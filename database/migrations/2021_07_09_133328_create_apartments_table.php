@@ -32,7 +32,7 @@ class CreateApartmentsTable extends Migration
             $table->string('address');
             $table->string('latitude', 20);
             $table->string('longitude', 20);
-            $table->string('images')->nullable();
+            $table->string('cover')->nullable();
             $table->boolean('visible')->default(1);
             $table->string('slug')->unique();
             
