@@ -13,14 +13,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Laravel Login Routes
+Auth::routes();
+
+// Public Routes
+Route::get('/', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// Private
+// prefix('admin') adds admin to these routes url
+Route::prefix('admin')
+// ->namespace('Admin') looks for controllers in admin folder
+->namespace('Admin')
+// ->name('admin.') gives a name to a route, es admin.index
+->name('admin.')
+// ->middleware('auth') set middleware on private
+->middleware('auth')
+// ->group joins here all the route with the previous set properties
+->group(function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    // Here all the admin's route with CRUD opertaions
+    Route::resource('apartments', 'ApartmentController');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
