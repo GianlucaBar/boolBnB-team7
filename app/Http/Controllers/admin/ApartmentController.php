@@ -30,8 +30,10 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        // TO-DO: Da aggiungere qui le eventuali foreign key necessarie 
+        // quando si crea un nuovo appartamento
+        return view('admin.apartments.create');
     }
 
     /**
