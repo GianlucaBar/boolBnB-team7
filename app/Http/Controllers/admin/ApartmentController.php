@@ -53,7 +53,13 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $apartment = Apartment::findOrFail($id);
+
+        $data = [
+            'apartment' => $apartment
+        ];
+
+        return view('admin.apartments.show', $data);
     }
 
     /**

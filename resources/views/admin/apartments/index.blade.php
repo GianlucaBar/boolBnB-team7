@@ -44,6 +44,12 @@
                     {{ $apartment->slug }}
                 </li>
 
+                <li>
+                    <a href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">
+                        Dettagli appartamento
+                    </a>
+                </li>
+
             </ul>
         </div>
     @endforeach
