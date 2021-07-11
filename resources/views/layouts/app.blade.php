@@ -41,6 +41,14 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         
+                        <li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.apartments.index') }}">
+                                    Lista Appartamenti
+                                </a>
+                            </li>
+                        </li>
+
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

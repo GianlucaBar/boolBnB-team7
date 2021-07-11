@@ -4,6 +4,6 @@
 <div class="container">
     <h1>{{ $apartment->title }}</h1>
 
-    <p>Informazioni da aggungere, questo è un test</p>
+    <p>Informazioni da aggungere, questo è un test, ma il collegamento funziona</p>
 </div>
 @endsection
