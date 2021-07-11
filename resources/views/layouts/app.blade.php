@@ -44,7 +44,13 @@
                         <li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.index') }}">
-                                    Lista Appartamenti
+                                    Lista appartamenti
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.apartments.create') }}">
+                                    Aggiungi un nuovo appartamento
                                 </a>
                             </li>
                         </li>

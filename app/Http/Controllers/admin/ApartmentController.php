@@ -97,4 +97,13 @@ class ApartmentController extends Controller
     {
         //
     }
+
+    // Validation rules
+    // private function getValidationRules() {
+    //     $validation_rules = [
+    //         blablabla
+    //     ];
+
+    //     return $validation_rules;
+    // }
 }
