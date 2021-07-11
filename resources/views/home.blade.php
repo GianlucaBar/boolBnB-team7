@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>BoolBnB</h1>
+<div class="container">
+    <h1>BoolBnB Team 7</h1>
+</div>
 @endsection

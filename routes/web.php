@@ -39,6 +39,7 @@ Route::prefix('admin')
 // ->group joins here all the route with the previous set properties
 ->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/apartments-list', 'ApartmentController@index')->name('apartments-list');
     // Here all the admin's route with CRUD opertaions
     Route::resource('apartments', 'ApartmentController');
 });
