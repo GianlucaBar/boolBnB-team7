@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Apartment;
 use App\Extra;
 
@@ -72,7 +73,7 @@ class ApartmentController extends Controller
             $counter++;
 
             // verify new_slug is now unique 
-            $same_slug_found = Post::where('slug', '=', $new_slug)->first();
+            $same_slug_found = Apartment::where('slug', '=', $new_slug)->first();
             // if it's not it goes back into cycle 
         }
 
@@ -90,11 +91,19 @@ class ApartmentController extends Controller
         }
 
         $new_ap = new Apartment();
+
+        //take current user id
         $new_ap->user_id = Auth::id();
+
+        // fill
         $new_ap->fill($new_ap_data);
 
         $new_ap->save();
         
+        // setting extras 
+        if(isset($new_ap_data['extras'])){
+            $new_ap->extras()->sync($new_ap_data['extras']);
+        }
 
         return redirect()->route('admin.apartments.show', ['apartment' => $new_ap->id]);
     }

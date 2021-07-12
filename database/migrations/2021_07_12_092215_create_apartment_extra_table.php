@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExtraApartmentTable extends Migration
+class CreateApartmentExtraTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateExtraApartmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('extra_apartment', function (Blueprint $table) {
+        Schema::create('apartment_extra', function (Blueprint $table) {
             $table->unsignedBigInteger('apartment_id');
             $table->foreign('apartment_id')->references('id')->on('apartments');
             $table->unsignedBigInteger('extra_id');
@@ -29,11 +29,11 @@ class CreateExtraApartmentTable extends Migration
      */
     public function down()
     {
-        Schema::table('extra_apartment', function (Blueprint $table) {
-            $table->dropForeign('extra_apartment_extra_id_foreign');
-            $table->dropForeign('extra_apartment_apartment_id_foreign');
+        Schema::table('apartment_extra', function (Blueprint $table) {
+            $table->dropForeign('apartment_extra_extra_id_foreign');
+            $table->dropForeign('apartment_extra_apartment_id_foreign');
         });
 
-        Schema::dropIfExists('extra_apartment');
+        Schema::dropIfExists('apartment_extra');
     }
 }
