@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
+use App\Extra;
 
 class ApartmentController extends Controller
 {
@@ -33,7 +34,13 @@ class ApartmentController extends Controller
     {   
         // TO-DO: Da aggiungere qui le eventuali foreign key necessarie 
         // quando si crea un nuovo appartamento
-        return view('admin.apartments.create');
+        $extras = Extra::All();
+
+        $data = [
+            'extras' => $extras
+        ];
+
+        return view('admin.apartments.create', $data);
     }
 
     /**
@@ -44,7 +51,8 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        return view('admin.apartments.store');
     }
 
     /**

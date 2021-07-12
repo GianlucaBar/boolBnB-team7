@@ -74,6 +74,20 @@
             <input type="file" class="form-control-file" name="cover-image" id="cover-image">
         </div>
 
+        {{-- checkboxes extras  --}}
+        <div class="form-group">
+            <h5>Servizi extra</h5>
+            
+            @foreach ($extras as $extra)
+            <div class="form-check">
+                <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}>
+                <label class="form-check-label" for="extra-{{ $extra->id }}">
+                    {{$extra->name}}
+                </label>
+            </div> 
+            @endforeach
+        </div>
+
         {{-- Non ho aggiunto l'opzione per il visible, io immagino sia un button con una funzione collegata,
             ma così ad occhio e croce non saprei come implementarla, c'è un attimo da ragionarci, magari una
             checkbox con un if-else--}}
