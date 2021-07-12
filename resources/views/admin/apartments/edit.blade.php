@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>MOdifica post: {{ $apartment->title }}</h1>
+<div class="container">
+    <h1>Modifica post: {{ $apartment->title }}</h1>
 <form action="{{ route('admin.apartments.update', ['apartment' => $apartment->id]) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -105,4 +106,5 @@
 
     <input class="btn btn-success" type="submit" value="Modifica">
 </form>
+</div>
 @endsection
