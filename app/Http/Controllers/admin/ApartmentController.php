@@ -237,7 +237,7 @@ class ApartmentController extends Controller
         return redirect()->route('admin.apartments.index');
     }
 
-    // Validation rules
+    // Validation rules ghesboro
     private function getValidationRules() {
         $validation_rules = [
             'title' => 'required|min:5|max:255',
