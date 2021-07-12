@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Aggiungi un nuovo appartamento</h1>
-<form action="{{ route('admin.apartments.update') }}" method="post" enctype="multipart/form-data">
+<h1>MOdifica post: {{ $apartment->title }}</h1>
+<form action="{{ route('admin.apartments.update', ['apartment' => $apartment->id]) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -89,7 +89,7 @@
                     Ci dice se in una relazione un Model con un id ha una relazione col Model attuale. Quindi controlliamo che l'elemento
                     con un id, quindi $tag->id l'id del o dei tag/tags, sia contenuto fra i tags, funzione del Model $post.
                     Se è contenuto mi torna true, altrimenti false. Richiamiamo l'elemento relazionato e gli diciamo quale elemento --}}
-                    <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $post->extras->contains($extra->id) ? 'checked' : '' }}>
+                    <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $apartment->extras->contains($extra->id) ? 'checked' : '' }}>
                 @endif
                 
                 <label class="form-check-label" for="extra-{{ $extra->id }}">
