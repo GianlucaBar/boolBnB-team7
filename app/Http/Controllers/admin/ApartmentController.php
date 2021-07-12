@@ -251,7 +251,7 @@ class ApartmentController extends Controller
             'longitude' => 'required|numeric',
             'latitude' => 'required|numeric',
             'extras' => 'nullable|exists:extras,id',
-            'cover' => 'nullable|mimes:jpg,png,jpeg,gif,svg'
+            'cover' => 'nullable|mimes:jpg,png,jpeg,gif,svg,webp'
         ];
 
         return $validation_rules;
