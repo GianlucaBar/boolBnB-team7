@@ -50,6 +50,16 @@
                     </a>
                 </li>
 
+                <form action="{{ route('admin.apartments.destroy', [
+                    'apartment' => $apartment->id
+                    ]) }} "method="post">
+                
+                    @csrf
+                    @method('DELETE')
+                    
+                    <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="elimina">
+                </form>
+
             </ul>
         </div>
     @endforeach
