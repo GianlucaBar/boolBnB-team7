@@ -53,7 +53,11 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {      
+
+        // validazione
+        $request->validate($this->getValidationRules());
+
         $new_ap_data = $request->all();
 
         // CREATE NEW SLUG 
@@ -152,8 +156,69 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+
+        // validazione
+        $request->validate($this->getValidationRules());
+
+        $mod_ap_data = $request->all();
+
         $mod_ap = Apartment::findOrFail($id);
+
+        // if title is modified, slug uniqueness has to checked
+        if($mod_ap_data['title'] != $mod_ap->title){
+            
+            // CREATE NEW SLUG 
+            $new_slug = Str::Slug($mod_ap_data['title'], '-');
+            $base_slug = $new_slug;
+            
+            // initialize cycle's condition and counter
+            $same_slug_found = Apartment::where('slug', '=', $new_slug)->first();
+            $counter = 1;
+
+            // searching for duplicate slugs
+            while($same_slug_found){
+                // append counter number to base slug (if there is a duplicate) 
+                $new_slug = $base_slug . '-' . $counter;
+
+                // increase counter 
+                $counter++;
+
+                // verify new_slug is now unique 
+                $same_slug_found = Apartment::where('slug', '=', $new_slug)->first();
+                // if it's not it goes back into cycle 
+            }
+
+        $new_ap_data['slug'] = $new_slug;
+        }
+        
+        // if an image is loaded, it's saved in storage 
+        // add result of Storage::put() in $new_ap_data
+        if (isset($mod_ap_data['cover'])) {
+            
+            $mod_img_path = Storage::put('apartments_covers', $mod_ap_data['cover']);
+            
+            if($mod_img_path){
+                $mod_ap_data['cover'] = $mod_img_path;
+            }
+        }
+
+        $mod_ap->update($mod_ap_data);
+
+        $mod_ap->save();
+
+        // setting extras 
+        // if checkboxes are modified, sync new values
+        if(isset($mod_ap_data['extras'])){
+            $mod_ap->extras()->sync($mod_ap_data['extras']);
+
+        // if checkboxes are left empty, sync with empty array 
+        } else{
+            $mod_ap->extras()->sync([]);
+        }
+
+        return redirect()->route('admin.apartments.show', ['apartment' => $mod_ap->id]);
+
     }
 
     /**
@@ -168,11 +233,23 @@ class ApartmentController extends Controller
     }
 
     // Validation rules
-    // private function getValidationRules() {
-    //     $validation_rules = [
-    //         blablabla
-    //     ];
+    private function getValidationRules() {
+        $validation_rules = [
+            'title' => 'required|max:100',
+            'description' => 'required',
+            'description' => 'required',
+            'rooms' => 'required',
+            'beds' => 'required',
+            'baths' => 'required',
+            'square_meters' => 'required',
+            'price' => 'required',
+            'address' => 'required',
+            'longitude' => 'required',
+            'latitude' => 'required',
+            'extras' => 'nullable|exists:extras,id',
+            'cover' => 'nullable'
+        ];
 
-    //     return $validation_rules;
-    // }
+        return $validation_rules;
+    }
 }
