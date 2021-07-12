@@ -240,20 +240,18 @@ class ApartmentController extends Controller
     // Validation rules
     private function getValidationRules() {
         $validation_rules = [
-            'title' => 'required|max:100',
-            'description' => 'required',
-            'description' => 'required',
-            'rooms' => 'required',
-            'beds' => 'required',
-            'baths' => 'required',
-            'square_meters' => 'required',
-            'price' => 'required',
-            'address' => 'required',
-            'longitude' => 'required',
-            'latitude' => 'required',
-            // exist evita chel'id dell'extra possa essere modificato all'inspector 
+            'title' => 'required|min:5|max:255',
+            'description' => 'required|max:65000',
+            'rooms' => 'required|numeric',
+            'beds' => 'required|numeric',
+            'baths' => 'required|numeric',
+            'square_meters' => 'required|numeric',
+            'price' => 'required|numeric',
+            'address' => 'required|min:5|max:255',
+            'longitude' => 'required|numeric',
+            'latitude' => 'required|numeric',
             'extras' => 'nullable|exists:extras,id',
-            'cover' => 'nullable'
+            'cover' => 'nullable|mimes:jpg,png,jpeg,gif,svg'
         ];
 
         return $validation_rules;
