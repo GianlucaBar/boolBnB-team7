@@ -132,8 +132,16 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {   
+        $this_ap = Apartment::findOrFail($id);
+        $extras = Extra::All();
+
+        $data = [
+            'apartment' => $this_ap,
+            'extras' => $extras
+        ];
+
+        return view('admin.apartments.edit', $data);
     }
 
     /**
@@ -145,7 +153,7 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mod_ap = Apartment::findOrFail($id);
     }
 
     /**

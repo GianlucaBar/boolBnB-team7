@@ -23,11 +23,10 @@ Auth::routes();
 // Public Routes
 Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Private
+
 // prefix('admin') adds admin to these routes url
 Route::prefix('admin')
 // ->namespace('Admin') looks for controllers in admin folder
@@ -42,3 +41,4 @@ Route::prefix('admin')
     // Here all the admin's route with CRUD opertaions
     Route::resource('apartments', 'ApartmentController');
 });
+
