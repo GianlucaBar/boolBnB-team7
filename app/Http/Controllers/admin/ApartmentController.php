@@ -251,6 +251,7 @@ class ApartmentController extends Controller
             'address' => 'required',
             'longitude' => 'required',
             'latitude' => 'required',
+            // exist evita chel'id dell'extra possa essere modificato all'inspector 
             'extras' => 'nullable|exists:extras,id',
             'cover' => 'nullable'
         ];
