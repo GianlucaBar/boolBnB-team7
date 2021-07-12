@@ -50,6 +50,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
+                        Modifica appartamento
+                    </a>
+                </li>
+
                 <form action="{{ route('admin.apartments.destroy', [
                     'apartment' => $apartment->id
                     ]) }} "method="post">

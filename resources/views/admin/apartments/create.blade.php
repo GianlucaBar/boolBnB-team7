@@ -2,7 +2,7 @@
 
 @section('content')
 
-    {{-- Per gli errori --}}
+    {{-- Script for errors --}}
     @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>

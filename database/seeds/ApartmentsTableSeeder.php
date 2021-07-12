@@ -15,6 +15,7 @@ class ApartmentsTableSeeder extends Seeder
     {
     
         $apartments = [
+
             [
                 'title'=> 'Porta Nuova centralissimo appartamento',
                 'user_id'=> '1',

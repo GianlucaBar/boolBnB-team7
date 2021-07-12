@@ -3,6 +3,18 @@
 @section('content')
 <div class="container">
     <h1>Modifica post: {{ $apartment->title }}</h1>
+
+    {{-- Script for errors --}}
+    @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+    @endif
+
 <form action="{{ route('admin.apartments.update', ['apartment' => $apartment->id]) }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
