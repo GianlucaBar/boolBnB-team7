@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 use App\Apartment;
 use App\Extra;
 
@@ -50,9 +52,51 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $new_ap_data = $request->all();
+
+        // CREATE NEW SLUG 
+        $new_slug = Str::Slug($new_ap_data['title'], '-');
+        $base_slug = $new_slug;
         
-        return view('admin.apartments.store');
+        // initialize cycle's condition and counter
+        $same_slug_found = Apartment::where('slug', '=', $new_slug)->first();
+        $counter = 1;
+
+        // searching for duplicate slugs
+        while($same_slug_found){
+            // append counter number to base slug (if there is a duplicate) 
+            $new_slug = $base_slug . '-' . $counter;
+
+            // increase counter 
+            $counter++;
+
+            // verify new_slug is now unique 
+            $same_slug_found = Post::where('slug', '=', $new_slug)->first();
+            // if it's not it goes back into cycle 
+        }
+
+        $new_ap_data['slug'] = $new_slug;
+
+        // if an image is loaded, it's saved in storage 
+        // add result of Storage::put() in $new_ap_data
+        if (isset($new_ap_data['cover'])) {
+            
+            $new_img_path = Storage::put('apartments_covers', $new_ap_data['cover']);
+            
+            if($new_img_path){
+                $new_ap_data['cover'] = $new_img_path;
+            }
+        }
+
+        $new_ap = new Apartment();
+        $new_ap->user_id = Auth::id();
+        $new_ap->fill($new_ap_data);
+
+        $new_ap->save();
+        
+
+        return redirect()->route('admin.apartments.show', ['apartment' => $new_ap->id]);
     }
 
     /**

@@ -5,7 +5,23 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Apartment extends Model
-{
+{   
+
+    protected $fillable = [
+        'title',
+        'description',
+        'slug',
+        'rooms',
+        'beds',
+        'baths',
+        'square_meters',
+        'price',
+        'address',
+        'latitude',
+        'longitude',
+        'cover'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');

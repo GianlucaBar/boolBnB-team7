@@ -70,8 +70,8 @@
         </div>
 
         <div class="form-group">
-            <label for="cover-image">Immagine di copertina</label>
-            <input type="file" class="form-control-file" name="cover-image" id="cover-image">
+            <label for="cover">Immagine di copertina</label>
+            <input type="file" class="form-control-file" name="cover" id="cover">
         </div>
 
         {{-- checkboxes extras  --}}
