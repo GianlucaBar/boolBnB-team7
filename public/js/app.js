@@ -38186,7 +38186,9 @@ var app = new Vue({
   el: '#root',
   data: {
     searchAddress: '',
-    searchResult: ''
+    searchResult: '',
+    lat: '',
+    lon: ''
   },
   methods: {
     getAddressCoord: function getAddressCoord() {
@@ -38217,7 +38219,8 @@ var app = new Vue({
                 url.search = new URLSearchParams({
                   query: _this.searchAddress,
                   key: 'HgVrAuAcCtAcxTpt0Vt2SyvAcoFKqF4Z',
-                  versionNumber: '2'
+                  versionNumber: '2',
+                  limit: '1'
                 });
                 _context.next = 4;
                 return fetch(url);
@@ -38229,9 +38232,11 @@ var app = new Vue({
 
               case 7:
                 data = _context.sent;
-                console.log(data);
+                console.log(data.results[0].position.lat);
+                _this.lat = data.results[0].position.lat;
+                _this.lon = data.results[0].position.lon;
 
-              case 9:
+              case 11:
               case "end":
                 return _context.stop();
             }

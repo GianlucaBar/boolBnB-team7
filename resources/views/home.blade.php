@@ -10,7 +10,7 @@
 
     <div class="container">
         <h1>ricerca</h1>
-        <input v-model="searchAddress" type="text" @keyup.enter="getAddressCoord">
+        {{-- <input v-model="searchAddress" type="text" v-on:keyup="getAddressCoord"> --}}
 
 
         <form id="form-search" action="{{route('api.search')}}" method="get">
@@ -18,13 +18,15 @@
             @method('GET')
             <div class="form-group">
                 
-                <input type="search" class="form-control" id="search-search-bar"  name='search' value="">
+                <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
 
 
                 {{-- hidden inputs of coords, retrieved by api search to tomtom --}}
-                <input type="hidden" name="latitude" id="latitude" value="">
-                <input type="hidden" name="longitude" id="longitude" value ="">
+                <input type="text" name="latitude" id="latitude" v-model="lat">
+                <input type="text" name="longitude" id="longitude" v-model="lon">
 
+                <label for="radius">Inserisci il raggio di ricerca</label>
+                <input type="text" name="radius" id="radius" value="">
                 <input type="submit" id="submit-search" class="btn bnb_btn" value='Cerca'>
               
             </div>

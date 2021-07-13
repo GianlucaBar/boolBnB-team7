@@ -4,7 +4,9 @@ var app = new Vue(
             
         data: {
             searchAddress: '',
-            searchResult: ''
+            searchResult: '',
+            lat: '',
+            lon: ''
         },
 
         methods: {
@@ -34,13 +36,16 @@ var app = new Vue(
             url.search = new URLSearchParams({
                 query: this.searchAddress,
                 key: 'HgVrAuAcCtAcxTpt0Vt2SyvAcoFKqF4Z',
-                versionNumber: '2'
+                versionNumber: '2',
+                limit: '1'
             })
         
             const response = await fetch(url);
 
             const data = await response.json();
-            console.log(data);
+            console.log(data.results[0].position.lat);
+            this.lat = data.results[0].position.lat;
+            this.lon = data.results[0].position.lon;
 
             }
 		
