@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('header-scripts')
+    {{-- Vue.js CDN --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 @endsection
@@ -24,6 +25,7 @@
 
             <label for="radius">Inserisci il raggio di ricerca</label>
             <input type="text" name="radius" id="radius" v-model="radius">
+
             <button class="btn btn-primary" v-on:click="getSearchResult">Cerca</button>
             
         </div> 

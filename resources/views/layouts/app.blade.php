@@ -10,7 +10,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     {{-- Header Script --}}
-    {{-- Prima carico le dipendenze della pagina e poi lancio app.js --}}
     @yield('header-scripts')
 
     <!-- Scripts -->

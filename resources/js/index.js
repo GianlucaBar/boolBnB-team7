@@ -4,7 +4,6 @@ var app = new Vue(
             
         data: {
             searchAddress: '',
-            searchResult: '',
             lat: '',
             lon: '',
             radius: '20',
