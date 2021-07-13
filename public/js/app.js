@@ -37345,6 +37345,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./index */ "./resources/js/index.js"); // require('/cors-settings');
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37392,6 +37394,43 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/index.js":
+/*!*******************************!*\
+  !*** ./resources/js/index.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var app = new Vue({
+  el: '#root',
+  data: {
+    searchAddress: '',
+    searchResult: ''
+  },
+  methods: {
+    getAddressCoord: function getAddressCoord() {
+      var _this = this;
+
+      axios.get('https://api.tomtom.com/search/2/geocode/.json?key=HgVrAuAcCtAcxTpt0Vt2SyvAcoFKqF4Z&versionNumber=2', {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+        },
+        params: {
+          query: this.searchAddress
+        }
+      }).then(function (response) {
+        var result = response.data;
+        _this.searchResult = result;
+        console.log(_this.searchResult);
+      });
+    }
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -37410,8 +37449,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7-1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianluca\laravel-projects\boolBnB-team7\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\boolBnB-team7\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
