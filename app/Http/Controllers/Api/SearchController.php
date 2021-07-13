@@ -33,7 +33,7 @@ class SearchController extends Controller
         ->havingRaw("distance < ?", [$radius])
         ->get();
 
-        dd($apartments);
+        return response()->json($apartments);
 
 
     }

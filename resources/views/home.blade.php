@@ -13,24 +13,20 @@
         {{-- <input v-model="searchAddress" type="text" v-on:keyup="getAddressCoord"> --}}
 
 
-        <form id="form-search" action="{{route('api.search')}}" method="get">
-            @csrf
-            @method('GET')
-            <div class="form-group">
-                
-                <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
+        <div class="form-group">
+            
+            <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
 
 
-                {{-- hidden inputs of coords, retrieved by api search to tomtom --}}
-                <input type="text" name="latitude" id="latitude" v-model="lat">
-                <input type="text" name="longitude" id="longitude" v-model="lon">
+            {{-- hidden inputs of coords, retrieved by api search to tomtom --}}
+            <input type="text" name="latitude" id="latitude" v-model="lat">
+            <input type="text" name="longitude" id="longitude" v-model="lon">
 
-                <label for="radius">Inserisci il raggio di ricerca</label>
-                <input type="text" name="radius" id="radius" value="">
-                <input type="submit" id="submit-search" class="btn bnb_btn" value='Cerca'>
-              
-            </div>
-        </form> 
+            <label for="radius">Inserisci il raggio di ricerca</label>
+            <input type="text" name="radius" id="radius" v-model="radius">
+            <button class="btn btn-primary" v-on:click="getSearchResult">Cerca</button>
+            
+        </div> 
     </div>   
 
 </div>

@@ -6,32 +6,15 @@ var app = new Vue(
             searchAddress: '',
             searchResult: '',
             lat: '',
-            lon: ''
+            lon: '',
+            radius: '20'
         },
 
-        methods: {
+        methods: { 
+
+            // api call to get coordinates from a given address 
             async getAddressCoord(){
                 
-        //          axios
-        //           get('https://api.tomtom.com/search/2/geocode/.json?key=HgVrAuAcCtAcxTpt0Vt2SyvAcoFKqF4Z&versionNumber=2',{
-
-        //           headers: { 
-        //                 'Access-Control-Allow-Origin' : '*',
-        //                 'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-        //             },
-
-        //             params: {
-        //                 query: this.searchAddress
-        //             }
-        //         })
-        //         .then( (response) => {
-                    
-                    
-        //             const result = response.data;
-
-        //             this.searchResult = result;
-        //             console.log(this.searchResult);
-        //     })
             let url = new URL('https://api.tomtom.com/search/2/geocode/.json')
             url.search = new URLSearchParams({
                 query: this.searchAddress,
@@ -43,12 +26,31 @@ var app = new Vue(
             const response = await fetch(url);
 
             const data = await response.json();
-            console.log(data.results[0].position.lat);
             this.lat = data.results[0].position.lat;
             this.lon = data.results[0].position.lon;
 
+            },
+
+            //api call to our api controller
+
+            async getSearchResult(){
+                
+            let url = new URL('http://127.0.0.1:8000/api?_token=nPc2OyCh7Nt1iIzKwV7sYV4xjps5FcKPAtDnb3Hf&_method=GET')
+            url.search = new URLSearchParams({
+                latitude: this.lat,
+                longitude: this.lon,
+                radius: this.radius
+            })
+        
+            const response = await fetch(url);
+
+            const data = await response.json();
+            console.log(data);
+            
+
             }
-		
+
+
         },
         mounted() {  
 

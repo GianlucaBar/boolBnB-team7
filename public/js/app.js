@@ -38188,9 +38188,11 @@ var app = new Vue({
     searchAddress: '',
     searchResult: '',
     lat: '',
-    lon: ''
+    lon: '',
+    radius: '20'
   },
   methods: {
+    // api call to get coordinates from a given address 
     getAddressCoord: function getAddressCoord() {
       var _this = this;
 
@@ -38200,21 +38202,6 @@ var app = new Vue({
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                //          axios
-                //           get('https://api.tomtom.com/search/2/geocode/.json?key=HgVrAuAcCtAcxTpt0Vt2SyvAcoFKqF4Z&versionNumber=2',{
-                //           headers: { 
-                //                 'Access-Control-Allow-Origin' : '*',
-                //                 'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-                //             },
-                //             params: {
-                //                 query: this.searchAddress
-                //             }
-                //         })
-                //         .then( (response) => {
-                //             const result = response.data;
-                //             this.searchResult = result;
-                //             console.log(this.searchResult);
-                //     })
                 url = new URL('https://api.tomtom.com/search/2/geocode/.json');
                 url.search = new URLSearchParams({
                   query: _this.searchAddress,
@@ -38232,16 +38219,51 @@ var app = new Vue({
 
               case 7:
                 data = _context.sent;
-                console.log(data.results[0].position.lat);
                 _this.lat = data.results[0].position.lat;
                 _this.lon = data.results[0].position.lon;
 
-              case 11:
+              case 10:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
+      }))();
+    },
+    //api call to our api controller
+    getSearchResult: function getSearchResult() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var url, response, data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                url = new URL('http://127.0.0.1:8000/api?_token=nPc2OyCh7Nt1iIzKwV7sYV4xjps5FcKPAtDnb3Hf&_method=GET');
+                url.search = new URLSearchParams({
+                  latitude: _this2.lat,
+                  longitude: _this2.lon,
+                  radius: _this2.radius
+                });
+                _context2.next = 4;
+                return fetch(url);
+
+              case 4:
+                response = _context2.sent;
+                _context2.next = 7;
+                return response.json();
+
+              case 7:
+                data = _context2.sent;
+                console.log(data);
+
+              case 9:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
       }))();
     }
   },
