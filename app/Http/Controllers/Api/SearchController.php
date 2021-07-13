@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Apartment;
 
 class SearchController extends Controller
 {   
@@ -16,18 +17,23 @@ class SearchController extends Controller
      */
     public function index(Request $request){
 
-        dd($request->all());
-        // $apartments = Apartment::select('apartments.*')
-        // ->selectRaw('( 6371 * acos( cos( radians(?) ) *
-        //                    cos( radians( lat ) )
-        //                    * cos( radians( lon ) - radians(?)
-        //                    ) + sin( radians(?) ) *
-        //                    sin( radians( lat ) ) )
-        //                  ) AS distance', [$latitude, $longitude, $latitude])
-        // ->havingRaw("distance < ?", [$radius])
-        // ->get();
+        // dd($request->all());
 
-        // return $offers;
+        $latitude = $request->latitude;
+        $longitude = $request->longitude;
+        $radius = $request->radius;
+
+        $apartments = Apartment::select('apartments.*')
+        ->selectRaw('( 6371 * acos( cos( radians(?) ) *
+                           cos( radians( latitude ) )
+                           * cos( radians( longitude ) - radians(?)
+                           ) + sin( radians(?) ) *
+                           sin( radians( latitude ) ) )
+                         ) AS distance', [$latitude, $longitude, $latitude])
+        ->havingRaw("distance < ?", [$radius])
+        ->get();
+
+        dd($apartments);
 
 
     }
