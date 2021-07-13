@@ -7,7 +7,8 @@ var app = new Vue(
             searchResult: '',
             lat: '',
             lon: '',
-            radius: '20'
+            radius: '20',
+            searchResult: ''
         },
 
         methods: { 
@@ -45,8 +46,9 @@ var app = new Vue(
             const response = await fetch(url);
 
             const data = await response.json();
-            console.log(data);
-            
+            // console.log(data);
+            this.searchResult = data;
+            console.log(this.searchResult);
 
             }
 
