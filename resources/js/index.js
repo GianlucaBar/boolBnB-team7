@@ -1,12 +1,18 @@
+const { filter } = require("lodash");
+
 var app = new Vue(
     {
         el: '#root',
             
         data: {
+            searchResult: '',
             searchAddress: '',
             lat: '',
             lon: '',
-            radius: '20'
+            radius: '20',
+            rooms: '1',
+            beds: '1',
+            filteredList: ''
         },
 
         methods: { 
@@ -51,8 +57,24 @@ var app = new Vue(
             this.searchResult = data;
             console.log(this.searchResult);
 
-            }
+            },
 
+            filter(){
+                let filteredList = [];
+
+                if(this.beds != 1 || this.rooms != 1){
+                    this.searchResult.forEach(element => {
+                        if(element.beds >= this.beds && element.rooms >= this.rooms){
+                            filteredList.push(element);
+                        }
+                    });
+                } else {
+                    filteredList = this.searchResult
+                }
+                
+
+                return filteredList;
+            }
 
         },
         mounted() {  

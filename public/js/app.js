@@ -38116,7 +38116,7 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./index */ "./resources/js/index.js"); // require('/cors-settings');
+__webpack_require__(/*! ./index */ "./resources/js/index.js"); // require('/search-filters');
 
 /***/ }),
 
@@ -38182,14 +38182,20 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    filter = _require.filter;
+
 var app = new Vue({
   el: '#root',
   data: {
-    searchAddress: '',
     searchResult: '',
+    searchAddress: '',
     lat: '',
     lon: '',
-    radius: '20'
+    radius: '20',
+    rooms: '1',
+    beds: '1',
+    filteredList: ''
   },
   methods: {
     // api call to get coordinates from a given address 
@@ -38256,17 +38262,35 @@ var app = new Vue({
 
               case 7:
                 data = _context2.sent;
-                // console.log(data);
+                // storage.setItem('searchResult', data);
+                console.log(data);
                 _this2.searchResult = data;
                 console.log(_this2.searchResult);
 
-              case 10:
+              case 11:
               case "end":
                 return _context2.stop();
             }
           }
         }, _callee2);
       }))();
+    },
+    filter: function filter() {
+      var _this3 = this;
+
+      var filteredList = [];
+
+      if (this.beds != 1 || this.rooms != 1) {
+        this.searchResult.forEach(function (element) {
+          if (element.beds >= _this3.beds && element.rooms >= _this3.rooms) {
+            filteredList.push(element);
+          }
+        });
+      } else {
+        filteredList = this.searchResult;
+      }
+
+      return filteredList;
     }
   },
   mounted: function mounted() {}

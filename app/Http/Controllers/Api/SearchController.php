@@ -31,7 +31,7 @@ class SearchController extends Controller
             sin( radians( latitude ) ) )
             ) AS distance', [$latitude, $longitude, $latitude])
         ->havingRaw("distance < ?", [$radius])
-        ->leftJoin('apartment_extra', 'apartments.id', '=', 'apartment_extra.apartment_id')
+        // ->leftJoin('apartment_extra', 'apartments.id', '=', 'apartment_extra.apartment_id')
         ->get();
 
         // dd($apartments);

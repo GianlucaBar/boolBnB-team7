@@ -31,7 +31,19 @@
             
         </div>
 
-        <div v-for="ap in searchResult">
+        <div v-if="searchResult.length">
+            <h2>filtri</h2>
+
+            <label for="beds">Numero min. posti letto</label>
+            <input type="number" id="beds" v-model="beds" min="1" max="20">
+
+            <label for="rooms">Numero min. stanze</label>
+            <input type="number" id="rooms" v-model="rooms" min="1" max="20">
+
+            <button class="btn btn-primary" v-on:click="filter">Filtra</button>
+
+
+        <div v-for="ap in filter()">
             <div class="card">
                 {{-- <img class="card-img-top" src="" alt=""> --}}
                 <div class="card-body">
@@ -41,6 +53,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        
         
     </div>   
 

@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 require('./index');
-require('/search-filters');
+// require('/search-filters');
 
 
 
