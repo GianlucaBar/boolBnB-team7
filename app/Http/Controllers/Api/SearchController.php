@@ -25,11 +25,11 @@ class SearchController extends Controller
 
         $apartments = Apartment::select('apartments.*')
         ->selectRaw('( 6371 * acos( cos( radians(?) ) *
-                           cos( radians( latitude ) )
-                           * cos( radians( longitude ) - radians(?)
-                           ) + sin( radians(?) ) *
-                           sin( radians( latitude ) ) )
-                         ) AS distance', [$latitude, $longitude, $latitude])
+            cos( radians( latitude ) )
+            * cos( radians( longitude ) - radians(?)
+            ) + sin( radians(?) ) *
+            sin( radians( latitude ) ) )
+            ) AS distance', [$latitude, $longitude, $latitude])
         ->havingRaw("distance < ?", [$radius])
         ->leftJoin('apartment_extra', 'apartments.id', '=', 'apartment_extra.apartment_id')
         ->get();
@@ -37,7 +37,5 @@ class SearchController extends Controller
         // dd($apartments);
 
         return response()->json($apartments);
-
-
     }
 }

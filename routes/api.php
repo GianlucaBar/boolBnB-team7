@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Apartments API
 Route::get('/', 'Api\SearchController@index')->name('api.search');
