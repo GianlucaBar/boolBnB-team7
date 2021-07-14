@@ -38116,7 +38116,7 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./index */ "./resources/js/index.js"); // require('/search-filters');
+__webpack_require__(/*! ./index */ "./resources/js/index.js"); // require('./search-filters');
 
 /***/ }),
 

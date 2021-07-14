@@ -14,8 +14,8 @@
         {{-- <input v-model="searchAddress" type="text" v-on:keyup="getAddressCoord"> --}}
 
 
-        
-        <div class="form-group" v-if="!searchResult.length">
+        {{-- v-if="!searchResult.length --}}
+        <div class="form-group">
             
             <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
 
@@ -39,6 +39,9 @@
 
             <label for="rooms">Numero min. stanze</label>
             <input type="number" id="rooms" v-model="rooms" min="1" max="20">
+
+            <label for="mod-radius">Modifica il raggio di ricerca</label>
+            <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
 
             <button class="btn btn-primary" v-on:click="filter">Filtra</button>
 

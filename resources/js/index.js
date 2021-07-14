@@ -78,7 +78,7 @@ var app = new Vue(
 
         },
         mounted() {  
-
+            
         }
 
     });
