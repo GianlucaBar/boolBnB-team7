@@ -38116,7 +38116,9 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./index */ "./resources/js/index.js"); // require('/cors-settings');
+__webpack_require__(/*! ./index */ "./resources/js/index.js");
+
+__webpack_require__(/*! ./search-filters */ "./resources/js/search-filters.js");
 
 /***/ }),
 
@@ -38186,7 +38188,6 @@ var app = new Vue({
   el: '#root',
   data: {
     searchAddress: '',
-    searchResult: '',
     lat: '',
     lon: '',
     radius: '20'
@@ -38202,6 +38203,7 @@ var app = new Vue({
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                alert('funzio');
                 url = new URL('https://api.tomtom.com/search/2/geocode/.json');
                 url.search = new URLSearchParams({
                   query: _this.searchAddress,
@@ -38209,20 +38211,20 @@ var app = new Vue({
                   versionNumber: '2',
                   limit: '1'
                 });
-                _context.next = 4;
+                _context.next = 5;
                 return fetch(url);
 
-              case 4:
+              case 5:
                 response = _context.sent;
-                _context.next = 7;
+                _context.next = 8;
                 return response.json();
 
-              case 7:
+              case 8:
                 data = _context.sent;
                 _this.lat = data.results[0].position.lat;
                 _this.lon = data.results[0].position.lon;
 
-              case 10:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -38256,11 +38258,12 @@ var app = new Vue({
 
               case 7:
                 data = _context2.sent;
-                // console.log(data);
+                // storage.setItem('searchResult', data);
+                console.log(data);
                 _this2.searchResult = data;
                 console.log(_this2.searchResult);
 
-              case 10:
+              case 11:
               case "end":
                 return _context2.stop();
             }
@@ -38269,6 +38272,24 @@ var app = new Vue({
       }))();
     }
   },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
+/***/ "./resources/js/search-filters.js":
+/*!****************************************!*\
+  !*** ./resources/js/search-filters.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var app = new Vue({
+  el: '#root',
+  data: {
+    searchResult: ''
+  },
+  methods: {},
   mounted: function mounted() {}
 });
 

@@ -7,19 +7,12 @@ var app = new Vue(
         },
 
         methods: { 
-            getSearchResult(){
-                
-                this.searchResult = localStorage.getItem('searchResult');
-
-                localStorage.removeItem('searchResult');
-
-            }
+            
 
 
         },
         mounted() {  
-            this.searchResult();
-            console.log(this.searchResult);
+            
         }
 
     });

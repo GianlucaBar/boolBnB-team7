@@ -13,20 +13,20 @@ var app = new Vue(
 
             // api call to get coordinates from a given address 
             async getAddressCoord(){
-                
-            let url = new URL('https://api.tomtom.com/search/2/geocode/.json')
-            url.search = new URLSearchParams({
-                query: this.searchAddress,
-                key: 'HgVrAuAcCtAcxTpt0Vt2SyvAcoFKqF4Z',
-                versionNumber: '2',
-                limit: '1'
-            })
-        
-            const response = await fetch(url);
+                alert('funzio');
+                let url = new URL('https://api.tomtom.com/search/2/geocode/.json')
+                url.search = new URLSearchParams({
+                    query: this.searchAddress,
+                    key: 'HgVrAuAcCtAcxTpt0Vt2SyvAcoFKqF4Z',
+                    versionNumber: '2',
+                    limit: '1'
+                })
+            
+                const response = await fetch(url);
 
-            const data = await response.json();
-            this.lat = data.results[0].position.lat;
-            this.lon = data.results[0].position.lon;
+                const data = await response.json();
+                this.lat = data.results[0].position.lat;
+                this.lon = data.results[0].position.lon;
 
             },
 
@@ -34,22 +34,22 @@ var app = new Vue(
 
             async getSearchResult(){
                 
-            let url = new URL('http://127.0.0.1:8000/api?_token=nPc2OyCh7Nt1iIzKwV7sYV4xjps5FcKPAtDnb3Hf&_method=GET')
-            url.search = new URLSearchParams({
-                latitude: this.lat,
-                longitude: this.lon,
-                radius: this.radius
-            })
-        
-            const response = await fetch(url);
+                let url = new URL('http://127.0.0.1:8000/api?_token=nPc2OyCh7Nt1iIzKwV7sYV4xjps5FcKPAtDnb3Hf&_method=GET')
+                url.search = new URLSearchParams({
+                    latitude: this.lat,
+                    longitude: this.lon,
+                    radius: this.radius
+                })
+            
+                const response = await fetch(url);
 
-            const data = await response.json();
+                const data = await response.json();
 
-            // storage.setItem('searchResult', data);
+                // storage.setItem('searchResult', data);
 
-            console.log(data);
-            this.searchResult = data;
-            console.log(this.searchResult);
+                console.log(data);
+                this.searchResult = data;
+                console.log(this.searchResult);
 
             }
 
