@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
-
+use App\Extra;
 class SearchController extends Controller
 {   
 
@@ -31,7 +31,10 @@ class SearchController extends Controller
                            sin( radians( latitude ) ) )
                          ) AS distance', [$latitude, $longitude, $latitude])
         ->havingRaw("distance < ?", [$radius])
+        ->leftJoin('apartment_extra', 'apartments.id', '=', 'apartment_extra.apartment_id')
         ->get();
+
+        // dd($apartments);
 
         return response()->json($apartments);
 

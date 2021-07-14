@@ -22,8 +22,10 @@ Auth::routes();
 
 // Public Routes
 Route::get('/', 'HomeController@index')->name('home');
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/apartments', 'ApartmentController@index')->name('search-page');
+
 
 // Private
 
