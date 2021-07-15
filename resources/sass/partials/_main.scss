@@ -1,0 +1,66 @@
+.my-jumbotron{
+    height: 600px;
+    position: relative;
+    // TEST
+    background-color: $red;
+
+    .title{
+        text-align: center;
+        
+
+        h2{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+    }
+}
+
+.list-apartment{
+    padding: 20px;
+
+    .title-page{
+        text-align: center;
+    }
+
+    .card-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+
+        .card{
+            width: calc(( 100% / 4) - 40px );
+            height: 340px;
+            margin:30px 0;
+            background-size: cover;
+            border-radius: 20px;
+            padding: 20px 30px;
+            transition: transform 1s;  
+            color: white;         
+
+            
+        }
+
+        .card:hover {
+            transform: scale(1.1); 
+            
+        }
+
+        .card:hover .hidden{           
+            display:block;
+        }
+
+        a{
+            color:white;
+
+            i{
+                font-size: 40px;
+            }
+        }
+
+    
+    }
+}

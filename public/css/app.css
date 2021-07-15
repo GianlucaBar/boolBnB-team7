@@ -4,6 +4,65 @@ ul {
   padding: 0;
 }
 
+.hidden {
+  display: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.my-jumbotron {
+  height: 600px;
+  position: relative;
+  background-color: #e3342f;
+}
+.my-jumbotron .title {
+  text-align: center;
+}
+.my-jumbotron .title h2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.list-apartment {
+  padding: 20px;
+}
+.list-apartment .title-page {
+  text-align: center;
+}
+.list-apartment .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.list-apartment .card-container .card {
+  width: calc(( 100% / 4) - 40px );
+  height: 340px;
+  margin: 30px 0;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 20px 30px;
+  transition: transform 1s;
+  color: white;
+}
+.list-apartment .card-container .card:hover {
+  transform: scale(1.1);
+}
+.list-apartment .card-container .card:hover .hidden {
+  display: block;
+}
+.list-apartment .card-container a {
+  color: white;
+}
+.list-apartment .card-container a i {
+  font-size: 40px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
