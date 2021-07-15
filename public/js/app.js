@@ -38297,16 +38297,18 @@ var app = new Vue({
 
               case 6:
                 data = _context3.sent;
-                console.log(data);
                 _this3.extras = data;
 
-              case 9:
+              case 8:
               case "end":
                 return _context3.stop();
             }
           }
         }, _callee3);
       }))();
+    },
+    getCheckboxValue: function getCheckboxValue() {
+      alert('funzio');
     },
     filter: function filter() {
       var _this4 = this;
@@ -38322,7 +38324,7 @@ var app = new Vue({
       } else {
         filteredList = this.searchResult;
       } //se l'array "currentCheckedExtras" e' popolato
-      //prendo solo gli appartamenti da  i cui id degli extra corrispondono agli id in currentCheckedExtras
+      //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
 
 
       return filteredList;
