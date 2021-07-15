@@ -29,11 +29,13 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                
+            
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <div class="logo">
-                        <img src={{asset('img/logo.png')}} alt="Logo">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            <img src={{asset('img/logo.png')}} alt="Logo">
+                        </a>     
                     </div>
 
                     <!-- Right Side Of Navbar -->
