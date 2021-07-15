@@ -1,4 +1,177 @@
-.test-block{
-    height: 800px;
-    color: red;
+.my-jumbotron{
+    height: 600px;
+    position: relative;
+    // TEST
+    background-color: $red;
+
+    
+
+    .title{
+        text-align: center;
+        
+
+        h2{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+    }
+}
+@keyframes my-jumbotron {
+    from {height:0px; width:0}
+    to {height:600px; width:100%}
+}
+
+
+.list-apartment{
+    padding: 20px;
+
+    .title-page{
+        text-align: center;
+    }
+
+    .card-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        position: relative;
+
+        .card{
+            position: relative;
+            width: calc(( 100% / 3) - 30px );
+            margin:30px 0;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            padding: 20px 30px;
+            transition: transform .1s;  
+            color: white; 
+            transform: scaleY(1);
+            transform-origin: top;
+            border: none;
+
+            .details{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: black;
+
+                a{
+                    color:lightgray;
+        
+                    i{
+                        font-size: 40px;
+                    }
+                }
+
+                a:hover{
+                    color:white;
+                }
+                
+
+            }
+
+           
+
+            .scaling-block{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: calc(100% + 1px);
+                height: 100px;
+                text-align: center;
+                background-color: white;
+                transform-origin: bottom;
+                transform: scaleY(1);
+                transition: .1s linear;
+                background-color: #f8fafc;
+                color: black;
+
+                .modified{
+                    color: black;
+                    text-decoration: underline;
+                }
+            }
+
+
+            
+        }
+
+        .card:hover {
+            transform: scaleY(1); 
+            background-image: linear-gradient(to top,rgba(3,3,3,0) 0,rgba(3,3,3,0.85) 100%);
+            &:hover .scaling-block{
+                transform: scaleY(0)
+            }
+            
+        }
+
+        .card:hover .hidden{           
+            display:block;
+        }
+
+        a{
+            color:white;
+
+            i{
+                font-size: 40px;
+            }
+        }
+
+    
+    }
+}
+
+// DASHBOARD
+.user-rep{
+    background-color:$cyan;
+    padding: 20px 40px;
+    border-radius: 10px;
+
+    // test
+    height:300px;
+}
+
+.new-ap{
+    color: $green;
+    i{
+        margin-left:10px;
+        font-size: 40px;
+    }
+}
+.my-ap{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    .new-ap{
+        color: $green;
+        i{
+            margin-left:10px;
+            font-size: 40px;
+        }
+    }
+}
+
+
+.ap-line{
+    padding:10px 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    display:flex;
+    justify-content: space-between;
+
+    
+    .buttoni{
+        display:flex;
+        margin:0 20px;
+        a{
+            margin:0 20px;
+        }
+    }
+
+
 }
