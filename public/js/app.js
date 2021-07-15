@@ -38315,11 +38315,12 @@ var app = new Vue({
       } else {
         this.currentCheckedExtras.forEach(function (element, index) {
           if (element == id) {
-            _this4.currentCheckedExtras.splice(index);
+            _this4.currentCheckedExtras.splice(index, 1);
           }
         });
-      } // console.log( this.currentCheckedExtras);
+      }
 
+      console.log(this.currentCheckedExtras);
     },
     filter: function filter() {
       var _this5 = this;
@@ -38338,29 +38339,26 @@ var app = new Vue({
       //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
 
 
+      var extraFilteredArray = [];
+
       if (this.currentCheckedExtras.length) {
+        // cycle apartments 
         filteredList.forEach(function (element) {
           var extraAp = element.extras;
           var thisExtras = [];
           extraAp.forEach(function (extra) {
             thisExtras.push(extra.id);
-          }); // console.log(thisExtras);
-
-          var extraFilteredArray = []; // Comparo nel ciclo i due array
+          }); // Comparo nel ciclo i due array
 
           var isMatched = _this5.currentCheckedExtras.every(function (i) {
             return thisExtras.includes(i);
-          }); // console.log(isMatched, element.title);
-          // const testingArray = thisExtras.filter(value => this.currentCheckedExtras.includes(value));
-
+          });
 
           if (isMatched) {
             extraFilteredArray.push(element);
-          } // console.log(testingArray);
-          // Se in thisExtra è presente tutto currentCheckedExtras
-          // allora ritorno ciò che è nel match
-
+          }
         });
+        filteredList = extraFilteredArray;
         console.log(extraFilteredArray);
       }
 
@@ -38400,8 +38398,8 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7-1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Gianluca\laravel-projects\boolBnB-team7\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\boolBnB-team7\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

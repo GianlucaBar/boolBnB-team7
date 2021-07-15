@@ -76,12 +76,12 @@ var app = new Vue(
                 } else{
                     this.currentCheckedExtras.forEach((element, index) => {
                         if(element == id){
-                            this.currentCheckedExtras.splice(index)
+                            this.currentCheckedExtras.splice(index, 1)
                         }
                     });
                 }
                 
-                // console.log( this.currentCheckedExtras);
+                console.log( this.currentCheckedExtras);
             },
 
             filter(){
@@ -99,28 +99,27 @@ var app = new Vue(
                 
                 //se l'array "currentCheckedExtras" è popolato
                 //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
+
+                let extraFilteredArray = [];
+
                 if(this.currentCheckedExtras.length){
+
+                    // cycle apartments 
                     filteredList.forEach(element =>{
                         let extraAp = element.extras;
-                        let thisExtras = []
+                        let thisExtras = [];
                         extraAp.forEach(extra=>{
                             thisExtras.push(extra.id)
                         })
-                        // console.log(thisExtras);
-
-                        let extraFilteredArray = [];
+        
                         // Comparo nel ciclo i due array
                         let isMatched = this.currentCheckedExtras.every(i => thisExtras.includes(i));
-                        // console.log(isMatched, element.title);
-                        // const testingArray = thisExtras.filter(value => this.currentCheckedExtras.includes(value));
                         if (isMatched) {
                             extraFilteredArray.push(element);
                         }
-                        // console.log(testingArray);
-                        // Se in thisExtra è presente tutto currentCheckedExtras
-                        // allora ritorno ciò che è nel match
+        
                     })
-
+                    filteredList = extraFilteredArray;
                     console.log(extraFilteredArray);
                 }
 
