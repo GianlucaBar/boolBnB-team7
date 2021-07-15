@@ -38116,7 +38116,9 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./index */ "./resources/js/index.js"); // require('/cors-settings');
+__webpack_require__(/*! ./index */ "./resources/js/index.js");
+
+__webpack_require__(/*! ./search-filters */ "./resources/js/search-filters.js");
 
 /***/ }),
 
@@ -38186,7 +38188,6 @@ var app = new Vue({
   el: '#root',
   data: {
     searchAddress: '',
-    searchResult: '',
     lat: '',
     lon: '',
     radius: '20'
@@ -38256,11 +38257,12 @@ var app = new Vue({
 
               case 7:
                 data = _context2.sent;
-                // console.log(data);
+                // storage.setItem('searchResult', data);
+                console.log(data);
                 _this2.searchResult = data;
                 console.log(_this2.searchResult);
 
-              case 10:
+              case 11:
               case "end":
                 return _context2.stop();
             }
@@ -38270,6 +38272,32 @@ var app = new Vue({
     }
   },
   mounted: function mounted() {}
+});
+
+/***/ }),
+
+/***/ "./resources/js/search-filters.js":
+/*!****************************************!*\
+  !*** ./resources/js/search-filters.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var app = new Vue({
+  el: '#root',
+  data: {
+    searchResult: ''
+  },
+  methods: {
+    getSearchResult: function getSearchResult() {
+      this.searchResult = localStorage.getItem('searchResult');
+      localStorage.removeItem('searchResult');
+    }
+  },
+  mounted: function mounted() {
+    this.searchResult();
+    console.log(this.searchResult);
+  }
 });
 
 /***/ }),
