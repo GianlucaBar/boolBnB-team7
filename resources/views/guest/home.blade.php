@@ -14,6 +14,7 @@
         {{-- <input v-model="searchAddress" type="text" v-on:keyup="getAddressCoord"> --}}
 
         {{-- v-if="!searchResult.length --}}
+        <a href="{{ route('api.extras') }}">vai all'api</a>
         <div class="form-group">
             
             <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
@@ -24,14 +25,14 @@
             <input type="hidden" name="longitude" id="longitude" v-model="lon">
 
             <label for="radius">Inserisci il raggio di ricerca</label>
-            <input type="text" name="radius" id="radius" v-model="radius">
+            <input type="hidden" name="radius" id="radius" v-model="radius">
             
             <button class="btn btn-primary" v-on:click="getSearchResult">Cerca</button>
             
         </div>
-        <div class="test-block">
+        {{-- <div class="test-block">
 
-        </div>
+        </div> --}}
         <div id="search-result" v-if="searchResult.length">
             <h2>filtri</h2>
 
@@ -44,6 +45,12 @@
             <label for="mod-radius">Modifica il raggio di ricerca</label>
             <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
 
+            <div class="form-check" v-for="extra in extras">
+                <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}">
+                <label class="form-check-label" for="extra-@{{ extra.id }}">
+                    @{{ extra.name }}
+                </label>
+            </div> 
             <button class="btn btn-primary" v-on:click="filter">Filtra</button>
 
 

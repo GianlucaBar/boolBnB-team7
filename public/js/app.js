@@ -38196,7 +38196,8 @@ var app = new Vue({
     radius: '30',
     rooms: '1',
     beds: '1',
-    filteredList: ''
+    filteredList: '',
+    extras: ''
   },
   methods: {
     // api call to get coordinates from a given address 
@@ -38263,12 +38264,10 @@ var app = new Vue({
 
               case 7:
                 data = _context2.sent;
-                // storage.setItem('searchResult', data);
-                console.log(data);
                 _this2.searchResult = data;
                 console.log(_this2.searchResult);
 
-              case 11:
+              case 10:
               case "end":
                 return _context2.stop();
             }
@@ -38276,14 +38275,46 @@ var app = new Vue({
         }, _callee2);
       }))();
     },
-    filter: function filter() {
+    //api call to get extras's list
+    getExtras: function getExtras() {
       var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var url, response, data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                url = new URL('http://127.0.0.1:8000/api/extras');
+                _context3.next = 3;
+                return fetch(url);
+
+              case 3:
+                response = _context3.sent;
+                _context3.next = 6;
+                return response.json();
+
+              case 6:
+                data = _context3.sent;
+                console.log(data);
+                _this3.extras = data;
+
+              case 9:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
+    filter: function filter() {
+      var _this4 = this;
 
       var filteredList = [];
 
       if (this.beds != 1 || this.rooms != 1) {
         this.searchResult.forEach(function (element) {
-          if (element.beds >= _this3.beds && element.rooms >= _this3.rooms) {
+          if (element.beds >= _this4.beds && element.rooms >= _this4.rooms) {
             filteredList.push(element);
           }
         });
@@ -38301,7 +38332,10 @@ var app = new Vue({
     // }
 
   },
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    // call to get extras  
+    this.getExtras();
+  }
 });
 
 /***/ }),
