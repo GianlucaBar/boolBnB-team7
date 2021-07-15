@@ -13,9 +13,9 @@
         <h1>ricerca</h1>
         {{-- <input v-model="searchAddress" type="text" v-on:keyup="getAddressCoord"> --}}
 
-
-        
-        <div class="form-group" v-if="!searchResult.length">
+        {{-- v-if="!searchResult.length --}}
+        <a href="{{ route('api.extras') }}">vai all'api</a>
+        <div class="form-group">
             
             <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
 
@@ -30,8 +30,32 @@
             <button class="btn btn-primary" v-on:click="getSearchResult">Cerca</button>
             
         </div>
+        {{-- <div class="test-block">
 
-        <div v-for="ap in searchResult">
+        </div> --}}
+        <div id="search-result" v-if="searchResult.length">
+            <h2>filtri</h2>
+
+            <label for="beds">Numero min. posti letto</label>
+            <input type="number" id="beds" v-model="beds" min="1" max="20">
+
+            <label for="rooms">Numero min. stanze</label>
+            <input type="number" id="rooms" v-model="rooms" min="1" max="20">
+
+            <label for="mod-radius">Modifica il raggio di ricerca</label>
+            <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
+
+            {{-- chechboxes  --}}
+            <div class="form-check" v-for="extra in extras">
+                <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )">
+                <label class="form-check-label" for="extra-@{{ extra.id }}">
+                    @{{ extra.name }}
+                </label>
+            </div> 
+            <button class="btn btn-primary" v-on:click="filter">Filtra</button>
+
+
+        <div v-for="ap in filter()">
             <div class="card">
                 {{-- <img class="card-img-top" src="" alt=""> --}}
                 <div class="card-body">
@@ -41,6 +65,8 @@
                 </div>
             </div>
         </div>
+        </div>
+        
         
     </div>   
 

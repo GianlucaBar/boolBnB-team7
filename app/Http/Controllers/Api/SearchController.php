@@ -10,9 +10,8 @@ class SearchController extends Controller
 {   
 
     /**
-     * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request 
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
@@ -31,10 +30,14 @@ class SearchController extends Controller
             sin( radians( latitude ) ) )
             ) AS distance', [$latitude, $longitude, $latitude])
         ->havingRaw("distance < ?", [$radius])
-        ->leftJoin('apartment_extra', 'apartments.id', '=', 'apartment_extra.apartment_id')
         ->get();
 
-        // dd($apartments);
+        foreach($apartments as $apartment){
+            if($apartment->extras){
+                $extras = $apartment->extras;
+            }   
+        }
+
 
         return response()->json($apartments);
     }
