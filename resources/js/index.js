@@ -1,4 +1,4 @@
-const { filter } = require("lodash");
+const { filter, result } = require("lodash");
 
 var app = new Vue(
     {
@@ -9,7 +9,7 @@ var app = new Vue(
             searchAddress: '',
             lat: '',
             lon: '',
-            radius: '20',
+            radius: '30',
             rooms: '1',
             beds: '1',
             filteredList: ''
@@ -74,7 +74,18 @@ var app = new Vue(
                 
 
                 return filteredList;
-            }
+            },
+
+            // scrollToResult(){
+            //     let el = document.getElementById("search-result");
+
+            //     if (el) {
+            //         // Use el.scrollIntoView() to instantly scroll to the element
+            //         el.scrollIntoView({behavior: 'smooth'});
+            //     }
+            // }
+
+            
 
         },
         mounted() {  

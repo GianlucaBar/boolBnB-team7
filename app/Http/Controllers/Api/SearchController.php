@@ -10,9 +10,8 @@ class SearchController extends Controller
 {   
 
     /**
-     * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request 
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request){
@@ -34,7 +33,9 @@ class SearchController extends Controller
         // ->leftJoin('apartment_extra', 'apartments.id', '=', 'apartment_extra.apartment_id')
         ->get();
 
-        // dd($apartments);
+        // $extra = $apartments->extra;
+        $extra = $apartments[20]->extras;
+        // dd($extra);
 
         return response()->json($apartments);
     }

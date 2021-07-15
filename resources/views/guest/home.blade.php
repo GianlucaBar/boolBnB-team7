@@ -13,7 +13,6 @@
         <h1>ricerca</h1>
         {{-- <input v-model="searchAddress" type="text" v-on:keyup="getAddressCoord"> --}}
 
-
         {{-- v-if="!searchResult.length --}}
         <div class="form-group">
             
@@ -25,13 +24,15 @@
             <input type="hidden" name="longitude" id="longitude" v-model="lon">
 
             <label for="radius">Inserisci il raggio di ricerca</label>
-            <input type="hidden" name="radius" id="radius" v-model="radius">
+            <input type="text" name="radius" id="radius" v-model="radius">
             
             <button class="btn btn-primary" v-on:click="getSearchResult">Cerca</button>
             
         </div>
+        <div class="test-block">
 
-        <div v-if="searchResult.length">
+        </div>
+        <div id="search-result" v-if="searchResult.length">
             <h2>filtri</h2>
 
             <label for="beds">Numero min. posti letto</label>

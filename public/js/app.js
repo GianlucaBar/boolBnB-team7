@@ -38183,7 +38183,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
-    filter = _require.filter;
+    filter = _require.filter,
+    result = _require.result;
 
 var app = new Vue({
   el: '#root',
@@ -38192,7 +38193,7 @@ var app = new Vue({
     searchAddress: '',
     lat: '',
     lon: '',
-    radius: '20',
+    radius: '30',
     rooms: '1',
     beds: '1',
     filteredList: ''
@@ -38291,7 +38292,14 @@ var app = new Vue({
       }
 
       return filteredList;
-    }
+    } // scrollToResult(){
+    //     let el = document.getElementById("search-result");
+    //     if (el) {
+    //         // Use el.scrollIntoView() to instantly scroll to the element
+    //         el.scrollIntoView({behavior: 'smooth'});
+    //     }
+    // }
+
   },
   mounted: function mounted() {}
 });
