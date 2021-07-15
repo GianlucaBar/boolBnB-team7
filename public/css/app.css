@@ -12,6 +12,10 @@ ul {
   text-align: center;
 }
 
+.logo img {
+  width: 250px;
+}
+
 .my-jumbotron {
   height: 600px;
   position: relative;
