@@ -1,49 +1,48 @@
 @extends('layouts.app')
 
-@section('list-apartment')
+@section('dashboard')
 <div class="container">
-    <div class="list-apartment">
-        <div class="title-page">
-            <h1>Lista Appartamenti</h1>
-        </div>
+    <div class="centered mt-4 mb-4">
+        <h2 >Dashboard</h2>
+    </div>
 
-        <div class="card-container">
-            @foreach ($apartments as $apartment)
-                <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
-                    <ul>
-                    
-                        <li>
-                            <h3>{{ $apartment->title }}</h3>
-                        </li>
+    <div class="container ">
+        <div class="user-rep centered">
+            <h2>Riepilogo dati utente</h2>
+    </div>
 
-                        <li class="hidden centered">
-                            <a  href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">
-                                <i class="far fa-eye"></i> <br> Dettagli appartamento
-                            </a>
-                        </li>
+    <div class="my-ap mt-4 mb-2">
+        <h2>I miei Appartamenti</h2>
 
-                        <li class="hidden">
-                            <a class="btn btn-secondary" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
-                                Modifica appartamento
-                            </a>
-                        </li>
-
-                        <form class="hidden" action="{{ route('admin.apartments.destroy', [
-                            'apartment' => $apartment->id
-                            ]) }} "method="post">
-                        
-                            @csrf
-                            @method('DELETE')
-                            
-                            <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="elimina">
-                        </form>
-
-                    </ul>
-                </div>
-            @endforeach
-        </div>
+        <a class="new-ap"  href="{{ route('admin.apartments.create') }}"> Aggiungi appartamento <i class="fas fa-home"></i> </a>
 
     </div>
 
+    <div class="dashboard-ap mt-4 mb-4">
+        @foreach ($apartments as $apartment)
+        <div class="ap-line mt-2 mb-2">
+            <h5>{{$apartment->title}}</h5>
+
+            <div class="buttoni">
+                <a class="btn btn-primary" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
+                    Modifica Appartamento
+                </a>
+
+                <form  action="{{ route('admin.apartments.destroy', [
+                    'apartment' => $apartment->id
+                    ]) }} "method="post">
+                
+                    @csrf
+                    @method('DELETE')
+                    
+                    <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="Elimina">
+                </form>
+            </div>
+        </div>          
+        @endforeach
+    </div>
+</div>
+
+    
 </div>
 @endsection

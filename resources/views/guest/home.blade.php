@@ -50,8 +50,181 @@
         </div>
     </div>
 
+    
+
 </div>
 @endsection
+
+@section('list-apartment')
+<div class="container">
+    <div class="list-apartment">
+        <div class="title-page">
+            <h1>Lista Appartamenti</h1>
+        </div>
+
+        <div class="card-container">
+           
+                <div class="card" style="background-color: blue">
+                    <div>
+                    
+                        <div class="details hidden centered">
+                            <a  href="#">
+                                <i class="far fa-eye"></i> <br> Dettagli appartamento
+                            </a>
+                        </div>
+
+                        <div class="scaling-block">
+                            <div class="blog-title">
+                                <h4>Titolo appartamento</h4>
+                                
+                                
+
+                            </div>
+                        </div>
+
+                        {{-- <div class="hidden">
+                            <a class="btn btn-secondary" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
+                                Modifica appartamento
+                            </a>
+                        </div> --}}
+
+                        {{-- <form class="hidden" action="{{ route('admin.apartments.destroy', [
+                            'apartment' => $apartment->id
+                            ]) }} "method="post">
+                        
+                            @csrf
+                            @method('DELETE')
+                            
+                            <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="elimina">
+                        </form> --}}
+
+                    </div>
+                </div>
+
+                {{-- COPIED CARD --}}
+                <div class="card" style="background-color: blue">
+                    <div>
+                    
+                        <div class="details hidden centered">
+                            <a  href="#">
+                                <i class="far fa-eye"></i> <br> Dettagli appartamento
+                            </a>
+                        </div>
+
+                        <div class="scaling-block">
+                            <div class="blog-title">
+                                <h4>Titolo appartamento</h4>
+                                
+                                
+
+                            </div>
+                        </div>
+
+                        {{-- <div class="hidden">
+                            <a class="btn btn-secondary" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
+                                Modifica appartamento
+                            </a>
+                        </div> --}}
+
+                        {{-- <form class="hidden" action="{{ route('admin.apartments.destroy', [
+                            'apartment' => $apartment->id
+                            ]) }} "method="post">
+                        
+                            @csrf
+                            @method('DELETE')
+                            
+                            <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="elimina">
+                        </form> --}}
+
+                    </div>
+                </div>
+
+                <div class="card" style="background-color: blue">
+                    <div>
+                    
+                        <div class="details hidden centered">
+                            <a  href="#">
+                                <i class="far fa-eye"></i> <br> Dettagli appartamento
+                            </a>
+                        </div>
+
+                        <div class="scaling-block">
+                            <div class="blog-title">
+                                <h4>Titolo appartamento</h4>
+                                
+                                
+
+                            </div>
+                        </div>
+
+                        {{-- <div class="hidden">
+                            <a class="btn btn-secondary" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
+                                Modifica appartamento
+                            </a>
+                        </div> --}}
+
+                        {{-- <form class="hidden" action="{{ route('admin.apartments.destroy', [
+                            'apartment' => $apartment->id
+                            ]) }} "method="post">
+                        
+                            @csrf
+                            @method('DELETE')
+                            
+                            <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="elimina">
+                        </form> --}}
+
+                    </div>
+                </div>
+        </div>
+
+    </div>
+@endsection
+
+
+    {{-- <div class="card-container">
+            @foreach ($apartments as $apartment)
+                <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
+                    <div>
+                    
+                        <div class="details hidden centered">
+                            <a  href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">
+                                <i class="far fa-eye"></i> <br> Dettagli appartamento
+                            </a>
+                        </div>
+
+                        <div class="scaling-block">
+                            <div class="blog-title">
+                                <h4>{{ $apartment->title }}</h4>
+                                <a class="modified" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
+                                    Modifica appartamento
+                                </a>
+                                <span></span>
+
+                            </div>
+                        </div>
+
+                        {{-- <div class="hidden">
+                            <a class="btn btn-secondary" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
+                                Modifica appartamento
+                            </a>
+                        </div> --}}
+
+                        {{-- <form class="hidden" action="{{ route('admin.apartments.destroy', [
+                            'apartment' => $apartment->id
+                            ]) }} "method="post">
+                        
+                            @csrf
+                            @method('DELETE')
+                            
+                            <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="elimina">
+                        </form> --}}
+
+                    {{--</div>
+                </div>
+            @endforeach
+        </div> --}}
+
+
 
 
 @section('header-scripts')

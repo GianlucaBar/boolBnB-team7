@@ -98,6 +98,7 @@
             @yield('content')
             @yield('guest-homepage')
             @yield('list-apartment')
+            @yield('dashboard')
         </main>
     </div>
 
