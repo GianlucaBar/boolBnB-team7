@@ -38197,7 +38197,8 @@ var app = new Vue({
     rooms: '1',
     beds: '1',
     filteredList: '',
-    extras: ''
+    extras: '',
+    currentCheckedExtras: []
   },
   methods: {
     // api call to get coordinates from a given address 
@@ -38320,7 +38321,9 @@ var app = new Vue({
         });
       } else {
         filteredList = this.searchResult;
-      }
+      } //se l'array "currentCheckedExtras" e' popolato
+      //prendo solo gli appartamenti da  i cui id degli extra corrispondono agli id in currentCheckedExtras
+
 
       return filteredList;
     } // scrollToResult(){

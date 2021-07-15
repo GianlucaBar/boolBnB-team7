@@ -63,13 +63,16 @@ var app = new Vue(
                 
                 let url = new URL('http://127.0.0.1:8000/api/extras')
                 
-                    const response = await fetch(url);
-    
-                    const data = await response.json();
-                
-                    console.log(data);
-                    this.extras = data;
-                },
+                const response = await fetch(url);
+
+                const data = await response.json();
+            
+                this.extras = data;
+            },
+
+            getCheckboxValue(){
+                alert('funzio');
+            },
 
             filter(){
                 let filteredList = [];
@@ -85,7 +88,7 @@ var app = new Vue(
                 }
                 
                 //se l'array "currentCheckedExtras" e' popolato
-                //prendo solo gli appartamenti da  i cui id degli extra corrispondono agli id in currentCheckedExtras
+                //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
 
                 return filteredList;
             },

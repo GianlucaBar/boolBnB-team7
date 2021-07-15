@@ -45,8 +45,9 @@
             <label for="mod-radius">Modifica il raggio di ricerca</label>
             <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
 
+            {{-- chechboxes  --}}
             <div class="form-check" v-for="extra in extras">
-                <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}">
+                <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue">
                 <label class="form-check-label" for="extra-@{{ extra.id }}">
                     @{{ extra.name }}
                 </label>
