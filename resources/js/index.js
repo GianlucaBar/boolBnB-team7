@@ -81,7 +81,7 @@ var app = new Vue(
                     });
                 }
                 
-                console.log(this.currentCheckedExtras);
+                // console.log( this.currentCheckedExtras);
             },
 
             filter(){
@@ -97,7 +97,7 @@ var app = new Vue(
                     filteredList = this.searchResult
                 }
                 
-                //se l'array "currentCheckedExtras" e' popolato
+                //se l'array "currentCheckedExtras" è popolato
                 //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
                 if(this.currentCheckedExtras.length){
                     filteredList.forEach(element =>{
@@ -106,9 +106,25 @@ var app = new Vue(
                         extraAp.forEach(extra=>{
                             thisExtras.push(extra.id)
                         })
-                        console.log(thisExtras);
+                        // console.log(thisExtras);
+
+                        let extraFilteredArray = [];
+                        // Comparo nel ciclo i due array
+                        let isMatched = this.currentCheckedExtras.every(i => thisExtras.includes(i));
+                        // console.log(isMatched, element.title);
+                        // const testingArray = thisExtras.filter(value => this.currentCheckedExtras.includes(value));
+                        if (isMatched) {
+                            extraFilteredArray.push(element);
+                        }
+                        // console.log(testingArray);
+                        // Se in thisExtra è presente tutto currentCheckedExtras
+                        // allora ritorno ciò che è nel match
                     })
+
+                    console.log(extraFilteredArray);
                 }
+
+                
 
                 return filteredList;
             },

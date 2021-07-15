@@ -38318,9 +38318,8 @@ var app = new Vue({
             _this4.currentCheckedExtras.splice(index);
           }
         });
-      }
+      } // console.log( this.currentCheckedExtras);
 
-      console.log(this.currentCheckedExtras);
     },
     filter: function filter() {
       var _this5 = this;
@@ -38335,7 +38334,7 @@ var app = new Vue({
         });
       } else {
         filteredList = this.searchResult;
-      } //se l'array "currentCheckedExtras" e' popolato
+      } //se l'array "currentCheckedExtras" è popolato
       //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
 
 
@@ -38345,9 +38344,24 @@ var app = new Vue({
           var thisExtras = [];
           extraAp.forEach(function (extra) {
             thisExtras.push(extra.id);
-          });
-          console.log(thisExtras);
+          }); // console.log(thisExtras);
+
+          var extraFilteredArray = []; // Comparo nel ciclo i due array
+
+          var isMatched = _this5.currentCheckedExtras.every(function (i) {
+            return thisExtras.includes(i);
+          }); // console.log(isMatched, element.title);
+          // const testingArray = thisExtras.filter(value => this.currentCheckedExtras.includes(value));
+
+
+          if (isMatched) {
+            extraFilteredArray.push(element);
+          } // console.log(testingArray);
+          // Se in thisExtra è presente tutto currentCheckedExtras
+          // allora ritorno ciò che è nel match
+
         });
+        console.log(extraFilteredArray);
       }
 
       return filteredList;
