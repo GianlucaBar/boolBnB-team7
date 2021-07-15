@@ -38266,9 +38266,8 @@ var app = new Vue({
               case 7:
                 data = _context2.sent;
                 _this2.searchResult = data;
-                console.log(_this2.searchResult);
 
-              case 10:
+              case 9:
               case "end":
                 return _context2.stop();
             }
@@ -38307,17 +38306,30 @@ var app = new Vue({
         }, _callee3);
       }))();
     },
-    getCheckboxValue: function getCheckboxValue() {
-      alert('funzio');
+    // function to populate currentCheckedExtras 
+    getCheckboxValue: function getCheckboxValue(id) {
+      var _this4 = this;
+
+      if (!this.currentCheckedExtras.includes(id)) {
+        this.currentCheckedExtras.push(id);
+      } else {
+        this.currentCheckedExtras.forEach(function (element, index) {
+          if (element == id) {
+            _this4.currentCheckedExtras.splice(index);
+          }
+        });
+      }
+
+      console.log(this.currentCheckedExtras);
     },
     filter: function filter() {
-      var _this4 = this;
+      var _this5 = this;
 
       var filteredList = [];
 
       if (this.beds != 1 || this.rooms != 1) {
         this.searchResult.forEach(function (element) {
-          if (element.beds >= _this4.beds && element.rooms >= _this4.rooms) {
+          if (element.beds >= _this5.beds && element.rooms >= _this5.rooms) {
             filteredList.push(element);
           }
         });
@@ -38326,6 +38338,17 @@ var app = new Vue({
       } //se l'array "currentCheckedExtras" e' popolato
       //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
 
+
+      if (this.currentCheckedExtras.length) {
+        filteredList.forEach(function (element) {
+          var extraAp = element.extras;
+          var thisExtras = [];
+          extraAp.forEach(function (extra) {
+            thisExtras.push(extra.id);
+          });
+          console.log(thisExtras);
+        });
+      }
 
       return filteredList;
     } // scrollToResult(){

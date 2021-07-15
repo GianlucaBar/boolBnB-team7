@@ -47,7 +47,7 @@
 
             {{-- chechboxes  --}}
             <div class="form-check" v-for="extra in extras">
-                <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue">
+                <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )">
                 <label class="form-check-label" for="extra-@{{ extra.id }}">
                     @{{ extra.name }}
                 </label>

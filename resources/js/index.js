@@ -54,7 +54,6 @@ var app = new Vue(
                 const data = await response.json();
 
                 this.searchResult = data;
-                console.log(this.searchResult);
 
             },
 
@@ -70,8 +69,19 @@ var app = new Vue(
                 this.extras = data;
             },
 
-            getCheckboxValue(){
-                alert('funzio');
+            // function to populate currentCheckedExtras 
+            getCheckboxValue(id){
+                if(!this.currentCheckedExtras.includes(id)){
+                    this.currentCheckedExtras.push(id);
+                } else{
+                    this.currentCheckedExtras.forEach((element, index) => {
+                        if(element == id){
+                            this.currentCheckedExtras.splice(index)
+                        }
+                    });
+                }
+                
+                console.log(this.currentCheckedExtras);
             },
 
             filter(){
@@ -89,6 +99,16 @@ var app = new Vue(
                 
                 //se l'array "currentCheckedExtras" e' popolato
                 //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
+                if(this.currentCheckedExtras.length){
+                    filteredList.forEach(element =>{
+                        let extraAp = element.extras;
+                        let thisExtras = []
+                        extraAp.forEach(extra=>{
+                            thisExtras.push(extra.id)
+                        })
+                        console.log(thisExtras);
+                    })
+                }
 
                 return filteredList;
             },
