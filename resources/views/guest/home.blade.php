@@ -54,7 +54,7 @@
 
 
                 {{-- Apartment List --}}
-                <div class="list-apartment">
+                <div class="list-apartment" v-if="searchResult.length">
                     <div class="card-container">  
                         <div class="card" 
                         style="background-color: rgb(85, 190, 231)" 
@@ -78,10 +78,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                {{-- <div v-else="@{{!searchResult.length}}">
-                        Nessun risultato trovato
-                </div> --}}
+            <div v-else>
+                Nessun risultato trovato
             </div>
         </div>
     </div>   
