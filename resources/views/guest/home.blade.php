@@ -11,8 +11,8 @@
 @section('guest-homepage')
 <div id="root">
     <div class="container-home">
-        <div class="my-jumbotron">
-            <div class="container">
+        <div class="my-jumbotron" style="background-image:url('{{asset('img/milano.jpg')}}')">
+            <div class="overlay">
                 <div class="title">
                     <h2>dove vuoi andare?</h2>
                 </div>

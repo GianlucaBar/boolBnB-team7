@@ -1,8 +1,17 @@
 .my-jumbotron{
     height: 600px;
     position: relative;
-    // TEST
-    background-color: $red;
+    background-size: cover;
+
+    .overlay {
+        position: absolute; 
+        bottom: 0; 
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.4); /* Black see-through */
+        color: #f1f1f1; 
+        width: 100%;
+        height:100%;  
+    }
 
     
 
@@ -17,6 +26,24 @@
             transform: translate(-50%, -50%);
             color: white;
         }
+    }
+    .form-group{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .form-control{
+            width: 700px;
+            border-radius: 30px;
+            padding:20px 30px;
+            font-size: 20px;
+            border: 1px solid $color-4;
+        }
+        &:hover #search-search-bar{
+            border:5px solid $color-5
+        }
+
     }
 }
 @keyframes my-jumbotron {
