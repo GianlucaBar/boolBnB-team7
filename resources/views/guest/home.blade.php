@@ -23,7 +23,13 @@
                     <label for="radius">Inserisci il raggio di ricerca</label>
                     <input type="hidden" name="radius" id="radius" v-model="radius">
                     
-                    <button class="btn btn-primary" v-on:click="getSearchResult">Cerca</button>
+                    <button class="btn btn-primary" v-on:click="getSearchResult">
+                        Cerca
+                    </button>
+
+                    {{-- Non eliminare, lo useremo per far balzare subito la pagina alla ricerca dopo averla effettuata.
+                        È un po' macchinoso con Laravel, ce lo teniamo per la fine --}}
+                    {{-- <a href="#search-results" class="btn btn-primary" v-on:click="getSearchResult">Cerca</a> --}}
                 </div>
             </div>
         </div>
