@@ -87,7 +87,7 @@
             </div>
 
             <div v-else>
-                Nessun risultato trovato
+                Scopri i nostri appartamenti
             </div>
         </div>
     </div>   
