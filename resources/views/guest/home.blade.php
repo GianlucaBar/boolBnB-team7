@@ -14,18 +14,33 @@
         <div class="my-jumbotron" style="background-image:url('{{asset('img/milano.jpg')}}')">
             <div class="overlay">
                 <div class="title">
-                    <h2>dove vuoi andare?</h2>
+                    <h2>Dove vuoi andare?</h2>
                 </div>
                 
                 {{-- Radius --}}
                 <div class="form-group">
                     <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
-                    <label for="radius">Inserisci il raggio di ricerca</label>
-                    <input type="hidden" name="radius" id="radius" v-model="radius">
+                    {{-- <label for="radius">Inserisci il raggio di ricerca</label>
+                    <input type="hidden" name="radius" id="radius" v-model="radius"> --}}
                     
-                    <button class="btn btn-primary" v-on:click="getSearchResult">
-                        Cerca
-                    </button>
+                     {{-- BTN-BLOB --}}
+                     <div class="buttons">
+                        <button class="blob-btn"  v-on:click="getSearchResult">
+                          CERCA
+                          <span class="blob-btn__inner">
+                            <span class="blob-btn__blobs">
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                              <span class="blob-btn__blob"></span>
+                            </span>
+                          </span>
+                        </button>
+                        <br/>
+                     </div>
+                      
+                      
+                    {{-- END BTN-BLOB --}}
 
                     {{-- Non eliminare, lo useremo per far balzare subito la pagina alla ricerca dopo averla effettuata.
                         È un po' macchinoso con Laravel, ce lo teniamo per la fine --}}
@@ -40,13 +55,13 @@
             <div id="search-result" v-if="searchResult.length">
                 <h2>filtri</h2>
                 
-                <label for="beds">Numero min. posti letto</label>
+                <label for="beds">Posti letto</label>
                 <input type="number" id="beds" v-model="beds" min="1" max="20">
     
-                <label for="rooms">Numero min. stanze</label>
+                <label for="rooms">Numero Stanze</label>
                 <input type="number" id="rooms" v-model="rooms" min="1" max="20">
     
-                <label for="mod-radius">Modifica il raggio di ricerca</label>
+                <label for="mod-radius">Raggio di ricerca</label>
                 <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
     
                 {{-- Chechboxes  --}}
