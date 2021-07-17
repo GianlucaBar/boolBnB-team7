@@ -26,6 +26,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/apartments', 'ApartmentController@index')->name('search-page');
 
+// Creo le route per la pagina dei pagamenti (GET) e per gestire il pagamento (POST)
+Route::get('/payment', 'PaymentController@index')->name('payment');
+Route::post('/checkout', 'PaymentController@sale')->name('checkout');
+
 
 // Private
 
