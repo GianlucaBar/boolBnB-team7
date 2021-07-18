@@ -26,7 +26,7 @@
                      {{-- BTN-BLOB --}}
                      <div class="buttons">
                         <button class="blob-btn"  v-on:click="getSearchResult">
-                          CERCA
+                          Inizia Ricerca
                           <span class="blob-btn__inner">
                             <span class="blob-btn__blobs">
                               <span class="blob-btn__blob"></span>
