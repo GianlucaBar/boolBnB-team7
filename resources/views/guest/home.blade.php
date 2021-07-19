@@ -81,7 +81,7 @@
                 <div class="list-apartment" v-if="searchResult.length">
                     <div class="card-container">  
                         <div class="card" 
-                        style="background-image:url('../../../storage/app/public/apartments_covers/ap.jpg')" 
+                        style="background-image: url('../public/storage/apartments_covers/ap.jpg')" 
                         v-for="ap in filter()">
                             <div>
                             
