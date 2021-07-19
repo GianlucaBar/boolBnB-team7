@@ -11,8 +11,8 @@ class PaymentController extends Controller
     public function index(Gateway $gateway)
     {
         // Genero qui il mio clienToken che serve per gestire il pagamento
-        $clientToken = $gateway->clientToken()->generate();
-        return view('guest.payment', compact('clientToken'));
+        $token = $gateway->clientToken()->generate();
+        return view('guest.payment', compact('token'));
     }
 
     // Gli passo sia il gateway sia la Request, sale() gestisce la trnsazione
@@ -38,7 +38,24 @@ class PaymentController extends Controller
             ]
         );
 
-        dd($result);
+        // TODO: Cambiare con redirect a route/view di feedback
+        if ($result->success) {
+ 
+            $transaction = $result->transaction;
+            return back()->with('success_message', 'Transaction Successful. Transaction ID:' . $transaction->id);
+ 
+        } else {
+            $errorString = "";
+ 
+            foreach  ($result->errors->deepAll() as $error) {
+                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            }
+ 
+            return back()->withErrors('An error occurred with the message:  ' . $result->message);
+        }
+
+
+        // dd($result);
 
     }
 }
