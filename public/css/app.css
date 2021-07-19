@@ -126,7 +126,7 @@ body {
   transition-delay: 0.24s;
 }
 .blob-btn:hover .blob-btn__blob {
-  transform: translateZ(0) scale(1.7);
+  transform: translateZ(0) scale(2);
 }
 @supports (filter: url("#goo")) {
   .blob-btn:hover .blob-btn__blob {
@@ -279,6 +279,21 @@ body {
 }
 .list-apartment .card-container a i {
   font-size: 40px;
+}
+
+.filter-check {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.filter-check .form-check {
+  width: calc(( 100% / 4 ) - 30px);
+  border: 1px solid #57737A;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .user-rep {

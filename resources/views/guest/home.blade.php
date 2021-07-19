@@ -41,7 +41,7 @@
                       
                       
                     {{-- END BTN-BLOB --}}
-
+                    
                     {{-- Non eliminare, lo useremo per far balzare subito la pagina alla ricerca dopo averla effettuata.
                         È un po' macchinoso con Laravel, ce lo teniamo per la fine --}}
                     {{-- <a href="#search-results" class="btn btn-primary" v-on:click="getSearchResult">Cerca</a> --}}
@@ -65,12 +65,14 @@
                 <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
     
                 {{-- Chechboxes  --}}
-                <div class="form-check" v-for="extra in extras">
-                    <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )">
-                    <label class="form-check-label" for="extra-@{{ extra.id }}">
-                        @{{ extra.name }}
-                    </label>
-                </div> 
+                <div class="filter-check">
+                    <div class="form-check" v-for="extra in extras">
+                        <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )">
+                        <label class="form-check-label" for="extra-@{{ extra.id }}">
+                            @{{ extra.name }}
+                        </label>
+                    </div> 
+                </div>
                 <button class="btn btn-primary" v-on:click="filter">Filtra</button>
 
 
@@ -78,7 +80,7 @@
                 <div class="list-apartment" v-if="searchResult.length">
                     <div class="card-container">  
                         <div class="card" 
-                        style="background-color: rgb(85, 190, 231)" 
+                        style="background-image:url('../../../storage/app/public/apartments_covers/ap.jpg')" 
                         v-for="ap in filter()">
                             <div>
                             

@@ -154,6 +154,22 @@
     
     }
 }
+.filter-check{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    .form-check{
+        width: calc(( 100% / 4 ) - 30px);
+        border:1px solid $color-2; 
+        border-radius: 10px;
+        padding: 10px 20px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+}
 
 // DASHBOARD
 .user-rep{

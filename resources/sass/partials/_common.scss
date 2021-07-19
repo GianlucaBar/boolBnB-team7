@@ -131,7 +131,7 @@ ul {
       }
       
       .blob-btn:hover & {
-        transform: translateZ(0) scale(1.7);
+        transform: translateZ(0) scale(2);
         
         @supports(filter: url('#goo')) {
           transform: translateZ(0) scale(1.4);
@@ -140,3 +140,5 @@ ul {
     }
     
   }
+
+  
