@@ -54,16 +54,16 @@
             {{-- Filters --}}
             <div id="search-result" v-if="searchResult.length">
                 <h2>filtri</h2>
-                
-                <label for="beds">Posti letto</label>
-                <input type="number" id="beds" v-model="beds" min="1" max="20">
-    
-                <label for="rooms">Numero Stanze</label>
-                <input type="number" id="rooms" v-model="rooms" min="1" max="20">
-    
-                <label for="mod-radius">Raggio di ricerca</label>
-                <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
-    
+                <div class="input-filters">
+                    <label for="beds">Posti letto</label>
+                    <input type="number" id="beds" v-model="beds" min="1" max="20">
+        
+                    <label for="rooms">Numero Stanze</label>
+                    <input type="number" id="rooms" v-model="rooms" min="1" max="20">
+        
+                    <label for="mod-radius">Raggio di ricerca</label>
+                    <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
+                </div>
                 {{-- Chechboxes  --}}
                 <div class="filter-check">
                     <div class="form-check" v-for="extra in extras">
@@ -73,6 +73,7 @@
                         </label>
                     </div> 
                 </div>
+
                 <button class="btn btn-primary" v-on:click="filter">Filtra</button>
 
 

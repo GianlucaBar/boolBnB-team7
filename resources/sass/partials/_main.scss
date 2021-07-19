@@ -154,6 +154,14 @@
     
     }
 }
+// input filters
+.input-filters{
+    width: 100%;
+    text-align: center;
+    padding: 20px 30px;
+}
+
+
 .filter-check{
 
     display: flex;
@@ -168,6 +176,13 @@
         text-align: center;
         text-transform: uppercase;
         margin-bottom: 20px;
+
+        .form-check-input{
+            cursor: pointer;
+        }
+
+        
+
     }
 }
 

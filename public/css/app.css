@@ -281,6 +281,12 @@ body {
   font-size: 40px;
 }
 
+.input-filters {
+  width: 100%;
+  text-align: center;
+  padding: 20px 30px;
+}
+
 .filter-check {
   display: flex;
   flex-wrap: wrap;
@@ -294,6 +300,9 @@ body {
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+.filter-check .form-check .form-check-input {
+  cursor: pointer;
 }
 
 .user-rep {
