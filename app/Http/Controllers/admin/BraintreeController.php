@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Sponsorship;
+use Carbon\Carbon;
 
 class BraintreeController extends Controller
 {   
@@ -17,6 +18,8 @@ class BraintreeController extends Controller
         $token = $gateway->clientToken()->generate();
         $sponsorship = Sponsorship::findOrFail($id);
 
+        $now = Carbon::now();
+        dd($now);
         $data = [
             'token' => $token,
             'sponsorship' => $sponsorship
