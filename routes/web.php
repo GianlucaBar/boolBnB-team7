@@ -27,8 +27,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/apartments', 'ApartmentController@index')->name('search-page');
 
 // Creo le route per la pagina dei pagamenti (GET) e per gestire il pagamento (POST)
-Route::get('/payment', 'PaymentController@index')->name('payment');
-Route::post('/checkout', 'PaymentController@sale')->name('braintree-checkout');
+// Route::get('/payment', 'PaymentController@index')->name('payment');
+// Route::post('/checkout', 'PaymentController@sale')->name('braintree-checkout');
 
 
 // Private
@@ -46,5 +46,12 @@ Route::prefix('admin')
     Route::get('/', 'HomeController@index')->name('home');
     // Here all the admin's route with CRUD opertaions
     Route::resource('apartments', 'ApartmentController');
+
+    // Sponsorship
+    Route::get('/sponsorships/{id}', 'SponsorshipController@index')->name('sponsor-page');
+    
+    // Braintree
+    Route::get('/payment/{id}', 'BraintreeController@index')->name('payment');
+    Route::post('/checkout', 'BraintreeController@sale')->name('braintree-checkout');
 });
 

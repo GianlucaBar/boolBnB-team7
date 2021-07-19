@@ -1,18 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Braintree\Gateway as Gateway;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Sponsorship;
 
-class PaymentController extends Controller
+class BraintreeController extends Controller
 {   
     // Reinderizza alla pagina col form di pagamento e genera il client token
-    public function index(Gateway $gateway)
+    public function index(Gateway $gateway, $id)
     {
         // Genero qui il mio clienToken che serve per gestire il pagamento
         $token = $gateway->clientToken()->generate();
-        return view('guest.payment', compact('token'));
+        $sponsorship = Sponsorship::findOrFail($id);
+
+        $data = [
+            'token' => $token,
+            'sponsorship' => $sponsorship
+        ];
+
+        return view('admin.payment', $data);
     }
 
     // Gli passo sia il gateway sia la Request, sale() gestisce la trnsazione
@@ -20,17 +30,22 @@ class PaymentController extends Controller
     {
         $form_data = $request->all();
 
+        if ($form_data['sponsorshipId'] == 1) {
+            $amount = 2.99;
+        } else if ($form_data['sponsorshipId'] == 2) {
+            $amount = 5.99;
+        } else if ($form_data['sponsorshipId'] == 3) {
+            $amount = 9.99;
+        }
 
         // La roba che passo al gateway la metto in camelCase per convenzione
         $result = $gateway->transaction()->sale(
             // $gateway->transaction()->find($id) cerca per id le varie transazioni, l'id è nel dd in fondo
-            [   
-                // Il prezzo
-                'amount' => $form_data['amount'],
+            [ 
+                'amount' => $amount,
                 // Il nonce, cioè il responsabile della transazione
                 'paymentMethodNonce' => $form_data['payment_method_nonce'],
                 // Id dell'ordine da prendere/passare da un model che gestisca gli ordini/utenti che pagano
-                'orderId' => 2,
                 // Si può ampliare con altri parametri
                 'options' => [
                     'submitForSettlement' => true
@@ -55,7 +70,7 @@ class PaymentController extends Controller
         }
 
 
-        // dd($result);
+        dd($result);
 
     }
 }

@@ -51,9 +51,13 @@
                 @endif
  
                 {{-- Payment Form --}}
-                <form action="{{ route('braintree-checkout') }}" method="POST" id="payment-form">
+                <form action="{{ route('admin.braintree-checkout') }}" method="POST" id="payment-form">
                     @csrf
                     @method('POST')
+
+                    {{-- Hidden Sponsorship ID --}}
+                    <input type="hidden" id="sponsorshipId" name="sponsorshipId" value="{{ $sponsorship->id }}">
+
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" class="form-control" id="email">
@@ -116,7 +120,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="amount" name="amount" value="11">
+                                <input type="text" class="form-control" id="amount" name="amount" value="{{$sponsorship->price}}" readonly>
                             </div>
                         </div>
                     </div>
