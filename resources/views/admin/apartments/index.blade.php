@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    - La tua dashboard
+@endsection
+
 @section('dashboard')
 <div class="container">
     <div class="centered mt-4 mb-4">

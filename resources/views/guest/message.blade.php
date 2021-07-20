@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    - Contatta il proprietario
+@endsection
+
 @section('content')
     <div class="container">
         <h1>Contatta il proprietario</h1>

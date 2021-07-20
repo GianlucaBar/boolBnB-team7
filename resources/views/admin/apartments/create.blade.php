@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    - Aggiungi nuovo appartamento
+@endsection
+
 @section('content')
 
     {{-- Script for errors --}}

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    - Modifica appartamento
+@endsection
+
 @section('content')
 <div class="container">
     <h1>Modifica post: {{ $apartment->title }}</h1>

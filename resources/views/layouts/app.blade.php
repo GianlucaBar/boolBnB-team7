@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'BoolBnB') }}</title>
+    <title>{{ config('app.name', 'BoolBnB') }} @yield('title') </title>
 
     {{-- Header Script --}}
     @yield('header-scripts')
