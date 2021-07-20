@@ -101,15 +101,7 @@
         
                     <div class="number-input">
                         <label for="mod-radius">Raggio di ricerca</label>
-                        <b-input-group>
-                        <b-input-group-prepend>
-                        <b-btn variant="outline-info" v-on:click="radius--" v-on:click="getSearchResult">-</b-btn>
-                        </b-input-group-prepend>
-                        <b-form-input class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" type="number" v-on:click="getSearchResult"></b-form-input>
-                        <b-input-group-append>
-                        <b-btn variant="outline-secondary" v-on:click="radius++">+</b-btn>
-                        </b-input-group-append>
-                        </b-input-group>
+                        <input type="number" class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
                         <span>km</span>
                     </div>
                 </div>

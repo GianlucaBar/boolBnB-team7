@@ -38249,26 +38249,25 @@ var app = new Vue({
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                alert('Heyla');
                 url = new URL('http://127.0.0.1:8000/api?_token=nPc2OyCh7Nt1iIzKwV7sYV4xjps5FcKPAtDnb3Hf&_method=GET');
                 url.search = new URLSearchParams({
                   latitude: _this2.lat,
                   longitude: _this2.lon,
                   radius: _this2.radius
                 });
-                _context2.next = 5;
+                _context2.next = 4;
                 return fetch(url);
 
-              case 5:
+              case 4:
                 response = _context2.sent;
-                _context2.next = 8;
+                _context2.next = 7;
                 return response.json();
 
-              case 8:
+              case 7:
                 data = _context2.sent;
                 _this2.searchResult = data;
 
-              case 10:
+              case 9:
               case "end":
                 return _context2.stop();
             }
