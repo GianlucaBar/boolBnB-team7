@@ -41,7 +41,7 @@ var app = new Vue(
             //api call to our api controller
 
             async getSearchResult(){
-                
+                alert('Heyla')
             let url = new URL('http://127.0.0.1:8000/api?_token=nPc2OyCh7Nt1iIzKwV7sYV4xjps5FcKPAtDnb3Hf&_method=GET')
                 url.search = new URLSearchParams({
                     latitude: this.lat,

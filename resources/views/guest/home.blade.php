@@ -4,6 +4,10 @@
     {{-- Vue.js CDN --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <script src="https://unpkg.com/vue"></script>
+<script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
 @endsection
 
 
@@ -66,9 +70,15 @@
                 <div class="input-filters">
                     <div class="number-input">
                         <label for="beds">Posti letto</label>
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
-                        <input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" value="1" type="number">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        <b-input-group>
+                        <b-input-group-prepend>
+                        <b-btn variant="outline-info" v-on:click="beds--">-</b-btn>
+                        </b-input-group-prepend>
+                        <b-form-input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" type="number"></b-form-input>
+                        <b-input-group-append>
+                        <b-btn variant="outline-secondary" v-on:click="beds++">+</b-btn>
+                        </b-input-group-append>
+                        </b-input-group>
                     </div>
 
                     {{-- <div>
@@ -78,16 +88,28 @@
         
                     <div class="number-input">
                         <label for="rooms">Numero Stanze</label>
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
-                        <input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" value="1" type="number">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        <b-input-group>
+                        <b-input-group-prepend>
+                        <b-btn variant="outline-info" v-on:click="rooms--">-</b-btn>
+                        </b-input-group-prepend>
+                        <b-form-input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" type="number"></b-form-input>
+                        <b-input-group-append>
+                        <b-btn variant="outline-secondary" v-on:click="rooms++">+</b-btn>
+                        </b-input-group-append>
+                        </b-input-group>
                     </div>
         
                     <div class="number-input">
                         <label for="mod-radius">Raggio di ricerca</label>
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
-                        <input class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" value="1" type="number" v-on:change="getSearchResult">
-                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        <b-input-group>
+                        <b-input-group-prepend>
+                        <b-btn variant="outline-info" v-on:click="radius--" v-on:click="getSearchResult">-</b-btn>
+                        </b-input-group-prepend>
+                        <b-form-input class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" type="number" v-on:click="getSearchResult"></b-form-input>
+                        <b-input-group-append>
+                        <b-btn variant="outline-secondary" v-on:click="radius++">+</b-btn>
+                        </b-input-group-append>
+                        </b-input-group>
                         <span>km</span>
                     </div>
                 </div>
@@ -108,7 +130,7 @@
                 <div class="list-apartment" v-if="searchResult.length">
                     <div class="card-container">  
                         <div class="card" 
-                        style="background-image: url('../public/storage/apartments_covers/ap.jpg')" 
+                        v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in filter()">
                             <div>
                             

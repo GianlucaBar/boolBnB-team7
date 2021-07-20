@@ -38249,25 +38249,26 @@ var app = new Vue({
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                alert('Heyla');
                 url = new URL('http://127.0.0.1:8000/api?_token=nPc2OyCh7Nt1iIzKwV7sYV4xjps5FcKPAtDnb3Hf&_method=GET');
                 url.search = new URLSearchParams({
                   latitude: _this2.lat,
                   longitude: _this2.lon,
                   radius: _this2.radius
                 });
-                _context2.next = 4;
+                _context2.next = 5;
                 return fetch(url);
 
-              case 4:
+              case 5:
                 response = _context2.sent;
-                _context2.next = 7;
+                _context2.next = 8;
                 return response.json();
 
-              case 7:
+              case 8:
                 data = _context2.sent;
                 _this2.searchResult = data;
 
-              case 9:
+              case 10:
               case "end":
                 return _context2.stop();
             }
@@ -38398,8 +38399,8 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/manuelbonini/Documenti/Laravel-Projects/boolBnB-team7/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/manuelbonini/Documenti/Laravel-Projects/boolBnB-team7/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7-1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
