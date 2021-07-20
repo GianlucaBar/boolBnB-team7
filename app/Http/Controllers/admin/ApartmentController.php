@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Apartment;
 use App\Extra;
+use App\Message;
 
 class ApartmentController extends Controller
 {
@@ -23,8 +24,18 @@ class ApartmentController extends Controller
 
         $apartments = Apartment::where('user_id', $currentUserId)->get();
 
+        $thisUserMessages = [];
+        foreach ($apartments as $apartment) {
+            $thisApMessages = Message::where('apartment_id', $apartment->id)->get();
+
+            if(!$thisApMessages->isEmpty()){
+                array_push($thisUserMessages, $thisApMessages);
+            } 
+        }
+
         $data = [
-            'apartments' => $apartments
+            'apartments' => $apartments,
+            'messagesArray' => $thisUserMessages
         ];
 
         return view('admin.apartments.index', $data);

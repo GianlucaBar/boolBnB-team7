@@ -56,7 +56,11 @@
     </div>
 
     <section class="msg-box">
-        
+        @foreach ($messagesArray as $messages)
+            @foreach ($messages as $message)
+            <div>{{ $message->sender_email }} - {{ $message->msg_subject }}</div>
+            @endforeach
+        @endforeach
     </section>
 </div>
 
