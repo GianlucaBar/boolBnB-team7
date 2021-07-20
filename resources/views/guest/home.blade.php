@@ -101,7 +101,7 @@
         
                     <div class="number-input">
                         <label for="mod-radius">Raggio di ricerca</label>
-                        <input class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
+                        <input type="number" class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
                         <span>km</span>
                     </div>
                 </div>
