@@ -23,9 +23,7 @@
                 border-radius: .25rem;
             }
         </style>
- 
-        <!-- Bootstrap 3 CDN -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     </head>
  
     <body>
@@ -55,8 +53,9 @@
                     @csrf
                     @method('POST')
 
-                    {{-- Hidden Sponsorship ID --}}
+                    {{-- Hidden Sponsorship ID and Apartment ID --}}
                     <input type="hidden" id="sponsorshipId" name="sponsorshipId" value="{{ $sponsorship->id }}">
+                    <input type="hidden" id="thisApartmentId" name="thisApartmentId" value="{{ $thisApartmentId }}">
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
