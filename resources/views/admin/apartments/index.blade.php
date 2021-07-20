@@ -24,6 +24,11 @@
             <h5>{{$apartment->title}}</h5>
 
             <div class="buttoni">
+
+                <a class="btn btn-primary" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">
+                    Dettagli
+                </a>
+
                 <a class="btn btn-primary" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
                     Modifica Appartamento
                 </a>
@@ -41,10 +46,18 @@
                 <a class="btn btn-secondary" href="{{ route('admin.sponsor-page', ['id' => $apartment->id]) }}">
                     Sponsorizza
                 </a>
+
+                <a class="btn btn-primary" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">
+                    Messaggi
+                </a>
             </div>
         </div>          
         @endforeach
     </div>
+
+    <section class="msg-box">
+        
+    </section>
 </div>
 
     

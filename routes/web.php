@@ -26,6 +26,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/apartments', 'ApartmentController@index')->name('search-page');
 
+Route::get('/apartments/{id}', 'ApartmentController@show')->name('ap-details');
+
+//messages routes
+Route::get('/message/{id}', 'MessageController@create')->name('send-message');
+Route::post('/message/{id}', 'MessageController@store')->name('store-message');
 // Creo le route per la pagina dei pagamenti (GET) e per gestire il pagamento (POST)
 // Route::get('/payment', 'PaymentController@index')->name('payment');
 // Route::post('/checkout', 'PaymentController@sale')->name('braintree-checkout');
@@ -53,5 +58,6 @@ Route::prefix('admin')
     // Braintree
     Route::get('/payment/{id}/{thisApartmentId}', 'BraintreeController@index')->name('payment');
     Route::post('/checkout', 'BraintreeController@sale')->name('braintree-checkout');
+    Route::get('/thankyou/{thisApartmentId}/{transactionId}', 'BraintreeController@success')->name('thankyou');
 });
 

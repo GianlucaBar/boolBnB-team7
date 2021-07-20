@@ -53,6 +53,8 @@
             </div>
         </div>
         
+        {{-- <a href="{{ route('ap-details', ['id']) }}"></a> --}}
+
         <div class="container">
 
             {{-- Filters --}}
@@ -127,7 +129,7 @@
                             <div>
                             
                                 <div class="details hidden centered">
-                                    <a  href="#">
+                                    <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
                                         <i class="far fa-eye"></i> <br> Dettagli appartamento
                                     </a>
                                 </div>

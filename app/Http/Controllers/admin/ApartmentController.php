@@ -18,9 +18,10 @@ class ApartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $apartments = Apartment::all();
+    {   
+        $currentUserId = Auth::id();
 
+        $apartments = Apartment::where('user_id', $currentUserId)->get();
 
         $data = [
             'apartments' => $apartments
