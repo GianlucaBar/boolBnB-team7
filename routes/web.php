@@ -51,7 +51,7 @@ Route::prefix('admin')
     Route::get('/sponsorships/{id}', 'SponsorshipController@index')->name('sponsor-page');
     
     // Braintree
-    Route::get('/payment/{id}', 'BraintreeController@index')->name('payment');
+    Route::get('/payment/{id}/{thisApartmentId}', 'BraintreeController@index')->name('payment');
     Route::post('/checkout', 'BraintreeController@sale')->name('braintree-checkout');
 });
 
