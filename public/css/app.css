@@ -281,10 +281,89 @@ body {
   font-size: 40px;
 }
 
+<<<<<<< HEAD
 .input-filters {
   width: 100%;
   text-align: center;
   padding: 20px 30px;
+=======
+.filters h2 {
+  font-size: 30px;
+  padding-top: 30px;
+  text-align: center;
+}
+.filters .input-filters {
+  width: 100%;
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+}
+.filters .input-filters label {
+  margin: 0;
+}
+.filters .input-filters input[type=number] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.filters .input-filters input[type=number]::-webkit-inner-spin-button,
+.filters .input-filters input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+.filters .input-filters .number-input {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+}
+.filters .input-filters .number-input,
+.filters .input-filters .number-input * {
+  box-sizing: border-box;
+}
+.filters .input-filters .number-input button {
+  outline: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  box-shadow: 0px 0px 1px #474747;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.filters .input-filters .number-input button:before,
+.filters .input-filters .number-input button:after {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 1rem;
+  height: 2px;
+  background-color: #212121;
+  transform: translate(-50%, -50%);
+}
+.filters .input-filters .number-input button.plus:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.filters .input-filters .number-input input[type=number] {
+  font-family: sans-serif;
+  max-width: 5rem;
+  padding: 0.5rem;
+  border: none;
+  border-width: 0 2px;
+  font-size: 20px;
+  height: 35px;
+  font-weight: bold;
+  text-align: center;
+  color: #0DCB92;
+  border-radius: 50px;
+  margin-left: 10px;
+>>>>>>> 7ec79d3aff7982ecd94a7b4cf0d21073317badf6
 }
 
 .filter-check {
