@@ -38198,7 +38198,8 @@ var app = new Vue({
     beds: '1',
     filteredList: '',
     extras: '',
-    currentCheckedExtras: []
+    currentCheckedExtras: [] // searchFeedback: 'Sto elaborando la ricerca'
+
   },
   methods: {
     // api call to get coordinates from a given address 
@@ -38328,6 +38329,7 @@ var app = new Vue({
       var filteredList = [];
 
       if (this.beds != 1 || this.rooms != 1) {
+        this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>';
         this.searchResult.forEach(function (element) {
           if (element.beds >= _this5.beds && element.rooms >= _this5.rooms) {
             filteredList.push(element);
@@ -38342,7 +38344,8 @@ var app = new Vue({
       var extraFilteredArray = [];
 
       if (this.currentCheckedExtras.length) {
-        // cycle apartments 
+        this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>'; // cycle apartments 
+
         filteredList.forEach(function (element) {
           var extraAp = element.extras;
           var thisExtras = [];
@@ -38360,7 +38363,18 @@ var app = new Vue({
         });
         filteredList = extraFilteredArray;
         console.log(extraFilteredArray);
-      }
+      } // this.$watch('filteredLList', function (value, mutation) {
+      //     if (mutation) {
+      //         mutation.method // e.g. 'push'
+      //         mutation.args // raw arguments to the mutation method
+      //         mutation.result // return value
+      //         mutation.inserted // new, inserted elements
+      //         mutation.removed // removed elements
+      //         console.log(mutation);
+      //         return this.searchFeedback;
+      //     }
+      // })
+
 
       return filteredList;
     } // scrollToResult(){

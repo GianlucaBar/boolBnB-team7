@@ -14,7 +14,8 @@ var app = new Vue(
             beds: '1',
             filteredList: '',
             extras: '',
-            currentCheckedExtras: []
+            currentCheckedExtras: [],
+            // searchFeedback: 'Sto elaborando la ricerca'
         },
 
         methods: { 
@@ -87,6 +88,7 @@ var app = new Vue(
                 let filteredList = [];
 
                 if(this.beds != 1 || this.rooms != 1){
+                    this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>'
                     this.searchResult.forEach(element => {
                         if(element.beds >= this.beds && element.rooms >= this.rooms){
                             filteredList.push(element);
@@ -98,11 +100,10 @@ var app = new Vue(
                 
                 //se l'array "currentCheckedExtras" è popolato
                 //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
-
                 let extraFilteredArray = [];
 
                 if(this.currentCheckedExtras.length){
-
+                    this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>'
                     // cycle apartments 
                     filteredList.forEach(element =>{
                         let extraAp = element.extras;
@@ -123,7 +124,18 @@ var app = new Vue(
                 }
 
                 
+                // this.$watch('filteredLList', function (value, mutation) {
+                //     if (mutation) {
+                //         mutation.method // e.g. 'push'
+                //         mutation.args // raw arguments to the mutation method
+                //         mutation.result // return value
+                //         mutation.inserted // new, inserted elements
+                //         mutation.removed // removed elements
 
+                //         console.log(mutation);
+                //         return this.searchFeedback;
+                //     }
+                // })
                 return filteredList;
             },
 

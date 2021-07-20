@@ -128,7 +128,6 @@
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in filter()">
                             <div>
-                            
                                 <div class="details hidden centered">
                                     <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
                                         <i class="far fa-eye"></i> <br> Dettagli appartamento
