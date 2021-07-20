@@ -37,6 +37,10 @@
                     
                     <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="Elimina">
                 </form>
+
+                <a class="btn btn-secondary" href="{{ route('admin.sponsor-page', ['id' => $apartment->id]) }}">
+                    Sponsorizza
+                </a>
             </div>
         </div>          
         @endforeach
