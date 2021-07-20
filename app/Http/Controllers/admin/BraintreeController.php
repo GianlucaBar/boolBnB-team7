@@ -108,7 +108,10 @@ class BraintreeController extends Controller
             $transaction = $result->transaction;
             // return back()->with('success_message', 'Transaction Successful. Transaction ID:' . $transaction->id);
             // ['thisApartmentId' => $form_data['thisApartmentId'], 'transactionId' => $transaction->id]
-            return redirect()->route('admin.thankyou', ['transactionId' => $transaction->id]);
+            return redirect()->route('admin.thankyou', [
+                'transactionId' => $transaction->id,
+                'thisApartmentId' => $form_data['thisApartmentId']
+        ]);
  
         } else {
             $errorString = "";
