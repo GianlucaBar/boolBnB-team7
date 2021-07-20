@@ -39,8 +39,11 @@
                     </div>
 
                     <!-- Right Side Of Navbar -->
+
                     <ul class="navbar-nav ml-auto">
-                        
+                        @guest
+                        {{-- Only Logged users can see these two sections --}}
+                        @else
                         <li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.index') }}">
@@ -55,6 +58,7 @@
                             </li>
 
                         </li>
+                        @endguest
 
                         <!-- Authentication Links -->
                         @guest

@@ -1,9 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>dettaglio appartamento</h1>
+    <div class="container">
+        <h1>Dettaglio appartamento</h1>
 
-    <div><h2>{{ $apartment->title }}</h2></div>
+    <div>
+        <h2>
+            {{ $apartment->title }}
+        </h2>
 
-    <a class="btn btn-primary" href="{{ route('send-message', ['id' => $apartment->id]) }}">Messaggia</a>
+        {{-- TODO: Completare la pagina --}}
+    </div>
+
+    <a class="btn btn-primary" href="{{ route('send-message', ['id' => $apartment->id]) }}">Contatta il proprietario</a>
+    </div>
 @endsection

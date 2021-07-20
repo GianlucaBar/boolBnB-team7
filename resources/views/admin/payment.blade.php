@@ -59,7 +59,7 @@
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" value="{{$email}}">
                     </div>
  
                     <div class="form-group">
@@ -304,8 +304,6 @@
                 });
             });
         });
- 
     </script>
- 
     </body>
 </html>

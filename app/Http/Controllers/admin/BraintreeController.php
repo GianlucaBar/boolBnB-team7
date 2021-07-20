@@ -18,11 +18,13 @@ class BraintreeController extends Controller
         // generate token
         $token = $gateway->clientToken()->generate();
         $sponsorship = Sponsorship::findOrFail($id);
-        
+        $email = Auth::user()->email;
+
         $data = [
             'token' => $token,
             'sponsorship' => $sponsorship,
-            'thisApartmentId' => $thisApartmentId
+            'thisApartmentId' => $thisApartmentId,
+            'email' => $email
         ];
 
         return view('admin.payment', $data);
@@ -118,7 +120,11 @@ class BraintreeController extends Controller
             return back()->withErrors('An error occurred with the message:  ' . $result->message);
         }
 
-
+        // return redirect()->route('admin.thankyou', [
+        //     // Show ha bisogno dell'id per cui le passo l'id dell'istanza appena creata
+        //     'thisApartmentID' => $post->id,
+        //     'transactionID' => 
+        // ]);
     }
 
     public function success($transactionId)

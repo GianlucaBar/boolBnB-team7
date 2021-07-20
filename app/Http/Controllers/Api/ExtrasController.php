@@ -8,11 +8,6 @@ use App\Extra;
 
 class ExtrasController extends Controller
 {
-    /**
-     *
-     * @param  \Illuminate\Http\Request 
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request){
 
         

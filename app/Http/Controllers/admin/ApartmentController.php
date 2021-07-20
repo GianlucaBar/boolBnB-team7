@@ -13,11 +13,7 @@ use App\Message;
 
 class ApartmentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // INDEX
     public function index()
     {   
         $currentUserId = Auth::id();
@@ -41,11 +37,7 @@ class ApartmentController extends Controller
         return view('admin.apartments.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // CREATE
     public function create()
     {   
         // TO-DO: Da aggiungere qui le eventuali foreign key necessarie 
@@ -59,12 +51,7 @@ class ApartmentController extends Controller
         return view('admin.apartments.create', $data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // STORE
     public function store(Request $request)
     {      
 
@@ -125,12 +112,7 @@ class ApartmentController extends Controller
         return redirect()->route('admin.apartments.show', ['apartment' => $new_ap->id]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // SHOW
     public function show($id)
     {
         $apartment = Apartment::findOrFail($id);
@@ -142,12 +124,7 @@ class ApartmentController extends Controller
         return view('admin.apartments.show', $data);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // EDIT
     public function edit($id)
     {   
         $this_ap = Apartment::findOrFail($id);
@@ -161,13 +138,7 @@ class ApartmentController extends Controller
         return view('admin.apartments.edit', $data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // UPDATE
     public function update(Request $request, $id)
     {   
 
@@ -234,12 +205,7 @@ class ApartmentController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // DESTROY
     public function destroy($id)
     {
         $this_ap = Apartment::find($id);

@@ -2,12 +2,13 @@
 
 @section('content')
     <div class="container">
-        <h1>scrivi al proprietario</h1>
+        <h1>Contatta il proprietario</h1>
 
         <form action="{{ route('store-message', ['id' => $apartmentId]) }}" method="post">
             @csrf
             @method('POST')
-    
+            
+            {{-- Form for guest --}}
             @guest
 
                 <div class="form-group">
@@ -30,7 +31,7 @@
                     <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10"></textarea>
                 </div>
                 
-                
+            {{-- Form for logged users --}}
             @else
     
                 <div class="form-group">
@@ -55,6 +56,7 @@
     
             @endguest
             
+            {{-- Submit equal for everyone --}}
             <input class="btn btn-success" type="submit" value="Invia messaggio">
         </form>
     </div>

@@ -8,12 +8,6 @@ use App\Sponsorship;
 
 class SponsorshipController extends Controller
 {
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function index($id)
     {
 

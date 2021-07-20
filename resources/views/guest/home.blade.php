@@ -27,23 +27,22 @@
                     {{-- <label for="radius">Inserisci il raggio di ricerca</label>
                     <input type="hidden" name="radius" id="radius" v-model="radius"> --}}
                     
-                     {{-- BTN-BLOB --}}
-                     <div class="buttons">
-                        <button class="blob-btn"  v-on:click="getSearchResult">
-                          Inizia Ricerca
-                          <span class="blob-btn__inner">
-                            <span class="blob-btn__blobs">
-                              <span class="blob-btn__blob"></span>
-                              <span class="blob-btn__blob"></span>
-                              <span class="blob-btn__blob"></span>
-                              <span class="blob-btn__blob"></span>
-                            </span>
-                          </span>
-                        </button>
-                        <br/>
-                     </div>
-                      
-                      
+                        {{-- BTN-BLOB --}}
+                        <div class="buttons">
+                            <button class="blob-btn"  v-on:click="getSearchResult">
+                                Inizia Ricerca
+                                <span class="blob-btn__inner">
+                                    <span class="blob-btn__blobs">
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                    </span>
+                                </span>
+                            </button>
+                            <br/>
+                        </div>
+
                     {{-- END BTN-BLOB --}}
                     
                     {{-- Non eliminare, lo useremo per far balzare subito la pagina alla ricerca dopo averla effettuata.
@@ -68,7 +67,7 @@
                     <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                 </div> --}}
 
-                
+                {{-- Beds --}}
                 <div class="input-filters">
                     <div class="number-input">
                         <label for="beds">Posti letto</label>
@@ -88,6 +87,7 @@
                         <input type="number" id="beds" v-model="beds" min="1" max="20">
                     </div> --}}
         
+                    {{-- Rooms --}}
                     <div class="number-input">
                         <label for="rooms">Numero Stanze</label>
                         <b-input-group>
@@ -100,7 +100,8 @@
                         </b-input-group-append>
                         </b-input-group>
                     </div>
-        
+                    
+                    {{-- Radius --}}
                     <div class="number-input">
                         <label for="mod-radius">Raggio di ricerca</label>
                         <input type="number" class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
