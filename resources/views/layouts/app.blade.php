@@ -24,6 +24,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {{-- Inline styles: for braintree --}}
+    @yield('styles')
 </head>
 <body>
     <div id="app">
@@ -101,6 +104,7 @@
             @yield('guest-homepage')
             @yield('list-apartment')
             @yield('dashboard')
+            @yield('braintree-content')
         </main>
     </div>
 

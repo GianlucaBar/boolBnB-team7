@@ -1,5 +1,9 @@
 @extends('layouts.app');
 
+@section('title')
+    - Sponsorship 
+@endsection
+
 @section('content')
     @foreach ($sponsorships as $sponsorship)
         <a href="{{route('admin.payment', [
