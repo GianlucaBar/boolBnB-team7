@@ -52,17 +52,45 @@
         <div class="container">
 
             {{-- Filters --}}
-            <div id="search-result" v-if="searchResult.length">
-                <h2>filtri</h2>
+            <div id="search-result" class="filters  " v-if="searchResult.length">
+                <h2>Filtra ricerca</h2>
+
+
+                {{-- <div class="number-input">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                    <input class="quantity" min="0" max="5" name="quantity" value="1" type="number">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                </div> --}}
+
                 
-                <label for="beds">Posti letto</label>
-                <input type="number" id="beds" v-model="beds" min="1" max="20">
-    
-                <label for="rooms">Numero Stanze</label>
-                <input type="number" id="rooms" v-model="rooms" min="1" max="20">
-    
-                <label for="mod-radius">Raggio di ricerca</label>
-                <input type="number" id="mod-radius" v-model="radius" min="5" max="100" v-on:change="getSearchResult">
+                <div class="input-filters">
+                    <div class="number-input">
+                        <label for="beds">Posti letto</label>
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                        <input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" value="1" type="number">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    </div>
+
+                    {{-- <div>
+                        <label for="beds">Posti letto</label>
+                        <input type="number" id="beds" v-model="beds" min="1" max="20">
+                    </div> --}}
+        
+                    <div class="number-input">
+                        <label for="rooms">Numero Stanze</label>
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                        <input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" value="1" type="number">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                    </div>
+        
+                    <div class="number-input">
+                        <label for="mod-radius">Raggio di ricerca</label>
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+                        <input class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" value="1" type="number" v-on:change="getSearchResult">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                        <span>km</span>
+                    </div>
+                </div>
     
                 {{-- Chechboxes  --}}
                 <div class="filter-check">
