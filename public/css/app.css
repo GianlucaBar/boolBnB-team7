@@ -443,8 +443,8 @@ body {
   min-height: 100%;
 }
 .filter-check body {
-  color: #435757;
-  background: radial-gradient(#fff, #dac4cd);
+  color: #57737A;
+  background: #F6E8EA;
   font: 1.4em/1 "Noto Sans", sans-serif;
 }
 .filter-check .container-check {
@@ -463,10 +463,10 @@ body {
   position: relative;
   margin: 20px;
   padding: 15px 30px 15px 62px;
-  border: 3px solid #fff;
+  border: 3px solid #57737A;
   border-radius: 100px;
-  color: #fff;
-  background-color: #6a8494;
+  color: #57737A;
+  background-color: #F6E8EA;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   cursor: pointer;
@@ -475,6 +475,7 @@ body {
       -ms-user-select: none;
           user-select: none;
   transition: background-color 0.2s, box-shadow 0.2s;
+  width: 90%;
 }
 .filter-check label::before {
   content: "";
@@ -484,19 +485,20 @@ body {
   bottom: 10px;
   left: 10px;
   width: 32px;
-  border: 3px solid #fff;
+  border: 3px solid #57737A;
   border-radius: 100px;
   transition: background-color 0.2s;
+  background-color: #0DCB92;
 }
 .filter-check label:hover, .filter-check input:focus + label {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   width: 100%;
 }
 .filter-check input:checked + label {
-  background-color: #ab576c;
+  background-color: #F6E8EA;
 }
 .filter-check input:checked + label::before {
-  background-color: #fff;
+  background-color: #F6E8EA;
 }
 
 .filter-btn {
