@@ -66,6 +66,7 @@
         @foreach ($messagesArray as $messages)
             @foreach ($messages as $message)
             <div>{{ $message->sender_email }} - {{ $message->msg_subject }}</div>
+            <a class="btn btn-primary" href="{{ route('admin.message', ['id' => $message->id]) }}"></a>
             @endforeach
         @endforeach
     </section>

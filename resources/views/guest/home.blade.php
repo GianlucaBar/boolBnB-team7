@@ -148,7 +148,31 @@
             </div>
 
             <div v-else>
-                Scopri i nostri appartamenti
+               <h2> Scopri i nostri appartamenti</h2>
+                {{-- TODO: aggiungere un qualcosa per identificare le card degli appartamenti sponsorizzati --}}
+                @foreach ($sponsored as $apartment)
+                <div class="list-apartment">
+                    <div class="card-container">  
+                        <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
+    
+                            <div class="details hidden centered">
+                                <a href="{{route('ap-details', ['id' => $apartment->id])}}">
+                                    <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                </a>
+                            </div>
+    
+                            <div class="scaling-block">
+                                <div class="blog-title">
+                                    <h4>{{$apartment->title}}</h4>
+    
+                                    <div>{{ $apartment->address }}</div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
     </div>   

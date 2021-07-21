@@ -8,7 +8,7 @@
     <div class="container">
         <h1>Contatta il proprietario</h1>
 
-        <form action="{{ route('store-message', ['id' => $apartmentId]) }}" method="post">
+        <form action="{{ route('store-message', ['id' => $apartment->id]) }}" method="post">
             @csrf
             @method('POST')
             
@@ -50,12 +50,12 @@
     
                 <div class="form-group">
                     <label for="msg_subject">Oggetto</label>
-                    <input type="text" class="form-control" id="msg_subject" name="msg_subject">
+                    <input type="text" class="form-control" id="msg_subject" name="msg_subject" value="{{$apartment->title}}">
                 </div>
     
                 <div class="form-group">
                     <label for="msg_content">Messaggio</label>
-                    <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10">Ciao, ti contatto per l'appartamento "{{ $apartment->title }}"</textarea>
                 </div>
     
             @endguest

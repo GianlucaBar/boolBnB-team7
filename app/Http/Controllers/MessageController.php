@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Message;
+use App\Apartment;
 
 class MessageController extends Controller
 {
@@ -12,14 +13,16 @@ class MessageController extends Controller
 
         $currentUser = Auth::user();
 
+        $thisApartment = Apartment::findOrFail($id);
+        
         if($currentUser){
             $data = [
-                'apartmentId' => $id,
+                'apartment' => $thisApartment,
                 'user' => $currentUser
             ];
         } else {
             $data = [
-                'apartmentId' => $id
+                'apartment' => $thisApartment
             ];
         }
 

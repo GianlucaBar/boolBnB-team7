@@ -20,6 +20,7 @@ Route::get('/message/{id}', 'MessageController@create')->name('send-message');
 Route::post('/message/{id}', 'MessageController@store')->name('store-message');
 
 
+
 // PRIVATE ROUTES
 //
 // prefix('admin') adds admin to these routes url
@@ -44,5 +45,8 @@ Route::prefix('admin')
     Route::get('/payment/{id}/{thisApartmentId}', 'BraintreeController@index')->name('payment');
     Route::post('/checkout', 'BraintreeController@sale')->name('braintree-checkout');
     Route::get('/thankyou/{thisApartmentId}/{transactionId}', 'BraintreeController@success')->name('thankyou');
+
+    //message
+    Route::get('/message/{id}', 'MessageController@show')->name('message');
 });
 
