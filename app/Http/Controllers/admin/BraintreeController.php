@@ -110,7 +110,6 @@ class BraintreeController extends Controller
             // ['thisApartmentId' => $form_data['thisApartmentId'], 'transactionId' => $transaction->id]
             return redirect()->route('admin.thankyou', [
                 'transactionId' => $transaction->id,
-                'thisApartmentId' => $form_data['thisApartmentId']
         ]);
  
         } else {
