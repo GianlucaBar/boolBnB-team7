@@ -118,15 +118,38 @@
                         </label>
                     </div> 
                 </div>
-                <button class="btn btn-primary" v-on:click="filter">Filtra</button>
+                <button class="btn btn-primary" v-on:click="filter()">Filtra</button>
 
 
                 {{-- Apartment List --}}
                 <div class="list-apartment" v-if="searchResult.length">
-                    <div class="card-container">  
+                    <div class="card-container" v-if="!filteredList.length">  
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
-                        v-for="ap in filter()">
+                        v-for="ap in searchResult">
+                            <div>
+                                <div class="details hidden centered">
+                                    <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
+                                        <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                    </a>
+                                </div>
+        
+                                <div class="scaling-block">
+                                    <div class="blog-title">
+                                        <h4>@{{ap.title}}</h4>
+        
+                                        <div>@{{ ap.address }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-container" v-else>  
+                        <div class="card" 
+                        v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
+                        v-for="ap in filteredList">
                             <div>
                                 <div class="details hidden centered">
                                     <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">

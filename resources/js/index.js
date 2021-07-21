@@ -9,7 +9,7 @@ var app = new Vue(
             searchAddress: '',
             lat: '',
             lon: '',
-            radius: '30',
+            radius: '20',
             rooms: '1',
             beds: '1',
             filteredList: '',
@@ -103,7 +103,6 @@ var app = new Vue(
                 let extraFilteredArray = [];
 
                 if(this.currentCheckedExtras.length){
-                    this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>'
                     // cycle apartments 
                     filteredList.forEach(element =>{
                         let extraAp = element.extras;
@@ -120,33 +119,10 @@ var app = new Vue(
         
                     })
                     filteredList = extraFilteredArray;
-                    console.log(extraFilteredArray);
                 }
-
                 
-                // this.$watch('filteredLList', function (value, mutation) {
-                //     if (mutation) {
-                //         mutation.method // e.g. 'push'
-                //         mutation.args // raw arguments to the mutation method
-                //         mutation.result // return value
-                //         mutation.inserted // new, inserted elements
-                //         mutation.removed // removed elements
-
-                //         console.log(mutation);
-                //         return this.searchFeedback;
-                //     }
-                // })
-                return filteredList;
+                this.filteredList = filteredList
             },
-
-            // scrollToResult(){
-            //     let el = document.getElementById("search-result");
-
-            //     if (el) {
-            //         // Use el.scrollIntoView() to instantly scroll to the element
-            //         el.scrollIntoView({behavior: 'smooth'});
-            //     }
-            // }
 
         },
         mounted() { 
