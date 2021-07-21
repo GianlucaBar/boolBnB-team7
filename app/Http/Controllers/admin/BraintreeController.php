@@ -37,7 +37,6 @@ class BraintreeController extends Controller
 
         $form_data = $request->all();
 
-        dd($form_data);
         //setting current date/time
         $start_date = Carbon::now();
 

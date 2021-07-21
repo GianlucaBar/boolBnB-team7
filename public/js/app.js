@@ -38199,8 +38199,7 @@ var app = new Vue({
     filteredList: '',
     extras: '',
     currentCheckedExtras: [],
-    isFiltered: false // searchFeedback: 'Sto elaborando la ricerca'
-
+    isFiltered: false
   },
   methods: {
     // api call to get coordinates from a given address 
@@ -38369,14 +38368,6 @@ var app = new Vue({
 
       this.isFiltered = true;
       this.filteredList = filteredList;
-    },
-    validateNum: function validateNum(event) {
-      alert('funzio');
-      var keyCode = event.keyCode;
-
-      if (keyCode < 1 || keyCode > 30) {
-        event.preventDefault();
-      }
     }
   },
   mounted: function mounted() {
@@ -38405,8 +38396,8 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

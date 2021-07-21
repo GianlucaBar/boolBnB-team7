@@ -16,7 +16,6 @@ var app = new Vue(
             extras: '',
             currentCheckedExtras: [],
             isFiltered: false
-            // searchFeedback: 'Sto elaborando la ricerca'
         },
 
         methods: { 
@@ -127,14 +126,7 @@ var app = new Vue(
                 this.isFiltered = true;
                 this.filteredList = filteredList
             },
-
-            validateNum: (event) => {
-                alert('funzio');
-                let keyCode = event.keyCode;
-                if (keyCode < 1 || keyCode > 30) {
-                  event.preventDefault();
-                }
-            }
+            
         },
         mounted() { 
             // call to get extras  

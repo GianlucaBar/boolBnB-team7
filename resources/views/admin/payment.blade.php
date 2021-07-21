@@ -121,7 +121,7 @@
                         </div>
                     </div>
  
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="hidden">
                             <div class="form-group">
                                 <label for="cc_number">Credit Card Number</label>
@@ -143,13 +143,13 @@
                             </div>
                         </div>
  
-                    </div>
+                    </div> --}}
  
                     <div class="row">
                         <div class="col-md-6">
                             <label for="cc_number">Credit Card Number</label>
  
-                            <div class="form-group" id="card-number" name="card-number">
+                            <div class="form-group" id="card-number">
  
                             </div>
                         </div>
@@ -157,15 +157,15 @@
                         <div class="col-md-3">
                             <label for="expiry">Expiry</label>
  
-                            <div class="form-group" id="expiration-date" name="expiration-date">
+                            <div class="form-group" id="expiration-date">
  
                             </div>
                         </div>
  
                         <div class="col-md-3">
-                            <label for="cvv">CVV</label>
+                            <label for="cvv">CVC</label>
  
-                            <div class="form-group" id="cvv" name="cvv">
+                            <div class="form-group" id="cvv">
  
                             </div>
                         </div>
@@ -226,15 +226,18 @@
                 fields: {
                     number: {
                         selector: '#card-number',
-                        placeholder: '4111 1111 1111 1111'
+                        placeholder: '4111 1111 1111 1111',
+                        name: 'cc_number'
                     },
                     cvv: {
                         selector: '#cvv',
-                        placeholder: '123'
+                        placeholder: '123',
+                        name: 'cvc'
                     },
                     expirationDate: {
                         selector: '#expiration-date',
-                        placeholder: '10/2019'
+                        placeholder: '10/2019',
+                        name: 'expiry'
                     }
                 }
             }, function (hostedFieldsErr, hostedFieldsInstance) {
