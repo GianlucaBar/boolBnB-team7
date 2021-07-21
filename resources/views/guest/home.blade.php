@@ -113,10 +113,10 @@
                         <label class="form-check-label" for="extra-@{{ extra.id }}">
                             @{{ extra.name }}
                         </label> --}}
-
+                        
                         <div class="container-check">
-                            <input type="checkbox" name="extras[]" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )" checked>
-                            <label for="extra-@{{ extra.id }}">
+                            <input type="checkbox" name="extras[]" :value="extra.id" :id="'extra-' + extra.id" v-on:change="getCheckboxValue( extra.id )" checked>
+                            <label :for="'extra-' + extra.id ">
                                 @{{ extra.name }}
                             </label>
                             
