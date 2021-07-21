@@ -56,7 +56,7 @@
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email" value="{{$email}}">
+                        <input type="email" class="form-control" id="email" value="{{$email}}" name="email">
                     </div>
  
                     <div class="form-group">
@@ -149,7 +149,7 @@
                         <div class="col-md-6">
                             <label for="cc_number">Credit Card Number</label>
  
-                            <div class="form-group" id="card-number">
+                            <div class="form-group" id="card-number" name="card-number">
  
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                         <div class="col-md-3">
                             <label for="expiry">Expiry</label>
  
-                            <div class="form-group" id="expiration-date">
+                            <div class="form-group" id="expiration-date" name="expiration-date">
  
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                         <div class="col-md-3">
                             <label for="cvv">CVV</label>
  
-                            <div class="form-group" id="cvv">
+                            <div class="form-group" id="cvv" name="cvv">
  
                             </div>
                         </div>

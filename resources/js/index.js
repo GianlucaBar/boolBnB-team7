@@ -15,6 +15,7 @@ var app = new Vue(
             filteredList: '',
             extras: '',
             currentCheckedExtras: [],
+            isFiltered: false
             // searchFeedback: 'Sto elaborando la ricerca'
         },
 
@@ -89,12 +90,14 @@ var app = new Vue(
                 let filteredList = [];
 
                 if(this.beds != 1 || this.rooms != 1){
-                    this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>'
                     this.searchResult.forEach(element => {
                         if(element.beds >= this.beds && element.rooms >= this.rooms){
                             filteredList.push(element);
                         }
                     });
+                    // if(filteredList.length == 0){
+                    //     this.filteredList = filteredList;
+                    // }
                 } else {
                     filteredList = this.searchResult
                 }
@@ -111,7 +114,7 @@ var app = new Vue(
                         extraAp.forEach(extra=>{
                             thisExtras.push(extra.id)
                         })
-        
+                        
                         // Comparo nel ciclo i due array
                         let isMatched = this.currentCheckedExtras.every(i => thisExtras.includes(i));
                         if (isMatched) {
@@ -121,10 +124,17 @@ var app = new Vue(
                     })
                     filteredList = extraFilteredArray;
                 }
-                
+                this.isFiltered = true;
                 this.filteredList = filteredList
             },
 
+            validateNum: (event) => {
+                alert('funzio');
+                let keyCode = event.keyCode;
+                if (keyCode < 1 || keyCode > 30) {
+                  event.preventDefault();
+                }
+            }
         },
         mounted() { 
             // call to get extras  

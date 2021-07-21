@@ -23,7 +23,7 @@ class SearchController extends Controller
             ) + sin( radians(?) ) *
             sin( radians( latitude ) ) )
             ) AS distance', [$latitude, $longitude, $latitude])
-        ->havingRaw("distance < ?", [$radius])
+        ->havingRaw("distance < ?", [$radius])->where('visible', '1')
         ->get();
 
         // Link extras to every apartment
