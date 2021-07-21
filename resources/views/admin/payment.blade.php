@@ -1,12 +1,10 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-        <title>Braintree Checkout</title>
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
- 
+    @extends('layouts.app')
+
+    @section('title')
+        - pagamento
+    @endsection
+
+    @section('styles')
         <!-- Additional Styles -->
         <style>
             body {
@@ -23,10 +21,9 @@
                 border-radius: .25rem;
             }
         </style>
-
-    </head>
+    @endsection
  
-    <body>
+    @section('braintree-content')
         <div class="container">
             <div class="col-md-6 offset-md-3">
                 <h1>Payment Form</h1>
@@ -59,7 +56,7 @@
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" id="email" value="{{$email}}">
                     </div>
  
                     <div class="form-group">
@@ -186,8 +183,10 @@
                 </form>
                 {{-- End Payment Form --}}
             </div>
-        </div>
- 
+        </div>        
+    @endsection
+
+    @section('footer-scripts')
     <script src="https://js.braintreegateway.com/web/3.38.1/js/client.min.js"></script>
     <script src="https://js.braintreegateway.com/web/3.38.1/js/hosted-fields.min.js"></script>
  
@@ -199,7 +198,6 @@
  
     <!-- Hosted Js Script -->
     <script>
- 
         var form = document.querySelector('#payment-form');
         var submit = document.querySelector('input[type="submit"]');
         braintree.client.create({
@@ -304,8 +302,5 @@
                 });
             });
         });
- 
     </script>
- 
-    </body>
-</html>
+    @endsection

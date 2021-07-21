@@ -27,23 +27,22 @@
                     {{-- <label for="radius">Inserisci il raggio di ricerca</label>
                     <input type="hidden" name="radius" id="radius" v-model="radius"> --}}
                     
-                     {{-- BTN-BLOB --}}
-                     <div class="buttons">
-                        <button class="blob-btn"  v-on:click="getSearchResult">
-                          Inizia Ricerca
-                          <span class="blob-btn__inner">
-                            <span class="blob-btn__blobs">
-                              <span class="blob-btn__blob"></span>
-                              <span class="blob-btn__blob"></span>
-                              <span class="blob-btn__blob"></span>
-                              <span class="blob-btn__blob"></span>
-                            </span>
-                          </span>
-                        </button>
-                        <br/>
-                     </div>
-                      
-                      
+                        {{-- BTN-BLOB --}}
+                        <div class="buttons">
+                            <button class="blob-btn"  v-on:click="getSearchResult">
+                                Inizia Ricerca
+                                <span class="blob-btn__inner">
+                                    <span class="blob-btn__blobs">
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                        <span class="blob-btn__blob"></span>
+                                    </span>
+                                </span>
+                            </button>
+                            <br/>
+                        </div>
+
                     {{-- END BTN-BLOB --}}
                     
                     {{-- Non eliminare, lo useremo per far balzare subito la pagina alla ricerca dopo averla effettuata.
@@ -54,11 +53,11 @@
         </div>
         
     </div>
-    <section class="green-sec">
+    <section class="green-sec" v-if="searchResult.length">
         <div class="container">
 
             {{-- Filters --}}
-            <div id="search-result" class="filters  " v-if="searchResult.length">
+            <div id="search-result" class="filters">
                 <h2>Migliora la tua ricerca</h2>
 
 
@@ -68,7 +67,7 @@
                     <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                 </div> --}}
 
-                
+                {{-- Beds --}}
                 <div class="input-filters">
                     <div class="number-input">
                         
@@ -87,6 +86,7 @@
                         <input type="number" id="beds" v-model="beds" min="1" max="20">
                     </div> --}}
         
+                    {{-- Rooms --}}
                     <div class="number-input">
                         <label for="rooms">Numero Stanze </label> 
                         
@@ -97,6 +97,8 @@
                         </div>
 
                     </div>
+                    
+                    {{-- Radius --}}
                     <div class="number-input">
                         <label for="mod-radius">Raggio di ricerca</label>
                         <div class="button-plus-min">
@@ -125,7 +127,7 @@
                 </div>
 
                 <div class="filter-btn">
-                    <button class="btn btn-outline-secondary" v-on:click="filter">Filtra</button>
+                    <button class="btn btn-outline-secondary" v-on:click="filter()">Filtra</button>
                 </div>
             </div>
         </div>
@@ -138,14 +140,36 @@
 
                 {{-- Apartment List --}}
                 <div class="list-apartment" v-if="searchResult.length">
-                    <div class="card-container">  
+                    <div class="card-container" v-if="!filteredList.length">  
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
-                        v-for="ap in filter()">
+                        v-for="ap in searchResult">
                             <div>
-                            
                                 <div class="details hidden centered">
-                                    <a  :href="'http://127.0.0.1:8000/apartments/' + ap.id">
+                                    <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
+                                        <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                    </a>
+                                </div>
+        
+                                <div class="scaling-block">
+                                    <div class="blog-title">
+                                        <h4>@{{ap.title}}</h4>
+        
+                                        <div>@{{ ap.address }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-container" v-else>  
+                        <div class="card" 
+                        v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
+                        v-for="ap in filteredList">
+                            <div>
+                                <div class="details hidden centered">
+                                    <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
                                         <i class="far fa-eye"></i> <br> Dettagli appartamento
                                     </a>
                                 </div>
@@ -164,7 +188,31 @@
             
 
             <div v-else>
-                Scopri i nostri appartamenti
+               <h2> Scopri i nostri appartamenti</h2>
+                {{-- TODO: aggiungere un qualcosa per identificare le card degli appartamenti sponsorizzati --}}
+                @foreach ($sponsored as $apartment)
+                <div class="list-apartment">
+                    <div class="card-container">  
+                        <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
+    
+                            <div class="details hidden centered">
+                                <a href="{{route('ap-details', ['id' => $apartment->id])}}">
+                                    <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                </a>
+                            </div>
+    
+                            <div class="scaling-block">
+                                <div class="blog-title">
+                                    <h4>{{$apartment->title}}</h4>
+    
+                                    <div>{{ $apartment->address }}</div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
         </div>
     </section>

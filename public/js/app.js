@@ -38193,12 +38193,13 @@ var app = new Vue({
     searchAddress: '',
     lat: '',
     lon: '',
-    radius: '30',
+    radius: '20',
     rooms: '1',
     beds: '1',
     filteredList: '',
     extras: '',
-    currentCheckedExtras: []
+    currentCheckedExtras: [] // searchFeedback: 'Sto elaborando la ricerca'
+
   },
   methods: {
     // api call to get coordinates from a given address 
@@ -38330,6 +38331,7 @@ var app = new Vue({
       var filteredList = [];
 
       if (this.beds != 1 || this.rooms != 1) {
+        this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>';
         this.searchResult.forEach(function (element) {
           if (element.beds >= _this5.beds && element.rooms >= _this5.rooms) {
             filteredList.push(element);
@@ -38361,18 +38363,10 @@ var app = new Vue({
           }
         });
         filteredList = extraFilteredArray;
-        console.log(extraFilteredArray);
       }
 
-      return filteredList;
-    } // scrollToResult(){
-    //     let el = document.getElementById("search-result");
-    //     if (el) {
-    //         // Use el.scrollIntoView() to instantly scroll to the element
-    //         el.scrollIntoView({behavior: 'smooth'});
-    //     }
-    // }
-
+      this.filteredList = filteredList;
+    }
   },
   mounted: function mounted() {
     // call to get extras  

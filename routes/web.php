@@ -2,37 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 // Laravel Login Routes
 Auth::routes();
 
-// Public Routes
+// PUBLIC ROUTES
+//
+//Home
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
+//Apartments
 Route::get('/apartments', 'ApartmentController@index')->name('search-page');
+Route::get('/apartments/{id}', 'ApartmentController@show')->name('ap-details');
 
-// Creo le route per la pagina dei pagamenti (GET) e per gestire il pagamento (POST)
-// Route::get('/payment', 'PaymentController@index')->name('payment');
-// Route::post('/checkout', 'PaymentController@sale')->name('braintree-checkout');
+//messages routes
+Route::get('/message/{id}', 'MessageController@create')->name('send-message');
+Route::post('/message/{id}', 'MessageController@store')->name('store-message');
 
 
-// Private
 
+// PRIVATE ROUTES
+//
 // prefix('admin') adds admin to these routes url
 Route::prefix('admin')
 // ->namespace('Admin') looks for controllers in admin folder
@@ -43,6 +33,7 @@ Route::prefix('admin')
 ->middleware('auth')
 // ->group joins here all the route with the previous set properties
 ->group(function () {
+    // Admin's home
     Route::get('/', 'HomeController@index')->name('home');
     // Here all the admin's route with CRUD opertaions
     Route::resource('apartments', 'ApartmentController');
@@ -53,5 +44,9 @@ Route::prefix('admin')
     // Braintree
     Route::get('/payment/{id}/{thisApartmentId}', 'BraintreeController@index')->name('payment');
     Route::post('/checkout', 'BraintreeController@sale')->name('braintree-checkout');
+    Route::get('/thankyou/{thisApartmentId}/{transactionId}', 'BraintreeController@success')->name('thankyou');
+
+    //message
+    Route::get('/message/{id}', 'MessageController@show')->name('message');
 });
 

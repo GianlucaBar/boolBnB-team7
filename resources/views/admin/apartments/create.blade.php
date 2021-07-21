@@ -1,20 +1,26 @@
 @extends('layouts.app')
 
+@section('title')
+    - Aggiungi nuovo appartamento
+@endsection
+
 @section('content')
 
     {{-- Script for errors --}}
     @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     @endif
 
 <div class="container">
     <h1>Aggiungi un nuovo appartamento</h1>
+
+    {{-- Form --}}
     <form action="{{ route('admin.apartments.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')

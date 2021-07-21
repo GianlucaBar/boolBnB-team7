@@ -9,12 +9,13 @@ var app = new Vue(
             searchAddress: '',
             lat: '',
             lon: '',
-            radius: '30',
+            radius: '20',
             rooms: '1',
             beds: '1',
             filteredList: '',
             extras: '',
-            currentCheckedExtras: []
+            currentCheckedExtras: [],
+            // searchFeedback: 'Sto elaborando la ricerca'
         },
 
         methods: { 
@@ -88,6 +89,7 @@ var app = new Vue(
                 let filteredList = [];
 
                 if(this.beds != 1 || this.rooms != 1){
+                    this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>'
                     this.searchResult.forEach(element => {
                         if(element.beds >= this.beds && element.rooms >= this.rooms){
                             filteredList.push(element);
@@ -99,11 +101,9 @@ var app = new Vue(
                 
                 //se l'array "currentCheckedExtras" è popolato
                 //prendo solo gli appartamenti da i cui id degli extra corrispondono agli id in currentCheckedExtras
-
                 let extraFilteredArray = [];
 
                 if(this.currentCheckedExtras.length){
-
                     // cycle apartments 
                     filteredList.forEach(element =>{
                         let extraAp = element.extras;
@@ -120,22 +120,10 @@ var app = new Vue(
         
                     })
                     filteredList = extraFilteredArray;
-                    console.log(extraFilteredArray);
                 }
-
                 
-
-                return filteredList;
+                this.filteredList = filteredList
             },
-
-            // scrollToResult(){
-            //     let el = document.getElementById("search-result");
-
-            //     if (el) {
-            //         // Use el.scrollIntoView() to instantly scroll to the element
-            //         el.scrollIntoView({behavior: 'smooth'});
-            //     }
-            // }
 
         },
         mounted() { 

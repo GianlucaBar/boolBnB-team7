@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'BoolBnB') }} @yield('title') </title>
 
     {{-- Header Script --}}
     @yield('header-scripts')
@@ -22,8 +22,14 @@
     {{-- fontowsome --}}
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
+    {{-- Icon --}}
+    <link rel="icon" href="{{asset('img/logo-small.png')}}">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {{-- Inline styles: for braintree --}}
+    @yield('styles')
 </head>
 <body>
     <div id="app">
@@ -39,8 +45,11 @@
                     </div>
 
                     <!-- Right Side Of Navbar -->
+
                     <ul class="navbar-nav ml-auto">
-                        
+                        @guest
+                        {{-- Only Logged users can see these two sections --}}
+                        @else
                         <li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.index') }}">
@@ -55,6 +64,7 @@
                             </li>
 
                         </li>
+                        @endguest
 
                         <!-- Authentication Links -->
                         @guest
@@ -97,6 +107,7 @@
             @yield('guest-homepage')
             @yield('list-apartment')
             @yield('dashboard')
+            @yield('braintree-content')
         </main>
     </div>
 

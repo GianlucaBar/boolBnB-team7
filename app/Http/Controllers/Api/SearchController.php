@@ -8,20 +8,14 @@ use App\Apartment;
 use App\Extra;
 class SearchController extends Controller
 {   
-
-    /**
-     *
-     * @param  \Illuminate\Http\Request 
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request){
 
-        // dd($request->all());
-
+        // Data taken from input when you search apartments
         $latitude = $request->latitude;
         $longitude = $request->longitude;
         $radius = $request->radius;
 
+        // Haversine Formula
         $apartments = Apartment::select('apartments.*')
         ->selectRaw('( 6371 * acos( cos( radians(?) ) *
             cos( radians( latitude ) )
@@ -32,6 +26,7 @@ class SearchController extends Controller
         ->havingRaw("distance < ?", [$radius])
         ->get();
 
+        // Link extras to every apartment
         foreach($apartments as $apartment){
             if($apartment->extras){
                 $extras = $apartment->extras;

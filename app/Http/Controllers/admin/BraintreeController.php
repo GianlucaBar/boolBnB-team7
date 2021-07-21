@@ -18,11 +18,13 @@ class BraintreeController extends Controller
         // generate token
         $token = $gateway->clientToken()->generate();
         $sponsorship = Sponsorship::findOrFail($id);
-        
+        $email = Auth::user()->email;
+
         $data = [
             'token' => $token,
             'sponsorship' => $sponsorship,
-            'thisApartmentId' => $thisApartmentId
+            'thisApartmentId' => $thisApartmentId,
+            'email' => $email
         ];
 
         return view('admin.payment', $data);
@@ -39,13 +41,15 @@ class BraintreeController extends Controller
         // with this query i get the last entry in apartments_sponsorship for current apartment id 
         $lastEntry = DB::table('apartment_sponsorship')->where('apartment_id', [$form_data['thisApartmentId']])->orderBy('end_date', 'DESC')->first();
 
-        // get end_date of last entry 
-        $lastEndDate = $lastEntry->end_date;
+        // get end_date of last entry
+        if($lastEntry){
+            $lastEndDate = $lastEntry->end_date;
 
-        //parse dates to compare them 
-        $parsedNow = strtotime($start_date);
-        $parsedEnd = strtotime($lastEndDate);
-
+            //parse dates to compare them 
+            $parsedNow = strtotime($start_date);
+            $parsedEnd = strtotime($lastEndDate);
+        } 
+        
         // if query return result && last known end_date is not expired
         if($lastEntry && $parsedEnd > $parsedNow){
             //set base date to last known end_date
@@ -102,7 +106,12 @@ class BraintreeController extends Controller
             ]);
 
             $transaction = $result->transaction;
-            return back()->with('success_message', 'Transaction Successful. Transaction ID:' . $transaction->id);
+            // return back()->with('success_message', 'Transaction Successful. Transaction ID:' . $transaction->id);
+            // ['thisApartmentId' => $form_data['thisApartmentId'], 'transactionId' => $transaction->id]
+            return redirect()->route('admin.thankyou', [
+                'transactionId' => $transaction->id,
+                'thisApartmentId' => $form_data['thisApartmentId']
+        ]);
  
         } else {
             $errorString = "";
@@ -113,7 +122,15 @@ class BraintreeController extends Controller
  
             return back()->withErrors('An error occurred with the message:  ' . $result->message);
         }
+    }
 
+    public function success($transactionId)
+    {
+        
+        $data = [
+            'transactionId' => $transactionId
+        ];
 
+        return view('admin.thankyou', $data);
     }
 }
