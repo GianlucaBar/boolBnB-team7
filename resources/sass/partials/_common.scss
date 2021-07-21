@@ -12,6 +12,11 @@ ul {
 .centered{
     text-align: center;
 }
+h2 {
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
 
 // BTN personalized
 *, *:before, *:after {
@@ -138,6 +143,19 @@ ul {
         }
       }
     }
+    
+  }
+
+  // SECTIONS
+  .green-sec{
+    background-color: $color-1;
+    padding: 40px;
+
+  }
+
+  .white-sec{
+    padding: 40px;
+    background-color: $color-5;
     
   }
 

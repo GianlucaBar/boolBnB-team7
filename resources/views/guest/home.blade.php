@@ -53,11 +53,13 @@
             </div>
         </div>
         
+    </div>
+    <section class="green-sec">
         <div class="container">
 
             {{-- Filters --}}
             <div id="search-result" class="filters  " v-if="searchResult.length">
-                <h2>Filtra ricerca</h2>
+                <h2>Migliora la tua ricerca</h2>
 
 
                 {{-- <div class="number-input">
@@ -69,17 +71,16 @@
                 
                 <div class="input-filters">
                     <div class="number-input">
+                        
                         <label for="beds">Posti letto</label>
-                        <b-input-group>
-                        <b-input-group-prepend>
-                        <b-btn variant="outline-info" v-on:click="beds--">-</b-btn>
-                        </b-input-group-prepend>
-                        <b-form-input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" type="number"></b-form-input>
-                        <b-input-group-append>
-                        <b-btn variant="outline-secondary" v-on:click="beds++">+</b-btn>
-                        </b-input-group-append>
-                        </b-input-group>
+
+                        <div class="button-plus-min">
+                            <i v-on:click="beds--" class="far fa-minus-square meno"></i>
+                                <b-form-input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" type="number"></b-form-input>
+                            <i v-on:click="beds++" class="far fa-plus-square più"></i>
+                        </div>    
                     </div>
+
 
                     {{-- <div>
                         <label for="beds">Posti letto</label>
@@ -87,22 +88,21 @@
                     </div> --}}
         
                     <div class="number-input">
-                        <label for="rooms">Numero Stanze</label>
-                        <b-input-group>
-                        <b-input-group-prepend>
-                        <b-btn variant="outline-info" v-on:click="rooms--">-</b-btn>
-                        </b-input-group-prepend>
-                        <b-form-input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" type="number"></b-form-input>
-                        <b-input-group-append>
-                        <b-btn variant="outline-secondary" v-on:click="rooms++">+</b-btn>
-                        </b-input-group-append>
-                        </b-input-group>
+                        <label for="rooms">Numero Stanze </label> 
+                        
+                        <div class="button-plus-min">
+                            <i v-on:click="rooms--" class="far fa-minus-square meno"></i>
+                                <b-form-input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" type="number"></b-form-input>
+                            <i v-on:click="rooms++" class="far fa-plus-square più"></i>
+                        </div>
+
                     </div>
-        
                     <div class="number-input">
                         <label for="mod-radius">Raggio di ricerca</label>
-                        <input type="number" class="quantity" id="mod-radius" v-model="radius" min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
-                        <span>km</span>
+                        <div class="button-plus-min">
+                            <input type="number" class="quantity" id="mod-radius" v-model="radius"  min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
+                            <span>km</span>
+                        </div>
                     </div>
                 </div>
     
@@ -116,8 +116,17 @@
                     </div> 
                 </div>
 
-                <button class="btn btn-primary" v-on:click="filter">Filtra</button>
+                <div class="filter-btn">
+                    <button class="btn btn-outline-secondary" v-on:click="filter">Filtra</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="white-sec">
+        <div class="container">
+            <h2>I nostri appartamenti</h2>
+    
 
                 {{-- Apartment List --}}
                 <div class="list-apartment" v-if="searchResult.length">
@@ -128,14 +137,14 @@
                             <div>
                             
                                 <div class="details hidden centered">
-                                    <a  href="#">
+                                    <a  :href="'http://127.0.0.1:8000/apartments/' + ap.id">
                                         <i class="far fa-eye"></i> <br> Dettagli appartamento
                                     </a>
                                 </div>
         
                                 <div class="scaling-block">
                                     <div class="blog-title">
-                                        <h4>@{{ap.title}}</h4>
+                                        <h5>@{{ap.title}}</h5>
         
                                         <div>@{{ ap.address }}</div>
                                     </div>
@@ -144,13 +153,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
 
             <div v-else>
                 Scopri i nostri appartamenti
             </div>
         </div>
-    </div>   
+    </section>
+        
+       
 </div>
 @endsection
 
