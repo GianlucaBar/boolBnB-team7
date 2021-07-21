@@ -27,7 +27,7 @@
 
         <div class="form-group">
             <label for="title">Titolo</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+            <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" required>
         </div>
 
         <div class="form-group">
@@ -37,17 +37,17 @@
 
         <div class="form-group">
             <label for="rooms">Numero di stanze</label>
-            <input type="text" class="form-control" id="rooms" name="rooms" value="{{ old('rooms') }}">
+            <input type="text" class="form-control" id="rooms" name="rooms" value="{{ old('rooms') }}" required>
         </div>
 
         <div class="form-group">
             <label for="beds">Numero di letti</label>
-            <input type="text" class="form-control" id="beds" name="beds" value="{{ old('beds') }}">
+            <input type="text" class="form-control" id="beds" name="beds" value="{{ old('beds') }}" required>
         </div>
 
         <div class="form-group">
             <label for="baths">Numero di bagni</label>
-            <input type="text" class="form-control" id="baths" name="baths" value="{{ old('baths') }}">
+            <input type="text" class="form-control" id="baths" name="baths" value="{{ old('baths') }}" required>
         </div>
 
         <div class="form-group">
@@ -57,22 +57,22 @@
 
         <div class="form-group">
             <label for="price">Prezzo</label>
-            <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}">
+            <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}" required>
         </div>
 
         <div class="form-group">
             <label for="address">Indirizzo</label>
-            <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}">
+            <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
         </div>
 
         <div class="form-group">
             <label for="latitude">Latitudine</label>
-            <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude') }}">
+            <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude') }}" required>
         </div>
 
         <div class="form-group">
             <label for="longitude">Longitudine</label>
-            <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude') }}">
+            <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude') }}" required>
         </div>
 
         <div class="form-group">

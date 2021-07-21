@@ -17,22 +17,22 @@
 
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" class="form-control" id="name" name="name">
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
     
                 <div class="form-group">
                     <label for="sender_email">E-mail</label>
-                    <input type="email" class="form-control" id="sender_email" name="sender_email">
+                    <input type="email" class="form-control" id="sender_email" name="sender_email" required>
                 </div>
     
                 <div class="form-group">
                     <label for="msg_subject">Oggetto</label>
-                    <input type="text" class="form-control" id="msg_subject" name="msg_subject">
+                    <input type="text" class="form-control" id="msg_subject" name="msg_subject" required>
                 </div>
     
                 <div class="form-group">
                     <label for="msg_content">Messaggio</label>
-                    <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10" required></textarea>
                 </div>
                 
             {{-- Form for logged users --}}
@@ -40,22 +40,22 @@
     
                 <div class="form-group">
                     <label for="name">Nome</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{$user->name}}">
+                    <input type="text" class="form-control" id="name" name="name" value="{{$user->name}}" required>
                 </div>
     
                 <div class="form-group">
                     <label for="sender_email">E-mail</label>
-                    <input type="email" class="form-control" id="sender_email" name="sender_email" value="{{$user->email}}">
+                    <input type="email" class="form-control" id="sender_email" name="sender_email" value="{{$user->email}}" required>
                 </div>
     
                 <div class="form-group">
                     <label for="msg_subject">Oggetto</label>
-                    <input type="text" class="form-control" id="msg_subject" name="msg_subject" value="{{$apartment->title}}">
+                    <input type="text" class="form-control" id="msg_subject" name="msg_subject" value="{{$apartment->title}}" required>
                 </div>
     
                 <div class="form-group">
                     <label for="msg_content">Messaggio</label>
-                    <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10">Ciao, ti contatto per l'appartamento "{{ $apartment->title }}"</textarea>
+                    <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10" required>Ciao, ti contatto per l'appartamento "{{ $apartment->title }}"</textarea>
                 </div>
     
             @endguest

@@ -56,33 +56,33 @@
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" class="form-control" id="email" value="{{$email}}" name="email">
+                        <input type="email" class="form-control" id="email" value="{{$email}}" name="email" required>
                     </div>
  
                     <div class="form-group">
                         <label for="name_on_card">Name on Card</label>
-                        <input type="text" class="form-control" id="name_on_card" name="name_on_card">
+                        <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
                     </div>
  
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address" name="address">
+                                <input type="text" class="form-control" id="address" name="address" required>
                             </div>
                         </div>
  
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="city">City</label>
-                                <input type="text" class="form-control" id="city" name="city">
+                                <input type="text" class="form-control" id="city" name="city" required>
                             </div>
                         </div>
  
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="province">Province</label>
-                                <input type="text" class="form-control" id="province" name="province">
+                                <input type="text" class="form-control" id="province" name="province" required>
                             </div>
                         </div>
  
@@ -92,21 +92,21 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="postalcode">Postal Code</label>
-                                <input type="text" class="form-control" id="postalcode" name="postalcode">
+                                <input type="text" class="form-control" id="postalcode" name="postalcode" required>
                             </div>
                         </div>
  
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="country">Country</label>
-                                <input type="text" class="form-control" id="country" name="country">
+                                <input type="text" class="form-control" id="country" name="country" required>
                             </div>
                         </div>
  
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone" name="phone">
+                                <input type="text" class="form-control" id="phone" name="phone" required>
                             </div>
                         </div>
  
