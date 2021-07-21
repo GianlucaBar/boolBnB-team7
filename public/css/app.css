@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Noto+Sans);@charset "UTF-8";
 ul {
   list-style-type: none;
   padding: 0;
@@ -426,16 +426,77 @@ body {
 }
 .filter-check .form-check {
   width: calc(( 100% / 4 ) - 30px);
-  border: 1px solid #F6E8EA;
-  border-radius: 10px;
+  /* border: 1px solid #F6E8EA; */
+  /* border-radius: 10px; */
   padding: 10px 20px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  background-color: #F6E8EA;
+  margin-bottom: 40px;
+  /* background-color: #F6E8EA; */
+  margin-top: 20px;
+  position: relative;
 }
 .filter-check .form-check .form-check-input {
   cursor: pointer;
+}
+.filter-check html {
+  min-height: 100%;
+}
+.filter-check body {
+  color: #435757;
+  background: radial-gradient(#fff, #dac4cd);
+  font: 1.4em/1 "Noto Sans", sans-serif;
+}
+.filter-check .container-check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.filter-check input {
+  position: absolute;
+  left: -9999px;
+}
+.filter-check label {
+  display: block;
+  position: relative;
+  margin: 20px;
+  padding: 15px 30px 15px 62px;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  color: #fff;
+  background-color: #6a8494;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+.filter-check label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  width: 32px;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  transition: background-color 0.2s;
+}
+.filter-check label:hover, .filter-check input:focus + label {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  width: 100%;
+}
+.filter-check input:checked + label {
+  background-color: #ab576c;
+}
+.filter-check input:checked + label::before {
+  background-color: #fff;
 }
 
 .filter-btn {

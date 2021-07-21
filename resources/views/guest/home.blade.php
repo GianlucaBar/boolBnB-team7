@@ -109,10 +109,18 @@
                 {{-- Chechboxes  --}}
                 <div class="filter-check">
                     <div class="form-check" v-for="extra in extras">
-                        <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )">
+                        {{-- <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )">
                         <label class="form-check-label" for="extra-@{{ extra.id }}">
                             @{{ extra.name }}
-                        </label>
+                        </label> --}}
+
+                        <div class="container-check">
+                            <input type="checkbox" name="extras[]" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )" checked>
+                            <label for="extra-@{{ extra.id }}">
+                                @{{ extra.name }}
+                            </label>
+                            
+                        </div>
                     </div> 
                 </div>
 

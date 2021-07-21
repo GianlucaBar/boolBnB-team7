@@ -74,8 +74,9 @@ var app = new Vue(
                     this.currentCheckedExtras.push(id);
                 } else{
                     this.currentCheckedExtras.forEach((element, index) => {
+                        console.log( this.currentCheckedExtras);
                         if(element == id){
-                            this.currentCheckedExtras.splice(index, 1)
+                            this.currentCheckedExtras.splice(index, 1);
                         }
                     });
                 }

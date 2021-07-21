@@ -38314,6 +38314,8 @@ var app = new Vue({
         this.currentCheckedExtras.push(id);
       } else {
         this.currentCheckedExtras.forEach(function (element, index) {
+          console.log(_this4.currentCheckedExtras);
+
           if (element == id) {
             _this4.currentCheckedExtras.splice(index, 1);
           }
@@ -38398,8 +38400,8 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Maurizio\PROGETTO FINALE\boolBnB-team7\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Maurizio\PROGETTO FINALE\boolBnB-team7\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/manuelbonini/Documenti/Laravel-Projects/boolBnB-team7/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/manuelbonini/Documenti/Laravel-Projects/boolBnB-team7/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
