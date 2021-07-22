@@ -13,6 +13,9 @@
     <div class="container ">
         <div class="user-rep centered">
             <h2>Riepilogo dati utente</h2>
+            <div>{{ $user->name }}</div>
+            <div>{{ $user->email }}</div>
+            <div>Numero Appartamenti: {{ $apartment_number}}</div>
     </div>
 
     <div class="my-ap mt-4 mb-2">

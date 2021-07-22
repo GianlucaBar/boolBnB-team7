@@ -200,6 +200,7 @@
     <script>
         var form = document.querySelector('#payment-form');
         var submit = document.querySelector('input[type="submit"]');
+        
         braintree.client.create({
             authorization: '{{ $token }}'
         }, function (clientErr, clientInstance) {

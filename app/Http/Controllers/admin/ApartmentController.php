@@ -15,7 +15,10 @@ class ApartmentController extends Controller
 {
     // INDEX
     public function index()
-    {   
+    {
+        $currentUser = Auth::user();
+        $userAp = count($currentUser->apartments);
+        // dd($userAp);
         $currentUserId = Auth::id();
 
         $apartments = Apartment::where('user_id', $currentUserId)->get();
@@ -26,12 +29,14 @@ class ApartmentController extends Controller
 
             if(!$thisApMessages->isEmpty()){
                 array_push($thisUserMessages, $thisApMessages);
-            } 
+            }
         }
 
         $data = [
             'apartments' => $apartments,
-            'messagesArray' => $thisUserMessages
+            'messagesArray' => $thisUserMessages,
+            'user' => $currentUser,
+            'apartment_number' => $userAp
         ];
 
         return view('admin.apartments.index', $data);
@@ -39,8 +44,8 @@ class ApartmentController extends Controller
 
     // CREATE
     public function create()
-    {   
-        // TO-DO: Da aggiungere qui le eventuali foreign key necessarie 
+    {
+        // TO-DO: Da aggiungere qui le eventuali foreign key necessarie
         // quando si crea un nuovo appartamento
         $extras = Extra::All();
 
@@ -53,42 +58,42 @@ class ApartmentController extends Controller
 
     // STORE
     public function store(Request $request)
-    {      
+    {
 
         // validazione
         $request->validate($this->getValidationRules());
 
         $new_ap_data = $request->all();
 
-        // CREATE NEW SLUG 
+        // CREATE NEW SLUG
         $new_slug = Str::Slug($new_ap_data['title'], '-');
         $base_slug = $new_slug;
-        
+
         // initialize cycle's condition and counter
         $same_slug_found = Apartment::where('slug', '=', $new_slug)->first();
         $counter = 1;
 
         // searching for duplicate slugs
         while($same_slug_found){
-            // append counter number to base slug (if there is a duplicate) 
+            // append counter number to base slug (if there is a duplicate)
             $new_slug = $base_slug . '-' . $counter;
 
-            // increase counter 
+            // increase counter
             $counter++;
 
-            // verify new_slug is now unique 
+            // verify new_slug is now unique
             $same_slug_found = Apartment::where('slug', '=', $new_slug)->first();
-            // if it's not it goes back into cycle 
+            // if it's not it goes back into cycle
         }
 
         $new_ap_data['slug'] = $new_slug;
 
-        // if an image is loaded, it's saved in storage 
+        // if an image is loaded, it's saved in storage
         // add result of Storage::put() in $new_ap_data
         if (isset($new_ap_data['cover'])) {
-            
+
             $new_img_path = Storage::put('apartments_covers', $new_ap_data['cover']);
-            
+
             if($new_img_path){
                 $new_ap_data['cover'] = $new_img_path;
             }
@@ -103,8 +108,8 @@ class ApartmentController extends Controller
         $new_ap->fill($new_ap_data);
 
         $new_ap->save();
-        
-        // setting extras 
+
+        // setting extras
         if(isset($new_ap_data['extras'])){
             $new_ap->extras()->sync($new_ap_data['extras']);
         }
@@ -126,7 +131,7 @@ class ApartmentController extends Controller
 
     // EDIT
     public function edit($id)
-    {   
+    {
         $this_ap = Apartment::findOrFail($id);
         $extras = Extra::All();
 
@@ -140,7 +145,7 @@ class ApartmentController extends Controller
 
     // UPDATE
     public function update(Request $request, $id)
-    {   
+    {
 
         // validazione
         $request->validate($this->getValidationRules());
@@ -151,37 +156,37 @@ class ApartmentController extends Controller
 
         // if title is modified, slug uniqueness has to checked
         if($mod_ap_data['title'] != $mod_ap->title){
-            
-            // CREATE NEW SLUG 
+
+            // CREATE NEW SLUG
             $new_slug = Str::Slug($mod_ap_data['title'], '-');
             $base_slug = $new_slug;
-            
+
             // initialize cycle's condition and counter
             $same_slug_found = Apartment::where('slug', '=', $new_slug)->first();
             $counter = 1;
 
             // searching for duplicate slugs
             while($same_slug_found){
-                // append counter number to base slug (if there is a duplicate) 
+                // append counter number to base slug (if there is a duplicate)
                 $new_slug = $base_slug . '-' . $counter;
 
-                // increase counter 
+                // increase counter
                 $counter++;
 
-                // verify new_slug is now unique 
+                // verify new_slug is now unique
                 $same_slug_found = Apartment::where('slug', '=', $new_slug)->first();
-                // if it's not it goes back into cycle 
+                // if it's not it goes back into cycle
             }
 
         $new_ap_data['slug'] = $new_slug;
         }
-        
-        // if an image is loaded, it's saved in storage 
+
+        // if an image is loaded, it's saved in storage
         // add result of Storage::put() in $new_ap_data
         if (isset($mod_ap_data['cover'])) {
-            
+
             $mod_img_path = Storage::put('apartments_covers', $mod_ap_data['cover']);
-            
+
             if($mod_img_path){
                 $mod_ap_data['cover'] = $mod_img_path;
             }
@@ -191,12 +196,12 @@ class ApartmentController extends Controller
 
         $mod_ap->save();
 
-        // setting extras 
+        // setting extras
         // if checkboxes are modified, sync new values
         if(isset($mod_ap_data['extras'])){
             $mod_ap->extras()->sync($mod_ap_data['extras']);
 
-        // if checkboxes are left empty, sync with empty array 
+        // if checkboxes are left empty, sync with empty array
         } else{
             $mod_ap->extras()->sync([]);
         }
