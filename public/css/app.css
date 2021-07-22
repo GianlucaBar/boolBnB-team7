@@ -505,6 +505,28 @@ body {
   width: 100%;
   text-align: center;
 }
+.filter-btn .myButton {
+  background: linear-gradient(to bottom, #97d9a8 5%, #34d95a 100%);
+  background-color: #97d9a8;
+  border-radius: 28px;
+  border: 3px solid #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #8e9995;
+}
+.filter-btn .myButton:hover {
+  background: linear-gradient(to bottom, #34d95a 5%, #97d9a8 100%);
+  background-color: #34d95a;
+}
+.filter-btn .myButton:active {
+  position: relative;
+  top: 1px;
+}
 
 .user-rep {
   background-color: #0505A9;
