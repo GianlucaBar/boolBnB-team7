@@ -52,10 +52,6 @@
                 <a class="btn btn-secondary" href="{{ route('admin.sponsor-page', ['id' => $apartment->id]) }}">
                     Sponsorizza
                 </a>
-
-                <a class="btn btn-primary" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">
-                    Messaggi
-                </a>
             </div>
         </div>          
         @endforeach
@@ -66,7 +62,9 @@
         @foreach ($messagesArray as $messages)
             @foreach ($messages as $message)
             <div>{{ $message->sender_email }} - {{ $message->msg_subject }}</div>
-            <a class="btn btn-primary" href="{{ route('admin.message', ['id' => $message->id]) }}"></a>
+            <a class="btn btn-primary" href="{{ route('admin.message', ['id' => $message->id]) }}">
+                Leggi
+            </a>
             @endforeach
         @endforeach
     </section>

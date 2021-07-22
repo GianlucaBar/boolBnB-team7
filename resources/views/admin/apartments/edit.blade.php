@@ -26,27 +26,27 @@
 
         <div class="form-group">
             <label for="title">Titolo</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $apartment->title) }}">
+            <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $apartment->title) }}" required>
         </div>
 
         <div class="form-group">
             <label for="description">Descrizione</label>
-            <textarea class="form-control" id="description" name="description" rows="10">{{ old('description', $apartment->description) }}</textarea>
+            <textarea class="form-control" id="description" name="description" rows="10" required>{{ old('description', $apartment->description) }}</textarea>
         </div>
 
         <div class="form-group">
             <label for="rooms">Numero di stanze</label>
-            <input type="text" class="form-control" id="rooms" name="rooms" value="{{ old('rooms', $apartment->rooms) }}">
+            <input type="text" class="form-control" id="rooms" name="rooms" value="{{ old('rooms', $apartment->rooms) }}" required>
         </div>
 
         <div class="form-group">
             <label for="beds">Numero di letti</label>
-            <input type="text" class="form-control" id="beds" name="beds" value="{{ old('beds', $apartment->beds) }}">
+            <input type="text" class="form-control" id="beds" name="beds" value="{{ old('beds', $apartment->beds) }}" required>
         </div>
 
         <div class="form-group">
             <label for="baths">Numero di bagni</label>
-            <input type="text" class="form-control" id="baths" name="baths" value="{{ old('baths', $apartment->baths) }}">
+            <input type="text" class="form-control" id="baths" name="baths" value="{{ old('baths', $apartment->baths) }}" required>
         </div>
 
         <div class="form-group">
@@ -56,22 +56,22 @@
 
         <div class="form-group">
             <label for="price">Prezzo</label>
-            <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $apartment->price) }}">
+            <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $apartment->price) }}" required>
         </div>
 
         <div class="form-group">
             <label for="address">Indirizzo</label>
-            <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $apartment->address) }}">
+            <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $apartment->address) }}" required>
         </div>
 
         <div class="form-group">
             <label for="latitude">Latitudine</label>
-            <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude', $apartment->latitude) }}">
+            <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude', $apartment->latitude) }}" required>
         </div>
 
         <div class="form-group">
             <label for="longitude">Longitudine</label>
-            <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude', $apartment->longitude) }}">
+            <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude', $apartment->longitude) }}" required>
         </div>
 
         <div class="form-group">

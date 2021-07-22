@@ -74,9 +74,9 @@
                         <label for="beds">Posti letto</label>
 
                         <div class="button-plus-min">
-                            <i v-on:click="beds--" class="far fa-minus-square meno"></i>
-                                <b-form-input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" type="number"></b-form-input>
-                            <i v-on:click="beds++" class="far fa-plus-square più"></i>
+                            <i v-if="beds > 1" v-on:click="beds--" class="far fa-minus-square meno"></i>
+                                <b-form-input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" type="number" v-on:keydown="$event.key === '-' ? $event.preventDefault() : null"></b-form-input>
+                            <i v-on:click="beds++" class="far fa-plus-square più" ></i>
                         </div>    
                     </div>
 
@@ -91,8 +91,8 @@
                         <label for="rooms">Numero Stanze </label> 
                         
                         <div class="button-plus-min">
-                            <i v-on:click="rooms--" class="far fa-minus-square meno"></i>
-                                <b-form-input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" type="number"></b-form-input>
+                            <i v-if="rooms > 1" v-on:click="rooms--" class="far fa-minus-square meno"></i>
+                                <b-form-input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" type="number" v-on:keydown="$event.key === '-' ? $event.preventDefault() : null"></b-form-input>
                             <i v-on:click="rooms++" class="far fa-plus-square più"></i>
                         </div>
 
@@ -141,7 +141,7 @@
 
                 {{-- Apartment List --}}
                 <div class="list-apartment" v-if="searchResult.length">
-                    <div class="card-container" v-if="!filteredList.length">  
+                    <div class="card-container" v-if="!isFiltered">  
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in searchResult">
@@ -164,7 +164,7 @@
                     </div>
 
                     
-                    <div class="card-container" v-else>  
+                    <div class="card-container" v-else-if="filteredList.length">
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in filteredList">
@@ -184,6 +184,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div v-else>
+                        Non c'e' una fava
                     </div>
                 </div>
             

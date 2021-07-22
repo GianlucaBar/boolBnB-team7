@@ -571,6 +571,12 @@ body {
   margin: 0 20px;
 }
 
+#map {
+  height: 500px;
+  width: 500px;
+  border-radius: 5px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

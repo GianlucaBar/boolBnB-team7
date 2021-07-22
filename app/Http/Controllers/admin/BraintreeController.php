@@ -33,6 +33,8 @@ class BraintreeController extends Controller
     // Gli passo sia il gateway sia la Request, sale() gestisce la trnsazione
     public function sale(Gateway $gateway, Request $request) 
     {   
+        $request->validate($this->validation());
+
         $form_data = $request->all();
 
         //setting current date/time
@@ -131,5 +133,22 @@ class BraintreeController extends Controller
         ];
 
         return view('admin.thankyou', $data);
+    }
+
+    private function validation(){
+        {
+            return 
+                [
+                    'email' => 'required|email:rfc,dns',
+                    'name_on_card' => 'required|string|min:3',
+                    'address' => 'required|string|min:10',
+                    'city' => 'required|string|min:2',
+                    'province' => 'required|string|min:2|max:2',
+                    'postalcode' => 'required|string',
+                    'country' => 'required|string',
+                    'phone' => 'required|numeric|min:8',
+                    'amount' => 'required|exists:sponsorships,price',
+                ];
+        }
     }
 }

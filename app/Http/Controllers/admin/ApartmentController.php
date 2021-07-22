@@ -220,11 +220,11 @@ class ApartmentController extends Controller
     private function getValidationRules() {
         $validation_rules = [
             'title' => 'required|min:5|max:255',
-            'description' => 'required|max:65000',
+            'description' => 'nullable|max:65000',
             'rooms' => 'required|numeric',
             'beds' => 'required|numeric',
             'baths' => 'required|numeric',
-            'square_meters' => 'required|numeric',
+            'square_meters' => 'nullable|numeric',
             'price' => 'required|numeric',
             'address' => 'required|min:5|max:255',
             'longitude' => 'required|numeric',

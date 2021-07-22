@@ -38198,8 +38198,8 @@ var app = new Vue({
     beds: '1',
     filteredList: '',
     extras: '',
-    currentCheckedExtras: [] // searchFeedback: 'Sto elaborando la ricerca'
-
+    currentCheckedExtras: [],
+    isFiltered: false
   },
   methods: {
     // api call to get coordinates from a given address 
@@ -38331,12 +38331,13 @@ var app = new Vue({
       var filteredList = [];
 
       if (this.beds != 1 || this.rooms != 1) {
-        this.searchFeedback = '<span>' + 'Sto elaborando' + '</span>';
         this.searchResult.forEach(function (element) {
           if (element.beds >= _this5.beds && element.rooms >= _this5.rooms) {
             filteredList.push(element);
           }
-        });
+        }); // if(filteredList.length == 0){
+        //     this.filteredList = filteredList;
+        // }
       } else {
         filteredList = this.searchResult;
       } //se l'array "currentCheckedExtras" è popolato
@@ -38365,6 +38366,7 @@ var app = new Vue({
         filteredList = extraFilteredArray;
       }
 
+      this.isFiltered = true;
       this.filteredList = filteredList;
     }
   },
