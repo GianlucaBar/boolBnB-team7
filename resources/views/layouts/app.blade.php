@@ -107,6 +107,7 @@
             @yield('guest-homepage')
             @yield('list-apartment')
             @yield('dashboard')
+            @yield('show')
             @yield('braintree-content')
         </main>
     </div>

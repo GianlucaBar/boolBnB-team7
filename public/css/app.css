@@ -560,6 +560,69 @@ body {
   margin: 0 20px;
 }
 
+.quack {
+  background-color: #F6E8EA;
+  padding-bottom: 30px;
+}
+.quack .admin-show {
+  padding-top: 50px;
+  font-size: 15px;
+  color: #040F0F;
+}
+.quack .admin-show .show-title {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.quack .admin-show .show-title h1 {
+  font-weight: bold;
+}
+.quack .admin-show .show-img {
+  width: 100%;
+  height: 500px;
+  padding-bottom: 30px;
+}
+.quack .admin-show .show-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.quack .admin-show .show-flex-container {
+  display: flex;
+}
+.quack .admin-show .show-flex-container .strong-text {
+  font-weight: bold;
+}
+.quack .admin-show .show-flex-container h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.quack .admin-show .show-flex-container p {
+  margin-bottom: 25px;
+}
+.quack .admin-show .show-flex-container .show-info {
+  width: 60%;
+  padding-right: 50px;
+}
+.quack .admin-show .show-flex-container .info-ul {
+  width: 40%;
+}
+.quack .admin-show .edit-link {
+  padding-bottom: 30px;
+}
+.quack .admin-show .edit-link .btn {
+  color: white;
+  font-size: 16px;
+  background-color: #0DCB92;
+}
+.quack .admin-show .edit-link .btn:hover {
+  background-color: #0fe3a3;
+}
+
 #map {
   height: 500px;
   width: 500px;
