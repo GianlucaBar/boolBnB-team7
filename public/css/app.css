@@ -608,6 +608,12 @@ body {
   width: 60%;
   padding-right: 50px;
 }
+.show-container .container .show-flex-container .show-info #map {
+  height: 350px;
+  width: 100%;
+  padding-right: 50px;
+  border-radius: 5px;
+}
 .show-container .container .show-flex-container .info-ul {
   width: 40%;
 }
@@ -622,12 +628,30 @@ body {
 .show-container .container .calltoaction-link .btn:hover {
   background-color: #0fe3a3;
 }
-
-#map {
-  height: 350px;
-  width: 100%;
-  padding-right: 50px;
-  border-radius: 5px;
+@media screen and (max-width: 991px) {
+  .show-container .container .show-flex-container {
+    display: block;
+  }
+  .show-container .container .show-flex-container .show-info {
+    width: 100%;
+    padding-right: 0;
+  }
+  .show-container .container .show-flex-container .show-info h3 {
+    text-align: center;
+  }
+  .show-container .container .show-flex-container .show-info #map {
+    height: 250px;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  .show-container .container .show-flex-container .info-ul {
+    width: 100%;
+    text-align: center;
+  }
+  .show-container .container .calltoaction-link {
+    text-align: center;
+  }
 }
 
 /*!

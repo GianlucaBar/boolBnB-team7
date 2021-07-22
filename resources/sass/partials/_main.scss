@@ -551,6 +551,14 @@
             // background-color: #424242;
             width: 60%;
             padding-right: 50px;
+
+            //style for tomtom map
+            #map {
+                height: 350px;
+                width: 100%;
+                padding-right: 50px;
+                border-radius: 5px;
+            }
         }
 
         .info-ul {
@@ -561,8 +569,8 @@
     .calltoaction-link {
         // text-align: center;
         padding-bottom: 30px;
-
         .btn {
+            
             color: white;
             font-size: 16px;
             background-color: $color-1;
@@ -573,15 +581,36 @@
         }
     }
 
-    // @media all and ()
+    @media screen and (max-width: 991px) {
+        .show-flex-container {
+            display: block;
+
+            .show-info {
+                width: 100%;
+                padding-right: 0;
+
+                h3 {
+                    text-align: center;
+                }
+
+                //style for tomtom map
+                #map {
+                    height: 250px;
+                    width: 100%;
+                    padding-right: 0;
+                    margin-bottom: 30px;
+                }
+            }
+
+            .info-ul {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .calltoaction-link {
+            text-align: center;
+        }
+    }
 }
 }   
-
-
-//style for tomtom map
-#map {
-    height: 350px;
-    width: 100%;
-    padding-right: 50px;
-    border-radius: 5px;
-}
