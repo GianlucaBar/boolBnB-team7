@@ -498,7 +498,7 @@
 //SHOW APARTMENTS GUEST & ADMIN
 .show-container {
     background-color: $color-5;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
         
         .container {
             padding-top: 50px;
@@ -507,10 +507,10 @@
             // background-color: #34d95a;
 
                 .show-title {
-                    width: 100%;
                     margin-bottom: 40px;
                     text-align: center;
                     h1 {
+                        word-break: break-all;
                         font-weight: bold;
                     }
                 }

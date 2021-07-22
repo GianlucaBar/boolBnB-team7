@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Noto+Sans);@charset "UTF-8";
 ul {
   list-style-type: none;
   padding: 0;
@@ -562,7 +562,7 @@ body {
 
 .show-container {
   background-color: #F6E8EA;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 .show-container .container {
   padding-top: 50px;
@@ -4635,6 +4635,7 @@ input[type=button].btn-block {
   justify-content: space-between;
   padding: 0.5rem 1rem;
 }
+
 .navbar .container,
 .navbar .container-fluid,
 .navbar .container-sm,
