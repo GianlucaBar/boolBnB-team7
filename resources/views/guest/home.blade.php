@@ -127,7 +127,8 @@
                 </div>
 
                 <div class="filter-btn">
-                    <button class="btn btn-outline-secondary" v-on:click="filter()">Filtra</button>
+                    <a v-on:click="filter()" class="myButton">Filtra</a>
+                    {{-- <button class="btn btn-outline-secondary" v-on:click="filter()">Filtra</button> --}}
                 </div>
             </div>
         </div>
