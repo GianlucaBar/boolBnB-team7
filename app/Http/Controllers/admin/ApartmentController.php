@@ -122,7 +122,8 @@ class ApartmentController extends Controller
     {
         $apartment = Apartment::findOrFail($id);
         $extras = $apartment->extras;
-        
+
+        // dd($extras);
         $data = [
             'apartment' => $apartment,
             'extras' => $extras
