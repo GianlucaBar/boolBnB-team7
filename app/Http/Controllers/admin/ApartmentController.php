@@ -31,7 +31,8 @@ class ApartmentController extends Controller
 
         $data = [
             'apartments' => $apartments,
-            'messagesArray' => $thisUserMessages
+            'messagesArray' => $thisUserMessages,
+            'userId' => $currentUserId
         ];
 
         return view('admin.apartments.index', $data);
