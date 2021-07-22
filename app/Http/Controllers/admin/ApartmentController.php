@@ -141,7 +141,6 @@ class ApartmentController extends Controller
     // UPDATE
     public function update(Request $request, $id)
     {   
-
         // validazione
         $request->validate($this->getValidationRules());
 

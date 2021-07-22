@@ -45,9 +45,15 @@
             Longitudine: {{ $apartment->longitude }}
         </li>
 
+        @if ($apartment->visible == 1)
         <li>
-            Slug: {{ $apartment->slug }}
+            Visibile: Si
         </li>
+        @else
+        <li>
+            Visibile: No
+        </li>
+        @endif
     </ul>
 
 
