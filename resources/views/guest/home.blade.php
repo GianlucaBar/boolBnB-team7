@@ -135,11 +135,10 @@
 
     <section class="white-sec">
         <div class="container">
-            <h2>I nostri appartamenti</h2>
-    
 
                 {{-- Apartment List --}}
                 <div class="list-apartment" v-if="searchResult.length">
+                    <h2>I nostri appartamenti</h2>
                     <div class="card-container" v-if="!isFiltered">  
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
@@ -185,38 +184,38 @@
                         </div>
                     </div>
 
-                    <div v-else>
-                        Non c'e' una fava
-                    </div>
                 </div>
             
 
             <div v-else>
-               <h2> Scopri i nostri appartamenti</h2>
+               <h2> Appartamenti in  Evidenza</h2>
                 {{-- TODO: aggiungere un qualcosa per identificare le card degli appartamenti sponsorizzati --}}
-                @foreach ($sponsored as $apartment)
                 <div class="list-apartment">
-                    <div class="card-container">  
+                    <div class="card-container"> 
+                        @foreach ($sponsored as $apartment) 
                         <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
-    
-                            <div class="details hidden centered">
-                                <a href="{{route('ap-details', ['id' => $apartment->id])}}">
-                                    <i class="far fa-eye"></i> <br> Dettagli appartamento
-                                </a>
+                            <div class="sponsorized-ap">
+                                Sponsorizzato
                             </div>
-    
-                            <div class="scaling-block">
-                                <div class="blog-title">
-                                    <h4>{{$apartment->title}}</h4>
-    
-                                    <div>{{ $apartment->address }}</div>
+                                <div class="details hidden centered">
+                                    <a href="{{route('ap-details', ['id' => $apartment->id])}}">
+                                        <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                    </a>
                                 </div>
-                            </div>
+        
+                                <div class="scaling-block">
+                                    <div class="blog-title">
+                                        <h4>{{$apartment->title}}</h4>
+        
+                                        <div>{{ $apartment->address }}</div>
+                                    </div>
+                                </div>
+                            
                         
                         </div>
+                        @endforeach
                     </div>
                 </div>
-                @endforeach
             </div>
         </div>
     </section>
