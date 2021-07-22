@@ -12,6 +12,8 @@
 @section('show')
 <div class="show-container">
     <div class="container">
+
+        {{-- Title --}}
         <div class="show-title">
             <h1>{{ $apartment->title }}</h1>
             {{ $apartment->address }}
@@ -22,15 +24,14 @@
             <img src="{{ asset('storage/' . $apartment->cover) }}" alt="{{ $apartment->title }}">
         </div>
 
+        {{-- Call to Action Link --}}
         <div class="calltoaction-link ">
             <a class="btn" href="{{ route('send-message', ['id' => $apartment->id]) }}">
                 Contatta il proprietario
             </a>
-            {{-- <a class="btn" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
-                Modifica informazioni
-            </a> --}}
         </div>
         
+        {{-- Flex Container --}}
         <div class="show-flex-container">
             {{-- Info part --}}
             <div class="show-info">
@@ -40,10 +41,12 @@
                         {{ $apartment->description }}
                     </p>
                 </div>
+
+                {{-- TomTom Map --}}
                 <div id='map'></div>
-                
             </div>
 
+            {{-- Other info --}}
             <div class="info-ul">
                 <h3>Altre info</h3>
                 <ul>
@@ -64,9 +67,12 @@
                     </li>
                 </ul>
 
+                {{-- Extras --}}
                 <div class="extras">
                     <h3>Extra</h3>
                     @foreach ($extras as $extra)
+                    {{-- TODO: Mettere qualcosa se non ci sono extra.
+                        A me non vanno le funzioni che penso dovrebbero andare--}}
                         {{-- @if($extra->name->isEmpty())
                             Nessun extra
                             @else --}}
@@ -87,6 +93,7 @@
 </div>
 @endsection
 
+{{-- Footer Scripts --}}
 @section('footer-scripts')
 <script>
     let coordinates = [{{$apartment->longitude}}, {{$apartment->latitude}}]

@@ -654,6 +654,26 @@ body {
   }
 }
 
+.message-admin-container {
+  background-color: #F6E8EA;
+  height: calc(100vh - 9rem);
+  padding-top: 50px;
+}
+.message-admin-container .container h2, .message-admin-container .container h4 {
+  font-weight: bold;
+}
+.message-admin-container .container h4 {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .message-admin-container {
+    height: 100vh;
+  }
+  .message-admin-container .container h4, .message-admin-container .container div {
+    text-align: center;
+  }
+}
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

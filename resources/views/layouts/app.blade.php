@@ -108,6 +108,7 @@
             @yield('list-apartment')
             @yield('dashboard')
             @yield('show')
+            @yield('message-box')
             @yield('braintree-content')
         </main>
     </div>
