@@ -842,15 +842,23 @@
         // height: 100%;
 
         .message-title {
+            margin: auto;
             text-align: center;
+            max-width: max-content;
+            background-color: white;
+            padding: 20px;
+            border: 2px solid $color-2;
+            border-radius: 9999px;
+            margin-bottom: 30px;
 
             h2 {
-            display: inline-block;
-            font-weight: bold;
-            margin-bottom: 30px;
+                display: inline-block;
+                font-weight: bold;
+                color: $color-2;
             }
 
             i {
+                color: $color-1;
                 display: inline-block;
                 font-size: 30px;
                 padding-right: 5px;
@@ -862,10 +870,11 @@
             background-color: white;
             padding: 20px;
             margin-bottom: 20px;
-            border: 2px solid $color-3;
+            border: 2px solid $color-2;
             border-radius: 5px;
             // box-shadow: 1px 1px 8px;
             h4 {
+            color: $color-2;
             font-weight: bold;
             }
         

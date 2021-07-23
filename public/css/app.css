@@ -835,14 +835,24 @@ body {
   padding-top: 50px;
 }
 .message-admin-container .container-fluid .message-title, .message-admin-container .container-xl .message-title, .message-admin-container .container-lg .message-title, .message-admin-container .container-md .message-title, .message-admin-container .container-sm .message-title {
+  margin: auto;
   text-align: center;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #57737A;
+  border-radius: 9999px;
+  margin-bottom: 30px;
 }
 .message-admin-container .container-fluid .message-title h2, .message-admin-container .container-xl .message-title h2, .message-admin-container .container-lg .message-title h2, .message-admin-container .container-md .message-title h2, .message-admin-container .container-sm .message-title h2 {
   display: inline-block;
   font-weight: bold;
-  margin-bottom: 30px;
+  color: #57737A;
 }
 .message-admin-container .container-fluid .message-title i, .message-admin-container .container-xl .message-title i, .message-admin-container .container-lg .message-title i, .message-admin-container .container-md .message-title i, .message-admin-container .container-sm .message-title i {
+  color: #0DCB92;
   display: inline-block;
   font-size: 30px;
   padding-right: 5px;
@@ -852,10 +862,11 @@ body {
   background-color: white;
   padding: 20px;
   margin-bottom: 20px;
-  border: 2px solid #040F0F;
+  border: 2px solid #57737A;
   border-radius: 5px;
 }
 .message-admin-container .container-fluid .message-box h4, .message-admin-container .container-xl .message-box h4, .message-admin-container .container-lg .message-box h4, .message-admin-container .container-md .message-box h4, .message-admin-container .container-sm .message-box h4 {
+  color: #57737A;
   font-weight: bold;
 }
 
