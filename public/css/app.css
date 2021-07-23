@@ -600,13 +600,6 @@ body {
   border-radius: 10px;
   box-shadow: 4px 4px 17px 4px #424242;
 }
-.container-user .new-ap {
-  color: #38c172;
-}
-.container-user .new-ap i {
-  margin-left: 10px;
-  font-size: 40px;
-}
 .container-user .my-ap {
   display: flex;
   justify-content: space-between;
@@ -623,7 +616,6 @@ body {
 .ap-line {
   margin: 40px 0;
   border-radius: 10px;
-  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   -o-box-shadow: 11px 9px 31px 4px #424242;
