@@ -5,73 +5,89 @@
 @endsection
 
 @section('dashboard')
-<div class="container">
-    <div class="centered mt-4 mb-4">
-        <h2 >Dashboard</h2>
-    </div>
+<section class="info-user green-sec">
+    <div class="container">
+        <div class="title centered mt-4 mb-4">
+            <h2>Dashboard</h2>
+        </div>
 
-    <div class="container ">
-        <div class="user-rep centered">
-            <h2>Riepilogo dati utente</h2>
-            <div>{{ $user->name }}</div>
-            <div>{{ $user->email }}</div>
-            <div>Numero Appartamenti: {{ $apartment_number}}</div>
-    </div>
-
-    <div class="my-ap mt-4 mb-2">
-        <h2>I miei Appartamenti</h2>
-
-        {{-- Add new Apartment --}}
-        <a class="new-ap"  href="{{ route('admin.apartments.create') }}"> Aggiungi appartamento <i class="fas fa-home"></i> </a>
-
-    </div>
-
-    <div class="dashboard-ap mt-4 mb-4">
-        @foreach ($apartments as $apartment)
-        <div class="ap-line mt-2 mb-2">
-            <h5>{{$apartment->title}}</h5>
-
-            {{-- CRUD --}}
-            <div class="buttoni">
-
-                <a class="btn btn-primary" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">
-                    Dettagli
-                </a>
-
-                <a class="btn btn-primary" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
-                    Modifica Appartamento
-                </a>
-
-                <form  action="{{ route('admin.apartments.destroy', [
-                    'apartment' => $apartment->id
-                    ]) }} "method="post">
-                
-                    @csrf
-                    @method('DELETE')
-                    
-                    <input type="submit" onclick="return confirm('Are you sure?')" class="btn btn-danger" value="Elimina">
-                </form>
-
-                <a class="btn btn-secondary" href="{{ route('admin.sponsor-page', ['id' => $apartment->id]) }}">
-                    Sponsorizza
-                </a>
+        <div class="container-user ">
+            <div class="user-rep ">
+                <h2>I Tuoi Dati</h2>
+                <div>Nome Utente: {{ $user->name }}</div>
+                <div>Email: {{ $user->email }}</div>
+                <div>Numero Appartamenti: {{ $apartment_number}}</div>
             </div>
-        </div>          
-        @endforeach
-    </div>
 
-    {{-- Messages --}}
-    <section class="msg-box">
-        @foreach ($messagesArray as $messages)
-            @foreach ($messages as $message)
-            <div>{{ $message->sender_email }} - {{ $message->msg_subject }}</div>
-            <a class="btn btn-primary" href="{{ route('admin.message', ['id' => $message->id]) }}">
-                Leggi
-            </a>
+            {{-- Messages --}}
+            <div class="msg-box">
+                <h2> I Tuoi Messaggi</h2>
+                @foreach ($messagesArray as $messages)
+                    @foreach ($messages as $message)
+                    <div>
+                        <ul>
+                            <li>
+                                <span>{{ $message->sender_email }} - {{ $message->msg_subject }}</span>
+                                <a class="read-btn" href="{{ route('admin.message', ['id' => $message->id]) }}">
+                                    Leggi
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    @endforeach
+                @endforeach
+            </div>
+            
+
+        </div>
+    </div>
+</section>
+<section class="ap-users white-sec">
+    <div class="container">
+
+        <div class="my-ap mt-4 mb-2">
+            <h2>I Tuoi Appartamenti</h2>
+
+            {{-- Add new Apartment --}}
+            <a id="new-ap"  href="{{ route('admin.apartments.create') }}"> Aggiungi appartamento <i class="fas fa-home"></i> </a>
+
+        </div>
+
+        <div class="dashboard-ap mt-4 mb-4">
+            @foreach ($apartments as $apartment)
+            <div class="ap-line">
+                <h5><a class="btn-link" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">{{$apartment->title}}</a></h5>
+
+                {{-- CRUD --}}
+                <div class="buttoni">
+
+                    <a class="btn-modify" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
+                        Modifica <i class="fas fa-wrench"></i>
+                    </a>
+
+                    <form  action="{{ route('admin.apartments.destroy', [
+                        'apartment' => $apartment->id
+                        ]) }} "method="post">
+                    
+                        @csrf
+                        @method('DELETE')
+                        
+                        <input type="submit" onclick="return confirm('Are you sure?')" class="btn-elimina" value="Elimina">
+                        
+                    </form>
+
+                    <a class="btn-sponsor" href="{{ route('admin.sponsor-page', ['id' => $apartment->id]) }}">
+                        Sponsorizza <i class="fas fa-wallet"></i>
+                    </a>
+                    
+                </div>
+            </div>          
             @endforeach
-        @endforeach
-    </section>
-</div>
+        </div>
+
+    
+    </div>
+</section>
 
     
 </div>
