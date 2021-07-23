@@ -153,9 +153,9 @@
                         <span class="dev-name">Alessandro Baccelli</span>
                         <ul>
                             <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/alessandro-baccelli1996/"><i class="fab fa-linkedin"></i></a>
 
-                                <a href="#"><i class="fab fa-github-square"></i></a>
+                                <a href="https://github.com/Alebacce"><i class="fab fa-github-square"></i></a>
                             </li>
                         </ul>
                     </li>
@@ -164,9 +164,9 @@
                         <span class="dev-name">Gianluca Barcè</span>
                         <ul>
                             <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/gianluca-barc%C3%A8-357536216/"><i class="fab fa-linkedin"></i></a>
 
-                                <a href="#"><i class="fab fa-github-square"></i></a>
+                                <a href="https://github.com/GianlucaBar"><i class="fab fa-github-square"></i></a>
                             </li>
                         </ul>
                     </li>
@@ -175,9 +175,9 @@
                         <span class="dev-name">Manuel Bonini</span>
                         <ul>
                             <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/manuelbonini/"><i class="fab fa-linkedin"></i></a>
 
-                                <a href="#"><i class="fab fa-github-square"></i></a>
+                                <a href="https://github.com/manuelbonini"><i class="fab fa-github-square"></i></a>
                             </li>
                         </ul>
                     </li>
@@ -186,9 +186,9 @@
                         <span class="dev-name">Maurizio Piacenza</span>
                         <ul>
                             <li>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.linkedin.com/in/maurizio-piacenza-458b22216/"><i class="fab fa-linkedin"></i></a>
 
-                                <a href="#"><i class="fab fa-github-square"></i></a>
+                                <a href="https://github.com/MauriPiace92"><i class="fab fa-github-square"></i></a>
                             </li>
                         </ul>
                     </li>
