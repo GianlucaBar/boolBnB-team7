@@ -9,24 +9,91 @@
     - {{ $apartment->title }} 
 @endsection
 
-@section('content')
+@section('show')
+<div class="show-container">
     <div class="container">
-        <h1>Dettaglio appartamento</h1>
 
-        <div>
-            <h2>
-                {{ $apartment->title }}
-            </h2>
-
-            {{-- TODO: Completare la pagina --}}
+        {{-- Title --}}
+        <div class="show-title">
+            <h1>{{ $apartment->title }}</h1>
+            {{ $apartment->address }}
         </div>
 
-    <a class="btn btn-primary" href="{{ route('send-message', ['id' => $apartment->id]) }}">Contatta il proprietario</a>
+        {{-- Img part --}}
+        <div class="show-img">
+            <img src="{{ asset('storage/' . $apartment->cover) }}" alt="{{ $apartment->title }}">
+        </div>
 
-    <div id='map'></div>
-    </div>
+        {{-- Call to Action Link --}}
+        <div class="calltoaction-link ">
+            <a class="btn" href="{{ route('send-message', ['id' => $apartment->id]) }}">
+                Contatta il proprietario
+            </a>
+        </div>
+        
+        {{-- Flex Container --}}
+        <div class="show-flex-container">
+            {{-- Info part --}}
+            <div class="show-info">
+                <div>
+                    <h3>Descrizione</h3>
+                    <p>
+                        {{ $apartment->description }}
+                    </p>
+                </div>
+
+                {{-- TomTom Map --}}
+                <div id='map'></div>
+            </div>
+
+            {{-- Other info --}}
+            <div class="info-ul">
+                <h3>Altre info</h3>
+                <ul>
+                    <li>
+                        <span class="strong-text">Camere:</span> {{ $apartment->rooms }}
+                    </li>
+
+                    <li>
+                        <span class="strong-text">Letti:</span> {{ $apartment->beds }}
+                    </li>
+
+                    <li>
+                        <span class="strong-text">Bagni:</span> {{ $apartment->baths }}
+                    </li>
+
+                    <li>
+                        <span class="strong-text">Metri quadrati:</span> {{ $apartment->square_meters }}
+                    </li>
+                </ul>
+
+                {{-- Extras --}}
+                <div class="extras">
+                    <h3>Extra</h3>
+                    @foreach ($extras as $extra)
+                    {{-- TODO: Mettere qualcosa se non ci sono extra.
+                        A me non vanno le funzioni che penso dovrebbero andare--}}
+                        {{-- @if($extra->name->isEmpty())
+                            Nessun extra
+                            @else --}}
+
+                            @if(!$loop->last)
+                            {{ Str::ucfirst($extra->name) }} -
+                            @endif
+
+                            @if($loop->last)
+                                {{ Str::ucfirst($extra->name) }}
+                            @endif
+                        
+                        {{-- @endif --}}
+                    @endforeach
+                </div> 
+            </div>
+        </div>
+</div>
 @endsection
 
+{{-- Footer Scripts --}}
 @section('footer-scripts')
 <script>
     let coordinates = [{{$apartment->longitude}}, {{$apartment->latitude}}]

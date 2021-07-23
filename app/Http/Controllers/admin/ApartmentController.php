@@ -121,9 +121,12 @@ class ApartmentController extends Controller
     public function show($id)
     {
         $apartment = Apartment::findOrFail($id);
+        $extras = $apartment->extras;
 
+        // dd($extras);
         $data = [
-            'apartment' => $apartment
+            'apartment' => $apartment,
+            'extras' => $extras
         ];
 
         return view('admin.apartments.show', $data);
