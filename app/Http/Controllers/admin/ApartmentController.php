@@ -17,6 +17,7 @@ class ApartmentController extends Controller
     public function index()
     {
         $currentUser = Auth::user();
+
         $userAp = count($currentUser->apartments);
         // dd($userAp);
         $currentUserId = Auth::id();
@@ -37,6 +38,7 @@ class ApartmentController extends Controller
             'messagesArray' => $thisUserMessages,
             'user' => $currentUser,
             'apartment_number' => $userAp
+            // 'userId' => $currentUserId
         ];
 
         return view('admin.apartments.index', $data);

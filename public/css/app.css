@@ -6,6 +6,7 @@ ul {
 
 body {
   height: 100%;
+  font-family: "Rubik", sans-serif !important;
 }
 
 .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
@@ -153,6 +154,11 @@ body {
   padding: 40px;
 }
 
+.red-sec {
+  background-color: #DB2B39;
+  padding: 40px;
+}
+
 .white-sec {
   padding: 40px;
   background-color: #f3ebe2;
@@ -160,6 +166,10 @@ body {
 
 .logo img {
   width: 250px;
+}
+
+main {
+  min-height: 100vh;
 }
 
 .my-jumbotron {
@@ -204,24 +214,25 @@ body {
   margin-bottom: 30px;
 }
 
-.white-sec h2 {
+h2 {
   font-size: 40px;
   text-align: center;
   font-weight: bold;
 }
-.white-sec .list-apartment {
+
+.list-apartment {
   padding: 20px;
 }
-.white-sec .list-apartment .title-page {
+.list-apartment .title-page {
   text-align: center;
 }
-.white-sec .list-apartment .card-container {
+.list-apartment .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
 }
-.white-sec .list-apartment .card-container .card {
+.list-apartment .card-container .card {
   position: relative;
   width: calc(( 100% / 3) - 30px );
   margin: 30px 0;
@@ -240,7 +251,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.white-sec .list-apartment .card-container .card .sponsorized-ap {
+.list-apartment .card-container .card .sponsorized-ap {
   position: absolute;
   top: 30px;
   right: -31px;
@@ -248,23 +259,23 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 0px 32px;
 }
-.white-sec .list-apartment .card-container .card .details {
+.list-apartment .card-container .card .details {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
 }
-.white-sec .list-apartment .card-container .card .details a {
+.list-apartment .card-container .card .details a {
   color: lightgray;
 }
-.white-sec .list-apartment .card-container .card .details a i {
+.list-apartment .card-container .card .details a i {
   font-size: 40px;
 }
-.white-sec .list-apartment .card-container .card .details a:hover {
+.list-apartment .card-container .card .details a:hover {
   color: white;
 }
-.white-sec .list-apartment .card-container .card .ap-stats {
+.list-apartment .card-container .card .ap-stats {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -275,10 +286,10 @@ body {
   font-size: 17px;
   width: 100%;
 }
-.white-sec .list-apartment .card-container .card .ap-stats span {
+.list-apartment .card-container .card .ap-stats span {
   margin: 10px;
 }
-.white-sec .list-apartment .card-container .card .scaling-block {
+.list-apartment .card-container .card .scaling-block {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 10px;
@@ -294,19 +305,23 @@ body {
   background-color: white;
   color: black;
 }
-.white-sec .list-apartment .card-container .card .scaling-block .modified {
+.list-apartment .card-container .card .scaling-block .modified {
   color: black;
   text-decoration: underline;
 }
+<<<<<<< HEAD
 .white-sec .list-apartment .card-container .card .scaling-block .blog-title h6 {
+=======
+.list-apartment .card-container .card .scaling-block .blog-title h5 {
+>>>>>>> 2c6871bc8b6ab8b0756f751f97e128d9b4ede7a0
   font-weight: bold;
 }
-.white-sec .list-apartment .card-container .card:hover {
+.list-apartment .card-container .card:hover {
   transform: scaleY(1);
   background-color: linear-gradient(to top, rgba(3, 3, 3, 0) 0, rgba(3, 3, 3, 0.85) 100%);
   z-index: 3;
 }
-.white-sec .list-apartment .card-container .card:hover .overlay {
+.list-apartment .card-container .card:hover .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -317,16 +332,16 @@ body {
   width: 100%;
   height: 100%;
 }
-.white-sec .list-apartment .card-container .card:hover:hover .scaling-block {
+.list-apartment .card-container .card:hover:hover .scaling-block {
   transform: scaleY(0);
 }
-.white-sec .list-apartment .card-container .card:hover .hidden {
+.list-apartment .card-container .card:hover .hidden {
   display: block;
 }
-.white-sec .list-apartment .card-container a {
+.list-apartment .card-container a {
   color: white;
 }
-.white-sec .list-apartment .card-container a i {
+.list-apartment .card-container a i {
   font-size: 40px;
 }
 
@@ -818,6 +833,7 @@ body {
 .show-container .container-fluid .show-title, .show-container .container-xl .show-title, .show-container .container-lg .show-title, .show-container .container-md .show-title, .show-container .container-sm .show-title {
   margin-bottom: 40px;
   text-align: center;
+  color: #57737A;
 }
 .show-container .container-fluid .show-title h1, .show-container .container-xl .show-title h1, .show-container .container-lg .show-title h1, .show-container .container-md .show-title h1, .show-container .container-sm .show-title h1 {
   word-break: break-all;
@@ -839,11 +855,14 @@ body {
 }
 .show-container .container-fluid .show-flex-container, .show-container .container-xl .show-flex-container, .show-container .container-lg .show-flex-container, .show-container .container-md .show-flex-container, .show-container .container-sm .show-flex-container {
   display: flex;
+  padding-bottom: 50px;
 }
 .show-container .container-fluid .show-flex-container .strong-text, .show-container .container-xl .show-flex-container .strong-text, .show-container .container-lg .show-flex-container .strong-text, .show-container .container-md .show-flex-container .strong-text, .show-container .container-sm .show-flex-container .strong-text {
+  color: #57737A;
   font-weight: bold;
 }
 .show-container .container-fluid .show-flex-container h3, .show-container .container-xl .show-flex-container h3, .show-container .container-lg .show-flex-container h3, .show-container .container-md .show-flex-container h3, .show-container .container-sm .show-flex-container h3 {
+  color: #57737A;
   margin-bottom: 15px;
   font-weight: 600;
 }
@@ -871,6 +890,9 @@ body {
   color: white;
   font-size: 16px;
   background-color: #0DCB92;
+}
+.show-container .container-fluid .calltoaction-link .btn i, .show-container .container-xl .calltoaction-link .btn i, .show-container .container-lg .calltoaction-link .btn i, .show-container .container-md .calltoaction-link .btn i, .show-container .container-sm .calltoaction-link .btn i {
+  padding-left: 4px;
 }
 .show-container .container-fluid .calltoaction-link .btn:hover, .show-container .container-xl .calltoaction-link .btn:hover, .show-container .container-lg .calltoaction-link .btn:hover, .show-container .container-md .calltoaction-link .btn:hover, .show-container .container-sm .calltoaction-link .btn:hover {
   background-color: #0fe3a3;
@@ -905,6 +927,7 @@ body {
 .message-admin-container {
   font-size: 16px;
   background-color: #f3ebe2;
+  height: 100vh;
   padding-top: 50px;
 }
 .message-admin-container .container-fluid .message-title, .message-admin-container .container-xl .message-title, .message-admin-container .container-lg .message-title, .message-admin-container .container-md .message-title, .message-admin-container .container-sm .message-title {
@@ -983,6 +1006,11 @@ body {
     padding-bottom: 30px;
   }
 }
+.sponsor-container {
+  min-height: 100vh;
+  background-color: #f3ebe2;
+}
+
 .bg-footer {
   background-color: #57737A;
   padding: 50px;

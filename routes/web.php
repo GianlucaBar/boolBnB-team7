@@ -45,7 +45,7 @@ Route::prefix('admin')
     Route::get('/payment/{id}/{thisApartmentId}', 'BraintreeController@index')->name('payment');
     Route::post('/checkout', 'BraintreeController@sale')->name('braintree-checkout');
     Route::get('/thankyou/{transactionId}', 'BraintreeController@success')->name('thankyou');
-
+    Route::get('/apartmentIds/{userId}', 'Api\StatsController@getApartments')->name('user-apartments');
     //message
     Route::get('/message/{id}', 'MessageController@show')->name('message');
 });

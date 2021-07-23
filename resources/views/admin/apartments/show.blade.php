@@ -27,7 +27,7 @@
         {{-- Call to Action Link --}}
         <div class="calltoaction-link ">
             <a class="btn" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
-                Modifica informazioni
+                Modifica informazioni <i class="fas fa-wrench"></i>
             </a>
         </div>
         
@@ -74,10 +74,16 @@
                         <span class="strong-text">Longitudine:</span> {{ $apartment->longitude }}
                     </li>
 
-                    <li>
-                        <span class="strong-text">Slug:</span> {{ $apartment->slug }}
-                    </li>
-                </ul>
+        @if ($apartment->visible == 1)
+        <li>
+            Visibile: Si
+        </li>
+        @else
+        <li>
+            Visibile: No
+        </li>
+        @endif
+    </ul>
 
                 {{-- Extras --}}
                 <div class="extras">
