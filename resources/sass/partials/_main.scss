@@ -829,6 +829,7 @@
 
 // MESSAGES ADMIN
 .message-admin-container {
+    font-size: 16px;
     background-color: $color-5;
     // width: 100%;
     // È brutto da vedere ma non avevo trovato altre soluzioni
@@ -836,14 +837,40 @@
 
     padding-top: 50px;
 
-    .container{
-        
-        h2, h4 {
+    .container-fluid{
+        // height: 100%;
+
+        .message-title {
+            text-align: center;
+
+            h2 {
+            display: inline-block;
             font-weight: bold;
+            margin-bottom: 30px;
+            }
+
+            i {
+                display: inline-block;
+                font-size: 30px;
+                padding-right: 5px;
+                vertical-align: text-bottom;
+            }
         }
+
+        .message-box {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid $color-3;
+            border-radius: 5px;
+            // box-shadow: 1px 1px 8px;
+            h4 {
+            font-weight: bold;
+            }
         
-        h4 {
-            margin-top: 30px;
+            // h4 {
+            //     margin-top: 30px;
+            // }
         }
     }
 }

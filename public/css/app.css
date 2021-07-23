@@ -826,15 +826,34 @@ body {
 }
 
 .message-admin-container {
+  font-size: 16px;
   background-color: #F6E8EA;
   height: calc(100vh - 9rem);
   padding-top: 50px;
 }
-.message-admin-container .container h2, .message-admin-container .container h4 {
-  font-weight: bold;
+.message-admin-container .container-fluid .message-title, .message-admin-container .container-xl .message-title, .message-admin-container .container-lg .message-title, .message-admin-container .container-md .message-title, .message-admin-container .container-sm .message-title {
+  text-align: center;
 }
-.message-admin-container .container h4 {
-  margin-top: 30px;
+.message-admin-container .container-fluid .message-title h2, .message-admin-container .container-xl .message-title h2, .message-admin-container .container-lg .message-title h2, .message-admin-container .container-md .message-title h2, .message-admin-container .container-sm .message-title h2 {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.message-admin-container .container-fluid .message-title i, .message-admin-container .container-xl .message-title i, .message-admin-container .container-lg .message-title i, .message-admin-container .container-md .message-title i, .message-admin-container .container-sm .message-title i {
+  display: inline-block;
+  font-size: 30px;
+  padding-right: 5px;
+  vertical-align: text-bottom;
+}
+.message-admin-container .container-fluid .message-box, .message-admin-container .container-xl .message-box, .message-admin-container .container-lg .message-box, .message-admin-container .container-md .message-box, .message-admin-container .container-sm .message-box {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #040F0F;
+  border-radius: 5px;
+}
+.message-admin-container .container-fluid .message-box h4, .message-admin-container .container-xl .message-box h4, .message-admin-container .container-lg .message-box h4, .message-admin-container .container-md .message-box h4, .message-admin-container .container-sm .message-box h4 {
+  font-weight: bold;
 }
 
 @media screen and (max-width: 767px) {
