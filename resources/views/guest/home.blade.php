@@ -134,13 +134,14 @@
         </div>
     </section>
 
-    <section class="white-sec">
+    <section class="white-sec" v-if="searchResult.length">
         <div class="container">
 
-                {{-- Apartment List --}}
-                <div class="list-apartment" v-if="searchResult.length">
+            {{-- Apartment List --}}
+            <div class="list-apartment">
+                <div v-if="!isFiltered">
                     <h2>I nostri appartamenti</h2>
-                    <div class="card-container" v-if="!isFiltered">  
+                    <div class="card-container">  
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in searchResult">
@@ -162,9 +163,11 @@
                             </div>
                         </div>
                     </div>
-
-                    
-                    <div class="card-container" v-else-if="filteredList.length">
+                </div>
+                
+                <div v-else-if="filteredList.length">
+                    <h2>I nostri appartamenti</h2>
+                    <div class="card-container">
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in filteredList">
@@ -185,38 +188,42 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-            
 
-            <div v-else>
-               <h2> Appartamenti in  Evidenza</h2>
-                {{-- TODO: aggiungere un qualcosa per identificare le card degli appartamenti sponsorizzati --}}
-                <div class="list-apartment">
-                    <div class="card-container"> 
-                        @foreach ($sponsored as $apartment) 
-                        <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
-                            <div class="sponsorized-ap">
-                                Sponsorizzato
-                            </div>
-                                <div class="details hidden centered">
-                                    <a href="{{route('ap-details', ['id' => $apartment->id])}}">
-                                        <i class="far fa-eye"></i> <br> Dettagli appartamento
-                                    </a>
-                                </div>
-        
-                                <div class="scaling-block">
-                                    <div class="blog-title">
-                                        <h4>{{$apartment->title}}</h4>
-        
-                                        <div>{{ $apartment->address }}</div>
-                                    </div>
-                                </div>
-                            
-                        
+                <div v-else>
+                    <h2>Nessun risultato :(</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="red-sec" v-else>
+        <div class="container">
+            <h2> Appartamenti in  Evidenza</h2>
+            <div class="list-apartment">
+                <div class="card-container"> 
+                    @foreach ($sponsored as $apartment) 
+                    <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
+                        <div class="sponsorized-ap">
+                            Sponsorizzato
                         </div>
-                        @endforeach
+
+                        <div class="details hidden centered">
+                            <a href="{{route('ap-details', ['id' => $apartment->id])}}">
+                                <i class="far fa-eye"></i> <br> Dettagli appartamento
+                            </a>
+                        </div>
+
+                        <div class="scaling-block">
+                            <div class="blog-title">
+                                <h4>{{$apartment->title}}</h4>
+
+                                <div>{{ $apartment->address }}</div>
+                            </div>
+                        </div>
+                        
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

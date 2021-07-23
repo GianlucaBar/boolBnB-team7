@@ -6,6 +6,7 @@ ul {
 
 body {
   height: 100%;
+  font-family: 'Rubik', sans-serif !important;
 }
 
 
@@ -158,13 +159,17 @@ h2 {
   .green-sec{
     background-color: $color-1;
     padding: 40px;
+  }
 
+  .red-sec{
+    background-color: $color-4;
+    padding: 40px;
   }
 
   .white-sec{
     padding: 40px;
     background-color: $color-5;
-    
   }
+
 
   
