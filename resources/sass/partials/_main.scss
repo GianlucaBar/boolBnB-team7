@@ -709,9 +709,9 @@
     background-color: $color-5;
     padding-bottom: 40px;
         
-        .container {
+        .container-fluid {
             padding-top: 50px;
-            font-size: 15px;
+            font-size: 16px;
             color: $color-3;
             // background-color: #34d95a;
 
@@ -773,6 +773,7 @@
 
                 .info-ul {
                     width: 40%;
+                    padding-left: 100px;
                 }
             }
 
@@ -815,6 +816,7 @@
                 .info-ul {
                     width: 100%;
                     text-align: center;
+                    padding-left: 0;
                 }
             }
 
