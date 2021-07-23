@@ -6,6 +6,7 @@
 
 @section('dashboard')
 <section class="info-user green-sec">
+    
     <div class="container">
         <div class="title centered mt-4 mb-4">
             <h2>Dashboard</h2>
@@ -45,12 +46,13 @@
 <section class="ap-users white-sec">
     <div class="container">
 
-        <div class="my-ap mt-4 mb-2">
+        <div class="my-ap mt-4 mb-2 centered">
             <h2>I Tuoi Appartamenti</h2>
+        </div>
 
-            {{-- Add new Apartment --}}
-            <a id="new-ap"  href="{{ route('admin.apartments.create') }}"> Aggiungi appartamento <i class="fas fa-home"></i> </a>
-
+        {{-- Add new Apartment --}}
+        <div class="new-ap centered ">
+            <a id="new-ap"  href="{{ route('admin.apartments.create') }}"><i class="fas fa-home"></i> Aggiungi appartamento </a>
         </div>
 
         <div class="dashboard-ap mt-4 mb-4">

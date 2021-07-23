@@ -144,7 +144,7 @@ body {
 }
 @supports (filter: url("#goo")) {
   .blob-btn:hover .blob-btn__blob {
-    transform: translateZ(0) scale(1.4);
+    transform: translateZ(0) scale(1.6);
   }
 }
 
@@ -169,7 +169,8 @@ body {
 }
 .my-jumbotron .overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
+  left: 0;
   background: black;
   background: rgba(0, 0, 0, 0.4);
   /* Black see-through */
@@ -235,7 +236,7 @@ body {
   transform-origin: top;
   border: none;
   -o-box-shadow: 11px 9px 31px 4px #424242;
-  box-shadow: 11px 9px 31px 4px #424242;
+  box-shadow: 1px 1px 12px 0px #424242;
   position: relative;
   overflow: hidden;
 }
@@ -290,6 +291,17 @@ body {
   transform: scaleY(1);
   background-color: linear-gradient(to top, rgba(3, 3, 3, 0) 0, rgba(3, 3, 3, 0.85) 100%);
   z-index: 3;
+}
+.white-sec .list-apartment .card-container .card:hover .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  height: 100%;
 }
 .white-sec .list-apartment .card-container .card:hover:hover .scaling-block {
   transform: scaleY(0);
@@ -524,12 +536,28 @@ body {
 
 .info-user {
   border-bottom: 3px solid #57737A;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 5%;
+  height: 500px;
+}
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
 .title h2 {
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
   font-weight: bold;
+  color: white;
 }
 
 .container-user {
@@ -546,10 +574,11 @@ body {
   width: 48%;
   border: 1px solid #57737A;
   padding: 20px 40px;
+  font-size: 17px;
   border-radius: 10px;
   background-color: #F6E8EA;
   -o-box-shadow: 11px 9px 31px 4px #424242;
-  box-shadow: 11px 9px 31px 4px #424242;
+  box-shadow: 1px 1px 12px 0px #424242;
   height: 300px;
 }
 .container-user .user-rep div {
@@ -562,7 +591,7 @@ body {
   width: 48%;
   background-color: #F6E8EA;
   -o-box-shadow: 11px 9px 31px 4px #424242;
-  box-shadow: 11px 9px 31px 4px #424242;
+  box-shadow: 1px 1px 12px 0px #424242;
   overflow-y: scroll;
   height: 300px;
 }
@@ -606,19 +635,46 @@ body {
 .container-user .msg-box ul li:hover {
   background-color: white;
   border-radius: 10px;
-  box-shadow: 4px 4px 17px 4px #424242;
+  box-shadow: 1px 1px 12px 0px #424242;
 }
 .container-user .my-ap {
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
-.container-user #new-ap {
-  color: #0DCB92;
+
+.new-ap {
+  text-align: right;
 }
-.container-user #new-ap i {
-  margin-left: 10px;
+.new-ap #new-ap {
+  display: grid;
+  text-align: center;
+  box-shadow: inset 0px 1px 0px 0px #09e6c1;
+  background: linear-gradient(to bottom, #02b89a 5%, #00dcb7 100%);
+  background-color: #02b89a;
+  border-radius: 6px;
+  border: 1px solid #00dcb7;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #787a74;
+}
+.new-ap #new-ap i {
+  display: block;
   font-size: 40px;
+}
+.new-ap #new-ap:hover {
+  background: linear-gradient(to bottom, #00dcb7 5%, #02b89a 100%);
+  background-color: #00dcb7;
+}
+.new-ap #new-ap:active {
+  position: relative;
+  top: 1px;
 }
 
 .ap-line {
@@ -627,7 +683,8 @@ body {
   display: flex;
   justify-content: space-between;
   -o-box-shadow: 11px 9px 31px 4px #424242;
-  box-shadow: 4px 4px 17px 4px #424242;
+  box-shadow: 1px 1px 5px 0px #424242;
+  background-color: #f8fafc;
 }
 .ap-line .btn-link {
   background-color: transparent;
