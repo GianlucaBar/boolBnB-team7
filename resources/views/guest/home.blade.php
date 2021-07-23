@@ -219,7 +219,7 @@
         </div>
     </section>
 
-    <section class="red-sec" v-else>
+    <section class="white-sec" v-else>
         <div class="container">
             <h2> Appartamenti in  Evidenza</h2>
             <div class="list-apartment">
@@ -236,37 +236,18 @@
                             </a>
                         </div>
 
+                        <div class="ap-stats hidden">
+                            <span>Stanze: {{$apartment->rooms}}</span>
+                            <span>Letti: {{$apartment->beds}}</span>
+                            <span>Bagni: {{$apartment->baths}}</span>
+                        </div>
+
                         <div class="scaling-block">
                             <div class="blog-title">
                                 <h4>{{$apartment->title}}</h4>
 
                                 <div>{{ $apartment->address }}</div>
                             </div>
-                                
-                                <div class="details hidden centered">
-                                    <a href="{{route('ap-details', ['id' => $apartment->id])}}">
-                                        <i class="far fa-eye"></i> <br> Dettagli appartamento
-                                    </a>
-                                </div>
-
-                                <div class="ap-stats hidden">
-                                    <span>Stanze: {{$apartment->rooms}}</span>
-                                    <span>Letti: {{$apartment->beds}}</span>
-                                    <span>Bagni: {{$apartment->baths}}</span>
-    
-    
-                                </div>
-                                
-        
-                                <div class="scaling-block">
-                                    <div class="blog-title">
-                                        <h6>{{$apartment->title}}</h6>
-        
-                                        <div>{{ $apartment->address }}</div>
-                                    </div>
-                                </div>
-                            
-                        
                         </div>
                         
                     </div>
