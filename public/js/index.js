@@ -18354,7 +18354,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\index.js */"./resources/js/index.js");
 
 
 /***/ })

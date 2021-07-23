@@ -1,11 +1,12 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
 @section('title')
     - Sponsorship 
 @endsection
 
-@section('content')
-    <div class="container">
+@section('sponsorship')
+<div class="sponsor-container">
+    <div class="container-fluid">
         @foreach ($sponsorships as $sponsorship)
             <a href="{{route('admin.payment', [
                 'id' => $sponsorship->id,
@@ -16,4 +17,5 @@
             </a>
         @endforeach
     </div>
+</div>
 @endsection

@@ -113,6 +113,7 @@
             @yield('dashboard')
             @yield('show')
             @yield('message-box')
+            @yield('sponsorship')
             @yield('braintree-content')
         </main>
     </div>
