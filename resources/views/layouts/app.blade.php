@@ -115,5 +115,88 @@
 
     {{-- Footer Script --}}
     @yield('footer-scripts')
+
+    <footer class="bg-footer">
+        <div class="container-fluid" >
+
+            <div class="footer-flex">
+                <div class="logo-small">
+                    <img src="{{ asset('img/logo-small-grey.png') }}" alt="">
+                </div>
+    
+                <a class="github-logo" href="https://github.com/GianlucaBar/boolBnB-team7">
+                    <i class="fab fa-github-square"></i>
+                </a>
+    
+                <ul class="social">
+                    <li>
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    </li>
+    
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+    
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </li>
+    
+                    <li>
+                        <a href="#"><i class="fab fa-youtube-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="copyright centered">
+                <ul>
+                    <li class="dev-block">
+                        <span class="dev-name">Alessandro Baccelli</span>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                                <a href="#"><i class="fab fa-github-square"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dev-block">
+                        <span class="dev-name">Gianluca Barcè</span>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                                <a href="#"><i class="fab fa-github-square"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dev-block">
+                        <span class="dev-name">Manuel Bonini</span>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                                <a href="#"><i class="fab fa-github-square"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dev-block">
+                        <span class="dev-name">Maurizio Piacenza</span>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+                                <a href="#"><i class="fab fa-github-square"></i></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>

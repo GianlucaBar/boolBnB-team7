@@ -770,9 +770,9 @@
     background-color: $color-5;
     padding-bottom: 40px;
         
-        .container {
+        .container-fluid {
             padding-top: 50px;
-            font-size: 15px;
+            font-size: 16px;
             color: $color-3;
             // background-color: #34d95a;
 
@@ -834,6 +834,7 @@
 
                 .info-ul {
                     width: 40%;
+                    padding-left: 100px;
                 }
             }
 
@@ -876,6 +877,7 @@
                 .info-ul {
                     width: 100%;
                     text-align: center;
+                    padding-left: 0;
                 }
             }
 
@@ -887,22 +889,59 @@
 }
 
 // MESSAGES ADMIN
-.message-container {
+.message-admin-container {
+    font-size: 16px;
     background-color: $color-5;
     // width: 100%;
     // È brutto da vedere ma non avevo trovato altre soluzioni
-    
+    // height: calc(100vh - 9rem);
+    // height: 100%;
 
     padding-top: 50px;
 
-    .container{
-        
-        h2, h4 {
-            font-weight: bold;
+    .container-fluid{
+        // height: 100%;
+
+        .message-title {
+            margin: auto;
+            text-align: center;
+            max-width: max-content;
+            background-color: white;
+            padding: 20px;
+            border: 2px solid $color-2;
+            border-radius: 9999px;
+            margin-bottom: 30px;
+
+            h2 {
+                display: inline-block;
+                font-weight: bold;
+                color: $color-2;
+            }
+
+            i {
+                color: $color-1;
+                display: inline-block;
+                font-size: 30px;
+                padding-right: 5px;
+                vertical-align: text-bottom;
+            }
         }
+
+        .message-box {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid $color-2;
+            border-radius: 5px;
+            // box-shadow: 1px 1px 8px;
+            h4 {
+            color: $color-2;
+            font-weight: bold;
+            }
         
-        h4 {
-            margin-top: 30px;
+            // h4 {
+            //     margin-top: 30px;
+            // }
         }
     }
 }
@@ -919,3 +958,43 @@
     }
     }
 }
+
+// BrainTree Form
+    .braintree-form-container {
+
+        .container-fluid {
+            max-width: 75%;
+
+            h1 {
+                padding-top: 30px;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            label {
+                font-weight: bold;
+            }
+        
+            button {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    
+    .spacer {
+        margin-bottom: 0;
+    }
+
+    #card-number, #cvv, #expiration-date {
+        background: white;
+        height: 38px;
+        border: 1px solid #CED4DA;
+        padding: .375rem .75rem;
+        border-radius: .25rem;
+    }
+
+    @media screen and (max-width: 767px) {
+        h1 {
+            padding-bottom: 30px;
+        }
+    }

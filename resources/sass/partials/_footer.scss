@@ -1,0 +1,65 @@
+.bg-footer{
+    background-color: $color-2;
+    padding: 50px;
+}
+
+.footer-flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-small{
+    width: 100px;
+    img{
+        width: 100px;
+    }
+    justify-self: flex-start;
+
+    width: 30%;
+}
+
+.github-logo{
+    i{
+        font-size:  100px;
+        color: rgb(37, 37, 37);
+    }
+    justify-self: center;
+    text-align: center;
+    width: 30%;
+}
+
+.social{
+    li{
+        display: inline-block;
+        margin-left: 30px;
+        a{
+            color: rgb(37, 37, 37);
+            font-size: 40px;
+        }
+    }
+
+    justify-self: flex-end;
+    width: 30%;
+    text-align: right;
+}
+
+.copyright{
+    margin-top: 50px;
+    .dev-block{
+        display: inline-block;
+        
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    i{
+        color: rgb(37, 37, 37);
+        font-size: 30px;
+    }
+}
+
+.dev-name{
+    font-weight: bold;
+    font-size: 20px;
+    color: $color-1;
+}

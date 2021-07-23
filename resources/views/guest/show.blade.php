@@ -11,7 +11,7 @@
 
 @section('show')
 <div class="show-container">
-    <div class="container">
+    <div class="container-fluid">
 
         {{-- Title --}}
         <div class="show-title">
@@ -48,7 +48,7 @@
 
             {{-- Other info --}}
             <div class="info-ul">
-                <h3>Altre info</h3>
+                <h3>Informazioni</h3>
                 <ul>
                     <li>
                         <span class="strong-text">Camere:</span> {{ $apartment->rooms }}
