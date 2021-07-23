@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('header-scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+@endsection
+
 @section('title')
     - La tua dashboard
 @endsection
@@ -91,6 +96,28 @@
     </div>
 </section>
 
+        {{-- Messages --}}
+        <section class="msg-box">
+            @foreach ($messagesArray as $messages)
+                @foreach ($messages as $message)
+                <div>{{ $message->sender_email }} - {{ $message->msg_subject }}</div>
+                <a class="btn btn-primary" href="{{ route('admin.message', ['id' => $message->id]) }}"></a>
+                @endforeach
+            @endforeach
+        </section>
+
+        {{-- statistic  --}}
+        <section class="stats">
+            <canvas id="chart" height="400" width="600"></canvas>
+        </section>
+        <input type="hidden" value="{{ $apartments }}" v-model="apartments">
+    </div>
+</div>
     
 </div>
+
+@endsection
+
+@section('footer-scripts')
+    <script src="{{ asset('js/charts.js') }}"></script>
 @endsection

@@ -23,6 +23,8 @@
         "vue-template-compiler": "^2.6.14"
     },
     "dependencies": {
-        "cors": "^2.8.5"
+        "chart.js": "^3.4.1",
+        "cors": "^2.8.5",
+        "vue-chartjs": "^3.5.1"
     }
 }

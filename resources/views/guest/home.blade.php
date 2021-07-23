@@ -6,8 +6,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <script src="https://unpkg.com/vue"></script>
-<script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
-<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="//unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
 @endsection
 
 
@@ -237,11 +237,10 @@
             </div>
         </div>
     </section>
-        
-       
+    
 </div>
 @endsection
 
-@section('header-scripts')
+@section('footer-scripts')
     <script src="{{ asset('js/index.js') }}"></script>
 @endsection

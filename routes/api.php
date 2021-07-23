@@ -13,3 +13,16 @@ Route::get('/', 'Api\SearchController@index')->name('api.search');
 
 // Extras API
 Route::get('/extras', 'Api\ExtrasController@index')->name('api.extras');
+
+//Views API
+// Route::middleware(['auth:api'])->group(function () {
+
+//     Route::get('/apartmentIds/{userId}', 'Api\StatsController@getApartments')->name('user-apartments');
+//     Route::get('/stats/{apartmentId}', 'Api\StatsController@getStats')->name('stats');
+
+// });
+
+Route::get('/apartmentIds/{userId}', 'Api\StatsController@getApartments')->name('user-apartments');
+Route::get('/stats/{apartmentId}', 'Api\StatsController@getStats')->name('stats');
+
+
