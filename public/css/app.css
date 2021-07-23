@@ -6,6 +6,7 @@ ul {
 
 body {
   height: 100%;
+  font-family: "Rubik", sans-serif !important;
 }
 
 .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
@@ -153,9 +154,18 @@ body {
   padding: 40px;
 }
 
+.red-sec {
+  background-color: #DB2B39;
+  padding: 40px;
+}
+
 .white-sec {
   padding: 40px;
-  background-color: #F6E8EA;
+<<<<<<< HEAD
+  background-color: #f8f8f7;
+=======
+  background-color: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
 }
 
 .logo img {
@@ -204,24 +214,25 @@ body {
   margin-bottom: 30px;
 }
 
-.white-sec h2 {
+h2 {
   font-size: 40px;
   text-align: center;
   font-weight: bold;
 }
-.white-sec .list-apartment {
+
+.list-apartment {
   padding: 20px;
 }
-.white-sec .list-apartment .title-page {
+.list-apartment .title-page {
   text-align: center;
 }
-.white-sec .list-apartment .card-container {
+.list-apartment .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
 }
-.white-sec .list-apartment .card-container .card {
+.list-apartment .card-container .card {
   position: relative;
   width: calc(( 100% / 3) - 30px );
   margin: 30px 0;
@@ -240,7 +251,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.white-sec .list-apartment .card-container .card .sponsorized-ap {
+.list-apartment .card-container .card .sponsorized-ap {
   position: absolute;
   top: 30px;
   right: -31px;
@@ -248,23 +259,41 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 0px 32px;
 }
-.white-sec .list-apartment .card-container .card .details {
+.list-apartment .card-container .card .details {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
 }
-.white-sec .list-apartment .card-container .card .details a {
+.list-apartment .card-container .card .details a {
   color: lightgray;
 }
-.white-sec .list-apartment .card-container .card .details a i {
+.list-apartment .card-container .card .details a i {
   font-size: 40px;
 }
-.white-sec .list-apartment .card-container .card .details a:hover {
+.list-apartment .card-container .card .details a:hover {
   color: white;
 }
+<<<<<<< HEAD
+.list-apartment .card-container .card .scaling-block {
+=======
+.white-sec .list-apartment .card-container .card .ap-stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  width: 100%;
+}
+.white-sec .list-apartment .card-container .card .ap-stats span {
+  margin: 10px;
+}
 .white-sec .list-apartment .card-container .card .scaling-block {
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 10px;
@@ -277,22 +306,26 @@ body {
   transform-origin: bottom;
   transform: scaleY(1);
   transition: 0.1s linear;
-  background-color: #F6E8EA;
+<<<<<<< HEAD
+  background-color: #f8f8f7;
+=======
+  background-color: white;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   color: black;
 }
-.white-sec .list-apartment .card-container .card .scaling-block .modified {
+.list-apartment .card-container .card .scaling-block .modified {
   color: black;
   text-decoration: underline;
 }
-.white-sec .list-apartment .card-container .card .scaling-block .blog-title h5 {
+.list-apartment .card-container .card .scaling-block .blog-title h5 {
   font-weight: bold;
 }
-.white-sec .list-apartment .card-container .card:hover {
+.list-apartment .card-container .card:hover {
   transform: scaleY(1);
   background-color: linear-gradient(to top, rgba(3, 3, 3, 0) 0, rgba(3, 3, 3, 0.85) 100%);
   z-index: 3;
 }
-.white-sec .list-apartment .card-container .card:hover .overlay {
+.list-apartment .card-container .card:hover .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -303,16 +336,16 @@ body {
   width: 100%;
   height: 100%;
 }
-.white-sec .list-apartment .card-container .card:hover:hover .scaling-block {
+.list-apartment .card-container .card:hover:hover .scaling-block {
   transform: scaleY(0);
 }
-.white-sec .list-apartment .card-container .card:hover .hidden {
+.list-apartment .card-container .card:hover .hidden {
   display: block;
 }
-.white-sec .list-apartment .card-container a {
+.list-apartment .card-container a {
   color: white;
 }
-.white-sec .list-apartment .card-container a i {
+.list-apartment .card-container a i {
   font-size: 40px;
 }
 
@@ -410,7 +443,11 @@ body {
 }
 .filters .meno,
 .filters .più {
-  color: #F6E8EA;
+<<<<<<< HEAD
+  color: #f8f8f7;
+=======
+  color: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   font-size: 35px;
   cursor: pointer;
 }
@@ -450,7 +487,11 @@ body {
 }
 .filter-check body {
   color: #57737A;
-  background: #F6E8EA;
+<<<<<<< HEAD
+  background: #f8f8f7;
+=======
+  background: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   font: 1.4em/1 "Noto Sans", sans-serif;
 }
 .filter-check .container-check {
@@ -472,7 +513,11 @@ body {
   border: 3px solid #57737A;
   border-radius: 100px;
   color: #57737A;
-  background-color: #F6E8EA;
+<<<<<<< HEAD
+  background-color: #f8f8f7;
+=======
+  background-color: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   cursor: pointer;
@@ -501,10 +546,17 @@ body {
   width: 100%;
 }
 .filter-check input:checked + label {
-  background-color: #F6E8EA;
+<<<<<<< HEAD
+  background-color: #f8f8f7;
 }
 .filter-check input:checked + label::before {
-  background-color: #F6E8EA;
+  background-color: #f8f8f7;
+=======
+  background-color: #f3ebe2;
+}
+.filter-check input:checked + label::before {
+  background-color: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
 }
 
 .filter-btn {
@@ -565,6 +617,8 @@ body {
   justify-content: space-between;
 }
 .container-user h2 {
+  display: flex;
+  justify-content: space-between;
   border-bottom: 2px solid #57737A;
   padding: 5px 10px;
   color: #57737A;
@@ -576,7 +630,11 @@ body {
   padding: 20px 40px;
   font-size: 17px;
   border-radius: 10px;
-  background-color: #F6E8EA;
+<<<<<<< HEAD
+  background-color: #f8f8f7;
+=======
+  background-color: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   -o-box-shadow: 11px 9px 31px 4px #424242;
   box-shadow: 1px 1px 12px 0px #424242;
   height: 300px;
@@ -589,7 +647,11 @@ body {
   border-radius: 10px;
   padding: 20px 25px;
   width: 48%;
-  background-color: #F6E8EA;
+<<<<<<< HEAD
+  background-color: #f8f8f7;
+=======
+  background-color: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   -o-box-shadow: 11px 9px 31px 4px #424242;
   box-shadow: 1px 1px 12px 0px #424242;
   overflow-y: scroll;
@@ -618,7 +680,7 @@ body {
   border-radius: 30px;
   display: inline-block;
   cursor: pointer;
-  color: #57737A;
+  color: #f8fafc;
   font-family: Arial;
   font-size: 15px;
   padding: 3px 12px;
@@ -626,7 +688,7 @@ body {
 }
 .container-user .msg-box ul li .read-btn:hover {
   background-color: #14dea1;
-  color: white;
+  color: #57737A;
 }
 .container-user .msg-box ul li .read-btn:active {
   position: relative;
@@ -651,7 +713,7 @@ body {
   text-align: center;
   box-shadow: inset 0px 1px 0px 0px #09e6c1;
   background: linear-gradient(to bottom, #02b89a 5%, #00dcb7 100%);
-  background-color: #02b89a;
+  background-color: #0DCB92;
   border-radius: 6px;
   border: 1px solid #00dcb7;
   display: inline-block;
@@ -791,7 +853,11 @@ body {
 }
 
 .show-container {
-  background-color: #F6E8EA;
+<<<<<<< HEAD
+  background-color: #f8f8f7;
+=======
+  background-color: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   padding-bottom: 40px;
 }
 .show-container .container-fluid, .show-container .container-xl, .show-container .container-lg, .show-container .container-md, .show-container .container-sm {
@@ -892,7 +958,11 @@ body {
 
 .message-admin-container {
   font-size: 16px;
-  background-color: #F6E8EA;
+<<<<<<< HEAD
+  background-color: #f8f8f7;
+=======
+  background-color: #f3ebe2;
+>>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   padding-top: 50px;
 }
 .message-admin-container .container-fluid .message-title, .message-admin-container .container-xl .message-title, .message-admin-container .container-lg .message-title, .message-admin-container .container-md .message-title, .message-admin-container .container-sm .message-title {
