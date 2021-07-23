@@ -165,7 +165,9 @@
                                     <div class="blog-title">
                                         <h6>@{{ap.title}}</h6>
         
-                                        <div>@{{ ap.address }}</div>
+                                        <div>
+                                            <p>@{{ ap.address }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -177,21 +179,32 @@
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in filteredList">
-                            <div>
-                                <div class="details hidden centered">
-                                    <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
-                                        <i class="far fa-eye"></i> <br> Dettagli appartamento
-                                    </a>
-                                </div>
-        
-                                <div class="scaling-block">
-                                    <div class="blog-title">
-                                        <h5>@{{ap.title}}</h5>
-        
-                                        <div>@{{ ap.address }}</div>
+                        <div>
+                            <div class="details hidden centered">
+                                <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
+                                    <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                </a>
+                            
+                            </div>
+
+                            <div class="ap-stats hidden">
+                                <span>Stanze: @{{ap.rooms}}</span>
+                                <span>Letti: @{{ap.beds}}</span>
+                                <span>Bagni: @{{ap.baths}}</span>
+
+
+                            </div>
+    
+                            <div class="scaling-block">
+                                <div class="blog-title">
+                                    <h6>@{{ap.title}}</h6>
+    
+                                    <div>
+                                        <p>@{{ ap.address }}</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
 
@@ -208,15 +221,25 @@
                             <div class="sponsorized-ap">
                                 Sponsorizzato
                             </div>
+                                
                                 <div class="details hidden centered">
                                     <a href="{{route('ap-details', ['id' => $apartment->id])}}">
                                         <i class="far fa-eye"></i> <br> Dettagli appartamento
                                     </a>
                                 </div>
+
+                                <div class="ap-stats hidden">
+                                    <span>Stanze: {{$apartment->rooms}}</span>
+                                    <span>Letti: {{$apartment->beds}}</span>
+                                    <span>Bagni: {{$apartment->baths}}</span>
+    
+    
+                                </div>
+                                
         
                                 <div class="scaling-block">
                                     <div class="blog-title">
-                                        <h4>{{$apartment->title}}</h4>
+                                        <h6>{{$apartment->title}}</h6>
         
                                         <div>{{ $apartment->address }}</div>
                                     </div>
