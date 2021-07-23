@@ -5,7 +5,7 @@ ul {
 }
 
 .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
-  max-width: 90%;
+  max-width: 80%;
 }
 
 .hidden {
@@ -845,6 +845,69 @@ body {
     text-align: center;
   }
 }
+.bg-footer {
+  background-color: #57737A;
+  padding: 50px;
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo-small {
+  width: 100px;
+  justify-self: flex-start;
+  width: 30%;
+}
+.logo-small img {
+  width: 100px;
+}
+
+.github-logo {
+  justify-self: center;
+  text-align: center;
+  width: 30%;
+}
+.github-logo i {
+  font-size: 100px;
+  color: #252525;
+}
+
+.social {
+  justify-self: flex-end;
+  width: 30%;
+  text-align: right;
+}
+.social li {
+  display: inline-block;
+  margin-left: 30px;
+}
+.social li a {
+  color: #252525;
+  font-size: 40px;
+}
+
+.copyright {
+  margin-top: 50px;
+}
+.copyright .dev-block {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.copyright i {
+  color: #252525;
+  font-size: 30px;
+}
+
+.dev-name {
+  font-weight: bold;
+  font-size: 20px;
+  color: #0DCB92;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
