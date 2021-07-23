@@ -1,0 +1,48 @@
+.sponsorship-title{
+    text-align: left;
+}
+
+.sp-section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sponsor-buttons{
+    li{
+       padding-top: 40px;
+    }
+}
+.btn-sponsorship{
+    width: 100px;
+    padding: 15px;
+    border-radius: 50px;
+    color: white;
+}
+
+#base{
+    background:linear-gradient(to bottom, #c6d1c9 5%, #525451 100%);
+}
+
+#medium{
+    background:linear-gradient(to bottom, #FCF6BA 5%, #BF953F 50%);
+    
+}
+
+#premium{
+    background:linear-gradient(to bottom, #585858 5%, #181818 50%);
+}
+
+.sp-price{
+    margin-left: 20px;
+    font-size: large;
+}
+
+.sp-choose{
+    flex-basis: 40%;
+}
+
+.sp-description{
+    flex-basis: 40%;
+}

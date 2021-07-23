@@ -18,7 +18,6 @@ class CreateApartmentSponsorshipTable extends Migration
             $table->foreign('apartment_id')->references('id')->on('apartments');
             $table->unsignedBigInteger('sponsorship_id');
             $table->foreign('sponsorship_id')->references('id')->on('sponsorships');
-
             $table->string('start_date', 20);
             $table->string('end_date', 20);
             $table->boolean('payment_status')->default(0);
