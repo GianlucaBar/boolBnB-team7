@@ -4,7 +4,7 @@
         - pagamento
     @endsection
 
-    @section('styles')
+    {{-- @section('styles')
         <!-- Additional Styles -->
         <style>
             body {
@@ -21,12 +21,12 @@
                 border-radius: .25rem;
             }
         </style>
-    @endsection
+    @endsection --}}
  
     @section('braintree-content')
-        <div class="container">
-            <div class="col-md-6 offset-md-3">
-                <h1>Payment Form</h1>
+        <div class="braintree-form-container">
+            <div class="container-fluid">
+                <h1>Pagamento</h1>
                 <div class="spacer"></div>
  
                 @if (session()->has('success_message'))
@@ -55,33 +55,33 @@
                     <input type="hidden" id="thisApartmentId" name="thisApartmentId" value="{{ $thisApartmentId }}">
 
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" value="{{$email}}" name="email" required>
                     </div>
  
                     <div class="form-group">
-                        <label for="name_on_card">Name on Card</label>
+                        <label for="name_on_card">Nome sulla carta</label>
                         <input type="text" class="form-control" id="name_on_card" name="name_on_card" required>
                     </div>
  
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="address">Address</label>
+                                <label for="address">Indirizzo</label>
                                 <input type="text" class="form-control" id="address" name="address" required>
                             </div>
                         </div>
  
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="city">City</label>
+                                <label for="city">Città</label>
                                 <input type="text" class="form-control" id="city" name="city" required>
                             </div>
                         </div>
  
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="province">Province</label>
+                                <label for="province">Provincia</label>
                                 <input type="text" class="form-control" id="province" name="province" required>
                             </div>
                         </div>
@@ -91,21 +91,21 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="postalcode">Postal Code</label>
+                                <label for="postalcode">Codice postale</label>
                                 <input type="text" class="form-control" id="postalcode" name="postalcode" required>
                             </div>
                         </div>
  
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="country">Country</label>
+                                <label for="country">Paese</label>
                                 <input type="text" class="form-control" id="country" name="country" required>
                             </div>
                         </div>
  
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="phone">Phone</label>
+                                <label for="phone">Telefono</label>
                                 <input type="text" class="form-control" id="phone" name="phone" required>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="amount">Amount</label>
+                                <label for="amount">Prezzo</label>
                                 <input type="text" class="form-control" id="amount" name="amount" value="{{$sponsorship->price}}" readonly>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
  
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="cc_number">Credit Card Number</label>
+                            <label for="cc_number">Numero carta di credito</label>
  
                             <div class="form-group" id="card-number">
  
@@ -155,7 +155,7 @@
                         </div>
  
                         <div class="col-md-3">
-                            <label for="expiry">Expiry</label>
+                            <label for="expiry">Scadenza</label>
  
                             <div class="form-group" id="expiration-date">
  
@@ -179,7 +179,7 @@
                     <div class="spacer"></div>
  
                     <input id="nonce" name="payment_method_nonce" type="hidden" />
-                    <button type="submit" class="btn btn-success">Submit Payment</button>
+                    <button type="submit" class="btn btn-success">Invia pagamento</button>
                 </form>
                 {{-- End Payment Form --}}
             </div>
