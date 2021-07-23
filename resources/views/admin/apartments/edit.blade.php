@@ -168,6 +168,14 @@
             
         </div>
         
+        <div class="form-group">
+            <label for="visible">Visibile tramite ricerca:</label>
+
+            <select name="visible" id="visible">
+                <option value="1" {{ old('visible', $apartment->visible) == 1 ? 'selected' : '' }}>Visibile</option>
+                <option value="0" {{ old('visible', $apartment->visible) == 0 ? 'selected' : '' }}>Nascosto</option>
+            </select>
+        </div>
         {{-- Non ho aggiunto l'opzione per il visible, io immagino sia un button con una funzione collegata,
             ma così ad occhio e croce non saprei come implementarla, c'è un attimo da ragionarci, magari una
             checkbox con un if-else--}}

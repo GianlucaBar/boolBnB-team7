@@ -128,6 +128,7 @@ var app = new Vue(
             },
             
         },
+
         mounted() { 
             // call to get extras  
             this.getExtras()

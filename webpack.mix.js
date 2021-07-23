@@ -18,3 +18,5 @@ mix.js('resources/js/app.js', 'public/js')
         processCssUrls: false
     });
 
+mix.js('resources/js/index.js', 'public/js');
+mix.js('resources/js/charts.js', 'public/js');

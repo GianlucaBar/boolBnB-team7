@@ -4,6 +4,15 @@ ul {
     padding: 0;
 }
 
+body {
+  height: 100%;
+  font-family: 'Rubik', sans-serif !important;
+}
+
+
+.container-fluid {
+  max-width: 80%;
+}
 
 .hidden{
     display:none;
@@ -139,7 +148,7 @@ h2 {
         transform: translateZ(0) scale(2);
         
         @supports(filter: url('#goo')) {
-          transform: translateZ(0) scale(1.4);
+          transform: translateZ(0) scale(1.6);
         }
       }
     }
@@ -150,13 +159,17 @@ h2 {
   .green-sec{
     background-color: $color-1;
     padding: 40px;
+  }
 
+  .red-sec{
+    background-color: $color-4;
+    padding: 40px;
   }
 
   .white-sec{
     padding: 40px;
     background-color: $color-5;
-    
   }
+
 
   
