@@ -161,11 +161,7 @@ body {
 
 .white-sec {
   padding: 40px;
-<<<<<<< HEAD
-  background-color: #f8f8f7;
-=======
   background-color: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
 }
 
 .logo img {
@@ -275,10 +271,7 @@ h2 {
 .list-apartment .card-container .card .details a:hover {
   color: white;
 }
-<<<<<<< HEAD
-.list-apartment .card-container .card .scaling-block {
-=======
-.white-sec .list-apartment .card-container .card .ap-stats {
+.list-apartment .card-container .card .ap-stats {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -289,11 +282,10 @@ h2 {
   font-size: 17px;
   width: 100%;
 }
-.white-sec .list-apartment .card-container .card .ap-stats span {
+.list-apartment .card-container .card .ap-stats span {
   margin: 10px;
 }
-.white-sec .list-apartment .card-container .card .scaling-block {
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
+.list-apartment .card-container .card .scaling-block {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   padding: 10px;
@@ -306,11 +298,7 @@ h2 {
   transform-origin: bottom;
   transform: scaleY(1);
   transition: 0.1s linear;
-<<<<<<< HEAD
-  background-color: #f8f8f7;
-=======
   background-color: white;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   color: black;
 }
 .list-apartment .card-container .card .scaling-block .modified {
@@ -443,11 +431,7 @@ h2 {
 }
 .filters .meno,
 .filters .più {
-<<<<<<< HEAD
-  color: #f8f8f7;
-=======
   color: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   font-size: 35px;
   cursor: pointer;
 }
@@ -487,11 +471,7 @@ h2 {
 }
 .filter-check body {
   color: #57737A;
-<<<<<<< HEAD
-  background: #f8f8f7;
-=======
   background: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   font: 1.4em/1 "Noto Sans", sans-serif;
 }
 .filter-check .container-check {
@@ -513,11 +493,7 @@ h2 {
   border: 3px solid #57737A;
   border-radius: 100px;
   color: #57737A;
-<<<<<<< HEAD
-  background-color: #f8f8f7;
-=======
   background-color: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   cursor: pointer;
@@ -546,17 +522,10 @@ h2 {
   width: 100%;
 }
 .filter-check input:checked + label {
-<<<<<<< HEAD
-  background-color: #f8f8f7;
-}
-.filter-check input:checked + label::before {
-  background-color: #f8f8f7;
-=======
   background-color: #f3ebe2;
 }
 .filter-check input:checked + label::before {
   background-color: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
 }
 
 .filter-btn {
@@ -630,11 +599,7 @@ h2 {
   padding: 20px 40px;
   font-size: 17px;
   border-radius: 10px;
-<<<<<<< HEAD
-  background-color: #f8f8f7;
-=======
   background-color: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   -o-box-shadow: 11px 9px 31px 4px #424242;
   box-shadow: 1px 1px 12px 0px #424242;
   height: 300px;
@@ -647,11 +612,7 @@ h2 {
   border-radius: 10px;
   padding: 20px 25px;
   width: 48%;
-<<<<<<< HEAD
-  background-color: #f8f8f7;
-=======
   background-color: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   -o-box-shadow: 11px 9px 31px 4px #424242;
   box-shadow: 1px 1px 12px 0px #424242;
   overflow-y: scroll;
@@ -853,11 +814,7 @@ h2 {
 }
 
 .show-container {
-<<<<<<< HEAD
-  background-color: #f8f8f7;
-=======
   background-color: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   padding-bottom: 40px;
 }
 .show-container .container-fluid, .show-container .container-xl, .show-container .container-lg, .show-container .container-md, .show-container .container-sm {
@@ -958,11 +915,7 @@ h2 {
 
 .message-admin-container {
   font-size: 16px;
-<<<<<<< HEAD
-  background-color: #f8f8f7;
-=======
   background-color: #f3ebe2;
->>>>>>> 6e1098ca7679abada557e07ef66065d76726ca41
   padding-top: 50px;
 }
 .message-admin-container .container-fluid .message-title, .message-admin-container .container-xl .message-title, .message-admin-container .container-lg .message-title, .message-admin-container .container-md .message-title, .message-admin-container .container-sm .message-title {

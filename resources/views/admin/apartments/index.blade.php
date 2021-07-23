@@ -48,6 +48,7 @@
         </div>
     </div>
 </section>
+
 <section class="ap-users white-sec">
     <div class="container">
 
@@ -96,25 +97,11 @@
     </div>
 </section>
 
-        {{-- Messages --}}
-        <section class="msg-box">
-            @foreach ($messagesArray as $messages)
-                @foreach ($messages as $message)
-                <div>{{ $message->sender_email }} - {{ $message->msg_subject }}</div>
-                <a class="btn btn-primary" href="{{ route('admin.message', ['id' => $message->id]) }}"></a>
-                @endforeach
-            @endforeach
-        </section>
-
-        {{-- statistic  --}}
-        <section class="stats">
-            <canvas id="chart" height="400" width="600"></canvas>
-        </section>
-        <input type="hidden" value="{{ $apartments }}" v-model="apartments">
-    </div>
-</div>
-    
-</div>
+    {{-- statistic 
+    <section class="stats">
+        <canvas id="chart" height="400" width="600"></canvas>
+    </section>
+    <input type="hidden" value="{{ $apartments }}" v-model="apartments"> --}}
 
 @endsection
 
