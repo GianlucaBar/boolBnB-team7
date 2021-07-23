@@ -112,30 +112,42 @@ h2 {
                     }
                 }
 
-                a:hover{
-                    color:white;
+                    a:hover{
+                        color:white;
+                    }
+                }
+                .ap-stats{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: rgba(0, 0, 0, 0.4);
+                    padding: 5px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    font-size: 17px;
+                    width: 100%;
+
+                    span{
+                        margin:10px;
+                    }
                 }
 
 
-            }
-
-
-
-            .scaling-block{
-                border-bottom-left-radius:10px;
-                border-bottom-right-radius:10px;
-                padding: 10px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: calc(100% + 1px);
-                height: 100px;
-                text-align: center;
-                transform-origin: bottom;
-                transform: scaleY(1);
-                transition: .1s linear;
-                background-color:$color-5;
-                color: black;
+                .scaling-block{
+                    border-bottom-left-radius:10px;
+                    border-bottom-right-radius:10px;
+                    padding: 10px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: calc(100% + 1px);
+                    height: 100px;
+                    text-align: center;
+                    transform-origin: bottom;
+                    transform: scaleY(1);
+                    transition: .1s linear;
+                    background-color:white;
+                    color: black;
 
 
                 .modified{
@@ -489,6 +501,8 @@ h2 {
     justify-content: space-between;
 
         h2{
+            display: flex;
+            justify-content: space-between;
             border-bottom: 2px solid $color-2;
             padding: 5px 10px;
             color: $color-2;
@@ -560,7 +574,7 @@ h2 {
                     border-radius: 30px;
                     display: inline-block;
                     cursor: pointer;
-                    color: $color-2;
+                    color: $body-bg;
                     font-family: Arial;
                     font-size: 15px;
                     padding: 3px 12px;
@@ -568,7 +582,7 @@ h2 {
                 }
                 .read-btn:hover {
                     background-color:#14dea1;
-                    color: white;
+                    color: $color-2;
                 }
                 .read-btn:active {
                     position:relative;
@@ -604,7 +618,7 @@ h2 {
 
         box-shadow:inset 0px 1px 0px 0px #09e6c1;
         background:linear-gradient(to bottom, #02b89a 5%, #00dcb7 100%);
-        background-color:#02b89a;
+        background-color:$color-1;
         border-radius:6px;
         border:1px solid #00dcb7;
         display:inline-block;
