@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <h1>Modifica post: {{ $apartment->title }}</h1>
+<div class="container edit-admin">
+    <h1>Modifica Appartamento: {{ $apartment->title }}</h1>
 
     {{-- Script for errors --}}
     @if ($errors->any())
@@ -25,85 +25,147 @@
         @method('PUT')
 
         <div class="form-group">
-            <label for="title">Titolo</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $apartment->title) }}" required>
+            <input type="text" name="title" class="question" id="title" value="{{ old('title', $apartment->title) }}" required />
+            <label for="title"><span>Titolo</span></label>
+
+            {{-- <textarea name="message" rows="2" class="question" id="msg" required autocomplete="off"></textarea>
+            <label for="msg"><span>What's your message?</span></label>
+            <input type="submit" value="Submit!" /> --}}
+
+            {{-- <label for="title">Titolo</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $apartment->title) }}" required> --}}
         </div>
 
         <div class="form-group">
-            <label for="description">Descrizione</label>
-            <textarea class="form-control" id="description" name="description" rows="10" required>{{ old('description', $apartment->description) }}</textarea>
+            <textarea type="text" name="description" class="question" id="description" required>{{ old('description', $apartment->description) }}</textarea>
+            <label for="description"><span>Descrizione</span></label>
+
+            {{-- <label for="description">Descrizione</label>
+            <textarea class="form-control" id="description" name="description" rows="10" required>{{ old('description', $apartment->description) }}</textarea> --}}
         </div>
 
         <div class="form-group">
-            <label for="rooms">Numero di stanze</label>
-            <input type="text" class="form-control" id="rooms" name="rooms" value="{{ old('rooms', $apartment->rooms) }}" required>
+            <input type="text" name="rooms" class="question" id="rooms" value="{{ old('rooms', $apartment->rooms) }}" required />
+            <label for="rooms"><span>Numero di stanze</span></label>
+
+            {{-- <label for="rooms">Numero di stanze</label>
+            <input type="text" class="form-control" id="rooms" name="rooms" value="{{ old('rooms', $apartment->rooms) }}" required> --}}
         </div>
 
         <div class="form-group">
-            <label for="beds">Numero di letti</label>
-            <input type="text" class="form-control" id="beds" name="beds" value="{{ old('beds', $apartment->beds) }}" required>
+            <input type="text" name="beds" class="question" id="beds" value="{{ old('beds', $apartment->beds) }}" required />
+            <label for="beds"><span>Numero di letti</span></label>
+
+            {{-- <label for="beds">Numero di letti</label>
+            <input type="text" class="form-control" id="beds" name="beds" value="{{ old('beds', $apartment->beds) }}" required> --}}
         </div>
 
         <div class="form-group">
-            <label for="baths">Numero di bagni</label>
-            <input type="text" class="form-control" id="baths" name="baths" value="{{ old('baths', $apartment->baths) }}" required>
+            <input type="text" name="baths" class="question" id="baths" value="{{ old('baths', $apartment->baths) }}" required />
+            <label for="baths"><span>Numero di bagni</span></label>
+
+            {{-- <label for="baths">Numero di bagni</label>
+            <input type="text" class="form-control" id="baths" name="baths" value="{{ old('baths', $apartment->baths) }}" required> --}}
         </div>
 
         <div class="form-group">
-            <label for="square_meters">Metri quadrati</label>
-            <input type="text" class="form-control" id="square_meters" name="square_meters" value="{{ old('square_meters', $apartment->square_meters) }}">
+            <input type="text" name="square_meters" class="question" id="square_meters" value="{{ old('square_meters', $apartment->square_meters) }}" required />
+            <label for="square_meters"><span>Metri quadrati</span></label>
+
+            {{-- <label for="square_meters">Metri quadrati</label>
+            <input type="text" class="form-control" id="square_meters" name="square_meters" value="{{ old('square_meters', $apartment->square_meters) }}"> --}}
         </div>
 
         <div class="form-group">
-            <label for="price">Prezzo</label>
-            <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $apartment->price) }}" required>
+            <input type="text" name="price" class="question" id="price" value="{{ old('price', $apartment->price) }}" required />
+            <label for="price"><span>Prezzo</span></label>
+
+            {{-- <label for="price">Prezzo</label>
+            <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $apartment->price) }}" required> --}}
         </div>
 
         <div class="form-group">
-            <label for="address">Indirizzo</label>
-            <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $apartment->address) }}" required>
+            <input type="text" name="address" class="question" id="address" value="{{ old('address', $apartment->address) }}" required />
+            <label for="address"><span>Indirizzo</span></label>
+
+            {{-- <label for="address">Indirizzo</label>
+            <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $apartment->address) }}" required> --}}
         </div>
 
         <div class="form-group">
-            <label for="latitude">Latitudine</label>
-            <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude', $apartment->latitude) }}" required>
+            <input type="text" name="latitude" class="question" id="latitude" value="{{ old('latitude', $apartment->latitude) }}" required />
+            <label for="latitude"><span>Latitudine</span></label>
+
+            {{-- <label for="latitude">Latitudine</label>
+            <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude', $apartment->latitude) }}" required> --}}
         </div>
 
         <div class="form-group">
-            <label for="longitude">Longitudine</label>
-            <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude', $apartment->longitude) }}" required>
+            <input type="text" name="longitude" class="question" id="longitude" value="{{ old('longitude', $apartment->longitude) }}" required />
+            <label for="longitude"><span>Longitudine</span></label>
+
+            {{-- <label for="longitude">Longitudine</label>
+            <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude', $apartment->longitude) }}" required> --}}
         </div>
 
-        <div class="form-group">
-            <label for="cover">Immagine di copertina</label>
-            <input type="file" class="form-control-file" name="cover" id="cover">
+        <div class="form-group file-select">
+            <input type="file" name="cover" class="question"  id="cover" value="{{ old('cover', $apartment->cover) }}" />
+            <label for="cover"><span>Immagine di copertina</span></label>
+
+            {{-- <label for="cover">Immagine di copertina</label>
+            <input type="file" class="form-control-file" name="cover" id="cover"> --}}
         </div>
 
         @if($apartment->cover)
+        <div class="edit-cover">
             <h5>Immagine corrente</h5>
             <div>
                 <img src="{{ asset('storage/' . $apartment->cover) }}" alt="{{ $apartment->title }}">
             </div>
+        </div>
         @endif
 
         {{-- checkboxes extras  --}}
-        <div class="form-group">
-            <h5>Servizi extra</h5>
-            
-            @foreach ($extras as $extra)
-                <div class="form-check">
+        <div class="form-group extra-service">
+            <h5>Servizi Extra</h5>
+            <div class="extra-checkbox">
+                @foreach ($extras as $extra)
+                    <div class="form-check">
+                        
+                        {{-- <div class="container-check">
+                            <input type="checkbox" name="extras[]" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}>
+                            <label for="extra-{{ $extra->id }}">
+                                {{$extra->name}}
+                            </label>
+                        </div> --}}
 
-                    @if ($errors->any())
-                        <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}>
-                    @else
-                        <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $apartment->extras->contains($extra->id) ? 'checked' : '' }}>
-                    @endif
-                    
-                    <label class="form-check-label" for="extra-{{ $extra->id }}">
-                        {{$extra->name}}
-                    </label>
-                </div> 
+                        @if ($errors->any())
+                            <div class="container-check">
+                                <input type="checkbox" name="extras[]" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}>
+                                <label for="extra-{{ $extra->id }}">
+                                    {{$extra->name}}
+                                </label>
+                            </div>
+
+                            {{-- <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}> --}}
+                        @else
+                            <div class="container-check">
+                                <input type="checkbox" name="extras[]" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $apartment->extras->contains($extra->id) ? 'checked' : '' }}>
+                                <label for="extra-{{ $extra->id }}">
+                                    {{$extra->name}}
+                                </label>
+                            </div>
+
+                            {{-- <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $apartment->extras->contains($extra->id) ? 'checked' : '' }}> --}}
+                        @endif
+                        
+                        {{-- <label class="form-check-label" for="extra-{{ $extra->id }}">
+                            {{$extra->name}}
+                        </label> --}}
+                    </div> 
                 @endforeach
+            </div>
+            
         </div>
         
         {{-- Non ho aggiunto l'opzione per il visible, io immagino sia un button con una funzione collegata,
