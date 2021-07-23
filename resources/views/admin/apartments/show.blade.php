@@ -27,7 +27,7 @@
         {{-- Call to Action Link --}}
         <div class="calltoaction-link ">
             <a class="btn" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
-                Modifica informazioni
+                Modifica informazioni <i class="fas fa-wrench"></i>
             </a>
         </div>
         

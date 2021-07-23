@@ -804,8 +804,7 @@
 
             .show-flex-container {
                 display: flex;
-                // padding-bottom: 30px;
-                // align-items: flex-start;
+                padding-bottom: 50px;
                 .strong-text {
                         font-weight: bold;
                     }
@@ -846,6 +845,10 @@
                     color: white;
                     font-size: 16px;
                     background-color: $color-1;
+
+                    i {
+                        padding-left: 4px;
+                    }
 
                     &:hover {
                         background-color: lighten($color-1, 5%);

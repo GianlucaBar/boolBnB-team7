@@ -823,6 +823,7 @@ body {
 }
 .show-container .container-fluid .show-flex-container, .show-container .container-xl .show-flex-container, .show-container .container-lg .show-flex-container, .show-container .container-md .show-flex-container, .show-container .container-sm .show-flex-container {
   display: flex;
+  padding-bottom: 50px;
 }
 .show-container .container-fluid .show-flex-container .strong-text, .show-container .container-xl .show-flex-container .strong-text, .show-container .container-lg .show-flex-container .strong-text, .show-container .container-md .show-flex-container .strong-text, .show-container .container-sm .show-flex-container .strong-text {
   font-weight: bold;
@@ -855,6 +856,9 @@ body {
   color: white;
   font-size: 16px;
   background-color: #0DCB92;
+}
+.show-container .container-fluid .calltoaction-link .btn i, .show-container .container-xl .calltoaction-link .btn i, .show-container .container-lg .calltoaction-link .btn i, .show-container .container-md .calltoaction-link .btn i, .show-container .container-sm .calltoaction-link .btn i {
+  padding-left: 4px;
 }
 .show-container .container-fluid .calltoaction-link .btn:hover, .show-container .container-xl .calltoaction-link .btn:hover, .show-container .container-lg .calltoaction-link .btn:hover, .show-container .container-md .calltoaction-link .btn:hover, .show-container .container-sm .calltoaction-link .btn:hover {
   background-color: #0fe3a3;
