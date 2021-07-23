@@ -743,11 +743,11 @@ body {
   color: #040F0F;
 }
 .show-container .container .show-title {
-  width: 100%;
   margin-bottom: 40px;
   text-align: center;
 }
 .show-container .container .show-title h1 {
+  word-break: break-all;
   font-weight: bold;
 }
 .show-container .container .show-img {
@@ -4808,7 +4808,6 @@ input[type=button].btn-block {
   justify-content: space-between;
   padding: 0.5rem 1rem;
 }
-
 .navbar .container,
 .navbar .container-fluid,
 .navbar .container-sm,
