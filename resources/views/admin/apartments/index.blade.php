@@ -9,12 +9,12 @@
     
     <div class="container">
         <div class="title centered mt-4 mb-4">
-            <h2>Dashboard</h2>
+            <h2><i class="fas fa-digital-tachograph"></i> DASHBOARD</h2>
         </div>
 
         <div class="container-user ">
             <div class="user-rep ">
-                <h2>I Tuoi Dati</h2>
+                <h2><i class="fas fa-user-tie"></i> I Tuoi Dati <i class="fas fa-user-tie"></i></h2>
                 <div>Nome Utente: {{ $user->name }}</div>
                 <div>Email: {{ $user->email }}</div>
                 <div>Numero Appartamenti: {{ $apartment_number}}</div>
@@ -22,7 +22,7 @@
 
             {{-- Messages --}}
             <div class="msg-box">
-                <h2> I Tuoi Messaggi</h2>
+                <h2> <i class="far fa-envelope"></i> I Tuoi Messaggi <i class="far fa-envelope"></i></h2>
                 @foreach ($messagesArray as $messages)
                     @foreach ($messages as $message)
                     <div>

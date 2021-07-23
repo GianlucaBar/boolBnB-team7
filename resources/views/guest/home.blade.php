@@ -150,11 +150,20 @@
                                     <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
                                         <i class="far fa-eye"></i> <br> Dettagli appartamento
                                     </a>
+                                
+                                </div>
+
+                                <div class="ap-stats hidden">
+                                    <span>Stanze: @{{ap.rooms}}</span>
+                                    <span>Letti: @{{ap.beds}}</span>
+                                    <span>Bagni: @{{ap.baths}}</span>
+
+
                                 </div>
         
                                 <div class="scaling-block">
                                     <div class="blog-title">
-                                        <h4>@{{ap.title}}</h4>
+                                        <h6>@{{ap.title}}</h6>
         
                                         <div>@{{ ap.address }}</div>
                                     </div>
