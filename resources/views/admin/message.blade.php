@@ -5,7 +5,7 @@
 @endsection
 
 @section('message-box')
-<div class="message-admin-container">
+<div class="message-container">
     <div class="container">
 
         <h2>{{$message->msg_subject}}</h2>

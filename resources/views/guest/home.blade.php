@@ -144,6 +144,7 @@
                         <div class="card" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in searchResult">
+                            
                             <div>
                                 <div class="details hidden centered">
                                     <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">

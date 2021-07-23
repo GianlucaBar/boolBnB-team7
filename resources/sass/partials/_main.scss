@@ -5,7 +5,8 @@
 
     .overlay {
         position: absolute;
-        bottom: 0;
+        top:0;
+        left: 0;
         background: rgb(0, 0, 0);
         background: rgba(0, 0, 0, 0.4); /* Black see-through */
         color: #f1f1f1;
@@ -84,7 +85,7 @@
                 -webkit-box-shadow: 11px 9px 31px 4px #424242;
                 -moz-box-shadow: 11px 9px 31px 4px #424242;
                 -o-box-shadow: 11px 9px 31px 4px #424242;
-                box-shadow: 11px 9px 31px 4px #424242;
+                box-shadow: 1px 1px 12px 0px #424242;
                 position: relative;
                 overflow: hidden;
                 .sponsorized-ap{
@@ -157,6 +158,18 @@
                 transform: scaleY(1);
                 background-color: linear-gradient(to top,rgba(3,3,3,0) 0,rgba(3,3,3,0.85) 100%);
                 z-index: 3;
+
+                .overlay{
+                    position: absolute;
+                    top:0;
+                    left: 0;
+                    background: rgb(0, 0, 0);
+                    background-color: rgba(0, 0, 0, 0.4); /* Black see-through */
+                    color: #f1f1f1;
+                    width: 100%;
+                    height:100%;
+                }
+
                 &:hover .scaling-block{
                     transform: scaleY(0)
                 }
@@ -446,13 +459,29 @@
 // -------------------------------------------------------------------------------------------
 // DASHBOARD
 .info-user{
-    border-bottom: 3px solid $color-2;
+    border-bottom: 3px solid #57737A;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 5%;
+    height: 500px;
+    
+}
+#overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 2;
 }
 .title{
     h2{
-        font-size: 40px;
+        font-size: 50px;
         text-align: center;
-        font-weight: bold
+        font-weight: bold;
+        color: white;
     }
 }
 .container-user{
@@ -472,12 +501,13 @@
         width: 48%;
         border: 1px solid $color-2;
         padding: 20px 40px;
+        font-size: 17px;
         border-radius: 10px;
         background-color: $color-5;
         -webkit-box-shadow: 11px 9px 31px 4px #424242;
         -moz-box-shadow: 11px 9px 31px 4px #424242;
         -o-box-shadow: 11px 9px 31px 4px #424242;
-        box-shadow: 11px 9px 31px 4px #424242;
+        box-shadow: 1px 1px 12px 0px #424242;
 
         // test
         height:300px;
@@ -497,7 +527,7 @@
         -webkit-box-shadow: 11px 9px 31px 4px #424242;
         -moz-box-shadow: 11px 9px 31px 4px #424242;
         -o-box-shadow: 11px 9px 31px 4px #424242;
-        box-shadow: 11px 9px 31px 4px #424242;
+        box-shadow: 1px 1px 12px 0px #424242;
         overflow-y: scroll;
 
         // test
@@ -550,7 +580,7 @@
             li:hover{
                 background-color: white;
                 border-radius: 10px;
-                box-shadow: 4px 4px 17px 4px #424242;
+                box-shadow: 1px 1px 12px 0px #424242;
 
             }
             
@@ -563,12 +593,42 @@
         justify-content: space-between;
         align-content: center;
     }
+}
+.new-ap{
+    text-align: right;
+    
     #new-ap{
-        color: $color-1;
+        display: grid; 
+        text-align: center;
+          
+
+        box-shadow:inset 0px 1px 0px 0px #09e6c1;
+        background:linear-gradient(to bottom, #02b89a 5%, #00dcb7 100%);
+        background-color:#02b89a;
+        border-radius:6px;
+        border:1px solid #00dcb7;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #787a74;
+
         i{
-            margin-left:10px;
+            display: block;
             font-size: 40px;
         }
+    }
+    #new-ap:hover {
+        background:linear-gradient(to bottom, #00dcb7 5%, #02b89a 100%);
+        background-color:#00dcb7;
+    }
+    #new-ap:active {
+        position:relative;
+        top:1px;
     }
 }
 
@@ -580,7 +640,8 @@
     -webkit-box-shadow: 11px 9px 31px 4px #424242;
     -moz-box-shadow: 11px 9px 31px 4px #424242;
     -o-box-shadow: 11px 9px 31px 4px #424242;
-    box-shadow: 4px 4px 17px 4px #424242;
+    box-shadow: 1px 1px 5px 0px #424242;
+    background-color: $body-bg;
 
 
 
@@ -826,11 +887,11 @@
 }
 
 // MESSAGES ADMIN
-.message-admin-container {
+.message-container {
     background-color: $color-5;
     // width: 100%;
     // È brutto da vedere ma non avevo trovato altre soluzioni
-    height: calc(100vh - 9rem);
+    
 
     padding-top: 50px;
 

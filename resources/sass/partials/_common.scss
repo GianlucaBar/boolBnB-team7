@@ -139,7 +139,7 @@ h2 {
         transform: translateZ(0) scale(2);
         
         @supports(filter: url('#goo')) {
-          transform: translateZ(0) scale(1.4);
+          transform: translateZ(0) scale(1.6);
         }
       }
     }
