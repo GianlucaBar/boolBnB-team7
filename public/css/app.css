@@ -1311,7 +1311,8 @@ h2 {
   margin-bottom: 5rem;
 }
 .edit-admin h1 {
-  color: red;
+  margin-top: 40px;
+  color: #57737A;
 }
 .edit-admin html {
   font-family: "Lora", sans-serif;
@@ -1323,7 +1324,7 @@ h2 {
   max-width: 1125px;
 }
 .edit-admin h1 {
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 2.5%;
 }
 .edit-admin input,
@@ -1415,7 +1416,7 @@ h2 {
 .edit-admin input[type=submit] {
   transition: opacity 0.2s ease, background 0.2s ease;
   display: block;
-  opacity: 0;
+  opacity: 1;
   margin: 10px 0 0 0;
   padding: 10px;
   cursor: pointer;
@@ -1529,17 +1530,17 @@ h2 {
   border: 3px solid #57737A;
   border-radius: 100px;
   transition: background-color 0.2s;
-  background-color: #DB2B39;
+  background-color: white;
 }
 .edit-admin .extra-service label:hover, .edit-admin .extra-service input:focus + label {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   width: 100%;
 }
 .edit-admin .extra-service input:checked + label {
-  background-color: #f3ebe2;
+  background-color: #0DCB92;
 }
 .edit-admin .extra-service input:checked + label::before {
-  background-color: #f3ebe2;
+  background-color: #f8c8cf;
 }
 
 .thank-you-container {

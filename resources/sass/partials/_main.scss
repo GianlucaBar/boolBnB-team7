@@ -1371,7 +1371,8 @@ h2 {
     }
 
     h1 {
-        color: red;
+        margin-top: 40px;
+        color: $color-2;
     }
 
     html {
@@ -1386,7 +1387,7 @@ h2 {
     }
 
     h1 {
-        font-size: 28px;
+        font-size: 32px;
         margin-bottom: 2.5%;
     }
 
@@ -1496,7 +1497,7 @@ h2 {
         -webkit-transition: opacity 0.2s ease, background 0.2s ease;
         transition: opacity 0.2s ease, background 0.2s ease;
         display: block;
-        opacity: 0;
+        opacity: 1;
         margin: 10px 0 0 0;
         padding: 10px;
         cursor: pointer;
@@ -1622,7 +1623,7 @@ h2 {
         }
 
         label::before {
-        content: '';
+            content: '';
             display: block;
             position: absolute;
             top: 10px;
@@ -1632,7 +1633,7 @@ h2 {
             border: 3px solid $color-2;
             border-radius: 100px;
             transition: background-color .2s;
-            background-color: $color-4;
+            background-color: white;
         }
 
         // label:first-of-type {
@@ -1649,13 +1650,14 @@ h2 {
         }
 
         input:checked + label {
-            background-color: $color-5;
+            background-color: $color-1;
         }
 
         input:checked + label::before {
-            background-color: $color-5;
+            background-color: $color-6;
         }
     }
+
 }
 
 // THANK YOU PAGE
