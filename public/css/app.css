@@ -166,7 +166,7 @@ body {
 }
 
 .logo .big-logo {
-  width: 250px;
+  width: 230px;
 }
 .logo .small-logo {
   width: 75px;
@@ -179,6 +179,10 @@ body {
   position: relative;
 }
 
+.header-nav {
+  height: 120px;
+  background-color: white;
+}
 .header-nav ul {
   margin: 0;
 }
@@ -219,7 +223,8 @@ body {
 }
 
 main {
-  min-height: 100vh;
+  min-height: calc( 100vh - 120px);
+  position: relative;
 }
 
 .my-jumbotron {
@@ -1109,6 +1114,7 @@ h2 {
 .show-container {
   background-color: #f3ebe2;
   padding-bottom: 40px;
+  min-height: calc( 100vh - 120px);
 }
 .show-container .container-fluid, .show-container .container-xl, .show-container .container-lg, .show-container .container-md, .show-container .container-sm {
   padding-top: 50px;
@@ -1536,6 +1542,53 @@ h2 {
   background-color: #f3ebe2;
 }
 
+.thank-you-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.thank-you-container .container-fluid, .thank-you-container .container-xl, .thank-you-container .container-lg, .thank-you-container .container-md, .thank-you-container .container-sm {
+  text-align: center;
+}
+.thank-you-container .container-fluid h2, .thank-you-container .container-xl h2, .thank-you-container .container-lg h2, .thank-you-container .container-md h2, .thank-you-container .container-sm h2 {
+  font-size: 50px;
+  text-transform: uppercase;
+}
+.thank-you-container .container-fluid .transaction, .thank-you-container .container-xl .transaction, .thank-you-container .container-lg .transaction, .thank-you-container .container-md .transaction, .thank-you-container .container-sm .transaction {
+  font-size: 22px;
+}
+.thank-you-container .container-fluid .strong-text, .thank-you-container .container-xl .strong-text, .thank-you-container .container-lg .strong-text, .thank-you-container .container-md .strong-text, .thank-you-container .container-sm .strong-text {
+  color: #252525;
+  font-weight: bold;
+}
+.thank-you-container .container-fluid .btn, .thank-you-container .container-xl .btn, .thank-you-container .container-lg .btn, .thank-you-container .container-md .btn, .thank-you-container .container-sm .btn {
+  margin-top: 20px;
+  background-color: #0DCB92;
+}
+.thank-you-container .container-fluid .btn:hover, .thank-you-container .container-xl .btn:hover, .thank-you-container .container-lg .btn:hover, .thank-you-container .container-md .btn:hover, .thank-you-container .container-sm .btn:hover {
+  background-color: #1bf0b0;
+}
+.thank-you-container .container-fluid a, .thank-you-container .container-xl a, .thank-you-container .container-lg a, .thank-you-container .container-md a, .thank-you-container .container-sm a {
+  color: white;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 520px) {
+  .thank-you-container {
+    width: 100%;
+  }
+  .thank-you-container .container-fluid h2, .thank-you-container .container-xl h2, .thank-you-container .container-lg h2, .thank-you-container .container-md h2, .thank-you-container .container-sm h2 {
+    font-size: 40px;
+  }
+  .thank-you-container .container-fluid .transaction, .thank-you-container .container-xl .transaction, .thank-you-container .container-lg .transaction, .thank-you-container .container-md .transaction, .thank-you-container .container-sm .transaction {
+    font-size: 18px;
+  }
+}
 footer i:hover {
   color: white;
 }
