@@ -4,7 +4,6 @@
     - Sponsorship 
 @endsection
 
-<<<<<<< HEAD
 @section('content')
     <div class="container-fluid">
         <section class="sp-section">
@@ -37,20 +36,6 @@
                 
         </section>
 
-=======
-@section('sponsorship')
-<div class="sponsor-container">
-    <div class="container-fluid">
-        @foreach ($sponsorships as $sponsorship)
-            <a href="{{route('admin.payment', [
-                'id' => $sponsorship->id,
-                'thisApartmentId' => $thisApartmentId])}}">
-                Pacchetto {{$sponsorship->name}}
-                {{$sponsorship->price}}
-                <br>
-            </a>
-        @endforeach
->>>>>>> d53b3d52ced8007cfebeac857fa07dfc13324e2f
     </div>
 </div>
 @endsection

@@ -81,76 +81,38 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/charts.js":
+/***/ "./resources/js/burger.js":
 /*!********************************!*\
-  !*** ./resources/js/charts.js ***!
+  !*** ./resources/js/burger.js ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var app = new Vue({
-  el: '#root2',
-  data: {
-    apartmentsIds: '',
-    apartments: ''
-  },
-  methods: {
-    renderChart: function renderChart() {
-      console.log(this.apartments);
-      var ctx = document.getElementById('chart').getContext('2d');
-      var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-            borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
-    } // async getApId(){
-    //     let url = new URL('http://127.0.0.1:8000/apartmentIds/')
-    //     const response = await fetch(url);
-    //     const data = await response.text();
-    //     this.apartmentsIds = data;
-    //     console.log(this.apartmentsIds);
-    // }
+document.addEventListener('DOMContentLoaded', nav);
 
-  },
-  mounted: function mounted() {
-    this.renderChart(); // this.getApId(
-  }
-});
+function nav() {
+  var burger = document.getElementById("ms-burger");
+  var nav = document.getElementById("ms-burger-menu");
+  burger.addEventListener('click', function () {
+    nav.classList.toggle('d-none');
+  });
+}
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!**************************************!*\
-  !*** multi ./resources/js/charts.js ***!
+  !*** multi ./resources/js/burger.js ***!
   \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\charts.js */"./resources/js/charts.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\charts.js */"./resources/js/charts.js");
->>>>>>> a0aedabacaa1f3566106c5c888100c5bc424f17e
+module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\burger.js */"./resources/js/burger.js");
 
 
 /***/ })

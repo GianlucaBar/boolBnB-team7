@@ -37343,7 +37343,9 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // require('./index');
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./burger */ "./resources/js/burger.js"); // require('./index');
 // require('./charts');
 
 /***/ }),
@@ -37390,6 +37392,25 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/burger.js":
+/*!********************************!*\
+  !*** ./resources/js/burger.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+document.addEventListener('DOMContentLoaded', nav);
+
+function nav() {
+  var burger = document.getElementById("ms-burger");
+  var nav = document.getElementById("ms-burger-menu");
+  burger.addEventListener('click', function () {
+    nav.classList.toggle('d-none');
+  });
+}
 
 /***/ }),
 
