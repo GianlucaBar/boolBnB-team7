@@ -266,7 +266,7 @@ main {
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768) {
   .form-control {
     max-width: 400px;
   }
@@ -384,6 +384,27 @@ h2 {
 .list-apartment .card-container .card .scaling-block .blog-title h6 {
   font-weight: bold;
 }
+@media screen and (max-width: 992px) {
+  .list-apartment .card-container .card {
+    width: calc(( 100% / 2) - 30px );
+  }
+}
+@media screen and (max-width: 768px) {
+  .list-apartment .card-container {
+    display: block;
+  }
+  .list-apartment .card-container .card {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 447px) {
+  .list-apartment .card-container .card {
+    min-width: 235px;
+    max-width: 100%;
+  }
+}
 .list-apartment .card:hover {
   transform: scaleY(1);
   background-color: linear-gradient(to top, rgba(3, 3, 3, 0) 0, rgba(3, 3, 3, 0.85) 100%);
@@ -442,6 +463,7 @@ h2 {
   -webkit-appearance: none;
 }
 .filters .input-filters .number-input {
+  min-width: 150px;
   border: 0;
   display: block;
   margin: 5px 0;
@@ -497,6 +519,25 @@ h2 {
   color: #0DCB92;
   border-radius: 30px;
 }
+@media screen and (max-width: 768) {
+  .filters .input-filters {
+    margin: auto;
+    width: 50%;
+    display: block;
+  }
+  .filters .input-filters .number-input {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+  .filters .input-filters .number-input .button-plus-min {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .filters .input-filters .number-input .button-plus-min input {
+    display: inline-block;
+  }
+}
 .filters .button-plus-min {
   display: flex;
   align-items: center;
@@ -528,7 +569,7 @@ h2 {
   justify-content: space-between;
 }
 .filter-check .form-check {
-  width: calc(( 100% / 4 ) - 30px);
+  width: calc(( 100% / 3 ) - 30px);
   /* border: 1px solid #F6E8EA; */
   /* border-radius: 10px; */
   padding: 10px 20px;
@@ -541,6 +582,9 @@ h2 {
 }
 .filter-check .form-check .form-check-input {
   cursor: pointer;
+}
+.filter-check .container-check input {
+  width: 300px;
 }
 .filter-check html {
   min-height: 100%;
@@ -604,6 +648,34 @@ h2 {
   background-color: #F6E8EA;
 }
 
+@media screen and (max-width: 992px) {
+  .filter-check .form-check {
+    width: calc(( 100% / 2 ) - 30px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .filter-check .form-check {
+    font-size: 12px;
+    width: calc(( 100% / 2 ) - 30px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .filter-check {
+    display: block;
+  }
+  .filter-check .form-check {
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-size: 12px;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .filter-check .form-check {
+    width: 100%;
+  }
+}
 .filter-btn {
   width: 100%;
   text-align: center;
@@ -827,7 +899,7 @@ h2 {
   cursor: pointer;
   color: #ffffff;
   font-family: Arial;
-  font-size: 13px;
+  font-size: 15px;
   padding: 7px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #854629;
@@ -850,13 +922,13 @@ h2 {
   cursor: pointer;
   color: #ffffff;
   font-family: Arial;
-  font-size: 13px;
+  font-size: 15px;
   padding: 7px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #854629;
 }
 .ap-line .buttoni .btn-elimina:hover {
-  background: linear-gradient(to bottom, #db2b3a 5%, #d0451b 100%);
+  background: linear-gradient(to bottom, #ff4800 5%, #d0451b 100%);
   background-color: #db2b3a;
 }
 .ap-line .buttoni .btn-elimina:active {
@@ -865,7 +937,7 @@ h2 {
 }
 .ap-line .buttoni .btn-sponsor {
   box-shadow: inset 0px 1px 0px 0px #57737a;
-  background: linear-gradient(to bottom, #0ef5b0 5%, #0dcb92 100%);
+  background: linear-gradient(to bottom, #16bd8b 5%, #16cc95 100%);
   background-color: #0ef5b0;
   border-radius: 10px;
   border: 1px solid #57737a;
@@ -873,7 +945,7 @@ h2 {
   cursor: pointer;
   color: #ffffff;
   font-family: Arial;
-  font-size: 13px;
+  font-size: 15px;
   padding: 7px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #57737A;
@@ -966,7 +1038,7 @@ h2 {
 .show-container .container-fluid .calltoaction-link .btn:hover, .show-container .container-xl .calltoaction-link .btn:hover, .show-container .container-lg .calltoaction-link .btn:hover, .show-container .container-md .calltoaction-link .btn:hover, .show-container .container-sm .calltoaction-link .btn:hover {
   background-color: #0fe3a3;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
   .show-container .container-fluid .show-flex-container, .show-container .container-xl .show-flex-container, .show-container .container-lg .show-flex-container, .show-container .container-md .show-flex-container, .show-container .container-sm .show-flex-container {
     display: block;
   }
@@ -1036,7 +1108,7 @@ h2 {
   font-weight: bold;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .message-admin-container {
     height: 100vh;
   }
@@ -1071,7 +1143,7 @@ h2 {
   border-radius: 0.25rem;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   h1 {
     padding-bottom: 30px;
   }
@@ -1247,7 +1319,7 @@ h2 {
   font-size: 14px;
 }
 .edit-admin .extra-service .form-check {
-  width: calc(( 100% / 4 ) - 30px);
+  width: calc(( 100% / 3 ) - 30px);
   /* border: 1px solid #F6E8EA; */
   /* border-radius: 10px; */
   padding: 10px 20px;

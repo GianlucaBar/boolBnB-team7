@@ -71,7 +71,7 @@
                 <div class="input-filters">
                     <div class="number-input">
                         
-                        <label for="beds">Posti letto</label>
+                        <label for="beds">Letti</label>
 
                         <div class="button-plus-min">
                             <i v-if="beds > 1" v-on:click="beds--" class="far fa-minus-square meno"></i>
@@ -88,7 +88,7 @@
         
                     {{-- Rooms --}}
                     <div class="number-input">
-                        <label for="rooms">Numero Stanze </label> 
+                        <label for="rooms">Stanze </label> 
                         
                         <div class="button-plus-min">
                             <i v-if="rooms > 1" v-on:click="rooms--" class="far fa-minus-square meno"></i>
@@ -100,7 +100,7 @@
                     
                     {{-- Radius --}}
                     <div class="number-input">
-                        <label for="mod-radius">Raggio di ricerca</label>
+                        <label for="mod-radius">Raggio</label>
                         <div class="button-plus-min">
                             <input type="number" class="quantity" id="mod-radius" v-model="radius"  min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
                             <span>km</span>

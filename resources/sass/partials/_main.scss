@@ -51,7 +51,7 @@ main {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768) {
     .form-control{
         max-width: 400px;
     }
@@ -199,9 +199,37 @@ h2 {
                     }
                 }
             }
+        }
 
+        @media screen and (max-width: 992px) {
+            .card-container{
+                .card{
+                    width: calc(( 100% / 2) - 30px );
+                }
+            }
+        }
 
+        @media screen and (max-width: 768px) {
+            .card-container{
+                display: block;
+                .card{
+                    margin: auto;
+                    margin-bottom: 20px;
+                    width: 80%;
+                }
+            }
+        }
 
+        @media screen and (max-width: 447px) {
+            .card-container{
+                // display: block;
+                .card{
+                    // margin: auto;
+                    // margin-bottom: 20px;
+                    min-width: 235px;
+                    max-width: 100%;
+                }
+            }
         }
 
         .card:hover {
@@ -277,6 +305,7 @@ h2 {
         }
 
         .number-input {
+            min-width: 150px;
             border: 0;
             display: block;
             margin:5px 0;
@@ -339,6 +368,33 @@ h2 {
         }
     }
 
+    @media screen and (max-width: 768) {
+        .input-filters {
+            margin: auto;
+            width: 50%;
+        // text-align: center;
+        // padding: 20px 30px;
+        // font-size: 16px;
+            display: block;
+        // justify-content: space-around;
+        
+        .number-input {
+            // min-width: 150px;
+            // border: 0;
+            display: block;
+            margin:auto;
+            text-align: center;
+            .button-plus-min {
+                margin: auto;
+                margin-bottom: 20px;
+               input {
+                    display: inline-block;
+               }
+            }
+        }
+    }
+    }
+
     .button-plus-min{
         display:flex;
         align-items: center;
@@ -379,7 +435,7 @@ h2 {
     justify-content: space-between;
 
     .form-check{
-        width: calc(( 100% / 4 ) - 30px);
+        width: calc(( 100% / 3 ) - 30px);
         /* border: 1px solid #F6E8EA; */
         /* border-radius: 10px; */
         padding: 10px 20px;
@@ -393,9 +449,13 @@ h2 {
         .form-check-input{
             cursor: pointer;
         }
+    }
 
-
-
+    .container-check {
+        input {
+        width:300px;
+        // word-break: break-all;
+    }
     }
 
     // checkboxes
@@ -479,6 +539,47 @@ h2 {
         background-color: $color-5;
     }
 }
+
+@media screen and (max-width: 992px) {
+    .filter-check{
+        .form-check{
+            width: calc(( 100% / 2 ) - 30px);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filter-check{
+        .form-check{
+            font-size: 12px;
+            width: calc(( 100% / 2 ) - 30px);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filter-check{
+        display: block;
+        // margin: auto;
+        .form-check{
+            margin: auto;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            font-size: 12px;
+            width: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .filter-check{
+        // margin: auto;
+        .form-check{
+            width: 100%;
+        }
+    }
+}
+
 .filter-btn{
     width:100%;
     text-align: center;
@@ -746,7 +847,7 @@ h2 {
             cursor:pointer;
             color:#ffffff;
             font-family:Arial;
-            font-size:13px;
+            font-size:15px;
             padding:7px 24px;
             text-decoration:none;
             text-shadow:0px 1px 0px #854629;
@@ -772,13 +873,13 @@ h2 {
             cursor:pointer;
             color:#ffffff;
             font-family:Arial;
-            font-size:13px;
+            font-size:15px;
             padding:7px 24px;
             text-decoration:none;
             text-shadow:0px 1px 0px #854629;
         }
         .btn-elimina:hover {
-            background:linear-gradient(to bottom, #db2b3a 5%, #d0451b 100%);
+            background:linear-gradient(to bottom, #ff4800 5%, #d0451b 100%);
             background-color:#db2b3a;
         }
         .btn-elimina:active {
@@ -789,7 +890,7 @@ h2 {
         // Sponsor btn
         .btn-sponsor {
             box-shadow:inset 0px 1px 0px 0px #57737a;
-            background:linear-gradient(to bottom, #0ef5b0 5%, #0dcb92 100%);
+            background:linear-gradient(to bottom, #16bd8b 5%, #16cc95 100%);
             background-color:#0ef5b0;
             border-radius:10px;
             border:1px solid #57737a;
@@ -797,7 +898,7 @@ h2 {
             cursor:pointer;
             color:#ffffff;
             font-family:Arial;
-            font-size:13px;
+            font-size:15px;
             padding:7px 24px;
             text-decoration:none;
             text-shadow:0px 1px 0px $color-2;
@@ -911,7 +1012,7 @@ h2 {
                 }
             }
 
-        @media screen and (max-width: 991px) {
+        @media screen and (max-width: 992px) {
             .show-flex-container {
                 display: block;
 
@@ -1004,7 +1105,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .message-admin-container {
         height: 100vh;
 
@@ -1051,7 +1152,7 @@ h2 {
         border-radius: .25rem;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768px) {
         h1 {
             padding-bottom: 30px;
         }
@@ -1267,7 +1368,7 @@ h2 {
             }
         }
         .form-check {
-            width: calc(( 100% / 4 ) - 30px);
+            width: calc(( 100% / 3 ) - 30px);
             /* border: 1px solid #F6E8EA; */
             /* border-radius: 10px; */
             padding: 10px 20px;
