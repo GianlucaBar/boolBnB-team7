@@ -1602,15 +1602,15 @@ footer i:hover {
   margin-left: 20px;
   margin-right: 20px;
 }
+.copyright .dev-block .dev-name {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #0DCB92;
+}
 .copyright i {
   color: #252525;
   font-size: 30px;
-}
-
-.dev-name {
-  font-weight: bold;
-  font-size: 20px;
-  color: #0DCB92;
 }
 
 @media screen and (max-width: 1142px) {
@@ -1637,6 +1637,14 @@ footer i:hover {
 .social-container {
     width: 100%;
   }
+
+  .copyright .dev-block {
+    width: 40%;
+  }
+  .copyright .dev-block .dev-name {
+    display: inline-block;
+    width: 100%;
+  }
 }
 @media screen and (max-width: 565px) {
   .footer-flex {
@@ -1648,9 +1656,11 @@ footer i:hover {
   }
 
   .copyright .dev-block {
+    width: 100%;
     display: block;
     margin: auto;
     margin-bottom: 20px;
+    text-align: center;
   }
 }
 .sponsorship-title {
