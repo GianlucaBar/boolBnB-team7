@@ -219,8 +219,10 @@ class ApartmentController extends Controller
     public function destroy($id)
     {
         $this_ap = Apartment::find($id);
-
         $this_ap->extras()->sync([]);
+        $this_ap->sponsorships()->sync([]);
+        $this_ap->views()->delete();
+        $this_ap->messages()->delete();
         $this_ap->delete();
 
         return redirect()->route('admin.apartments.index');

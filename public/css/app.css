@@ -7,6 +7,7 @@ ul {
 body {
   height: 100%;
   font-family: "Rubik", sans-serif !important;
+  min-width: 320px;
 }
 
 .container-fluid, .container-xl, .container-lg, .container-md, .container-sm {
@@ -668,6 +669,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  font-size: 16px;
 }
 
 .new-ap {
@@ -942,6 +944,7 @@ h2 {
   display: inline-block;
   font-weight: bold;
   color: #57737A;
+  word-break: break-all;
 }
 .message-admin-container .container-fluid .message-title i, .message-admin-container .container-xl .message-title i, .message-admin-container .container-lg .message-title i, .message-admin-container .container-md .message-title i, .message-admin-container .container-sm .message-title i {
   color: #0DCB92;
@@ -1246,21 +1249,31 @@ h2 {
   background-color: #f3ebe2;
 }
 
+footer i:hover {
+  color: white;
+}
+
 .bg-footer {
   background-color: #57737A;
-  padding: 50px;
+  padding: 30px;
+}
+
+.copy {
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 40px;
 }
 
 .footer-flex {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo-small {
   width: 100px;
   justify-self: flex-start;
-  width: 30%;
 }
 .logo-small img {
   width: 100px;
@@ -1269,7 +1282,6 @@ h2 {
 .github-logo {
   justify-self: center;
   text-align: center;
-  width: 30%;
 }
 .github-logo i {
   font-size: 100px;
@@ -1278,7 +1290,6 @@ h2 {
 
 .social {
   justify-self: flex-end;
-  width: 30%;
   text-align: right;
 }
 .social li {
@@ -1290,8 +1301,14 @@ h2 {
   font-size: 40px;
 }
 
+.logo-small,
+.github-logo,
+.social-container {
+  width: 20%;
+}
+
 .copyright {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .copyright .dev-block {
   display: inline-block;
@@ -1307,6 +1324,93 @@ h2 {
   font-weight: bold;
   font-size: 20px;
   color: #0DCB92;
+}
+
+@media screen and (max-width: 1142px) {
+  .copyright {
+    width: 100%;
+  }
+  .copyright .dev-block {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 932px) {
+  .social {
+    text-align: center;
+  }
+  .social li {
+    margin-left: 0;
+  }
+  .social li.with-margin {
+    margin-left: 15px;
+  }
+
+  .logo-small,
+.github-logo,
+.social-container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 565px) {
+  .footer-flex {
+    display: block;
+    text-align: center;
+  }
+  .footer-flex div {
+    margin-bottom: 40px;
+  }
+
+  .copyright .dev-block {
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+}
+.sponsorship-title {
+  text-align: left;
+}
+
+.sp-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sponsor-buttons li {
+  padding-top: 40px;
+}
+
+.btn-sponsorship {
+  width: 100px;
+  padding: 15px;
+  border-radius: 50px;
+  color: white;
+}
+
+#base {
+  background: linear-gradient(to bottom, #c6d1c9 5%, #525451 100%);
+}
+
+#medium {
+  background: linear-gradient(to bottom, #FCF6BA 5%, #BF953F 50%);
+}
+
+#premium {
+  background: linear-gradient(to bottom, #585858 5%, #181818 50%);
+}
+
+.sp-price {
+  margin-left: 20px;
+  font-size: large;
+}
+
+.sp-choose {
+  flex-basis: 40%;
+}
+
+.sp-description {
+  flex-basis: 40%;
 }
 
 /*!

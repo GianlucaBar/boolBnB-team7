@@ -76,11 +76,11 @@
 
         @if ($apartment->visible == 1)
         <li>
-            Visibile: Si
+            <span class="strong-text">Visibile:</span> Si
         </li>
         @else
         <li>
-            Visibile: No
+            <span class="strong-text">Visibile:</span> No
         </li>
         @endif
     </ul>

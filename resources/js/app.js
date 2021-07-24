@@ -1,8 +1,8 @@
 require('./bootstrap');
 
-require('./index');
+// require('./index');
 
-require('./charts');
+// require('./charts');
 
 
 
