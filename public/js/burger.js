@@ -112,7 +112,7 @@ function nav() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\burger.js */"./resources/js/burger.js");
+module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\burger.js */"./resources/js/burger.js");
 
 
 /***/ })

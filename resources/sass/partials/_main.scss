@@ -51,7 +51,7 @@ main {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768) {
     .form-control{
         max-width: 400px;
     }
@@ -199,9 +199,37 @@ h2 {
                     }
                 }
             }
+        }
 
+        @media screen and (max-width: 992px) {
+            .card-container{
+                .card{
+                    width: calc(( 100% / 2) - 30px );
+                }
+            }
+        }
 
+        @media screen and (max-width: 768px) {
+            .card-container{
+                display: block;
+                .card{
+                    margin: auto;
+                    margin-bottom: 20px;
+                    width: 80%;
+                }
+            }
+        }
 
+        @media screen and (max-width: 447px) {
+            .card-container{
+                // display: block;
+                .card{
+                    // margin: auto;
+                    // margin-bottom: 20px;
+                    min-width: 235px;
+                    max-width: 100%;
+                }
+            }
         }
 
         .card:hover {
@@ -340,7 +368,7 @@ h2 {
         }
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768) {
         .input-filters {
             margin: auto;
             width: 50%;
@@ -512,7 +540,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 992px) {
     .filter-check{
         .form-check{
             width: calc(( 100% / 2 ) - 30px);
@@ -520,7 +548,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .filter-check{
         .form-check{
             font-size: 12px;
@@ -529,7 +557,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .filter-check{
         display: block;
         // margin: auto;
@@ -984,7 +1012,7 @@ h2 {
                 }
             }
 
-        @media screen and (max-width: 991px) {
+        @media screen and (max-width: 992px) {
             .show-flex-container {
                 display: block;
 
@@ -1077,7 +1105,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .message-admin-container {
         height: 100vh;
 
@@ -1124,7 +1152,7 @@ h2 {
         border-radius: .25rem;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 768px) {
         h1 {
             padding-bottom: 30px;
         }
