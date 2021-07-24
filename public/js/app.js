@@ -37410,7 +37410,14 @@ function nav() {
   burger.addEventListener('click', function () {
     nav.classList.toggle('d-none');
   });
-}
+} // document.addEventListener('DOMContentLoaded', seeFilters)
+// function seeFilters(){
+//     const burger = document.getElementById("home-burger");
+//     const nav = document.getElementById("home-burger-menu");
+//     burger.addEventListener('click', ()=>{
+//         nav.classList.toggle('d-none')
+//     })
+// }
 
 /***/ }),
 
@@ -37432,13 +37439,8 @@ function nav() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
 __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> 5614b8744a37f9083e0c7f3f1963a419a87d9087
 
 
 /***/ })
