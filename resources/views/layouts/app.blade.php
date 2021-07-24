@@ -128,28 +128,34 @@
                 <div class="logo-small">
                     <img src="{{ asset('img/logo-small-grey.png') }}" alt="">
                 </div>
-    
-                <a class="github-logo" href="https://github.com/GianlucaBar/boolBnB-team7">
-                    <i class="fab fa-github-square"></i>
-                </a>
-    
-                <ul class="social">
-                    <li>
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                    </li>
-    
-                    <li>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </li>
-    
-                    <li>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </li>
-    
-                    <li>
-                        <a href="#"><i class="fab fa-youtube-square"></i></a>
-                    </li>
-                </ul>
+                
+                <div>
+                    <a class="github-logo" href="https://github.com/GianlucaBar/boolBnB-team7">
+                        <i class="fab fa-github-square"></i>
+                    </a>
+                </div>
+                
+                <div class="social-container">
+                    <ul class="social">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        </li>
+        
+                        <li class="with-margin">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="social">
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </li>
+        
+                        <li class="with-margin">
+                            <a href="#"><i class="fab fa-youtube-square"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="copyright centered">
@@ -199,7 +205,9 @@
                     </li>
                 </ul>
             </div>
-
+            <div class="copy">
+                BoolBnB 2021 &copy;
+            </div>
         </div>
     </footer>
 

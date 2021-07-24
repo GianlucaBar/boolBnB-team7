@@ -1,11 +1,26 @@
+footer {
+    i {
+        &:hover {
+            color: white;
+        }
+    }
+}
+
 .bg-footer{
     background-color: $color-2;
-    padding: 50px;
+    padding: 30px;
+}
+
+.copy {
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 40px;
 }
 
 .footer-flex{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -15,8 +30,6 @@
         width: 100px;
     }
     justify-self: flex-start;
-
-    width: 30%;
 }
 
 .github-logo{
@@ -26,7 +39,6 @@
     }
     justify-self: center;
     text-align: center;
-    width: 30%;
 }
 
 .social{
@@ -40,15 +52,19 @@
     }
 
     justify-self: flex-end;
-    width: 30%;
     text-align: right;
 }
 
+.logo-small,
+.github-logo,
+.social-container {
+    width: 20%;
+}
+
 .copyright{
-    margin-top: 50px;
+    margin-top: 30px;
     .dev-block{
         display: inline-block;
-        
         margin-left: 20px;
         margin-right: 20px;
     }
@@ -62,4 +78,52 @@
     font-weight: bold;
     font-size: 20px;
     color: $color-1;
+}
+
+@media screen and (max-width: 1142px) {
+    .copyright {
+        width: 100%;
+        .dev-block {
+            width: 30%;
+        }
+    }
+}
+
+@media screen and (max-width: 932px) {
+    .social{
+    text-align: center;
+        li {
+            margin-left: 0;
+
+            &.with-margin {
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .logo-small,
+    .github-logo,
+    .social-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 565px) {
+    .footer-flex{
+    display: block;
+    text-align: center;
+
+        div {
+            margin-bottom: 40px;
+        }
+    }
+
+    .copyright{
+
+        .dev-block{
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+    }
 }
