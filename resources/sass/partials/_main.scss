@@ -1028,3 +1028,300 @@ h2 {
     min-height: 100vh;
     background-color: $color-5;
 }
+
+
+
+
+// EDIT ADMIN PAGE 
+.edit-admin {
+    .form-group {
+        margin-bottom: 5rem;
+    }
+
+    h1 {
+        color: red;
+    }
+
+    html {
+        font-family: 'Lora', sans-serif;
+        width: 100%;
+    }
+
+    body {
+        margin: 5% auto 0 auto;
+        width: 90%;
+        max-width: 1125px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 2.5%;
+    }
+
+    input,
+    span,
+    label,
+    textarea {
+        font-family: 'Ubuntu', sans-serif;
+        display: block;
+        margin: 10px;
+        padding: 5px;
+        border: none;
+        font-size: 22px;
+    }
+
+    textarea:focus,
+    input:focus {
+        outline: 0;
+    }
+    /* Question */
+
+    input.question,
+    textarea.question {
+        font-size: 30px;
+        font-weight: 300;
+        border-radius: 2px;
+        margin: 0;
+        border: none;
+        width: 100%;
+        background: rgba(0, 0, 0, 0);
+        transition: padding-top 0.2s ease, margin-top 0.2s ease;
+        overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+    }
+    /* Underline and Placeholder */
+
+    input.question + label,
+    textarea.question + label {
+        display: block;
+        position: relative;
+        white-space: nowrap;
+        padding: 0;
+        margin: 0;
+        width: 10%;
+        border-top: 1px solid red;
+        -webkit-transition: width 0.4s ease;
+        transition: width 0.4s ease;
+        height: 0px;
+    }
+
+    input.question:focus + label,
+    textarea.question:focus + label {
+        width: 80%;
+    }
+
+    input.question:focus,
+    input.question:valid {
+        padding-top: 35px;
+        color: $color-3;
+    }
+
+    textarea.question:valid,
+    textarea.question:focus {
+        margin-top: 35px;
+        color: $color-3;
+    }
+
+    input.question:focus + label > span,
+    input.question:valid + label > span {
+        top: -100px;
+        font-size: 22px;
+        color: $color-2;
+
+    }
+
+    textarea.question:focus + label > span,
+    textarea.question:valid + label > span {
+        top: -150px;
+        font-size: 25px;
+        color: $color-2;
+    }
+
+    input.question:valid + label,
+    textarea.question:valid + label {
+        border-color: $color-1;
+    }
+
+    input.question:invalid,
+    textarea.question:invalid {
+        box-shadow: none;
+    }
+
+    input.question + label > span,
+    textarea.question + label > span {
+        font-weight: 300;
+        margin: 0;
+        position: absolute;
+        color: #8F8F8F;
+        font-size: 48px;
+        top: -72px;
+        left: 0px;
+        z-index: -1;
+        -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+        transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    }
+
+    input[type="submit"] {
+        -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+        transition: opacity 0.2s ease, background 0.2s ease;
+        display: block;
+        opacity: 0;
+        margin: 10px 0 0 0;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background: #EEE;
+    }
+
+    input[type="submit"]:active {
+        background: #999;
+    }
+
+    input.question:valid ~ input[type="submit"], textarea.question:valid ~ input[type="submit"] {
+        -webkit-animation: appear 1s forwards;
+        animation: appear 1s forwards;
+    }
+
+    input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input[type="submit"] {
+        display: none;
+    }
+
+    @-webkit-keyframes appear {
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes appear {
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .edit-cover img {
+        width: 40%;
+    }
+
+    .file-select {
+
+        input.question {
+            font-size: 14px;
+        }
+
+        input.question + label > span {
+            position: relative;
+            top: -100px;
+        }
+    }
+
+    .extra-service {
+
+        h5 {
+            font-size: 25px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .extra-checkbox {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            label {
+                font-size: 14px;
+            }
+        }
+        .form-check {
+            width: calc(( 100% / 4 ) - 30px);
+            /* border: 1px solid #F6E8EA; */
+            /* border-radius: 10px; */
+            padding: 10px 20px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            /* background-color: #F6E8EA; */
+            margin-top: 20px;
+            position: relative;
+        }
+        // checkboxes
+        @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+
+
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            color: $color-2;
+            background: $color-5;
+            font: 1.4em/1 'Noto Sans', sans-serif;
+        }
+
+
+
+        .container-check {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);  
+            width: 100%;
+        }
+
+        input {
+            position: absolute;
+            left: -9999px;
+        }
+
+        label {
+            display: block;
+            position: relative;
+            margin: 20px;
+            padding: 15px 30px 15px 62px;
+            border: 3px solid $color-2;
+            border-radius: 100px;
+            color: $color-2;
+            background-color: $color-5;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color .2s, box-shadow .2s;
+            width:90%;
+        }
+
+        label::before {
+        content: '';
+            display: block;
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            width: 32px;
+            border: 3px solid $color-2;
+            border-radius: 100px;
+            transition: background-color .2s;
+            background-color: $color-4;
+        }
+
+        // label:first-of-type {
+        //     transform: translateX(-40px);
+        // }
+
+        // label:last-of-type {
+        //     transform: translateX(40px);
+        // }
+
+        label:hover, input:focus + label {
+            box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+            width: 100%;
+        }
+
+        input:checked + label {
+            background-color: $color-5;
+        }
+
+        input:checked + label::before {
+            background-color: $color-5;
+        }
+    }
+}
