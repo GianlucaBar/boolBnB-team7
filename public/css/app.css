@@ -164,8 +164,57 @@ body {
   background-color: #f3ebe2;
 }
 
-.logo img {
+.logo .big-logo {
   width: 250px;
+}
+.logo .small-logo {
+  width: 75px;
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-nav ul {
+  margin: 0;
+}
+.header-nav li {
+  display: inline-block;
+}
+.header-nav li a {
+  color: #040F0F;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+#ms-burger i {
+  font-size: 50px;
+}
+
+#ms-burger-menu {
+  background-color: #F8FAFC;
+  position: absolute;
+  top: 102px;
+  right: -15px;
+  padding: 20px;
+}
+#ms-burger-menu li {
+  display: block;
+}
+
+.ms-display-block {
+  display: block;
+}
+
+.ms-display-none {
+  display: none;
+}
+
+.menu-nav {
+  align-self: center;
 }
 
 main {
