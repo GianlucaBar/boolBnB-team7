@@ -11,18 +11,28 @@
 
 .sponsor-buttons{
     li{
-       padding-top: 40px;
+       margin-bottom: 40px;
+
+       a:hover{
+           text-decoration: none;
+           color: rgb(34, 34, 34);
+       }
     }
 }
 .btn-sponsorship{
-    width: 100px;
-    padding: 15px;
+    padding: 15px 40px 15px 40px;
     border-radius: 50px;
     color: white;
+    font-size: 23px;
 }
+
 
 #base{
     background:linear-gradient(to bottom, #c6d1c9 5%, #525451 100%);
+}
+
+#base:hover{
+    background:linear-gradient(to bottom, #525451 5%, #c6d1c9 100%);
 }
 
 #medium{
@@ -30,8 +40,16 @@
     
 }
 
+#medium:hover{
+    background:linear-gradient(to bottom, #BF953F 5%, #FCF6BA 50%);  
+}
+
 #premium{
     background:linear-gradient(to bottom, #585858 5%, #181818 50%);
+}
+
+#premium:hover{
+    background:linear-gradient(to bottom, #181818 5%, #585858 50%);
 }
 
 .sp-price{
@@ -40,9 +58,57 @@
 }
 
 .sp-choose{
-    flex-basis: 40%;
+    flex-basis: 50%;
+    padding: 30px;
+
+    p{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
 }
 
 .sp-description{
-    flex-basis: 40%;
+    flex-basis: 50%;
+    padding: 30px;
+    h2{
+        font-size: 40px;
+    }
+    p{
+        margin-top: 30px;
+        font-size: 18px;
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .sp-section{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .btn-sponsorship{
+        padding: 15px 40px 15px 40px;
+        border-radius: 50px;
+        color: white;
+        font-size: 23px;
+    }
+
+    .sp-price{
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    .sp-description{
+        flex-basis: 50%;
+        padding: 30px;
+        h2{
+            font-size: 30px;
+        }
+        p{
+            font-size: 15px;
+        }
+    }
 }
