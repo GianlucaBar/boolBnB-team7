@@ -146,11 +146,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\charts.js */"./resources/js/charts.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\charts.js */"./resources/js/charts.js");
->>>>>>> a0aedabacaa1f3566106c5c888100c5bc424f17e
 
 
 /***/ })

@@ -38,7 +38,7 @@
 <body>
     <div id="app">
         <nav class="header-nav">
-            <div class="container">
+            <div class="container-fluid">
             
                 <div class="nav-flex">
                     <!-- Left Side Of Navbar -->

@@ -37432,13 +37432,8 @@ function nav() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! /Users/manuelbonini/Documenti/Laravel-Projects/boolBnB-team7/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/manuelbonini/Documenti/Laravel-Projects/boolBnB-team7/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> a0aedabacaa1f3566106c5c888100c5bc424f17e
 
 
 /***/ })
