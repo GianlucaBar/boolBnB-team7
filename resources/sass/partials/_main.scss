@@ -51,7 +51,7 @@ main {
     }
 }
 
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) {
     .form-control{
         max-width: 400px;
     }
@@ -368,10 +368,10 @@ h2 {
         }
     }
 
-    @media screen and (max-width: 768) {
+    @media screen and (max-width: 768px) {
         .input-filters {
             margin: auto;
-            width: 50%;
+            width: 100%;
         // text-align: center;
         // padding: 20px 30px;
         // font-size: 16px;
@@ -385,6 +385,7 @@ h2 {
             margin:auto;
             text-align: center;
             .button-plus-min {
+                max-width: max-content;
                 margin: auto;
                 margin-bottom: 20px;
                input {

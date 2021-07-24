@@ -51,10 +51,21 @@
                 </div>
             </div>
         </div>
-        
     </div>
+
     <section class="green-sec" v-if="searchResult.length">
         <div class="container">
+            <div class="home-burger">
+                <div id="ms-burger">
+                        <i class="fas fa-bars"></i>
+                </div>
+                CIAO
+                <ul id="ms-burger-menu">
+                    <li>
+
+                    </li>
+                </ul>
+        </div>
 
             {{-- Filters --}}
             <div id="search-result" class="filters">
@@ -262,4 +273,5 @@
 
 @section('footer-scripts')
     <script src="{{ asset('js/index.js') }}"></script>
+    <script src="{{ asset('js/burger.js') }}"></script>
 @endsection

@@ -266,7 +266,7 @@ main {
   margin-bottom: 30px;
 }
 
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) {
   .form-control {
     max-width: 400px;
   }
@@ -519,10 +519,10 @@ h2 {
   color: #0DCB92;
   border-radius: 30px;
 }
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) {
   .filters .input-filters {
     margin: auto;
-    width: 50%;
+    width: 100%;
     display: block;
   }
   .filters .input-filters .number-input {
@@ -531,6 +531,9 @@ h2 {
     text-align: center;
   }
   .filters .input-filters .number-input .button-plus-min {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
     margin: auto;
     margin-bottom: 20px;
   }

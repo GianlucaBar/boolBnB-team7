@@ -126,7 +126,6 @@ var app = new Vue(
                 this.isFiltered = true;
                 this.filteredList = filteredList
             },
-            
         },
 
         mounted() { 
