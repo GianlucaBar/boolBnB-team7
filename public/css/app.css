@@ -162,7 +162,7 @@ body {
 
 .white-sec {
   padding: 40px;
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
 }
 
 .logo img {
@@ -190,9 +190,11 @@ main {
   height: 100%;
 }
 .my-jumbotron .title {
+  width: 100%;
   text-align: center;
 }
 .my-jumbotron .title h2 {
+  width: 100%;
   font-size: 52px;
   position: absolute;
   top: 37%;
@@ -215,6 +217,26 @@ main {
   margin-bottom: 30px;
 }
 
+@media screen and (max-width: 767px) {
+  .form-control {
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .my-jumbotron .title h2 {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .form-control {
+    max-width: 300px;
+  }
+}
+@media screen and (max-width: 415px) {
+  .my-jumbotron .title h2 {
+    font-size: 34px;
+  }
+}
 h2 {
   font-size: 40px;
   text-align: center;
@@ -436,7 +458,7 @@ h2 {
 }
 .filters .meno,
 .filters .più {
-  color: #f3ebe2;
+  color: #F6E8EA;
   font-size: 35px;
   cursor: pointer;
 }
@@ -476,7 +498,7 @@ h2 {
 }
 .filter-check body {
   color: #57737A;
-  background: #f3ebe2;
+  background: #F6E8EA;
   font: 1.4em/1 "Noto Sans", sans-serif;
 }
 .filter-check .container-check {
@@ -498,7 +520,7 @@ h2 {
   border: 3px solid #57737A;
   border-radius: 100px;
   color: #57737A;
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
   cursor: pointer;
@@ -527,10 +549,10 @@ h2 {
   width: 100%;
 }
 .filter-check input:checked + label {
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
 }
 .filter-check input:checked + label::before {
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
 }
 
 .filter-btn {
@@ -604,7 +626,7 @@ h2 {
   padding: 20px 40px;
   font-size: 17px;
   border-radius: 10px;
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
   -o-box-shadow: 11px 9px 31px 4px #424242;
   box-shadow: 1px 1px 12px 0px #424242;
   height: 300px;
@@ -617,7 +639,7 @@ h2 {
   border-radius: 10px;
   padding: 20px 25px;
   width: 48%;
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
   -o-box-shadow: 11px 9px 31px 4px #424242;
   box-shadow: 1px 1px 12px 0px #424242;
   overflow-y: scroll;
@@ -820,7 +842,7 @@ h2 {
 }
 
 .show-container {
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
   padding-bottom: 40px;
 }
 .show-container .container-fluid, .show-container .container-xl, .show-container .container-lg, .show-container .container-md, .show-container .container-sm {
@@ -924,7 +946,7 @@ h2 {
 
 .message-admin-container {
   font-size: 16px;
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
   height: 100vh;
   padding-top: 50px;
 }
@@ -1007,7 +1029,7 @@ h2 {
 }
 .sponsor-container {
   min-height: 100vh;
-  background-color: #f3ebe2;
+  background-color: #F6E8EA;
 }
 
 footer i:hover {

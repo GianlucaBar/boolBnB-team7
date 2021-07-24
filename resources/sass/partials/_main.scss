@@ -20,10 +20,12 @@ main {
 
 
     .title{
+        width: 100%;
         text-align: center;
 
 
         h2{
+            width: 100%;
             font-size: 52px;
             position: absolute;
             top: 37%;
@@ -46,7 +48,38 @@ main {
             border: 3px solid $color-1;
             margin-bottom: 30px;
         }
+    }
+}
 
+@media screen and (max-width: 767px) {
+    .form-control{
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .my-jumbotron {
+        .title {
+            h2{
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .form-control{
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .my-jumbotron {
+        .title {
+            h2{
+                font-size: 34px;
+            }
+        }
     }
 }
 
