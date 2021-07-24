@@ -21,3 +21,4 @@ mix.js('resources/js/app.js', 'public/js')
 mix.js('resources/js/index.js', 'public/js');
 mix.js('resources/js/charts.js', 'public/js');
 mix.js('resources/js/burger.js', 'public/js');
+mix.js('resources/js/address.js', 'public/js');
