@@ -1305,6 +1305,7 @@ h2 {
 }
 
 .edit-admin {
+  padding: 50px 0;
   /* Question */
   /* Underline and Placeholder */
 }
@@ -1312,7 +1313,6 @@ h2 {
   margin-bottom: 5rem;
 }
 .edit-admin h1 {
-  margin-top: 40px;
   color: #57737A;
 }
 .edit-admin html {
@@ -1356,8 +1356,10 @@ h2 {
   overflow-x: hidden;
   /* Hack to make "rows" attribute apply in Firefox. */
 }
-.edit-admin input.question + label,
-.edit-admin textarea.question + label {
+.edit-admin textarea.question {
+  border-bottom: 1px solid red;
+}
+.edit-admin input.question + label {
   display: block;
   position: relative;
   white-space: nowrap;
@@ -1368,8 +1370,16 @@ h2 {
   transition: width 0.4s ease;
   height: 0px;
 }
-.edit-admin input.question:focus + label,
-.edit-admin textarea.question:focus + label {
+.edit-admin .description-label {
+  display: block;
+  font-weight: 300;
+  margin: 0;
+  color: #8F8F8F;
+  font-size: 22px;
+  z-index: -1;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+.edit-admin input.question:focus + label {
   width: 80%;
 }
 .edit-admin input.question:focus,
@@ -1377,21 +1387,14 @@ h2 {
   padding-top: 35px;
   color: #040F0F;
 }
-.edit-admin textarea.question:valid,
-.edit-admin textarea.question:focus {
-  margin-top: 35px;
+.edit-admin textarea.question:valid {
+  border-bottom: 1px solid #0DCB92;
   color: #040F0F;
 }
 .edit-admin input.question:focus + label > span,
 .edit-admin input.question:valid + label > span {
   top: -100px;
   font-size: 22px;
-  color: #57737A;
-}
-.edit-admin textarea.question:focus + label > span,
-.edit-admin textarea.question:valid + label > span {
-  top: -150px;
-  font-size: 25px;
   color: #57737A;
 }
 .edit-admin input.question:valid + label,
@@ -1543,7 +1546,77 @@ h2 {
 .edit-admin .extra-service input:checked + label::before {
   background-color: #f8c8cf;
 }
+.edit-admin textarea {
+  min-height: 400px;
+  padding-bottom: 40px;
+}
+.edit-admin label.select {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  color: #57737A;
+}
+.edit-admin select {
+  padding: 20px 10px;
+  min-width: 200px;
+}
+.edit-admin h5 {
+  font-size: 22px;
+  color: #57737A;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
 
+@media screen and (max-width: 992px) {
+  .edit-admin h1 {
+    font-size: 25px;
+    padding-bottom: 40px;
+  }
+  .edit-admin .form-group,
+.edit-admin .edit-cover,
+.edit-admin .submit {
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .edit-admin .submit {
+    margin-top: 60px;
+  }
+  .edit-admin .submit input {
+    margin: auto;
+  }
+  .edit-admin span {
+    display: inline-block;
+    text-align: center;
+  }
+  .edit-admin input.question,
+.edit-admin textarea.question {
+    font-size: 18px;
+  }
+  .edit-admin .extra-service .form-check {
+    width: calc(( 100% / 2 ) - 30px);
+  }
+  .edit-admin textarea {
+    min-height: 250px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .edit-admin .extra-service {
+    flex-direction: column;
+  }
+  .edit-admin .extra-service .form-check {
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-size: 12px;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 428px) {
+  .edit-admin .extra-service .form-check {
+    width: 100%;
+  }
+}
 .thank-you-container {
   width: 80%;
   display: flex;

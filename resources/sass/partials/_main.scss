@@ -563,7 +563,6 @@ h2 {
 @media screen and (max-width: 768px) {
     .filter-check{
         display: block;
-        // margin: auto;
         .form-check{
             margin: auto;
             margin-bottom: 40px;
@@ -1367,12 +1366,14 @@ h2 {
 
 // EDIT ADMIN PAGE 
 .edit-admin {
+    padding: 50px 0;
+
     .form-group {
         margin-bottom: 5rem;
     }
 
     h1 {
-        margin-top: 40px;
+        // margin-top: 40px;
         color: $color-2;
     }
 
@@ -1422,10 +1423,13 @@ h2 {
         transition: padding-top 0.2s ease, margin-top 0.2s ease;
         overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
     }
-    /* Underline and Placeholder */
 
-    input.question + label,
-    textarea.question + label {
+    textarea.question {
+        border-bottom: 1px solid red;
+    }
+
+    /* Underline and Placeholder */
+    input.question + label {
         display: block;
         position: relative;
         white-space: nowrap;
@@ -1438,8 +1442,21 @@ h2 {
         height: 0px;
     }
 
-    input.question:focus + label,
-    textarea.question:focus + label {
+    .description-label {
+        display: block;
+        font-weight: 300;
+        margin: 0;
+        // position: absolute;
+        color: #8F8F8F;
+        font-size: 22px;
+        // top: -72px;
+        // left: 0px;
+        z-index: -1;
+        -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+        transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    }
+
+    input.question:focus + label  {
         width: 80%;
     }
 
@@ -1449,9 +1466,11 @@ h2 {
         color: $color-3;
     }
 
-    textarea.question:valid,
-    textarea.question:focus {
-        margin-top: 35px;
+    textarea.question:valid {
+    // textarea.question:focus {
+        border-bottom: 1px solid $color-1;
+        // padding-bottom: 50px;
+        // margin-top: 35px;
         color: $color-3;
     }
 
@@ -1463,12 +1482,22 @@ h2 {
 
     }
 
-    textarea.question:focus + label > span,
-    textarea.question:valid + label > span {
-        top: -150px;
-        font-size: 25px;
-        color: $color-2;
-    }
+    // .description-form {
+    //     border-bottom: 1px solid $color-2;
+    //     padding-bottom: 20px;
+    // }
+
+    // .description-form:valid {
+    //     border-bottom: 1px solid $color-1;
+    //     padding-bottom: 20px;
+    // }
+
+    // textarea.question:focus,
+    // textarea.question:valid {
+    //     // top: -150px;
+    //     font-size: 25px;
+    //     // color: $color-2;
+    // }
 
     input.question:valid + label,
     textarea.question:valid + label {
@@ -1659,6 +1688,108 @@ h2 {
         }
     }
 
+    textarea {
+        min-height: 400px;
+        padding-bottom: 40px;
+    }
+
+    label.select {
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        color: $color-2;
+    }
+
+    select {
+        padding: 20px 10px;
+        min-width: 200px;
+    }
+
+    h5 {
+        font-size: 22px;
+        color: $color-2;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .edit-admin {
+        h1 {
+            font-size: 25px;
+            padding-bottom: 40px;
+        }
+
+        .form-group, 
+        .edit-cover,
+        .submit {
+            max-width: 100%;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+
+        .submit {
+            margin-top: 60px;
+            input {
+                margin: auto;
+            }
+        }
+
+        span {
+            display: inline-block;
+            text-align: center;
+        }
+
+        // label,
+        // h5 {
+        //     text-align: center;
+        // }
+
+        // input.question + label > span {
+        //     text-align: center;
+        //     left: 434%;
+        // }
+
+        input.question,
+        textarea.question {
+            font-size: 18px;
+        }
+
+        .extra-service {
+            .form-check{
+                width: calc(( 100% / 2 ) - 30px);
+            }
+        }
+    
+        textarea {
+        min-height: 250px;
+    }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .edit-admin {
+        .extra-service {
+            flex-direction: column;
+            .form-check{
+                margin: auto;
+                margin-bottom: 40px;
+                margin-top: 20px;
+                font-size: 12px;
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .edit-admin {
+        .extra-service {
+            .form-check{
+                width: 100%;
+            }
+        }
+    }
 }
 
 // THANK YOU PAGE
