@@ -68,7 +68,7 @@
         </div>
 
         {{-- Add new Apartment --}}
-        <div class="new-ap centered ">
+        <div class="new-ap centered">
             <a id="new-ap"  href="{{ route('admin.apartments.create') }}"><i class="fas fa-plus"></i> Aggiungi appartamento </a>
         </div>
 

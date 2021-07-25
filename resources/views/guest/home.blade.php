@@ -15,14 +15,14 @@
 @section('guest-homepage')
 <div id="root">
     <div class="container-home">
-        <div class="my-jumbotron" style="background-image:url('{{asset('img/milano.jpg')}}')">
+        <div class="my-jumbotron kenburns-bottom" style="background-image:url('{{asset('img/milano.jpg')}}')">
             <div class="overlay">
                 <div class="title">
-                    <h2>Dove vuoi andare?</h2>
+                    <h2 class="tracking-in-expand ">Dove vuoi andare?</h2>
                 </div>
                 
                 {{-- Radius --}}
-                <div class="form-group">
+                <div class="form-group tracking-in-contract">
                     <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
                     {{-- <label for="radius">Inserisci il raggio di ricerca</label>
                     <input type="hidden" name="radius" id="radius" v-model="radius"> --}}
@@ -135,7 +135,7 @@
                 <div v-if="!isFiltered">
                     <h2>I nostri appartamenti</h2>
                     <div class="card-container">  
-                        <div class="card" 
+                        <div class="card fade-in-top"
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in searchResult">
                             
@@ -172,7 +172,7 @@
                 <div v-else-if="filteredList.length">
                     <h2>I nostri appartamenti</h2>
                     <div class="card-container">
-                        <div class="card" 
+                        <div class="card fade-in-top" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in filteredList">
                         <div>
@@ -224,7 +224,7 @@
             <div class="list-apartment">
                 <div class="card-container"> 
                     @foreach ($sponsored as $apartment) 
-                    <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
+                    <div class="card fade-in-top" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
                         <div class="sponsorized-ap">
                             Sponsorizzato
                         </div>
