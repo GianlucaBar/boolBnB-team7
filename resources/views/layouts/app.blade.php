@@ -57,7 +57,7 @@
                     </div>
 
                     <!-- Right Side Of Navbar -->
-                    <div class="d-block" id="ms-burger">
+                    <div class="d-block d-md-none" id="ms-burger">
                         <i class="fas fa-bars"></i>
                     </div>
 
