@@ -137,7 +137,16 @@
                             </label>
                         </div> --}}
 
-                        @if ($errors->any())
+                       @if ($errors->any())
+                            <div class="container-check">
+                                <input type="checkbox" name="extras[]" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}>
+                                <label for="extra-{{ $extra->id }}">
+                                    {{$extra->name}}
+                                </label>
+                            </div>
+
+
+                        @else
                             <div class="container-check">
                                 <input type="checkbox" name="extras[]" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $apartment->extras->contains($extra->id) ? 'checked' : '' }}>
                                 <label for="extra-{{ $extra->id }}">
@@ -145,17 +154,7 @@
                                 </label>
                             </div>
 
-                            {{-- <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}> --}}
-                        @else
-                           
 
-                            <div class="container-check">
-                                <input type="checkbox" name="extras[]" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}>
-                                <label for="extra-{{ $extra->id }}">
-                                    {{$extra->name}}
-                                </label>
-                            </div>
-                            {{-- <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $apartment->extras->contains($extra->id) ? 'checked' : '' }}> --}}
                         @endif
                         
                         {{-- <label class="form-check-label" for="extra-{{ $extra->id }}">

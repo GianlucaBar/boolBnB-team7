@@ -89,7 +89,11 @@
             
             @foreach ($extras as $extra)
             <div class="form-check">
+                {{-- @if ($errors->any()) --}}
                 <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ in_array($extra->id, old('extras', [])) ? 'checked' : '' }}>
+                {{-- @else
+                <input class="form-check-input" name="extras[]" type="checkbox" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $apartment->extras->contains($extra->id) ? 'checked' : '' }}>
+                @endif --}}
                 <label class="form-check-label" for="extra-{{ $extra->id }}">
                     {{$extra->name}}
                 </label>
