@@ -19,7 +19,6 @@ class HomeController extends Controller
 
         $inProgress = DB::table('apartment_sponsorship')->whereDate('end_date', '>=', $nowParsed)->get();
 
-        // dd($inProgress);
         $sponsoredApIds = [];
 
         foreach ($inProgress as $entry) {

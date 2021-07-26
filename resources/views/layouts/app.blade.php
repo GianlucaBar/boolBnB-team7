@@ -178,7 +178,7 @@
 
     {{-- Footer Script --}}
     @yield('footer-scripts')
-
+    
     <footer class="bg-footer">
         <div class="container-fluid" >
 

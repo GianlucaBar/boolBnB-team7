@@ -261,6 +261,5 @@
 
 @section('footer-scripts')
     <script src="{{ asset('js/index.js') }}"></script>
-    <script src="{{ asset('js/burger.js') }}">
-    </script>
+    
 @endsection

@@ -1320,6 +1320,29 @@ h2 {
   }
 }
 
+.title-dashboard {
+  position: relative;
+}
+
+.sponsored-star {
+  color: #0DCB92;
+}
+
+[data-tooltip]:before {
+  /* needed - do not touch */
+  content: attr(data-tooltip);
+  position: absolute;
+  opacity: 0;
+  right: -75px;
+}
+
+[data-tooltip]:hover:before {
+  /* needed - do not touch */
+  opacity: 1;
+  /* customizable */
+  background: white;
+}
+
 .message-admin-container {
   font-size: 16px;
   background-color: #fffeec;
