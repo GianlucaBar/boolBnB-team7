@@ -1242,6 +1242,11 @@ h2 {
   top: 1px;
 }
 
+.ap-line:hover {
+  transform: scale(1.1);
+  box-shadow: 1px 1px 5px 0px #424242;
+}
+
 @media screen and (max-width: 992px) {
   .new-ap {
     text-align: center;
