@@ -126,7 +126,13 @@ var app = new Vue(
                 this.isFiltered = true;
                 this.filteredList = filteredList
             },
-            
+
+            toggleFilters(){
+        
+                const nav = document.getElementById("home-burger-menu");
+                
+                    nav.classList.toggle('d-none')
+            }
         },
 
         mounted() { 

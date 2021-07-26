@@ -15,6 +15,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -37,35 +39,91 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="header-nav">
+            <div class="container-fluid">
             
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="nav-flex">
                     <!-- Left Side Of Navbar -->
-                    <div class="logo">
+                    <div class="logo d-none d-sm-block">
                         <a class="navbar-brand" href="{{ url('/') }}">
-                            <img src={{asset('img/logo.png')}} alt="Logo">
+                            <img class="big-logo" src={{asset('img/logo.png')}} alt="Logo">
+                        </a>     
+                    </div>
+
+                    <div class="logo d-block d-sm-none">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            <img class="small-logo" src={{asset('img/logo-small-right.png')}} alt="Logo">
                         </a>     
                     </div>
 
                     <!-- Right Side Of Navbar -->
+                    <div class="d-block d-md-none" id="ms-burger">
+                        <i class="fas fa-bars"></i>
+                    </div>
 
-                    <ul class="navbar-nav ml-auto">
+                    <ul id="ms-burger-menu" class="d-none">
+                        @guest
+                    {{-- Only Logged users can see these two sections --}}
+                    @else
+                    <li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.apartments.index') }}">
+                                Dashboard
+                            </a>
+                        </li>
+
+                    </li>
+                    @endguest
+
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        
+                        
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form-1" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                    </ul>
+
+                    <ul class="menu-nav d-none d-md-block">
                         @guest
                         {{-- Only Logged users can see these two sections --}}
                         @else
                         <li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.index') }}">
-                                    Lista appartamenti
+                                    Dashboard
                                 </a>
                             </li>
 
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.apartments.create') }}">
                                     Aggiungi un nuovo appartamento
                                 </a>
-                            </li>
+                            </li> --}}
 
                         </li>
                         @endguest
@@ -210,6 +268,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>

@@ -1,7 +1,69 @@
 .logo{
     // Se cambiamo grandezza all'header, la pagina message in admin è strettamente collegata alla grandezza di questo nel suo
     // CSS, quindi teniamo conto anche di quella
-    img{
-    width: 250px;
+    .big-logo{
+    width: 230px;
+    }
+
+    .small-logo{
+        width: 75px;
     }
 }
+
+.nav-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-nav{
+    height: 120px;
+    background-color: white;
+
+    ul{
+        margin: 0;
+    }
+    li{
+        display: inline-block;
+
+        a{
+            color: $color-3;
+            font-weight: 500;
+            font-size: 20px;
+        }
+    }
+}
+
+#ms-burger{
+    i{
+        font-size: 50px;
+    }
+}
+
+#ms-burger-menu{
+    background-color: #F8FAFC;
+    position: absolute;
+    top: 102px;
+    right: -15px;
+    padding: 20px;
+    z-index: 2;
+    li{
+        display: block;
+    }
+}
+
+.ms-display-block{
+    display: block;
+}
+
+.ms-display-none{
+    display: none;
+}
+
+.menu-nav{
+    align-self: center;
+}
+// @media screen and (max-width: 576px){
+
+// }

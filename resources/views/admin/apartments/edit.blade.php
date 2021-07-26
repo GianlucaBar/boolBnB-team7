@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container edit-admin">
+<div class="container-fluid edit-admin">
     <h1>Modifica Appartamento: {{ $apartment->title }}</h1>
 
     {{-- Script for errors --}}
@@ -36,9 +36,9 @@
             <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $apartment->title) }}" required> --}}
         </div>
 
-        <div class="form-group">
+        <div class="form-group description-form">
+            <label class="description-label" for="description">Descrizione</label>
             <textarea type="text" name="description" class="question" id="description" required>{{ old('description', $apartment->description) }}</textarea>
-            <label for="description"><span>Descrizione</span></label>
 
             {{-- <label for="description">Descrizione</label>
             <textarea class="form-control" id="description" name="description" rows="10" required>{{ old('description', $apartment->description) }}</textarea> --}}
@@ -93,23 +93,21 @@
         </div>
 
         <div class="form-group">
-            <input type="text" name="latitude" class="question" id="latitude" value="{{ old('latitude', $apartment->latitude) }}" required />
-            <label for="latitude"><span>Latitudine</span></label>
+            <input type="hidden" name="latitude" class="question" id="latitude" value="{{ old('latitude', $apartment->latitude) }}" required />
 
             {{-- <label for="latitude">Latitudine</label>
-            <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude', $apartment->latitude) }}" required> --}}
+            <input type="hidden" class="form-control" id="latitude" name="latitude" value="{{ old('latitude', $apartment->latitude) }}" required> --}}
         </div>
 
         <div class="form-group">
-            <input type="text" name="longitude" class="question" id="longitude" value="{{ old('longitude', $apartment->longitude) }}" required />
-            <label for="longitude"><span>Longitudine</span></label>
+            <input type="hidden" name="longitude" class="question" id="longitude" value="{{ old('longitude', $apartment->longitude) }}" required />
 
             {{-- <label for="longitude">Longitudine</label>
             <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude', $apartment->longitude) }}" required> --}}
         </div>
 
         <div class="form-group file-select">
-            <input type="file" name="cover" class="question"  id="cover" value="{{ old('cover', $apartment->cover) }}" />
+            <input type="file" name="cover" class="question file"  id="cover" value="{{ old('cover', $apartment->cover) }}" />
             <label for="cover"><span>Immagine di copertina</span></label>
 
             {{-- <label for="cover">Immagine di copertina</label>
@@ -170,7 +168,7 @@
         </div>
         
         <div class="form-group">
-            <label for="visible">Visibile tramite ricerca:</label>
+            <label for="visible" class="select">Visibile tramite ricerca:</label>
 
             <select name="visible" id="visible">
                 <option value="1" {{ old('visible', $apartment->visible) == 1 ? 'selected' : '' }}>Visibile</option>
@@ -181,7 +179,9 @@
             ma così ad occhio e croce non saprei come implementarla, c'è un attimo da ragionarci, magari una
             checkbox con un if-else--}}
 
-        <input class="btn btn-success" type="submit" value="Modifica">
+        <div class="submit">
+            <input class="btn btn-success" type="submit" value="Modifica">
+        </div>
     </form>
 </div>
 @endsection

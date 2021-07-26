@@ -18337,6 +18337,10 @@ var app = new Vue({
 
       this.isFiltered = true;
       this.filteredList = filteredList;
+    },
+    toggleFilters: function toggleFilters() {
+      var nav = document.getElementById("home-burger-menu");
+      nav.classList.toggle('d-none');
     }
   },
   mounted: function mounted() {
@@ -18354,7 +18358,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/manuelbonini/Documenti/Laravel-Projects/boolBnB-team7/resources/js/index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! C:\Users\Maurizio\PROGETTO FINALE\boolBnB-team7\resources\js\index.js */"./resources/js/index.js");
 
 
 /***/ })

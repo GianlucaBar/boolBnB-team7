@@ -4,6 +4,9 @@
     - Aggiungi nuovo appartamento
 @endsection
 
+@section('header-scripts')
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+@endsection
 @section('content')
 
     {{-- Script for errors --}}
@@ -60,24 +63,24 @@
             <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}" required>
         </div>
 
-        <div class="form-group">
-            <label for="address">Indirizzo</label>
-            <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
-        </div>
-
-        <div class="form-group">
-            <label for="latitude">Latitudine</label>
-            <input type="text" class="form-control" id="latitude" name="latitude" value="{{ old('latitude') }}" required>
-        </div>
-
-        <div class="form-group">
-            <label for="longitude">Longitudine</label>
-            <input type="text" class="form-control" id="longitude" name="longitude" value="{{ old('longitude') }}" required>
+        <div id="root">
+            <div class="form-group">
+                <label for="address">Indirizzo</label>
+                <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="text" class="form-control" id="address" name="address" required>
+            </div>
+    
+            <div class="form-group">
+                <input type="hidden" class="form-control" id="latitude" name="latitude" v-model="lat" required>
+            </div>
+    
+            <div class="form-group">
+                <input type="hidden" class="form-control" id="longitude" name="longitude" v-model="lon " required>
+            </div>
         </div>
 
         <div class="form-group">
             <label for="cover">Immagine di copertina</label>
-            <input type="file" class="form-control-file" name="cover" id="cover">
+            <input type="file" class="form-control-file" name="cover" id="cover" required>
         </div>
 
         {{-- checkboxes extras  --}}
@@ -101,4 +104,8 @@
         <input class="btn btn-success" type="submit" value="Aggiungi">
     </form>
 </div>
+@endsection
+
+@section('footer-scripts')
+    <script src="{{ asset('js/address.js') }}"></script>
 @endsection

@@ -15,14 +15,14 @@
 @section('guest-homepage')
 <div id="root">
     <div class="container-home">
-        <div class="my-jumbotron" style="background-image:url('{{asset('img/milano.jpg')}}')">
+        <div class="my-jumbotron kenburns-bottom" style="background-image:url('{{asset('img/milano.jpg')}}')">
             <div class="overlay">
                 <div class="title">
-                    <h2>Dove vuoi andare?</h2>
+                    <h2 class="tracking-in-expand ">Dove vuoi andare?</h2>
                 </div>
                 
                 {{-- Radius --}}
-                <div class="form-group">
+                <div class="form-group tracking-in-contract">
                     <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="search" class="form-control" id="search-search-bar"  name='search'>
                     {{-- <label for="radius">Inserisci il raggio di ricerca</label>
                     <input type="hidden" name="radius" id="radius" v-model="radius"> --}}
@@ -51,86 +51,79 @@
                 </div>
             </div>
         </div>
-        
     </div>
+
     <section class="green-sec" v-if="searchResult.length">
         <div class="container">
+            {{-- <div class="home-burger"> --}}
+                <div id="home-burger" class="d-block" v-on:click="toggleFilters">
+                        <i class="fas fa-bars"></i>
+                </div>
 
-            {{-- Filters --}}
-            <div id="search-result" class="filters">
-                <h2>Migliora la tua ricerca</h2>
+                <ul id="home-burger-menu" class="d-none">
+                    <li>
+                        <div id="search-result" class="filters">
+                            <h2>Migliora la tua ricerca</h2>
 
+                        {{-- Beds --}}
+                        <div class="input-filters">
+                            <div class="number-input">
+                                
+                                <label for="beds">Letti</label>
 
-                {{-- <div class="number-input">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
-                    <input class="quantity" min="0" max="5" name="quantity" value="1" type="number">
-                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
-                </div> --}}
-
-                {{-- Beds --}}
-                <div class="input-filters">
-                    <div class="number-input">
-                        
-                        <label for="beds">Posti letto</label>
-
-                        <div class="button-plus-min">
-                            <i v-if="beds > 1" v-on:click="beds--" class="far fa-minus-square meno"></i>
-                                <b-form-input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" type="number" v-on:keydown="$event.key === '-' ? $event.preventDefault() : null"></b-form-input>
-                            <i v-on:click="beds++" class="far fa-plus-square più" ></i>
-                        </div>    
-                    </div>
-
-
-                    {{-- <div>
-                        <label for="beds">Posti letto</label>
-                        <input type="number" id="beds" v-model="beds" min="1" max="20">
-                    </div> --}}
-        
-                    {{-- Rooms --}}
-                    <div class="number-input">
-                        <label for="rooms">Numero Stanze </label> 
-                        
-                        <div class="button-plus-min">
-                            <i v-if="rooms > 1" v-on:click="rooms--" class="far fa-minus-square meno"></i>
-                                <b-form-input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" type="number" v-on:keydown="$event.key === '-' ? $event.preventDefault() : null"></b-form-input>
-                            <i v-on:click="rooms++" class="far fa-plus-square più"></i>
-                        </div>
-
-                    </div>
+                                <div class="button-plus-min">
+                                    <i v-if="beds > 1" v-on:click="beds--" class="far fa-minus-square meno"></i>
+                                        <b-form-input class="quantity" id="beds" v-model="beds" min="1" max="20" name="quantity" type="number" v-on:keydown="$event.key === '-' ? $event.preventDefault() : null"></b-form-input>
+                                    <i v-on:click="beds++" class="far fa-plus-square più" ></i>
+                                </div>    
+                            </div>
+                
+                            {{-- Rooms --}}
+                            <div class="number-input">
+                                <label for="rooms">Stanze </label> 
+                                
+                                <div class="button-plus-min">
+                                    <i v-if="rooms > 1" v-on:click="rooms--" class="far fa-minus-square meno"></i>
+                                        <b-form-input class="quantity" id="rooms" v-model="rooms" min="1" max="20" name="quantity" type="number" v-on:keydown="$event.key === '-' ? $event.preventDefault() : null"></b-form-input>
+                                    <i v-on:click="rooms++" class="far fa-plus-square più"></i>
+                                </div>
+                            </div>
                     
-                    {{-- Radius --}}
-                    <div class="number-input">
-                        <label for="mod-radius">Raggio di ricerca</label>
-                        <div class="button-plus-min">
-                            <input type="number" class="quantity" id="mod-radius" v-model="radius"  min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
-                            <span>km</span>
+                            {{-- Radius --}}
+                            <div class="number-input">
+                                <label for="mod-radius">Raggio</label>
+                                <div class="button-plus-min">
+                                    <input type="number" class="quantity" id="mod-radius" v-model="radius"  min="5" max="100" name="quantity" type="number" v-on:change="getSearchResult">
+                                    <span>km</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        {{-- Chechboxes  --}}
+                        <div class="filter-check">
+                            <div class="form-check" v-for="extra in extras">
+                                {{-- <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )">
+                                <label class="form-check-label" for="extra-@{{ extra.id }}">
+                                    @{{ extra.name }}
+                                </label> --}}
+                                
+                                <div class="container-check">
+                                    <input type="checkbox" name="extras[]" :value="extra.id" :id="'extra-' + extra.id" v-on:change="getCheckboxValue( extra.id )" checked>
+                                    <label :for="'extra-' + extra.id ">
+                                        @{{ extra.name }}
+                                    </label>
+                                    
+                                </div>
+                            </div> 
+                        </div>
+
+                        <div class="filter-btn">
+                            <a v-on:click="filter()" class="myButton">Filtra</a>
+                            {{-- <button class="btn btn-outline-secondary" v-on:click="filter()">Filtra</button> --}}
                         </div>
                     </div>
-                </div>
-    
-                {{-- Chechboxes  --}}
-                <div class="filter-check">
-                    <div class="form-check" v-for="extra in extras">
-                        {{-- <input class="form-check-input" name="extras[]" type="checkbox" value="@{{ extra.id }}" id="extra-@{{ extra.id }}" v-on:change="getCheckboxValue( extra.id )">
-                        <label class="form-check-label" for="extra-@{{ extra.id }}">
-                            @{{ extra.name }}
-                        </label> --}}
-                        
-                        <div class="container-check">
-                            <input type="checkbox" name="extras[]" :value="extra.id" :id="'extra-' + extra.id" v-on:change="getCheckboxValue( extra.id )" checked>
-                            <label :for="'extra-' + extra.id ">
-                                @{{ extra.name }}
-                            </label>
-                            
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="filter-btn">
-                    <a v-on:click="filter()" class="myButton">Filtra</a>
-                    {{-- <button class="btn btn-outline-secondary" v-on:click="filter()">Filtra</button> --}}
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -142,7 +135,7 @@
                 <div v-if="!isFiltered">
                     <h2>I nostri appartamenti</h2>
                     <div class="card-container">  
-                        <div class="card" 
+                        <div class="card fade-in-top"
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in searchResult">
                             
@@ -179,7 +172,7 @@
                 <div v-else-if="filteredList.length">
                     <h2>I nostri appartamenti</h2>
                     <div class="card-container">
-                        <div class="card" 
+                        <div class="card fade-in-top" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in filteredList">
                         <div>
@@ -216,6 +209,12 @@
                     <h2>Nessun risultato :(</h2>
                 </div>
             </div>
+                    </li>
+                </ul>
+            </div>
+
+            {{-- Filters --}}
+            
         </div>
     </section>
 
@@ -225,7 +224,7 @@
             <div class="list-apartment">
                 <div class="card-container"> 
                     @foreach ($sponsored as $apartment) 
-                    <div class="card" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
+                    <div class="card fade-in-top" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
                         <div class="sponsorized-ap">
                             Sponsorizzato
                         </div>
@@ -244,7 +243,7 @@
 
                         <div class="scaling-block">
                             <div class="blog-title">
-                                <h4>{{$apartment->title}}</h4>
+                                <h6>{{$apartment->title}}</h6>
 
                                 <div>{{ $apartment->address }}</div>
                             </div>
@@ -262,4 +261,6 @@
 
 @section('footer-scripts')
     <script src="{{ asset('js/index.js') }}"></script>
+    <script src="{{ asset('js/burger.js') }}">
+    </script>
 @endsection
