@@ -28,9 +28,18 @@
         display: inline-block;
 
         a{
-            color: $color-3;
+            color: $color-2;
             font-weight: 500;
             font-size: 20px;
+            text-shadow: 1px 1px 5px 0px black;
+
+        }
+        a:hover{
+            color: $color-1;
+        }
+        a:active{
+            transform: scale(1.1);
+            text-shadow: 2px 2px 5px 0px black;
         }
     }
 }
@@ -38,6 +47,14 @@
 #ms-burger{
     i{
         font-size: 50px;
+        color: $color-2;
+    }
+    i:hover{
+        color:$color-1;
+        
+    }
+    i:active{
+        transform: scale(1.1);
     }
 }
 
@@ -48,6 +65,7 @@
     right: -15px;
     padding: 20px;
     z-index: 2;
+    
     li{
         display: block;
     }

@@ -297,7 +297,7 @@
             border: 3px solid $color-2;
             border-radius: 100px;
             transition: background-color .2s;
-            background-color: white;
+            background-color: $color-5;
         }
 
         // label:first-of-type {
@@ -313,12 +313,14 @@
             width: 100%;
         }
 
+
+
         input:checked + label {
-            background-color: $color-1;
+            background-color: $color-5;
         }
 
         input:checked + label::before {
-            background-color: $color-6;
+            background-color: $color-1;
         }
     }
 
