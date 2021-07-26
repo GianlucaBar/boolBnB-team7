@@ -120,12 +120,12 @@
                 <option :value="{{$year}}">{{$year}}</option>
             @endforeach
         </select>
-        <canvas id="chart" height="400" width="600"></canvas>
+        <canvas id="chart" height="400" width="400"></canvas>
     </section>
 
     <script>
+        // passing datas from blade to vue 
         const views = {!!json_encode($views)!!};
-        // console.log(apartments);
     </script>
 </div>
 
