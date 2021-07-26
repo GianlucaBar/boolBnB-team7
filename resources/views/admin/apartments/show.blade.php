@@ -28,7 +28,7 @@
         {{-- Call to Action Link --}}
         <div class="calltoaction-link ">
             <a class="btn" href="{{ route('admin.apartments.edit', ['apartment' => $apartment->id]) }}">
-                Modifica informazioni <i class="fas fa-wrench"></i>
+                Modifica informazioni
             </a>
         </div>
         
@@ -108,10 +108,11 @@
                     @endforeach
                 </div>
 
+            @if(!empty($views))
                 <div id="root2">
                     <section class="stats">
                         <h3>Visualizzazioni</h3>
-                        <select v-model="currentYear" name="" id="selectYear" v-on:change="renderChart">
+                            <select v-model="currentYear" name="" id="selectYear" v-on:change="renderChart">
                             @foreach ($availableYears as $year)
                                 <option :value="{{$year}}">{{$year}}</option>
                             @endforeach
@@ -124,6 +125,7 @@
                     </script>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
