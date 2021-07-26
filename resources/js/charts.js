@@ -15,13 +15,16 @@ var app = new Vue(
         methods: { 
             renderChart(){
 
+                // if chart is already loaded, destroy it 
                 if(this.myChart != ''){
                     this.myChart.destroy();
                 }
 
+                // get currentYear datas 
                 this.labels = views[this.currentYear].labels;
                 this.datas = views[this.currentYear].data;
 
+                // config 
                 const config = {
                     type: 'bar',
                     data: {
@@ -31,19 +34,19 @@ var app = new Vue(
                             data: this.datas,
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
-                                // 'rgba(54, 162, 235, 0.2)',
-                                // 'rgba(255, 206, 86, 0.2)',
-                                // 'rgba(75, 192, 192, 0.2)',
-                                // 'rgba(153, 102, 255, 0.2)',
-                                // 'rgba(255, 159, 64, 0.2)'
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
                             ],
                             borderColor: [
                                 'rgba(255, 99, 132, 1)',
-                                // 'rgba(54, 162, 235, 1)',
-                                // 'rgba(255, 206, 86, 1)',
-                                // 'rgba(75, 192, 192, 1)',
-                                // 'rgba(153, 102, 255, 1)',
-                                // 'rgba(255, 159, 64, 1)'
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
                             ],
                             borderWidth: 1
                         }]
@@ -56,7 +59,8 @@ var app = new Vue(
                         }
                     }
                 };
-                // myChart.update();
+                
+                // populate chart 
                 var ctx = document.getElementById('chart').getContext('2d');
 
                 this.myChart = new Chart(ctx, config);
@@ -66,13 +70,6 @@ var app = new Vue(
         },
         mounted() { 
             
-            // this.views = views;
-            // this.labels = this.views[2021].labels;
-            // this.datas = this.views[2021].data;
-            // console.log(this.labels);
-            // console.log(this.views[2021]);
-            // console.log(Object.values(this.labels));
-            // console.log(Object.values(this.datas));
             this.renderChart();
 
         }
