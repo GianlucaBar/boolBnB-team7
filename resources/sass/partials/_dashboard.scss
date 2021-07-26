@@ -62,10 +62,7 @@
         font-size: 17px;
         border-radius: 10px;
         background-color: $body-bg;
-        -webkit-box-shadow: 11px 9px 31px 4px #424242;
-        -moz-box-shadow: 11px 9px 31px 4px #424242;
-        -o-box-shadow: 11px 9px 31px 4px #424242;
-        box-shadow: 1px 1px 12px 0px #424242;
+        box-shadow:4px 4px 10px -5px #000000;
 
         h4 {
             color: $color-2;
@@ -86,10 +83,7 @@
         width: 48%;
         height: 300px;
         background-color: $body-bg;
-        -webkit-box-shadow: 11px 9px 31px 4px #424242;
-        -moz-box-shadow: 11px 9px 31px 4px #424242;
-        -o-box-shadow: 11px 9px 31px 4px #424242;
-        box-shadow: 1px 1px 12px 0px #424242;
+        box-shadow: 4px 4px 10px -5px #000000;
         overflow-y: scroll;
 
         h2 {
@@ -150,7 +144,7 @@
             li:hover{
                 background-color: white;
                 border-radius: 5px;
-                box-shadow: 1px 1px 12px 0px #424242;
+                box-shadow:4px 4px 10px -5px #000000;
             }
             
         }
@@ -320,10 +314,7 @@
     border-radius: 10px;
     display:flex;
     justify-content: space-between;
-    -webkit-box-shadow: 11px 9px 31px 4px #424242;
-    -moz-box-shadow: 11px 9px 31px 4px #424242;
-    -o-box-shadow: 11px 9px 31px 4px #424242;
-    box-shadow: 1px 1px 5px 0px #424242;
+    box-shadow:4px 4px 10px -5px #000000;
     background-color: white;
 
 
@@ -457,7 +448,7 @@
 }
 .ap-line:hover{
     transform: scale(1.1);
-    box-shadow: 1px 1px 5px 0px #424242;
+    box-shadow: 4px 4px 10px -5px #000000;
     
 }
 
