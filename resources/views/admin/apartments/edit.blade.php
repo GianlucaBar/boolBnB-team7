@@ -140,11 +140,6 @@
                                 </label>
                             </div>
 
-<<<<<<< HEAD
-                            
-=======
-
->>>>>>> ec77e76d0e45234a3d268172c777e0a7647b5a97
                         @else
                             <div class="container-check">
                                 <input type="checkbox" name="extras[]" value="{{ $extra->id }}" id="extra-{{ $extra->id }}" {{ $apartment->extras->contains($extra->id) ? 'checked' : '' }}>
@@ -153,10 +148,6 @@
                                 </label>
                             </div>
 
-<<<<<<< HEAD
-                            
-=======
->>>>>>> ec77e76d0e45234a3d268172c777e0a7647b5a97
                         @endif
                         
                     </div> 
