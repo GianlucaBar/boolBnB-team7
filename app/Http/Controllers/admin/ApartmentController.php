@@ -186,7 +186,7 @@ class ApartmentController extends Controller
         foreach ($yearsWithOrders as $year) {
 
 
-            $viewsByMonth = $views->toQuery()->selectRaw('count(views.id) as count, DATE_FORMAT(created_at, \'%M\') as month')->groupBy('month')->whereYear('created_at', $year)->get();
+            $viewsByMonth = $views->toQuery()->selectRaw('count(views.id) as count, DATE_FORMAT(created_at, \'%M\') as month')->groupBy('month')->whereYear('created_at', $year)->orderBy('count')->get();
 
 
             foreach ($viewsByMonth as $month) {

@@ -27,12 +27,12 @@
     
                 <div class="form-group">
                     <label for="msg_subject">Oggetto</label>
-                    <input type="text" class="form-control" id="msg_subject" name="msg_subject" required>
+                    <input type="text" class="form-control" id="msg_subject" name="msg_subject" value="{{$apartment->title}}" required>
                 </div>
     
                 <div class="form-group">
                     <label for="msg_content">Messaggio</label>
-                    <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10" required></textarea>
+                    <textarea name="msg_content" id="msg_content" class="form-control" cols="30" rows="10" required>Ciao, ti contatto per l'appartamento "{{ $apartment->title }}"</textarea>
                 </div>
                 
             {{-- Form for logged users --}}
