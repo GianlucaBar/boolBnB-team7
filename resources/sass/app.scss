@@ -2,13 +2,28 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Partials
+
+// RULES
 @import "partials/variables";
 @import "partials/mixins";
 @import "partials/common";
+@import "partials/animations";
+
+// HEADER
 @import "partials/header";
+
+// MAIN
 @import "partials/main";
-@import "partials/footer";
+@import "partials/home-guest";
+@import "partials/dashboard";
+@import "partials/message-admin";
+@import "partials/braintree-form";
 @import "partials/sponsorship-page";
+@import "partials/edit-form";
+@import "partials/thank-you";
+
+// FOOTER
+@import "partials/footer";
 
 
 

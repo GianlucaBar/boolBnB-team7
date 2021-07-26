@@ -237,7 +237,7 @@
                     },
                     expirationDate: {
                         selector: '#expiration-date',
-                        placeholder: '10/2019',
+                        placeholder: '10/2025',
                         name: 'expiry'
                     }
                 }

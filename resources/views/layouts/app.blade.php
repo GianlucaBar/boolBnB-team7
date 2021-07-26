@@ -15,6 +15,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -55,7 +57,7 @@
                     </div>
 
                     <!-- Right Side Of Navbar -->
-                    <div class="d-block d-md-none" id="ms-burger">
+                    <div class="d-block" id="ms-burger">
                         <i class="fas fa-bars"></i>
                     </div>
 
