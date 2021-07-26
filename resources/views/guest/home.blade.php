@@ -56,7 +56,7 @@
     <section class="green-sec" v-if="searchResult.length">
         <div class="container">
             {{-- <div class="home-burger"> --}}
-                <div id="home-burger" class="d-block">
+                <div id="home-burger" class="d-block" v-on:click="toggleFilters">
                         <i class="fas fa-bars"></i>
                 </div>
 
@@ -261,5 +261,6 @@
 
 @section('footer-scripts')
     <script src="{{ asset('js/index.js') }}"></script>
-    <script src="{{ asset('js/burger.js') }}"></script>
+    <script src="{{ asset('js/burger.js') }}">
+    </script>
 @endsection
