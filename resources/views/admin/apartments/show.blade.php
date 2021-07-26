@@ -68,11 +68,7 @@
                     </li>
 
                     <li>
-                        <span class="strong-text">Latitudine:</span> {{ $apartment->latitude }}
-                    </li>
-
-                    <li>
-                        <span class="strong-text">Longitudine:</span> {{ $apartment->longitude }}
+                        <span class="strong-text">Prezzo:</span> {{ $apartment->price }}€/notte
                     </li>
 
         @if ($apartment->visible == 1)

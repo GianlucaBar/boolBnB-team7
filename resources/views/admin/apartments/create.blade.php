@@ -78,7 +78,7 @@
 
         <div class="form-group">
             <input type="text" name="price" class="question" id="price" value="{{ old('price') }}" required />
-            <label for="price"><span>Prezzo</span></label>
+            <label for="price"><span>Prezzo €</span></label>
 
             {{-- <label for="price">Prezzo</label>
             <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}" required> --}}

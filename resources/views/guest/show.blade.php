@@ -65,6 +65,10 @@
                     <li>
                         <span class="strong-text">Metri quadrati:</span> {{ $apartment->square_meters }}
                     </li>
+
+                    <li>
+                        <span class="strong-text">Prezzo:</span> {{ $apartment->price }}€/notte
+                    </li>
                 </ul>
 
                 {{-- Extras --}}
