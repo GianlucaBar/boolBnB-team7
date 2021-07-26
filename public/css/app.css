@@ -1593,7 +1593,11 @@ h2 {
   margin-bottom: 5rem;
 }
 .edit-admin h1 {
+<<<<<<< HEAD
+  color: #040F0F;
+=======
   color: #57737A;
+>>>>>>> 0549a37a38eb27104f5ec15f443d3bc0efb69eea
 }
 .edit-admin html {
   font-family: "Lora", sans-serif;
