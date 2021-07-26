@@ -297,7 +297,7 @@
             border: 3px solid $color-2;
             border-radius: 100px;
             transition: background-color .2s;
-            background-color: $color-5;
+            background-color: white;
         }
 
         // label:first-of-type {
@@ -313,20 +313,18 @@
             width: 100%;
         }
 
-
-
         input:checked + label {
-            background-color: $color-5;
+            background-color: $color-1;
         }
 
         input:checked + label::before {
-            background-color: $color-1;
+            background-color: $color-6;
         }
     }
 
     textarea {
-        min-height: 400px;
-        padding-bottom: 40px;
+        min-height: 263px;
+        padding-bottom: 10px;
     }
 
     label.select {

@@ -1923,21 +1923,21 @@ h2 {
   border: 3px solid #57737A;
   border-radius: 100px;
   transition: background-color 0.2s;
-  background-color: #f3ebe2;
+  background-color: white;
 }
 .edit-admin .extra-service label:hover, .edit-admin .extra-service input:focus + label {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   width: 100%;
 }
 .edit-admin .extra-service input:checked + label {
-  background-color: #f3ebe2;
-}
-.edit-admin .extra-service input:checked + label::before {
   background-color: #0DCB92;
 }
+.edit-admin .extra-service input:checked + label::before {
+  background-color: #f8c8cf;
+}
 .edit-admin textarea {
-  min-height: 400px;
-  padding-bottom: 40px;
+  min-height: 263px;
+  padding-bottom: 10px;
 }
 .edit-admin label.select {
   margin: 0;

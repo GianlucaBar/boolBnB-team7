@@ -104,7 +104,7 @@ eval("var app = new Vue({\n  el: '#root2',\n  data: {\n    views: '',\n    label
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Gianluca\laravel-projects\progetto finale\boolBnB-team7\resources\js\charts.js */"./resources/js/charts.js");
+module.exports = __webpack_require__(/*! C:\Users\Maurizio\PROGETTO FINALE\boolBnB-team7\resources\js\charts.js */"./resources/js/charts.js");
 
 
 /***/ })

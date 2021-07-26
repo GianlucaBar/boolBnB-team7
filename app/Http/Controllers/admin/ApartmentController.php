@@ -166,6 +166,9 @@ class ApartmentController extends Controller
 
         $yearsWithOrders = [];
 
+        $monthlyStatsForYears = [];
+
+        
         foreach ($views as $view) {
 
             $date = date($view->date_month_year);
@@ -194,6 +197,7 @@ class ApartmentController extends Controller
 
             // dump($monthlyStatsForYears);
         }
+        
 
 
         $data = [
