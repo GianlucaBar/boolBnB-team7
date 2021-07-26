@@ -461,6 +461,31 @@
     
 }
 
+.title-dashboard{
+    position: relative;
+}
+.sponsored-star{
+    margin-left: 5px;
+    color: $color-1;
+    font-size: 18px;
+}
+
+[data-tooltip]:before {
+    /* needed - do not touch */
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+    right: -75px;
+}
+
+[data-tooltip]:hover:before {
+    /* needed - do not touch */
+    opacity: 1;
+    
+    /* customizable */
+    background: white;   
+}
+
 @media screen and (max-width: 992px) {
     .new-ap {
         text-align: center;
@@ -474,6 +499,13 @@
             margin: auto;
             margin-top: 20px;
         }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sponsored-star{
+        display: block;
+        margin-top: 10px;
     }
 }
 
@@ -511,27 +543,4 @@
             }
         }
     }    
-}
-
-.title-dashboard{
-    position: relative;
-}
-.sponsored-star{
-    color: $color-1;
-}
-
-[data-tooltip]:before {
-    /* needed - do not touch */
-    content: attr(data-tooltip);
-    position: absolute;
-    opacity: 0;
-    right: -75px;
-}
-
-[data-tooltip]:hover:before {
-    /* needed - do not touch */
-    opacity: 1;
-    
-    /* customizable */
-    background: white;   
 }

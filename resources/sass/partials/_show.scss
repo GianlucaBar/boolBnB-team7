@@ -23,7 +23,7 @@
                 .show-img {
                     // width: 40%;
                     width: 100%;
-                    height: 500px;
+                    height: 650px;
                     padding-bottom: 30px;
 
                     img {
@@ -92,6 +92,18 @@
                 }
             }
 
+
+    #root2 {
+
+        select {
+            text-align: center;
+            padding: 8px 25px;
+            margin-bottom: 20px;
+        }
+        min-width: 100%;
+        padding-top: 20px;
+    }
+
         @media screen and (max-width: 992px) {
             h1 {
                 font-size: 25px;
@@ -127,12 +139,28 @@
             .calltoaction-link {
                 text-align: center;
             }
+
+            #root2 {
+                margin: auto;
+                min-width: 60%;
+                max-width: 60%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            #root2 {
+                // margin: auto;
+                min-width: 80%;
+                max-width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 680px) {
+            #root2 {
+                // margin: auto;
+                min-width: 100%;
+                max-width: 100%;
+            }
         }
     }
-}
-
-#root2 {
-    // .stats {
-    padding-top: 20px;
-    // }
 }
