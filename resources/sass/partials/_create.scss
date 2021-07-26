@@ -385,6 +385,7 @@
         input.question,
         textarea.question {
             font-size: 18px;
+            margin-bottom: 40px;
         }
 
         .extra-service {
@@ -408,7 +409,7 @@
                 margin-bottom: 40px;
                 margin-top: 20px;
                 font-size: 12px;
-                width: 70%;
+                width: 90%;
             }
         }
     }
@@ -419,6 +420,7 @@
         .extra-service {
             .form-check{
                 width: 100%;
+                padding: 10px 0;
             }
         }
     }

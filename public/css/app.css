@@ -2378,6 +2378,7 @@ h2 {
   .create-admin input.question,
 .create-admin textarea.question {
     font-size: 18px;
+    margin-bottom: 40px;
   }
   .create-admin .extra-service .form-check {
     width: calc(( 100% / 2 ) - 30px);
@@ -2395,12 +2396,13 @@ h2 {
     margin-bottom: 40px;
     margin-top: 20px;
     font-size: 12px;
-    width: 70%;
+    width: 90%;
   }
 }
 @media screen and (max-width: 428px) {
   .create-admin .extra-service .form-check {
     width: 100%;
+    padding: 10px 0;
   }
 }
 footer i:hover {
