@@ -160,7 +160,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bab
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\index.js */"./resources/js/index.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\Maurizio\PROGETTO FINALE\boolBnB-team7\resources\js\index.js */"./resources/js/index.js");
+>>>>>>> f81707791b508898634648ff7410578154d1f966
 
 
 /***/ })

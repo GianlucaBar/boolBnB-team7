@@ -104,7 +104,11 @@ eval("document.addEventListener('DOMContentLoaded', nav);\n\nfunction nav() {\n 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\burger.js */"./resources/js/burger.js");
+=======
+module.exports = __webpack_require__(/*! C:\Users\Maurizio\PROGETTO FINALE\boolBnB-team7\resources\js\burger.js */"./resources/js/burger.js");
+>>>>>>> f81707791b508898634648ff7410578154d1f966
 
 
 /***/ })
