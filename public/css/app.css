@@ -379,20 +379,36 @@ main {
   .form-control {
     max-width: 400px;
   }
+
+  .details {
+    display: block;
+  }
 }
 @media screen and (max-width: 560px) {
   .my-jumbotron .title h2 {
     font-size: 40px;
+  }
+
+  .details {
+    display: block;
   }
 }
 @media screen and (max-width: 460px) {
   .form-control {
     max-width: 300px;
   }
+
+  .details {
+    display: block;
+  }
 }
 @media screen and (max-width: 415px) {
   .my-jumbotron .title h2 {
     font-size: 34px;
+  }
+
+  .details {
+    display: block;
   }
 }
 h2 {
@@ -466,6 +482,7 @@ h2 {
   font-weight: bold;
   font-size: 17px;
   width: 100%;
+  text-align: center;
 }
 .list-apartment .card-container .card .ap-stats span {
   margin: 10px;
@@ -497,6 +514,23 @@ h2 {
   .list-apartment .card-container .card {
     width: calc(( 100% / 2) - 30px );
   }
+  .list-apartment .card-container .card .ap-stats {
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    left: -4px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .list-apartment .card-container .card .ap-stats span {
+    margin: 10px;
+  }
 }
 @media screen and (max-width: 768px) {
   .list-apartment .card-container {
@@ -507,11 +541,45 @@ h2 {
     margin-bottom: 20px;
     width: 80%;
   }
+  .list-apartment .card-container .card .ap-stats {
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    left: -4px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .list-apartment .card-container .card .ap-stats span {
+    margin: 10px;
+  }
 }
 @media screen and (max-width: 447px) {
   .list-apartment .card-container .card {
     min-width: 235px;
     max-width: 100%;
+  }
+  .list-apartment .card-container .card .ap-stats {
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    left: -4px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+  .list-apartment .card-container .card .ap-stats span {
+    margin: 10px;
   }
 }
 .list-apartment .card:hover {

@@ -52,6 +52,10 @@
     .form-control{
         max-width: 400px;
     }
+    .details{
+        display: block;
+    }
+   
 }
 
 @media screen and (max-width: 560px) {
@@ -62,11 +66,17 @@
             }
         }
     }
+    .details{
+        display: block;
+    }
 }
 
 @media screen and (max-width: 460px) {
     .form-control{
         max-width: 300px;
+    }
+    .details{
+        display: block;
     }
 }
 
@@ -77,6 +87,9 @@
                 font-size: 34px;
             }
         }
+    }
+    .details{
+        display: block;
     }
 }
 
@@ -160,6 +173,7 @@ h2 {
                     font-weight: bold;
                     font-size: 17px;
                     width: 100%;
+                    text-align: center;
 
                     span{
                         margin:10px;
@@ -202,8 +216,27 @@ h2 {
             .card-container{
                 .card{
                     width: calc(( 100% / 2) - 30px );
+                    .ap-stats{
+                        display: block;
+                        position: absolute;
+                        bottom: 20%;
+                        left: -4px;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        padding: 5px;
+                        border-radius: 5px;
+                        font-weight: bold;
+                        font-size: 17px;
+                        width: 100%;
+                        text-align: center;
+                        display: block;
+        
+                        span{
+                            margin:10px;
+                        }
+                    }
                 }
             }
+            
         }
 
         @media screen and (max-width: 768px) {
@@ -213,8 +246,29 @@ h2 {
                     margin: auto;
                     margin-bottom: 20px;
                     width: 80%;
+                    
+                    .ap-stats{
+                        display: block;
+                        position: absolute;
+                        bottom: 20%;
+                        left: -4px;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        padding: 5px;
+                        border-radius: 5px;
+                        font-weight: bold;
+                        font-size: 17px;
+                        width: 100%;
+                        text-align: center;
+                        display: block;
+        
+                        span{
+                            margin:10px;
+                        }
+                    }
                 }
             }
+            
+            
         }
 
         @media screen and (max-width: 447px) {
@@ -225,8 +279,28 @@ h2 {
                     // margin-bottom: 20px;
                     min-width: 235px;
                     max-width: 100%;
+                    .ap-stats{
+                        display: block;
+                        position: absolute;
+                        bottom: 20%;
+                        left: -4px;
+                        background-color: rgba(0, 0, 0, 0.4);
+                        padding: 5px;
+                        border-radius: 5px;
+                        font-weight: bold;
+                        font-size: 17px;
+                        width: 100%;
+                        text-align: center;
+                        display: block;
+        
+                        span{
+                            margin:10px;
+                        }
+                    }
                 }
+                
             }
+           
         }
 
         .card:hover {
