@@ -20,7 +20,7 @@
         </div>
     @endif
 
-<div class="container create-admin">
+<div class="container-fluid create-admin">
     <h1>Aggiungi un nuovo appartamento</h1>
 
     {{-- Form --}}

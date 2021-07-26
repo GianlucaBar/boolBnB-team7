@@ -196,10 +196,6 @@
         }
     }
 
-    .edit-cover img {
-        width: 40%;
-    }
-
     .file-select {
 
         input.question {
@@ -350,7 +346,7 @@
 }
 
 @media screen and (max-width: 992px) {
-    .edit-admin {
+    .create-admin {
         h1 {
             font-size: 25px;
             padding-bottom: 40px;
@@ -404,7 +400,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .edit-admin {
+    .create-admin {
         .extra-service {
             flex-direction: column;
             .form-check{
@@ -419,7 +415,7 @@
 }
 
 @media screen and (max-width: 428px) {
-    .edit-admin {
+    .create-admin {
         .extra-service {
             .form-check{
                 width: 100%;

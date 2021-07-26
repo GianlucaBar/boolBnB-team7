@@ -2237,9 +2237,6 @@ h2 {
     opacity: 1;
   }
 }
-.create-admin .edit-cover img {
-  width: 40%;
-}
 .create-admin .file-select input.question {
   font-size: 14px;
 }
@@ -2357,43 +2354,43 @@ h2 {
 }
 
 @media screen and (max-width: 992px) {
-  .edit-admin h1 {
+  .create-admin h1 {
     font-size: 25px;
     padding-bottom: 40px;
   }
-  .edit-admin .form-group,
-.edit-admin .edit-cover,
-.edit-admin .submit {
+  .create-admin .form-group,
+.create-admin .edit-cover,
+.create-admin .submit {
     max-width: 100%;
     margin: auto;
     margin-bottom: 30px;
   }
-  .edit-admin .submit {
+  .create-admin .submit {
     margin-top: 60px;
   }
-  .edit-admin .submit input {
+  .create-admin .submit input {
     margin: auto;
   }
-  .edit-admin span {
+  .create-admin span {
     display: inline-block;
     text-align: center;
   }
-  .edit-admin input.question,
-.edit-admin textarea.question {
+  .create-admin input.question,
+.create-admin textarea.question {
     font-size: 18px;
   }
-  .edit-admin .extra-service .form-check {
+  .create-admin .extra-service .form-check {
     width: calc(( 100% / 2 ) - 30px);
   }
-  .edit-admin textarea {
+  .create-admin textarea {
     min-height: 250px;
   }
 }
 @media screen and (max-width: 768px) {
-  .edit-admin .extra-service {
+  .create-admin .extra-service {
     flex-direction: column;
   }
-  .edit-admin .extra-service .form-check {
+  .create-admin .extra-service .form-check {
     margin: auto;
     margin-bottom: 40px;
     margin-top: 20px;
@@ -2402,7 +2399,7 @@ h2 {
   }
 }
 @media screen and (max-width: 428px) {
-  .edit-admin .extra-service .form-check {
+  .create-admin .extra-service .form-check {
     width: 100%;
   }
 }
