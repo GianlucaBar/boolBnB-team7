@@ -141,7 +141,7 @@
                             <a id='click-card' :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
                                 <div>
                                     <div class="details hidden centered">
-                                        <a>
+                                        <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
                                             <i class="far fa-eye"></i> <br> Dettagli appartamento
                                         </a>
                                     
@@ -179,7 +179,7 @@
                             <a id='click-card' :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
                                 <div>
                                     <div class="details hidden centered">
-                                        <a>
+                                        <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
                                             <i class="far fa-eye"></i> <br> Dettagli appartamento
                                         </a>
                                     
@@ -234,7 +234,7 @@
                         </div>
                         <a id='click-card' href="{{route('ap-details', ['id' => $apartment->id])}}">
                             <div class="details hidden centered">
-                                <a>
+                                <a  href="{{route('ap-details', ['id' => $apartment->id])}}">
                                     <i class="far fa-eye"></i> <br> Dettagli appartamento
                                 </a>
                             </div>

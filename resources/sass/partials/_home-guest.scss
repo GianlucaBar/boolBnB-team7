@@ -70,7 +70,7 @@
         }
     }
     .details{
-        display: block;
+        display: none;
     }
 }
 
@@ -79,7 +79,7 @@
         max-width: 300px;
     }
     .details{
-        display: block;
+        display: none;
     }
 }
 
@@ -92,7 +92,7 @@
         }
     }
     .details{
-        display: block;
+        display: none;
     }
 }
 
@@ -146,6 +146,7 @@ h2 {
                 transform: rotateZ(42deg);
                 background-color: rgba(0, 0, 0, 0.4);
                 padding: 0px 32px;
+                
             }
 
             .details{
@@ -153,17 +154,25 @@ h2 {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                background-color: rgba(0, 0, 0, 0.4);
                 border-radius: 5px;
-                padding:10px;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.4);
 
-                a{
-                    color:lightgray;
+                    a{
+                        color:$body-bg;
+                        position: relative;
+                        top: 50%;
+                        z-index:1;
+                    }
 
                     i{
                         font-size: 40px;
+                        position: relative;
+                        color: white; 
+                        z-index:2;     
                     }
-                }
+                
 
                     a:hover{
                         color:white;
@@ -173,11 +182,10 @@ h2 {
                     position: absolute;
                     bottom: 0;
                     left: 0;
-                    background-color: rgba(0, 0, 0, 0.4);
                     padding: 5px;
                     border-radius: 5px;
                     font-weight: bold;
-                    font-size: 17px;
+                    font-size: 15px;
                     width: 100%;
                     text-align: center;
 
@@ -225,9 +233,8 @@ h2 {
                     .ap-stats{
                         display: block;
                         position: absolute;
-                        bottom: 20%;
-                        left: -4px;
-                        background-color: rgba(0, 0, 0, 0.4);
+                        bottom: 0;
+                        left: 0;
                         padding: 5px;
                         border-radius: 5px;
                         font-weight: bold;
@@ -252,20 +259,44 @@ h2 {
                     margin: auto;
                     margin-bottom: 20px;
                     width: 80%;
+
+                    .details{
+                        display:none;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 5px;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.4);
+        
+                            a{
+                                color:$body-bg;
+                                position: relative;
+                                top: 50%;
+                                z-index:1;
+                            }
+        
+                            i{
+                                
+                                font-size: 40px;
+                                position: relative;
+                                color: white; 
+                                z-index:2;     
+                            }
+                    }
                     
                     .ap-stats{
                         display: block;
                         position: absolute;
-                        bottom: 20%;
-                        left: -4px;
-                        background-color: rgba(0, 0, 0, 0.4);
+                        bottom: 0;
+                        left: 0;
                         padding: 5px;
-                        border-radius: 5px;
                         font-weight: bold;
-                        font-size: 17px;
+                        font-size: 12px;
                         width: 100%;
                         text-align: center;
-                        display: block;
         
                         span{
                             margin:10px;
@@ -288,13 +319,11 @@ h2 {
                     .ap-stats{
                         display: block;
                         position: absolute;
-                        bottom: 20%;
-                        left: -4px;
-                        background-color: rgba(0, 0, 0, 0.4);
+                        bottom: 0;
+                        left: 0;
                         padding: 5px;
-                        border-radius: 5px;
                         font-weight: bold;
-                        font-size: 17px;
+                        font-size: 12px;
                         width: 100%;
                         text-align: center;
                         display: block;
@@ -303,6 +332,14 @@ h2 {
                             margin:10px;
                         }
                     }
+                    #click-card{
+                        #click-card{
+                            cursor: pointer;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    
                 }
                 
             }
