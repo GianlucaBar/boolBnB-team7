@@ -47,6 +47,14 @@
 #ms-burger{
     i{
         font-size: 50px;
+        color: $color-2;
+    }
+    i:hover{
+        color:$color-1;
+        
+    }
+    i:active{
+        transform: scale(1.1);
     }
 }
 

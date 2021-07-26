@@ -263,6 +263,32 @@ body {
     opacity: 1;
   }
 }
+.slide-rotate-hor-top {
+  -webkit-animation: slide-rotate-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+  animation: slide-rotate-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-rotate-hor-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-rotate-hor-top {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  100% {
+    transform: translateY(-150px) rotateX(-90deg);
+  }
+}
+@keyframes slide-rotate-hor-top {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  100% {
+    transform: translateY(-150px) rotateX(-90deg);
+  }
+}
 .logo .big-logo {
   width: 230px;
 }
@@ -303,6 +329,13 @@ body {
 
 #ms-burger i {
   font-size: 50px;
+  color: #57737A;
+}
+#ms-burger i:hover {
+  color: #0DCB92;
+}
+#ms-burger i:active {
+  transform: scale(1.1);
 }
 
 #ms-burger-menu {
@@ -1003,11 +1036,17 @@ h2 {
   display: flex;
   align-items: center;
   padding: 15px;
+  height: 50px;
 }
 .container-user .msg-box ul li span {
   border-right: 1px solid;
   padding-right: 5px;
   width: 85%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 43px;
+  line-height: 41px;
 }
 .container-user .msg-box ul li .read-btn {
   background-color: #0DCB92;

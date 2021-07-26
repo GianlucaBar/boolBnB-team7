@@ -14,10 +14,11 @@
     
     <div class="container">
         <div class="title centered mt-4 mb-4">
-            <h2>LA TUA DASHBOARD</h2>
+            <h2 class="tracking-in-expand">LA TUA DASHBOARD</h2>
         </div>
 
-        <div class="container-user ">
+        {{-- User info --}}
+        <div class="container-user slide-rotate-hor-top">
             <div class="user-rep ">
                 <h2><i class="fas fa-user"></i> I Tuoi Dati <i class="fas fa-user icon-hide"></i></h2>
                 <div class="user-rep-box">
@@ -37,8 +38,8 @@
             </div>
 
             {{-- Messages --}}
-            <div class="msg-box">
-                <h2> <i class="far fa-envelope"></i> I Tuoi Messaggi <i class="far fa-envelope icon-hide"></i></h2>
+            <div class="msg-box slide-rotate-hor-top">
+                <h2> <i class="far fa-envelope "></i> I Tuoi Messaggi <i class="far fa-envelope icon-hide"></i></h2>
                 @foreach ($messagesArray as $messages)
                     @foreach ($messages as $message)
                     <div>
