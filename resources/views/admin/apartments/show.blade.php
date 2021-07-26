@@ -107,26 +107,25 @@
                         {{-- @endif --}}
                     @endforeach
                 </div>
+
+                <div id="root2">
+                    <section class="stats">
+                        <h3>Visualizzazioni</h3>
+                        <select v-model="currentYear" name="" id="selectYear" v-on:change="renderChart">
+                            @foreach ($availableYears as $year)
+                                <option :value="{{$year}}">{{$year}}</option>
+                            @endforeach
+                        </select>
+                        <canvas id="chart" height="400" width="600"></canvas>
+                    </section>
+
+                    <script>
+                        const views = {!!json_encode($views)!!};
+                    </script>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div id="root2">
-
-    <section class="stats">
-        <select v-model="currentYear" name="" id="selectYear" v-on:change="renderChart">
-            @foreach ($availableYears as $year)
-                <option :value="{{$year}}">{{$year}}</option>
-            @endforeach
-        </select>
-        <canvas id="chart" height="400" width="600"></canvas>
-    </section>
-
-    <script>
-        const views = {!!json_encode($views)!!};
-        // console.log(apartments);
-    </script>
 </div>
 
 @endsection
