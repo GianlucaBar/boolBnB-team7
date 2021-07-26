@@ -154,7 +154,6 @@
                                 </label>
                             </div>
 
-
                         @endif
                         
                         {{-- <label class="form-check-label" for="extra-{{ $extra->id }}">
