@@ -3,7 +3,8 @@
 @section('header-scripts')
     <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps.css'/>
     <script src='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.14.0/maps/maps-web.min.js'></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 @endsection
 @section('title')
     - {{ $apartment->title }} 
@@ -110,6 +111,24 @@
         </div>
     </div>
 </div>
+
+<div id="root2">
+
+    <section class="stats">
+        <select v-model="currentYear" name="" id="selectYear" v-on:change="renderChart">
+            @foreach ($availableYears as $year)
+                <option :value="{{$year}}">{{$year}}</option>
+            @endforeach
+        </select>
+        <canvas id="chart" height="400" width="600"></canvas>
+    </section>
+
+    <script>
+        const views = {!!json_encode($views)!!};
+        // console.log(apartments);
+    </script>
+</div>
+
 @endsection
 
 {{-- Footer Scripts --}}
@@ -125,4 +144,6 @@
 
     var marker = new tt.Marker().setLngLat(coordinates).addTo(map);
 </script>
+
+<script src="{{ asset('js/charts.js') }}"></script>
 @endsection

@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('header-scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-@endsection
 
 @section('title')
     - La tua dashboard
@@ -76,8 +72,19 @@
         <div class="dashboard-ap mt-4 mb-4">
             @foreach ($apartments as $apartment)
             <div class="ap-line">
-                <a class="btn-link" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">{{$apartment->title}}</a>
 
+                <div class="title-dashboard">
+                    <a class="btn-link" href="{{ route('admin.apartments.show', ['apartment' => $apartment->id]) }}">{{$apartment->title}}</a>
+
+                @foreach ($sponsored as $sponsoredAp)
+                        
+                        @if ($apartment->id == $sponsoredAp->id)
+                            <span data-tooltip="sponsored"><i class="fas fa-star sponsored-star"></i></span>
+                        @endif
+
+                @endforeach
+                </div>
+            
                 {{-- CRUD --}}
                 <div class="buttoni">
 
@@ -111,14 +118,6 @@
     </div>
 </section>
 
-    {{-- statistic 
-    <section class="stats">
-        <canvas id="chart" height="400" width="600"></canvas>
-    </section>
-    <input type="hidden" value="{{ $apartments }}" v-model="apartments"> --}}
-
 @endsection
 
-@section('footer-scripts')
-    <script src="{{ asset('js/charts.js') }}"></script>
-@endsection
+

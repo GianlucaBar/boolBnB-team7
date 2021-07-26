@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers\admin;
 
+use Illuminate\Support\Facades\DB;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 use App\Apartment;
 use App\Extra;
 use App\Message;
+use App\View;
 
 class ApartmentController extends Controller
 {
@@ -19,11 +23,17 @@ class ApartmentController extends Controller
         $currentUser = Auth::user();
 
         $userAp = count($currentUser->apartments);
-        // dd($userAp);
+        
         $currentUserId = Auth::id();
 
         $apartments = Apartment::where('user_id', $currentUserId)->get();
 
+        // link sponsorships to single apartment 
+        foreach($apartments as $apartment){
+            if($apartment->sponsorships){
+                $apartment = $apartment->extras;
+            }   
+        }
         $thisUserMessages = [];
         foreach ($apartments as $apartment) {
             $thisApMessages = Message::where('apartment_id', $apartment->id)->get();
@@ -32,13 +42,40 @@ class ApartmentController extends Controller
                 array_push($thisUserMessages, $thisApMessages);
             }
         }
+        //////////////////////////////////////////
+        // get sponsored apartments for thisuser
+
+        $now = Carbon::now();
+
+        $nowParsed = $now->format('Y-m-d H:i:s');
+
+        $inProgress = DB::table('apartment_sponsorship')->whereDate('end_date', '>=', $nowParsed)->get();
+
+        $sponsoredApIds = [];
+
+        foreach ($inProgress as $entry) {
+            
+            $apartmentId = $entry->apartment_id;
+            if(!in_array($apartmentId, $sponsoredApIds)){
+                array_push($sponsoredApIds, $apartmentId);
+            }
+        }
+
+        $sponsoredArray = [];
+        foreach ($sponsoredApIds as $id) {
+            $sponsoredAp = Apartment::where('id', $id)->where('user_id', $currentUserId)->get();
+
+            if(!$sponsoredAp->isEmpty()){
+                array_push($sponsoredArray, $sponsoredAp->first());
+            }
+        }
 
         $data = [
             'apartments' => $apartments,
             'messagesArray' => $thisUserMessages,
             'user' => $currentUser,
-            'apartment_number' => $userAp
-            // 'userId' => $currentUserId
+            'apartment_number' => $userAp,
+            'sponsored' => $sponsoredArray
         ];
 
         return view('admin.apartments.index', $data);
@@ -125,10 +162,46 @@ class ApartmentController extends Controller
         $apartment = Apartment::findOrFail($id);
         $extras = $apartment->extras;
 
-        // dd($extras);
+        $views = View::where('apartment_id', $id)->get();
+
+        $yearsWithOrders = [];
+
+        foreach ($views as $view) {
+
+            $date = date($view->date_month_year);
+
+            $parsedDate = Carbon::parse($date);
+
+            if(!in_array($parsedDate->year, $yearsWithOrders)){
+
+                array_push($yearsWithOrders, $parsedDate->year);
+            }
+
+        }
+
+        // dd($views);
+        foreach ($yearsWithOrders as $year) {
+
+
+            $viewsByMonth = $views->toQuery()->selectRaw('count(views.id) as count, DATE_FORMAT(created_at, \'%M\') as month')->groupBy('month')->whereYear('created_at', $year)->get();
+
+
+            foreach ($viewsByMonth as $month) {
+                $monthlyStatsForYears[$year]["labels"][]= $month->month;
+                $monthlyStatsForYears[$year]["data"][]= $month->count;
+
+            }
+
+            // dump($monthlyStatsForYears);
+        }
+
+
         $data = [
             'apartment' => $apartment,
-            'extras' => $extras
+            'extras' => $extras,
+            'views' => $monthlyStatsForYears,
+            'availableYears' => $yearsWithOrders
+            
         ];
 
         return view('admin.apartments.show', $data);
