@@ -288,9 +288,17 @@ body {
   display: inline-block;
 }
 .header-nav li a {
-  color: #040F0F;
+  color: #57737A;
   font-weight: 500;
   font-size: 20px;
+  text-shadow: 1px 1px 5px 0px black;
+}
+.header-nav li a:hover {
+  color: #0DCB92;
+}
+.header-nav li a:active {
+  transform: scale(1.1);
+  text-shadow: 2px 2px 5px 0px black;
 }
 
 #ms-burger i {
