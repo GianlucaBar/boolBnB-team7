@@ -8,20 +8,21 @@ var app = new Vue(
             labels: '',
             datas: '',
             months: ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
-            currentYear: '2021'
+            currentYear: '2021',
+            myChart: ''
         },
         
         methods: { 
             renderChart(){
+
+                if(this.myChart != ''){
+                    this.myChart.destroy();
+                }
+
                 this.labels = views[this.currentYear].labels;
                 this.datas = views[this.currentYear].data;
 
-                var ctx = document.getElementById('chart').getContext('2d');
-
-                if(myChart){
-                    myChart.destroy();
-                }
-                var myChart = new Chart(ctx, {
+                const config = {
                     type: 'bar',
                     data: {
                         labels: this.labels,
@@ -54,7 +55,12 @@ var app = new Vue(
                             }
                         }
                     }
-                });
+                };
+                // myChart.update();
+                var ctx = document.getElementById('chart').getContext('2d');
+
+                this.myChart = new Chart(ctx, config);
+
             },
             
         },

@@ -23,7 +23,7 @@ class ApartmentController extends Controller
         $currentUser = Auth::user();
 
         $userAp = count($currentUser->apartments);
-        // dd($userAp);
+        
         $currentUserId = Auth::id();
 
         $apartments = Apartment::where('user_id', $currentUserId)->get();
