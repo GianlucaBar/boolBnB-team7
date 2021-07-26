@@ -57,7 +57,7 @@
         <div class="container">
             {{-- <div class="home-burger"> --}}
                 <div id="home-burger" class="d-block" v-on:click="toggleFilters">
-                        <i class="fas fa-bars"></i>
+                        <i class="fas fa-filter"></i>Aggiuungi filtro
                 </div>
 
                 <ul id="home-burger-menu" class="d-none">
@@ -261,6 +261,4 @@
 
 @section('footer-scripts')
     <script src="{{ asset('js/index.js') }}"></script>
-    <script src="{{ asset('js/burger.js') }}">
-    </script>
 @endsection
