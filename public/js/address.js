@@ -2,7 +2,7 @@
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
-/******/ 	// The require sfunction
+/******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
@@ -126,5 +126,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bab
   \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! C:\Users\assas\Boolean\progetto_finale\boolBnB-team7\resources\js\address.js */"./resources/js/address.js");
+
+
+/***/ })
 
 /******/ });

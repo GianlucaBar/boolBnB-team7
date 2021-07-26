@@ -57,7 +57,7 @@
         <div class="container">
             {{-- <div class="home-burger"> --}}
                 <div id="home-burger" class="d-block" v-on:click="toggleFilters">
-                        <i class="fas fa-filter"></i> Filtra la ricerca
+                        <i class="fas fa-filter"></i>Aggiuungi filtro
                 </div>
 
                 <ul id="home-burger-menu" class="d-none">
