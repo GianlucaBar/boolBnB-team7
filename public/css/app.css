@@ -507,6 +507,11 @@ h2 {
   position: relative;
   overflow: hidden;
 }
+.list-apartment .card-container .card #click-card {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
 .list-apartment .card-container .card .sponsorized-ap {
   position: absolute;
   top: 30px;
@@ -1331,31 +1336,6 @@ h2 {
 .ap-line:hover {
   transform: scale(1.1);
   box-shadow: 4px 4px 10px -5px #000000;
-}
-
-.title-dashboard {
-  position: relative;
-}
-
-.sponsored-star {
-  margin-left: 5px;
-  color: #0DCB92;
-  font-size: 18px;
-}
-
-[data-tooltip]:before {
-  /* needed - do not touch */
-  content: attr(data-tooltip);
-  position: absolute;
-  opacity: 0;
-  right: -75px;
-}
-
-[data-tooltip]:hover:before {
-  /* needed - do not touch */
-  opacity: 1;
-  /* customizable */
-  background: white;
 }
 
 .title-dashboard {

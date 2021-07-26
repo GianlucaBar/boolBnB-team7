@@ -138,33 +138,34 @@
                         <div class="card fade-in-top"
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in searchResult">
-                            
-                            <div>
-                                <div class="details hidden centered">
-                                    <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
-                                        <i class="far fa-eye"></i> <br> Dettagli appartamento
-                                    </a>
-                                
-                                </div>
+                            <a id='click-card' :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
+                                <div>
+                                    <div class="details hidden centered">
+                                        <a>
+                                            <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                        </a>
+                                    
+                                    </div>
 
-                                <div class="ap-stats hidden">
-                                    <span>Stanze: @{{ap.rooms}}</span>
-                                    <span>Letti: @{{ap.beds}}</span>
-                                    <span>Bagni: @{{ap.baths}}</span>
+                                    <div class="ap-stats hidden">
+                                        <span>Stanze: @{{ap.rooms}}</span>
+                                        <span>Letti: @{{ap.beds}}</span>
+                                        <span>Bagni: @{{ap.baths}}</span>
 
 
-                                </div>
-        
-                                <div class="scaling-block">
-                                    <div class="blog-title">
-                                        <h6>@{{ap.title}}</h6>
-        
-                                        <div>
-                                            <p>@{{ ap.address }}</p>
+                                    </div>
+            
+                                    <div class="scaling-block">
+                                        <div class="blog-title">
+                                            <h6>@{{ap.title}}</h6>
+            
+                                            <div>
+                                                <p>@{{ ap.address }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -175,32 +176,34 @@
                         <div class="card fade-in-top" 
                         v-bind:style="{ backgroundImage: 'url('+ 'storage/' + ap.cover +  ')' }"
                         v-for="ap in filteredList">
-                        <div>
-                            <div class="details hidden centered">
-                                <a :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
-                                    <i class="far fa-eye"></i> <br> Dettagli appartamento
-                                </a>
-                            
-                            </div>
+                            <a id='click-card' :href="'http://127.0.0.1:8000/apartments/' + ap.id ">
+                                <div>
+                                    <div class="details hidden centered">
+                                        <a>
+                                            <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                        </a>
+                                    
+                                    </div>
 
-                            <div class="ap-stats hidden">
-                                <span>Stanze: @{{ap.rooms}}</span>
-                                <span>Letti: @{{ap.beds}}</span>
-                                <span>Bagni: @{{ap.baths}}</span>
+                                    <div class="ap-stats hidden">
+                                        <span>Stanze: @{{ap.rooms}}</span>
+                                        <span>Letti: @{{ap.beds}}</span>
+                                        <span>Bagni: @{{ap.baths}}</span>
 
 
-                            </div>
-    
-                            <div class="scaling-block">
-                                <div class="blog-title">
-                                    <h6>@{{ap.title}}</h6>
-    
-                                    <div>
-                                        <p>@{{ ap.address }}</p>
+                                    </div>
+            
+                                    <div class="scaling-block">
+                                        <div class="blog-title">
+                                            <h6>@{{ap.title}}</h6>
+            
+                                            <div>
+                                                <p>@{{ ap.address }}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -225,29 +228,31 @@
                 <div class="card-container"> 
                     @foreach ($sponsored as $apartment) 
                     <div class="card fade-in-top" style="background-image: url('{{ asset('storage/' . $apartment->cover) }}')">
+                        
                         <div class="sponsorized-ap">
                             Sponsorizzato
                         </div>
-
-                        <div class="details hidden centered">
-                            <a href="{{route('ap-details', ['id' => $apartment->id])}}">
-                                <i class="far fa-eye"></i> <br> Dettagli appartamento
-                            </a>
-                        </div>
-
-                        <div class="ap-stats hidden">
-                            <span>Stanze: {{$apartment->rooms}}</span>
-                            <span>Letti: {{$apartment->beds}}</span>
-                            <span>Bagni: {{$apartment->baths}}</span>
-                        </div>
-
-                        <div class="scaling-block">
-                            <div class="blog-title">
-                                <h6>{{$apartment->title}}</h6>
-
-                                <div>{{ $apartment->address }}</div>
+                        <a id='click-card' href="{{route('ap-details', ['id' => $apartment->id])}}">
+                            <div class="details hidden centered">
+                                <a>
+                                    <i class="far fa-eye"></i> <br> Dettagli appartamento
+                                </a>
                             </div>
-                        </div>
+
+                            <div class="ap-stats hidden">
+                                <span>Stanze: {{$apartment->rooms}}</span>
+                                <span>Letti: {{$apartment->beds}}</span>
+                                <span>Bagni: {{$apartment->baths}}</span>
+                            </div>
+
+                            <div class="scaling-block">
+                                <div class="blog-title">
+                                    <h6>{{$apartment->title}}</h6>
+
+                                    <div>{{ $apartment->address }}</div>
+                                </div>
+                            </div>
+                        </a>
                         
                     </div>
                     @endforeach
