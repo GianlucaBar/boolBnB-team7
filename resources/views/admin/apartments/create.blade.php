@@ -80,7 +80,7 @@
 
         <div class="form-group">
             <label for="cover">Immagine di copertina</label>
-            <input type="file" class="form-control-file" name="cover" id="cover">
+            <input type="file" class="form-control-file" name="cover" id="cover" required>
         </div>
 
         {{-- checkboxes extras  --}}
