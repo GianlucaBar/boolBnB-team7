@@ -109,6 +109,7 @@
                 </div>
 
                 <div id="root2">
+                    @if (!Empty($views))
                     <section class="stats">
                         <h3>Visualizzazioni</h3>
                         <select v-model="currentYear" name="" id="selectYear" v-on:change="renderChart">
@@ -118,7 +119,8 @@
                         </select>
                         <canvas id="chart" height="400" width="600"></canvas>
                     </section>
-
+                    @endif
+                    
                     <script>
                         const views = {!!json_encode($views)!!};
                     </script>
