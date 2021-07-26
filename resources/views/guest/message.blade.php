@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid message-guest">
         <h1>Contatta il proprietario</h1>
 
         <form action="{{ route('store-message', ['id' => $apartment->id]) }}" method="post">

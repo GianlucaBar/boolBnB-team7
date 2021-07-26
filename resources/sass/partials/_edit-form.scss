@@ -347,6 +347,20 @@
     }
 }
 
+@media screen and (max-width: 1070px){
+
+        .edit-admin {
+            .extra-service {
+                .extra-checkbox {
+                label{
+                    font-size: 13px;
+                }
+            }
+            }
+        }
+        
+}
+
 @media screen and (max-width: 992px) {
     .edit-admin {
         h1 {

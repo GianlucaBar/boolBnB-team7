@@ -6,9 +6,8 @@
         
         .container-fluid {
             padding-top: 50px;
-            font-size: 16px;
+            font-size: 18px;
             color: $color-3;
-            // background-color: #34d95a;
 
                 .show-title {
                     margin-bottom: 40px;
@@ -21,18 +20,18 @@
                 }
 
                 .show-img {
-                    // width: 40%;
+                    // margin: auto;
                     width: 100%;
-                    height: 650px;
+                    height: 750px;
                     padding-bottom: 30px;
 
                     img {
-                        // width: 100%;
                         object-fit: cover;
                         object-position: center;
                         width: 100%;
                         height: 100%;
                         border-radius: 5px;
+                        // display: block;
                     }
                 }
 
@@ -105,12 +104,22 @@
     }
 
         @media screen and (max-width: 992px) {
+            
             h1 {
                 font-size: 25px;
             }
 
+            // .show-container {
+            //     .container-fluid {
+            //         .show-img {
+            //             height: 400px;
+            //         }
+            //     }
+            // }
+
             .show-flex-container {
                 display: block;
+
 
                 .show-info {
                     width: 100%;
@@ -146,8 +155,30 @@
                 max-width: 60%;
             }
         }
+    }
+}
 
-        @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+            .show-container {
+                .container-fluid {
+                    .show-img {
+                        // width: 100%;
+                        height: unset;
+                        // max-height: 500px;
+                        // padding-bottom: 30px;
+                        // padding-bottom: 500px;
+
+                        img {
+                            // width: 100%;
+                            object-fit: unset;
+                            object-position: unset;
+                            // width: 100%;
+                            // height: 100%;
+                        }
+                    }
+                }
+            }
+            
             #root2 {
                 // margin: auto;
                 min-width: 80%;
@@ -155,12 +186,10 @@
             }
         }
 
-        @media screen and (max-width: 680px) {
-            #root2 {
-                // margin: auto;
-                min-width: 100%;
-                max-width: 100%;
-            }
-        }
-    }
-}
+        // @media screen and (max-width: 680px) {
+        //     #root2 {
+        //         // margin: auto;
+        //         min-width: 100%;
+        //         max-width: 100%;
+        //     }
+        // }
