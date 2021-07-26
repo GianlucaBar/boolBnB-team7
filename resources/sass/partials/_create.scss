@@ -274,7 +274,7 @@
             border-radius: 100px;
             color: $color-2;
             background-color: $color-5;
-            box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+            box-shadow: 4px 4px 10px -5px #000000;
             white-space: nowrap;
             cursor: pointer;
             user-select: none;
@@ -305,7 +305,7 @@
         // }
 
         label:hover, input:focus + label {
-            box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+            box-shadow: 4px 4px 10px -5px #000000;
             width: 100%;
         }
 
@@ -385,6 +385,7 @@
         input.question,
         textarea.question {
             font-size: 18px;
+            margin-bottom: 40px;
         }
 
         .extra-service {
@@ -408,7 +409,7 @@
                 margin-bottom: 40px;
                 margin-top: 20px;
                 font-size: 12px;
-                width: 70%;
+                width: 90%;
             }
         }
     }
@@ -419,6 +420,7 @@
         .extra-service {
             .form-check{
                 width: 100%;
+                padding: 10px 0;
             }
         }
     }
