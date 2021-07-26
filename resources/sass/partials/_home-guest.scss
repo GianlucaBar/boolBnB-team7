@@ -54,6 +54,9 @@
     }
     .details{
         display: block;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        padding:5px;
     }
    
 }
@@ -128,10 +131,7 @@ h2 {
             transform: scaleY(1);
             transform-origin: top;
             border: none;
-            -webkit-box-shadow: 11px 9px 31px 4px #424242;
-            -moz-box-shadow: 11px 9px 31px 4px #424242;
-            -o-box-shadow: 11px 9px 31px 4px #424242;
-            box-shadow: 1px 1px 12px 0px #424242;
+            box-shadow: 4px 4px 10px -5px #000000;
             position: relative;
             overflow: hidden;
             .sponsorized-ap{
@@ -148,7 +148,9 @@ h2 {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                color: black;
+                background-color: rgba(0, 0, 0, 0.4);
+                border-radius: 5px;
+                padding:10px;
 
                 a{
                     color:lightgray;

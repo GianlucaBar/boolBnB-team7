@@ -86,7 +86,7 @@
 
         <div id="root">
             <div class="form-group">
-                <input type="text" name="address" class="question" id="address" value="{{ old('address') }}" required />
+                <input v-on:keyup="getAddressCoord" v-model="searchAddress" type="text" name="address" class="question" id="address" required />
                 <label for="address"><span>Indirizzo</span></label>
 
                 {{-- <label for="address">Indirizzo</label>
@@ -94,14 +94,14 @@
             </div>
     
             <div class="form-group">
-                <input type="hidden" name="latitude" class="question" id="latitude" value="{{ old('latitude') }}" required />
+                <input type="hidden" name="latitude" class="question" id="latitude" v-model="lat" required />
 
 
                 {{-- <input type="hidden" class="form-control" id="latitude" name="latitude" v-model="lat" required> --}}
             </div>
     
             <div class="form-group">
-                <input type="hidden" name="longitude" class="question" id="longitude" value="{{ old('longitude') }}" required />
+                <input type="hidden" name="longitude" class="question" id="longitude" v-model="lon" required />
 
 
                 {{-- <input type="hidden" class="form-control" id="longitude" name="longitude" v-model="lon " required> --}}
