@@ -243,7 +243,7 @@
 
                         <div class="scaling-block">
                             <div class="blog-title">
-                                <h4>{{$apartment->title}}</h4>
+                                <h6>{{$apartment->title}}</h6>
 
                                 <div>{{ $apartment->address }}</div>
                             </div>
