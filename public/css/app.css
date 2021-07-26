@@ -303,6 +303,7 @@ body {
   top: 102px;
   right: -15px;
   padding: 20px;
+  z-index: 2;
 }
 #ms-burger-menu li {
   display: block;
