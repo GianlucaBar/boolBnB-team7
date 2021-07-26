@@ -1041,7 +1041,7 @@ h2 {
     }
 
     h1 {
-        color: red;
+        color: $color-3;
     }
 
     html {
@@ -1234,7 +1234,7 @@ h2 {
             }
         }
         .form-check {
-            width: calc(( 100% / 4 ) - 30px);
+            width: calc(( 100% / 3 ) - 30px);
             /* border: 1px solid #F6E8EA; */
             /* border-radius: 10px; */
             padding: 10px 20px;

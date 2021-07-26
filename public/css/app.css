@@ -1018,7 +1018,7 @@ h2 {
   margin-bottom: 5rem;
 }
 .edit-admin h1 {
-  color: red;
+  color: #040F0F;
 }
 .edit-admin html {
   font-family: "Lora", sans-serif;
@@ -1176,7 +1176,7 @@ h2 {
   font-size: 14px;
 }
 .edit-admin .extra-service .form-check {
-  width: calc(( 100% / 4 ) - 30px);
+  width: calc(( 100% / 3 ) - 30px);
   /* border: 1px solid #F6E8EA; */
   /* border-radius: 10px; */
   padding: 10px 20px;
