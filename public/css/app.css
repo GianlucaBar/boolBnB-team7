@@ -450,7 +450,7 @@ main {
   }
 
   .details {
-    display: block;
+    display: none;
   }
 }
 @media screen and (max-width: 460px) {
@@ -459,7 +459,7 @@ main {
   }
 
   .details {
-    display: block;
+    display: none;
   }
 }
 @media screen and (max-width: 415px) {
@@ -468,7 +468,7 @@ main {
   }
 
   .details {
-    display: block;
+    display: none;
   }
 }
 h2 {
@@ -519,21 +519,29 @@ h2 {
   transform: rotateZ(42deg);
   background-color: rgba(0, 0, 0, 0.4);
   padding: 0px 32px;
+  z-index: 2;
 }
 .list-apartment .card-container .card .details {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 5px;
-  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .list-apartment .card-container .card .details a {
-  color: lightgray;
+  color: #fffeec;
+  position: relative;
+  top: 50%;
+  z-index: 1;
 }
-.list-apartment .card-container .card .details a i {
+.list-apartment .card-container .card .details i {
   font-size: 40px;
+  position: relative;
+  color: white;
+  z-index: 2;
 }
 .list-apartment .card-container .card .details a:hover {
   color: white;
@@ -542,11 +550,10 @@ h2 {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
   padding: 5px;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 15px;
   width: 100%;
   text-align: center;
 }
@@ -583,9 +590,8 @@ h2 {
   .list-apartment .card-container .card .ap-stats {
     display: block;
     position: absolute;
-    bottom: 20%;
-    left: -4px;
-    background-color: rgba(0, 0, 0, 0.4);
+    bottom: 0;
+    left: 0;
     padding: 5px;
     border-radius: 5px;
     font-weight: bold;
@@ -607,19 +613,39 @@ h2 {
     margin-bottom: 20px;
     width: 80%;
   }
+  .list-apartment .card-container .card .details {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .list-apartment .card-container .card .details a {
+    color: #fffeec;
+    position: relative;
+    top: 50%;
+    z-index: 1;
+  }
+  .list-apartment .card-container .card .details i {
+    font-size: 40px;
+    position: relative;
+    color: white;
+    z-index: 2;
+  }
   .list-apartment .card-container .card .ap-stats {
     display: block;
     position: absolute;
-    bottom: 20%;
-    left: -4px;
-    background-color: rgba(0, 0, 0, 0.4);
+    bottom: 0;
+    left: 0;
     padding: 5px;
-    border-radius: 5px;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 12px;
     width: 100%;
     text-align: center;
-    display: block;
   }
   .list-apartment .card-container .card .ap-stats span {
     margin: 10px;
@@ -633,19 +659,22 @@ h2 {
   .list-apartment .card-container .card .ap-stats {
     display: block;
     position: absolute;
-    bottom: 20%;
-    left: -4px;
-    background-color: rgba(0, 0, 0, 0.4);
+    bottom: 0;
+    left: 0;
     padding: 5px;
-    border-radius: 5px;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 12px;
     width: 100%;
     text-align: center;
     display: block;
   }
   .list-apartment .card-container .card .ap-stats span {
     margin: 10px;
+  }
+  .list-apartment .card-container .card #click-card #click-card {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
   }
 }
 .list-apartment .card:hover {
@@ -1865,6 +1894,11 @@ h2 {
   font-weight: 400;
 }
 
+@media screen and (max-width: 1070px) {
+  .edit-admin .extra-service .extra-checkbox label {
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 992px) {
   .edit-admin h1 {
     font-size: 25px;
@@ -1969,7 +2003,7 @@ h2 {
 }
 .show-container .container-fluid, .show-container .container-xl, .show-container .container-lg, .show-container .container-md, .show-container .container-sm {
   padding-top: 50px;
-  font-size: 16px;
+  font-size: 18px;
   color: #040F0F;
 }
 .show-container .container-fluid .show-title, .show-container .container-xl .show-title, .show-container .container-lg .show-title, .show-container .container-md .show-title, .show-container .container-sm .show-title {
@@ -1982,7 +2016,7 @@ h2 {
 }
 .show-container .container-fluid .show-img, .show-container .container-xl .show-img, .show-container .container-lg .show-img, .show-container .container-md .show-img, .show-container .container-sm .show-img {
   width: 100%;
-  height: 650px;
+  height: 750px;
   padding-bottom: 30px;
 }
 .show-container .container-fluid .show-img img, .show-container .container-xl .show-img img, .show-container .container-lg .show-img img, .show-container .container-md .show-img img, .show-container .container-sm .show-img img {
@@ -2081,19 +2115,23 @@ h2 {
     max-width: 60%;
   }
 }
+
 @media screen and (max-width: 768px) {
-  .show-container .container-fluid #root2, .show-container .container-xl #root2, .show-container .container-lg #root2, .show-container .container-md #root2, .show-container .container-sm #root2 {
+  .show-container .container-fluid .show-img, .show-container .container-xl .show-img, .show-container .container-lg .show-img, .show-container .container-md .show-img, .show-container .container-sm .show-img {
+    height: unset;
+  }
+  .show-container .container-fluid .show-img img, .show-container .container-xl .show-img img, .show-container .container-lg .show-img img, .show-container .container-md .show-img img, .show-container .container-sm .show-img img {
+    -o-object-fit: unset;
+       object-fit: unset;
+    -o-object-position: unset;
+       object-position: unset;
+  }
+
+  #root2 {
     min-width: 80%;
     max-width: 80%;
   }
 }
-@media screen and (max-width: 680px) {
-  .show-container .container-fluid #root2, .show-container .container-xl #root2, .show-container .container-lg #root2, .show-container .container-md #root2, .show-container .container-sm #root2 {
-    min-width: 100%;
-    max-width: 100%;
-  }
-}
-
 .create-admin {
   padding: 50px 0;
   /* Question */
@@ -2264,10 +2302,8 @@ h2 {
   width: calc(( 100% / 3 ) - 30px);
   /* border: 1px solid #F6E8EA; */
   /* border-radius: 10px; */
-  padding: 10px 20px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 40px;
   /* background-color: #F6E8EA; */
   margin-top: 20px;
   position: relative;
@@ -2294,7 +2330,6 @@ h2 {
 .create-admin .extra-service label {
   display: block;
   position: relative;
-  margin: 20px;
   padding: 15px 30px 15px 62px;
   border: 3px solid #57737A;
   border-radius: 100px;
@@ -2308,7 +2343,7 @@ h2 {
       -ms-user-select: none;
           user-select: none;
   transition: background-color 0.2s, box-shadow 0.2s;
-  width: 90%;
+  width: 100%;
 }
 .create-admin .extra-service label::before {
   content: "";
@@ -2339,7 +2374,6 @@ h2 {
 }
 .create-admin label.select {
   margin: 0;
-  margin-bottom: 10px;
   padding: 0;
   color: #57737A;
 }
@@ -2388,16 +2422,20 @@ h2 {
     min-height: 250px;
   }
 }
+@media screen and (max-width: 1070px) {
+  .create-admin .extra-service .extra-checkbox label {
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 768px) {
   .create-admin .extra-service {
     flex-direction: column;
   }
   .create-admin .extra-service .form-check {
     margin: auto;
-    margin-bottom: 40px;
     margin-top: 20px;
     font-size: 12px;
-    width: 90%;
+    width: 70%;
   }
 }
 @media screen and (max-width: 428px) {
@@ -2406,6 +2444,14 @@ h2 {
     padding: 10px 0;
   }
 }
+.login-register {
+  padding-top: 50px;
+}
+
+.message-guest h1 {
+  margin-top: 40px;
+}
+
 footer i:hover {
   color: white;
 }
