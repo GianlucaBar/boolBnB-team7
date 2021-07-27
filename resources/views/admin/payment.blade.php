@@ -163,7 +163,7 @@
                         </div>
  
                         <div class="col-md-3">
-                            <label for="cvv">CVC</label>
+                            <label for="cvv">CVV</label>
  
                             <div class="form-group" id="cvv">
  
@@ -233,7 +233,7 @@
                     cvv: {
                         selector: '#cvv',
                         placeholder: '123',
-                        name: 'cvc'
+                        name: 'cvv'
                     },
                     expirationDate: {
                         selector: '#expiration-date',
